@@ -1,0 +1,440 @@
+{%- comment -%}
+  ============================================================
+  Section : Présentation produit (atouts autour de l'image)
+  - Desktop : 2 atouts à gauche | image centrale | 2 atouts à droite
+              + flèches décoratives vers l'image
+  - Mobile  : titre / texte / image / grille d'atouts / taglines
+  - Fond au choix : couleur unie OU dégradé
+  - Icônes personnalisables (upload par atout)
+  - Typographie héritée de votre thème
+  ============================================================
+{%- endcomment -%}
+
+{%- liquid
+  assign s = section.settings
+
+  if s.bg_type == 'gradient'
+    if s.gradient_color_3 != blank
+      assign bg_value = 'linear-gradient(' | append: s.gradient_angle | append: 'deg, ' | append: s.gradient_color_1 | append: ', ' | append: s.gradient_color_2 | append: ', ' | append: s.gradient_color_3 | append: ')'
+    else
+      assign bg_value = 'linear-gradient(' | append: s.gradient_angle | append: 'deg, ' | append: s.gradient_color_1 | append: ', ' | append: s.gradient_color_2 | append: ')'
+    endif
+  else
+    assign bg_value = s.bg_color
+  endif
+
+  assign features = section.blocks | where: 'type', 'feature'
+  assign taglines = section.blocks | where: 'type', 'tagline'
+-%}
+
+<style>
+  #fs-{{ section.id }} {
+    --fs-heading-color: {{ s.heading_color }};
+    --fs-heading-size: {{ s.heading_size }}px;
+    --fs-sub-color: {{ s.sub_color }};
+    --fs-sub-size: {{ s.sub_size }}px;
+
+    --fs-feature-title-color: {{ s.feature_title_color }};
+    --fs-feature-title-size: {{ s.feature_title_size }}px;
+    --fs-feature-text-color: {{ s.feature_text_color }};
+    --fs-feature-text-size: {{ s.feature_text_size }}px;
+    --fs-icon-size: {{ s.feature_icon_size }}px;
+
+    --fs-accent: {{ s.accent_color }};
+
+    --fs-tagline-color: {{ s.tagline_color }};
+    --fs-tagline-size: {{ s.tagline_size }}px;
+    --fs-strike-thickness: {{ s.strike_thickness }}px;
+
+    background: {{ bg_value }};
+    font-family: inherit; /* hérite de votre thème */
+    padding-top: {{ s.padding_top }}px;
+    padding-bottom: {{ s.padding_bottom }}px;
+  }
+  #fs-{{ section.id }},
+  #fs-{{ section.id }} .fs-heading,
+  #fs-{{ section.id }} .fs-sub,
+  #fs-{{ section.id }} .fs-f-title,
+  #fs-{{ section.id }} .fs-f-text,
+  #fs-{{ section.id }} .fs-tagline { font-family: inherit; }
+
+  #fs-{{ section.id }} * { box-sizing: border-box; }
+
+  #fs-{{ section.id }} .fs-wrapper {
+    max-width: {{ s.content_width }}px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #fs-{{ section.id }} .fs-heading {
+    color: var(--fs-heading-color);
+    font-size: var(--fs-heading-size);
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    margin: 0 auto 18px;
+    max-width: 760px;
+  }
+
+  #fs-{{ section.id }} .fs-sub {
+    color: var(--fs-sub-color);
+    font-size: var(--fs-sub-size);
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 640px;
+  }
+  #fs-{{ section.id }} .fs-sub :is(p) { margin: 0; }
+
+  /* ---------- Grille principale (desktop) ---------- */
+  #fs-{{ section.id }} .fs-grid {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, {{ s.image_max_width }}px) 1fr;
+    align-items: center;
+    column-gap: {{ s.col_gap }}px;
+    margin-top: {{ s.grid_margin_top }}px;
+  }
+
+  #fs-{{ section.id }} .fs-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: {{ s.row_gap }}px;
+  }
+  #fs-{{ section.id }} .fs-col--left { text-align: right; align-items: flex-end; }
+  #fs-{{ section.id }} .fs-col--right { text-align: left; align-items: flex-start; }
+
+  #fs-{{ section.id }} .fs-feature { max-width: 280px; }
+  #fs-{{ section.id }} .fs-f-icon {
+    height: var(--fs-icon-size);
+    width: auto;
+    display: block;
+    margin-bottom: 12px;
+  }
+  #fs-{{ section.id }} .fs-col--left .fs-f-icon { margin-left: auto; }
+  #fs-{{ section.id }} .fs-f-title {
+    color: var(--fs-feature-title-color);
+    font-size: var(--fs-feature-title-size);
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 8px;
+  }
+  #fs-{{ section.id }} .fs-f-text {
+    color: var(--fs-feature-text-color);
+    font-size: var(--fs-feature-text-size);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ---------- Image centrale + flèches ---------- */
+  #fs-{{ section.id }} .fs-center { position: relative; text-align: center; }
+  #fs-{{ section.id }} .fs-center img.fs-product {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #fs-{{ section.id }} .fs-arrow {
+    position: absolute;
+    width: {{ s.arrow_size }}px;
+    height: auto;
+    color: var(--fs-accent);
+    pointer-events: none;
+  }
+  #fs-{{ section.id }} .fs-arrow svg { width: 100%; height: auto; display: block; }
+  #fs-{{ section.id }} .fs-arrow--tl { top: 14%;  left: -6%;  }
+  #fs-{{ section.id }} .fs-arrow--bl { bottom: 14%; left: -6%;  transform: scaleY(-1); }
+  #fs-{{ section.id }} .fs-arrow--tr { top: 14%;  right: -6%; transform: scaleX(-1); }
+  #fs-{{ section.id }} .fs-arrow--br { bottom: 14%; right: -6%; transform: scale(-1, -1); }
+
+  /* ---------- Taglines ---------- */
+  #fs-{{ section.id }} .fs-taglines {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(20px, 5vw, 60px);
+    margin-top: {{ s.taglines_margin_top }}px;
+  }
+  #fs-{{ section.id }} .fs-tagline {
+    color: var(--fs-tagline-color);
+    font-size: var(--fs-tagline-size);
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: line-through;
+    text-decoration-color: var(--fs-accent);
+    text-decoration-thickness: var(--fs-strike-thickness);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 989px) {
+    #fs-{{ section.id }} .fs-grid {
+      grid-template-columns: 1fr;
+      row-gap: {{ s.row_gap }}px;
+    }
+    #fs-{{ section.id }} .fs-center { order: -1; }
+    #fs-{{ section.id }} .fs-product { max-width: {{ s.image_mobile_width }}px; }
+    #fs-{{ section.id }} .fs-arrow { display: none; }
+
+    #fs-{{ section.id }} .fs-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: {{ s.row_gap }}px;
+    }
+    #fs-{{ section.id }} .fs-col--left,
+    #fs-{{ section.id }} .fs-col--right {
+      text-align: center;
+      align-items: center;
+    }
+    #fs-{{ section.id }} .fs-feature {
+      max-width: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #fs-{{ section.id }} .fs-col--left .fs-f-icon,
+    #fs-{{ section.id }} .fs-f-icon { margin-left: auto; margin-right: auto; }
+    #fs-{{ section.id }} .fs-f-title { text-align: center; }
+    #fs-{{ section.id }} .fs-f-text { text-align: center; }
+  }
+
+  @media (max-width: 479px) {
+    #fs-{{ section.id }} .fs-col {
+      grid-template-columns: 1fr;
+    }
+    #fs-{{ section.id }} .fs-heading { font-size: {{ s.heading_size | times: 0.78 | round }}px; }
+  }
+</style>
+
+<div id="fs-{{ section.id }}">
+  <div class="fs-wrapper">
+
+    {%- if s.heading != blank -%}
+      <h2 class="fs-heading">{{ s.heading }}</h2>
+    {%- endif -%}
+
+    {%- if s.subheading != blank -%}
+      <div class="fs-sub">{{ s.subheading }}</div>
+    {%- endif -%}
+
+    <div class="fs-grid">
+
+      {%- comment -%} Colonne gauche : atouts impairs (1, 3, ...) {%- endcomment -%}
+      <div class="fs-col fs-col--left">
+        {%- for block in features -%}
+          {%- assign fs_rem = forloop.index | modulo: 2 -%}
+          {%- if fs_rem == 1 -%}
+            <div class="fs-feature" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != blank -%}
+                <img class="fs-f-icon" src="{{ block.settings.icon | image_url: width: 160 }}" alt="" loading="lazy" width="{{ s.feature_icon_size }}" height="{{ s.feature_icon_size }}">
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}<p class="fs-f-title">{{ block.settings.title }}</p>{%- endif -%}
+              {%- if block.settings.text != blank -%}<p class="fs-f-text">{{ block.settings.text }}</p>{%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- comment -%} Image centrale + flèches décoratives {%- endcomment -%}
+      <div class="fs-center">
+        {%- if s.product_image != blank -%}
+          <img class="fs-product" src="{{ s.product_image | image_url: width: 1100 }}" alt="{{ s.heading | escape }}" loading="lazy">
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'fs-product' }}
+        {%- endif -%}
+
+        {%- if s.show_arrows -%}
+          {%- assign arrow_svg = '<svg viewBox="0 0 130 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 14 C 40 6, 78 14, 112 44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M96 32 L116 47 L92 56" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>' -%}
+          <span class="fs-arrow fs-arrow--tl">{{ arrow_svg }}</span>
+          <span class="fs-arrow fs-arrow--bl">{{ arrow_svg }}</span>
+          <span class="fs-arrow fs-arrow--tr">{{ arrow_svg }}</span>
+          <span class="fs-arrow fs-arrow--br">{{ arrow_svg }}</span>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Colonne droite : atouts pairs (2, 4, ...) {%- endcomment -%}
+      <div class="fs-col fs-col--right">
+        {%- for block in features -%}
+          {%- assign fs_rem = forloop.index | modulo: 2 -%}
+          {%- if fs_rem == 0 -%}
+            <div class="fs-feature" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != blank -%}
+                <img class="fs-f-icon" src="{{ block.settings.icon | image_url: width: 160 }}" alt="" loading="lazy" width="{{ s.feature_icon_size }}" height="{{ s.feature_icon_size }}">
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}<p class="fs-f-title">{{ block.settings.title }}</p>{%- endif -%}
+              {%- if block.settings.text != blank -%}<p class="fs-f-text">{{ block.settings.text }}</p>{%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+    </div>
+
+    {%- if taglines.size > 0 -%}
+      <div class="fs-taglines">
+        {%- for block in taglines -%}
+          <span class="fs-tagline" {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Présentation produit",
+  "tag": "section",
+  "class": "section-feature-showcase",
+  "settings": [
+    { "type": "header", "content": "Mise en page" },
+    {
+      "type": "range", "id": "content_width", "label": "Largeur du contenu",
+      "min": 800, "max": 1600, "step": 20, "unit": "px", "default": 1200
+    },
+    {
+      "type": "range", "id": "col_gap", "label": "Espace horizontal (colonnes ↔ image)",
+      "min": 20, "max": 160, "step": 4, "unit": "px", "default": 60
+    },
+    {
+      "type": "range", "id": "row_gap", "label": "Espace vertical entre atouts",
+      "min": 20, "max": 120, "step": 4, "unit": "px", "default": 56
+    },
+    {
+      "type": "range", "id": "grid_margin_top", "label": "Espace au-dessus de la grille",
+      "min": 0, "max": 160, "step": 4, "unit": "px", "default": 48
+    },
+    {
+      "type": "range", "id": "taglines_margin_top", "label": "Espace au-dessus des taglines",
+      "min": 0, "max": 160, "step": 4, "unit": "px", "default": 48
+    },
+    {
+      "type": "range", "id": "padding_top", "label": "Marge intérieure haut",
+      "min": 0, "max": 200, "step": 4, "unit": "px", "default": 80
+    },
+    {
+      "type": "range", "id": "padding_bottom", "label": "Marge intérieure bas",
+      "min": 0, "max": 200, "step": 4, "unit": "px", "default": 80
+    },
+
+    { "type": "header", "content": "Fond" },
+    {
+      "type": "select", "id": "bg_type", "label": "Type de fond",
+      "options": [
+        { "value": "solid", "label": "Couleur unie" },
+        { "value": "gradient", "label": "Dégradé" }
+      ],
+      "default": "solid"
+    },
+    { "type": "color", "id": "bg_color", "label": "Couleur unie", "default": "#FBF5E3" },
+    { "type": "color", "id": "gradient_color_1", "label": "Dégradé — couleur 1", "default": "#FBF5E3" },
+    { "type": "color", "id": "gradient_color_2", "label": "Dégradé — couleur 2", "default": "#F7E9C6" },
+    { "type": "color", "id": "gradient_color_3", "label": "Dégradé — couleur 3 (optionnelle)" },
+    {
+      "type": "range", "id": "gradient_angle", "label": "Angle du dégradé",
+      "min": 0, "max": 360, "step": 5, "unit": "°", "default": 135
+    },
+
+    { "type": "header", "content": "Titre & texte d'intro" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Immune Support, and So Much More." },
+    { "type": "color", "id": "heading_color", "label": "Couleur du titre", "default": "#3A1E0E" },
+    {
+      "type": "range", "id": "heading_size", "label": "Taille du titre",
+      "min": 24, "max": 64, "step": 1, "unit": "px", "default": 40
+    },
+    {
+      "type": "richtext", "id": "subheading", "label": "Texte d'intro",
+      "default": "<p>One daily pack, loaded with a whole bunch of powerhouse ingredients like vitamin C, elderberry, ashwagandha, and zinc. <strong><u>Not</u></strong> your backup plan.</p>"
+    },
+    { "type": "color", "id": "sub_color", "label": "Couleur du texte d'intro", "default": "#8A7A63" },
+    {
+      "type": "range", "id": "sub_size", "label": "Taille du texte d'intro",
+      "min": 12, "max": 24, "step": 1, "unit": "px", "default": 16
+    },
+
+    { "type": "header", "content": "Image centrale" },
+    { "type": "image_picker", "id": "product_image", "label": "Image produit" },
+    {
+      "type": "range", "id": "image_max_width", "label": "Largeur max (desktop)",
+      "min": 200, "max": 900, "step": 10, "unit": "px", "default": 460
+    },
+    {
+      "type": "range", "id": "image_mobile_width", "label": "Largeur max (mobile)",
+      "min": 160, "max": 600, "step": 10, "unit": "px", "default": 340
+    },
+
+    { "type": "header", "content": "Atouts" },
+    {
+      "type": "range", "id": "feature_icon_size", "label": "Taille des icônes",
+      "min": 24, "max": 80, "step": 2, "unit": "px", "default": 40
+    },
+    { "type": "color", "id": "feature_title_color", "label": "Couleur des titres d'atout", "default": "#3A1E0E" },
+    {
+      "type": "range", "id": "feature_title_size", "label": "Taille des titres d'atout",
+      "min": 14, "max": 32, "step": 1, "unit": "px", "default": 20
+    },
+    { "type": "color", "id": "feature_text_color", "label": "Couleur des descriptions", "default": "#8A7A63" },
+    {
+      "type": "range", "id": "feature_text_size", "label": "Taille des descriptions",
+      "min": 11, "max": 20, "step": 1, "unit": "px", "default": 14
+    },
+
+    { "type": "header", "content": "Flèches décoratives" },
+    { "type": "checkbox", "id": "show_arrows", "label": "Afficher les flèches (desktop)", "default": true },
+    { "type": "color", "id": "accent_color", "label": "Couleur d'accent (flèches & barré)", "default": "#E2682B" },
+    {
+      "type": "range", "id": "arrow_size", "label": "Taille des flèches",
+      "min": 50, "max": 220, "step": 5, "unit": "px", "default": 110
+    },
+
+    { "type": "header", "content": "Taglines (bandeau bas)" },
+    { "type": "color", "id": "tagline_color", "label": "Couleur du texte", "default": "#3A1E0E" },
+    {
+      "type": "range", "id": "tagline_size", "label": "Taille du texte",
+      "min": 14, "max": 40, "step": 1, "unit": "px", "default": 24
+    },
+    {
+      "type": "range", "id": "strike_thickness", "label": "Épaisseur du barré",
+      "min": 1, "max": 6, "step": 1, "unit": "px", "default": 2
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Atout",
+      "settings": [
+        {
+          "type": "image_picker", "id": "icon", "label": "Icône",
+          "info": "Image ou SVG téléversé. Laissez vide pour aucun visuel."
+        },
+        { "type": "text", "id": "title", "label": "Titre", "default": "Proactive Defense" },
+        { "type": "textarea", "id": "text", "label": "Description", "default": "Support before you need it." }
+      ]
+    },
+    {
+      "type": "tagline",
+      "name": "Tagline (barrée)",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Texte", "default": "No pills." }
+      ]
+    }
+  ],
+  "max_blocks": 14,
+  "presets": [
+    {
+      "name": "Présentation produit",
+      "blocks": [
+        { "type": "feature", "settings": { "title": "Proactive Defense", "text": "Support before you need it." } },
+        { "type": "feature", "settings": { "title": "Completely Clean", "text": "Immün is vegan, non-GMO, and has zero artificial flavors." } },
+        { "type": "feature", "settings": { "title": "Everyday Stress Support", "text": "Adaptogens like ashwagandha and holy basil support balance and resilience." } },
+        { "type": "feature", "settings": { "title": "A Delicious Daily Habit", "text": "Helps to strengthen your body's natural defenses, every single day." } },
+        { "type": "tagline", "settings": { "text": "No pills." } },
+        { "type": "tagline", "settings": { "text": "No powders." } },
+        { "type": "tagline", "settings": { "text": "No BS." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
