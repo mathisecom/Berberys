@@ -17,20 +17,28 @@
         "message": {
           "type": "message",
           "settings": {
+            "text": "Livraison offerte dès 49€ d'achat !",
+            "url": ""
+          }
+        },
+        "message_eDP89E": {
+          "type": "message",
+          "settings": {
             "text": "Announce something here",
             "url": ""
           }
         }
       },
       "block_order": [
-        "message"
+        "message",
+        "message_eDP89E"
       ],
       "settings": {
         "enable_sticky": false,
-        "autoplay": false,
+        "autoplay": true,
         "cycle_speed": 6,
         "text_size": "text-xs",
-        "navigation_mode": "scrolling",
+        "navigation_mode": "arrows",
         "scrolling_speed": 10,
         "background": "#a5bfdb",
         "background_gradient": "",
