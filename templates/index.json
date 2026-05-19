@@ -164,6 +164,12 @@
             "show_taxes_notice": false
           }
         },
+        "text_rNiFih": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Share some content to your customers about your products.</strong></p>"
+          }
+        },
         "liquid_pKkQHQ": {
           "type": "liquid",
           "settings": {
@@ -251,6 +257,7 @@
         "liquid_pEcFnn",
         "title_HKBdXL",
         "price_kfhCb7",
+        "text_rNiFih",
         "liquid_pKkQHQ",
         "variant_picker_n94Ycf",
         "quantity_selector_HLczLm",
