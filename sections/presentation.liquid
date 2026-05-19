@@ -142,12 +142,28 @@
     height: auto;
     color: var(--fs-accent);
     pointer-events: none;
+    z-index: 2;
   }
   #fs-{{ section.id }} .fs-arrow svg { width: 100%; height: auto; display: block; }
-  #fs-{{ section.id }} .fs-arrow--tl { top: 14%;  left: -6%;  }
-  #fs-{{ section.id }} .fs-arrow--bl { bottom: 14%; left: -6%;  transform: scaleY(-1); }
-  #fs-{{ section.id }} .fs-arrow--tr { top: 14%;  right: -6%; transform: scaleX(-1); }
-  #fs-{{ section.id }} .fs-arrow--br { bottom: 14%; right: -6%; transform: scale(-1, -1); }
+
+  /* Les flèches sont posées juste à l'extérieur de l'image, dans l'espace
+     vers le texte. translate basé sur leur propre taille = robuste. */
+  #fs-{{ section.id }} .fs-arrow--tl {
+    top: 8%;  left: 0;
+    transform: translateX(calc(-100% - {{ s.arrow_offset }}px));
+  }
+  #fs-{{ section.id }} .fs-arrow--tr {
+    top: 8%;  right: 0;
+    transform: translateX(calc(100% + {{ s.arrow_offset }}px)) scaleX(-1);
+  }
+  #fs-{{ section.id }} .fs-arrow--bl {
+    bottom: 8%; left: 0;
+    transform: translateX(calc(-100% - {{ s.arrow_offset }}px)) scaleY(-1);
+  }
+  #fs-{{ section.id }} .fs-arrow--br {
+    bottom: 8%; right: 0;
+    transform: translateX(calc(100% + {{ s.arrow_offset }}px)) scale(-1, -1);
+  }
 
   /* ---------- Taglines ---------- */
   #fs-{{ section.id }} .fs-taglines {
@@ -171,38 +187,41 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 989px) {
     #fs-{{ section.id }} .fs-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      column-gap: {{ s.row_gap }}px;
       row-gap: {{ s.row_gap }}px;
+      align-items: start;
     }
-    #fs-{{ section.id }} .fs-center { order: -1; }
+
+    /* Image en pleine largeur, placée en premier */
+    #fs-{{ section.id }} .fs-center {
+      grid-column: 1 / -1;
+      order: -1;
+      margin-bottom: {{ s.row_gap }}px;
+    }
     #fs-{{ section.id }} .fs-product { max-width: {{ s.image_mobile_width }}px; }
     #fs-{{ section.id }} .fs-arrow { display: none; }
 
-    #fs-{{ section.id }} .fs-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: {{ s.row_gap }}px;
-    }
-    #fs-{{ section.id }} .fs-col--left,
-    #fs-{{ section.id }} .fs-col--right {
-      text-align: center;
-      align-items: center;
-    }
+    /* Les conteneurs gauche/droite s'effacent : les 4 atouts
+       deviennent des cellules de la grille → vraie disposition 2 × 2 */
+    #fs-{{ section.id }} .fs-col { display: contents; }
+
     #fs-{{ section.id }} .fs-feature {
       max-width: none;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     #fs-{{ section.id }} .fs-col--left .fs-f-icon,
     #fs-{{ section.id }} .fs-f-icon { margin-left: auto; margin-right: auto; }
-    #fs-{{ section.id }} .fs-f-title { text-align: center; }
+    #fs-{{ section.id }} .fs-f-title,
     #fs-{{ section.id }} .fs-f-text { text-align: center; }
   }
 
   @media (max-width: 479px) {
-    #fs-{{ section.id }} .fs-col {
-      grid-template-columns: 1fr;
+    #fs-{{ section.id }} .fs-grid {
+      column-gap: {{ s.row_gap | divided_by: 2 }}px;
     }
     #fs-{{ section.id }} .fs-heading { font-size: {{ s.heading_size | times: 0.78 | round }}px; }
   }
@@ -246,7 +265,7 @@
         {%- endif -%}
 
         {%- if s.show_arrows -%}
-          {%- assign arrow_svg = '<svg viewBox="0 0 130 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 14 C 40 6, 78 14, 112 44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M96 32 L116 47 L92 56" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>' -%}
+          {%- assign arrow_svg = '<svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9 Q 66 2 106 44" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><path d="M85 45 L108 45 L101 22" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' -%}
           <span class="fs-arrow fs-arrow--tl">{{ arrow_svg }}</span>
           <span class="fs-arrow fs-arrow--bl">{{ arrow_svg }}</span>
           <span class="fs-arrow fs-arrow--tr">{{ arrow_svg }}</span>
@@ -387,6 +406,10 @@
     {
       "type": "range", "id": "arrow_size", "label": "Taille des flèches",
       "min": 50, "max": 220, "step": 5, "unit": "px", "default": 110
+    },
+    {
+      "type": "range", "id": "arrow_offset", "label": "Distance flèche ↔ image",
+      "min": 0, "max": 140, "step": 4, "unit": "px", "default": 24
     },
 
     { "type": "header", "content": "Taglines (bandeau bas)" },
