@@ -39,12 +39,24 @@
     --rt-step-text-color: {{ s.step_text_color }};
     --rt-step-text-size: {{ s.step_text_size }}px;
 
-    --rt-font-family: {{ s.font_family.family }}, {{ s.font_family.fallback_families }};
+    --rt-line-thickness: {{ s.line_thickness }}px;
 
     background-color: var(--rt-section-bg);
-    font-family: var(--rt-font-family);
+    /* Hérite de la typographie définie dans votre thème */
+    font-family: inherit;
     padding-top: {{ s.padding_top }}px;
     padding-bottom: {{ s.padding_bottom }}px;
+  }
+
+  #routine-{{ section.id }},
+  #routine-{{ section.id }} .rt-name,
+  #routine-{{ section.id }} .rt-subtitle,
+  #routine-{{ section.id }} .rt-quote,
+  #routine-{{ section.id }} .rt-heading,
+  #routine-{{ section.id }} .rt-step-label,
+  #routine-{{ section.id }} .rt-step-title,
+  #routine-{{ section.id }} .rt-step-text {
+    font-family: inherit;
   }
 
   #routine-{{ section.id }} * {
@@ -157,26 +169,28 @@
     padding-bottom: 0;
   }
 
-  /* Ligne verticale reliant les pastilles */
-  #routine-{{ section.id }} .rt-step:not(:last-child) .rt-step-icon::after {
+  /* Ligne verticale continue, du centre d'une pastille au centre de la suivante */
+  #routine-{{ section.id }} .rt-step:not(:last-child)::before {
     content: "";
     position: absolute;
-    top: 26px;
-    left: 50%;
+    left: 13px;
+    top: 13px;
+    bottom: -13px;
+    width: var(--rt-line-thickness);
     transform: translateX(-50%);
-    width: 1px;
-    height: calc(100% + {{ s.step_gap }}px - 26px);
     background-color: var(--rt-accent);
-    opacity: .55;
+    z-index: 0;
   }
 
   #routine-{{ section.id }} .rt-step-icon {
     position: relative;
+    z-index: 1;
     flex: 0 0 auto;
     width: 26px;
     height: 26px;
     border: 1.5px solid var(--rt-accent);
     border-radius: 50%;
+    background-color: var(--rt-section-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -375,10 +389,14 @@
       "default": "#C0793C"
     },
     {
-      "type": "font_picker",
-      "id": "font_family",
-      "label": "Typographie",
-      "default": "assistant_n4"
+      "type": "range",
+      "id": "line_thickness",
+      "label": "Épaisseur du trait",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "default": 2
     },
     {
       "type": "header",
