@@ -120,6 +120,65 @@
         "input_text_color": ""
       }
     },
+    "resultatsprouves_b3gcMW": {
+      "type": "resultatsprouves",
+      "blocks": {
+        "stat_rnFyQg": {
+          "type": "stat",
+          "settings": {
+            "number": "91%",
+            "label": "De nos clients",
+            "text": "Constatent une amélioration sur leur besoin clé après 3 mois."
+          }
+        },
+        "stat_tADknP": {
+          "type": "stat",
+          "settings": {
+            "number": "94%",
+            "label": "De nos clients",
+            "text": "Constatent une amélioration de leur état général après 3 mois."
+          }
+        },
+        "stat_DGi9GW": {
+          "type": "stat",
+          "settings": {
+            "number": "76",
+            "label": "Études cliniques",
+            "text": "et pré-cliniques réalisées sur nos ingrédients, incluant des études contre placebos."
+          }
+        }
+      },
+      "block_order": [
+        "stat_rnFyQg",
+        "stat_tADknP",
+        "stat_DGi9GW"
+      ],
+      "name": "Résultats prouvés",
+      "settings": {
+        "content_width": 1200,
+        "columns_gap": 64,
+        "stats_padding_left": 48,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "title_align": "center",
+        "section_bg": "#f8f1e6",
+        "heading_light": "Des résultats",
+        "heading_bold": "prouvés",
+        "heading_color": "#1a1a1a",
+        "heading_size": 41,
+        "separator_color": "#D8D6D2",
+        "separator_thickness": 1,
+        "divider_color": "#D8D6D2",
+        "divider_thickness": 1,
+        "stat_padding": 24,
+        "number_color": "#1a1a1a",
+        "number_size": 46,
+        "label_color": "#1a1a1a",
+        "label_size": 13,
+        "text_color": "#1a1a1a",
+        "text_size": 15
+      }
+    },
     "routine_a4ebbj": {
       "type": "routine",
       "blocks": {
@@ -161,6 +220,7 @@
         "padding_bottom": 28,
         "section_bg": "#fef9f0",
         "accent_color": "#ffb74a",
+        "line_thickness": 2,
         "card_bg": "#f8f1e6",
         "card_radius": 20,
         "card_padding": 48,
@@ -185,7 +245,7 @@
         "step_label_size": 15,
         "step_title_color": "#1a1a1a",
         "step_title_size": 14,
-        "step_text_color": "#6A6A75",
+        "step_text_color": "#6a6a75",
         "step_text_size": 13
       }
     },
@@ -410,6 +470,7 @@
   },
   "order": [
     "featured_product_khQ4Qz",
+    "resultatsprouves_b3gcMW",
     "routine_a4ebbj",
     "rich_text_jm8eFe",
     "logoscrooll_zK3aBh",
