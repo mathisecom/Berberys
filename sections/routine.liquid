@@ -1,0 +1,654 @@
+{%- comment -%}
+  ============================================================
+  Section : Une routine pensée pour durer
+  Layout responsive : 2 colonnes (desktop) / empilé (mobile)
+  Tout est personnalisable depuis l'éditeur de thème.
+  ============================================================
+{%- endcomment -%}
+
+{%- liquid
+  assign s = section.settings
+-%}
+
+<style>
+  #routine-{{ section.id }} {
+    --rt-section-bg: {{ s.section_bg }};
+    --rt-card-bg: {{ s.card_bg }};
+    --rt-card-radius: {{ s.card_radius }}px;
+    --rt-card-padding: {{ s.card_padding }}px;
+    --rt-accent: {{ s.accent_color }};
+
+    --rt-heading-color: {{ s.heading_color }};
+    --rt-heading-size: {{ s.heading_size }}px;
+
+    --rt-name-color: {{ s.name_color }};
+    --rt-name-size: {{ s.name_size }}px;
+
+    --rt-subtitle-color: {{ s.subtitle_color }};
+    --rt-subtitle-size: {{ s.subtitle_size }}px;
+
+    --rt-quote-color: {{ s.quote_color }};
+    --rt-quote-size: {{ s.quote_size }}px;
+
+    --rt-step-label-color: {{ s.step_label_color }};
+    --rt-step-label-size: {{ s.step_label_size }}px;
+
+    --rt-step-title-color: {{ s.step_title_color }};
+    --rt-step-title-size: {{ s.step_title_size }}px;
+
+    --rt-step-text-color: {{ s.step_text_color }};
+    --rt-step-text-size: {{ s.step_text_size }}px;
+
+    --rt-font-family: {{ s.font_family.family }}, {{ s.font_family.fallback_families }};
+
+    background-color: var(--rt-section-bg);
+    font-family: var(--rt-font-family);
+    padding-top: {{ s.padding_top }}px;
+    padding-bottom: {{ s.padding_bottom }}px;
+  }
+
+  #routine-{{ section.id }} * {
+    box-sizing: border-box;
+  }
+
+  #routine-{{ section.id }} .rt-wrapper {
+    max-width: {{ s.content_width }}px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ s.columns_gap }}px;
+    align-items: center;
+  }
+
+  /* ---------- Carte profil ---------- */
+  #routine-{{ section.id }} .rt-card {
+    background-color: var(--rt-card-bg);
+    border-radius: var(--rt-card-radius);
+    padding: var(--rt-card-padding);
+    text-align: center;
+  }
+
+  #routine-{{ section.id }} .rt-avatar {
+    width: {{ s.avatar_size }}px;
+    height: {{ s.avatar_size }}px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 24px;
+    display: block;
+    background-color: #e6e6e6;
+  }
+
+  #routine-{{ section.id }} .rt-avatar-placeholder {
+    width: {{ s.avatar_size }}px;
+    height: {{ s.avatar_size }}px;
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    background-color: #e6e6e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #routine-{{ section.id }} .rt-avatar-placeholder svg {
+    width: 60%;
+    height: 60%;
+    fill: #b9b9b9;
+  }
+
+  #routine-{{ section.id }} .rt-name {
+    color: var(--rt-name-color);
+    font-size: var(--rt-name-size);
+    font-weight: 700;
+    margin: 0 0 6px;
+    line-height: 1.3;
+  }
+
+  #routine-{{ section.id }} .rt-subtitle {
+    color: var(--rt-subtitle-color);
+    font-size: var(--rt-subtitle-size);
+    font-weight: 400;
+    margin: 0 0 28px;
+    line-height: 1.5;
+  }
+
+  #routine-{{ section.id }} .rt-quote {
+    color: var(--rt-quote-color);
+    font-size: var(--rt-quote-size);
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 0 22px;
+  }
+  #routine-{{ section.id }} .rt-quote:last-child {
+    margin-bottom: 0;
+  }
+  #routine-{{ section.id }} .rt-quote strong {
+    font-weight: 700;
+  }
+
+  /* ---------- Colonne timeline ---------- */
+  #routine-{{ section.id }} .rt-content { width: 100%; }
+
+  #routine-{{ section.id }} .rt-heading {
+    color: var(--rt-heading-color);
+    font-size: var(--rt-heading-size);
+    font-weight: 300;
+    line-height: 1.15;
+    margin: 0 0 40px;
+  }
+  #routine-{{ section.id }} .rt-heading strong {
+    font-weight: 700;
+    display: block;
+  }
+
+  #routine-{{ section.id }} .rt-timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #routine-{{ section.id }} .rt-step {
+    display: flex;
+    gap: 18px;
+    position: relative;
+    padding-bottom: {{ s.step_gap }}px;
+  }
+  #routine-{{ section.id }} .rt-step:last-child {
+    padding-bottom: 0;
+  }
+
+  /* Ligne verticale reliant les pastilles */
+  #routine-{{ section.id }} .rt-step:not(:last-child) .rt-step-icon::after {
+    content: "";
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: calc(100% + {{ s.step_gap }}px - 26px);
+    background-color: var(--rt-accent);
+    opacity: .55;
+  }
+
+  #routine-{{ section.id }} .rt-step-icon {
+    position: relative;
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+    border: 1.5px solid var(--rt-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #routine-{{ section.id }} .rt-step-icon svg {
+    width: 13px;
+    height: 13px;
+    stroke: var(--rt-accent);
+    stroke-width: 2.5;
+    fill: none;
+  }
+
+  #routine-{{ section.id }} .rt-step-body { padding-top: 1px; }
+
+  #routine-{{ section.id }} .rt-step-label {
+    color: var(--rt-step-label-color);
+    font-size: var(--rt-step-label-size);
+    font-weight: 700;
+    margin: 0 0 6px;
+    line-height: 1.2;
+  }
+
+  #routine-{{ section.id }} .rt-step-title {
+    color: var(--rt-step-title-color);
+    font-size: var(--rt-step-title-size);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+    margin: 0 0 4px;
+    line-height: 1.3;
+  }
+
+  #routine-{{ section.id }} .rt-step-text {
+    color: var(--rt-step-text-color);
+    font-size: var(--rt-step-text-size);
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ---------- Responsive / mobile ---------- */
+  @media (max-width: 749px) {
+    #routine-{{ section.id }} .rt-wrapper {
+      grid-template-columns: 1fr;
+      gap: {{ s.columns_gap | divided_by: 2 }}px;
+      text-align: left;
+    }
+    #routine-{{ section.id }} .rt-card {
+      padding: {{ s.card_padding | times: 0.7 | round }}px;
+    }
+    #routine-{{ section.id }} .rt-heading {
+      margin-bottom: 28px;
+    }
+  }
+</style>
+
+<div id="routine-{{ section.id }}">
+  <div class="rt-wrapper">
+
+    {%- comment -%} ---------- Carte profil ---------- {%- endcomment -%}
+    <div class="rt-card">
+      {%- if s.avatar != blank -%}
+        <img
+          class="rt-avatar"
+          src="{{ s.avatar | image_url: width: 300 }}"
+          alt="{{ s.profile_name | escape }}"
+          width="{{ s.avatar_size }}"
+          height="{{ s.avatar_size }}"
+          loading="lazy"
+        >
+      {%- else -%}
+        <div class="rt-avatar-placeholder">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/>
+          </svg>
+        </div>
+      {%- endif -%}
+
+      {%- if s.profile_name != blank -%}
+        <p class="rt-name">{{ s.profile_name }}</p>
+      {%- endif -%}
+
+      {%- if s.profile_subtitle != blank -%}
+        <p class="rt-subtitle">{{ s.profile_subtitle }}</p>
+      {%- endif -%}
+
+      {%- if s.quote_1 != blank -%}
+        <div class="rt-quote">{{ s.quote_1 }}</div>
+      {%- endif -%}
+
+      {%- if s.quote_2 != blank -%}
+        <div class="rt-quote">{{ s.quote_2 }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ---------- Colonne titre + timeline ---------- {%- endcomment -%}
+    <div class="rt-content">
+      {%- if s.heading_light != blank or s.heading_bold != blank -%}
+        <h2 class="rt-heading">
+          {{ s.heading_light }}
+          {%- if s.heading_bold != blank -%}<strong>{{ s.heading_bold }}</strong>{%- endif -%}
+        </h2>
+      {%- endif -%}
+
+      <ul class="rt-timeline">
+        {%- for block in section.blocks -%}
+          <li class="rt-step" {{ block.shopify_attributes }}>
+            <span class="rt-step-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg>
+            </span>
+            <div class="rt-step-body">
+              {%- if block.settings.label != blank -%}
+                <p class="rt-step-label">{{ block.settings.label }}</p>
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}
+                <p class="rt-step-title">{{ block.settings.title }}</p>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <p class="rt-step-text">{{ block.settings.text }}</p>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Routine pensée",
+  "tag": "section",
+  "class": "section-routine-pensee",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Mise en page"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Largeur du contenu",
+      "min": 800,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "columns_gap",
+      "label": "Espace entre les colonnes",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge intérieure haut",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge intérieure bas",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Couleurs générales"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Fond de la section",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Couleur d'accent (pastilles & ligne)",
+      "default": "#C0793C"
+    },
+    {
+      "type": "font_picker",
+      "id": "font_family",
+      "label": "Typographie",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "header",
+      "content": "Carte profil"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Fond de la carte",
+      "default": "#F6F6F6"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi de la carte",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Marge intérieure de la carte",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar",
+      "label": "Photo du profil"
+    },
+    {
+      "type": "range",
+      "id": "avatar_size",
+      "label": "Taille de la photo",
+      "min": 60,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "text",
+      "id": "profile_name",
+      "label": "Nom",
+      "default": "Armelle Marcilhacy"
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Couleur du nom",
+      "default": "#1A1A2E"
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "label": "Taille du nom",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 17
+    },
+    {
+      "type": "text",
+      "id": "profile_subtitle",
+      "label": "Fonction / sous-titre",
+      "default": "Médecin nutritionniste et membre du Comité Scientifique de Cuure"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Couleur du sous-titre",
+      "default": "#555555"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Taille du sous-titre",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "richtext",
+      "id": "quote_1",
+      "label": "Citation 1",
+      "default": "<p>“Pour être bénéfique, la prise de compléments alimentaires doit <strong>s'insérer durablement</strong> dans une routine bien-être quotidienne.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "quote_2",
+      "label": "Citation 2",
+      "default": "<p>La <strong>durée moyenne recommandée</strong> pour voir des effets durables est de <strong>3 mois</strong>.”</p>"
+    },
+    {
+      "type": "color",
+      "id": "quote_color",
+      "label": "Couleur des citations",
+      "default": "#2E2E3A"
+    },
+    {
+      "type": "range",
+      "id": "quote_size",
+      "label": "Taille des citations",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Titre de la colonne"
+    },
+    {
+      "type": "text",
+      "id": "heading_light",
+      "label": "Titre (partie fine)",
+      "default": "Une routine pensée"
+    },
+    {
+      "type": "text",
+      "id": "heading_bold",
+      "label": "Titre (partie grasse)",
+      "default": "pour durer"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Couleur du titre",
+      "default": "#1A1A2E"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille du titre",
+      "min": 22,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Étapes — styles communs"
+    },
+    {
+      "type": "range",
+      "id": "step_gap",
+      "label": "Espace entre les étapes",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "step_label_color",
+      "label": "Couleur de l'intitulé (ex : 1 MOIS)",
+      "default": "#1A1A2E"
+    },
+    {
+      "type": "range",
+      "id": "step_label_size",
+      "label": "Taille de l'intitulé",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "step_title_color",
+      "label": "Couleur du titre d'étape",
+      "default": "#3A3A45"
+    },
+    {
+      "type": "range",
+      "id": "step_title_size",
+      "label": "Taille du titre d'étape",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "step_text_color",
+      "label": "Couleur de la description",
+      "default": "#6A6A75"
+    },
+    {
+      "type": "range",
+      "id": "step_text_size",
+      "label": "Taille de la description",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Étape",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Intitulé",
+          "default": "1 MOIS"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Une nouvelle habitude"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Ressentez les premiers effets sur votre bien-être et votre santé"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Routine pensée",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "label": "1 MOIS",
+            "title": "Une nouvelle habitude",
+            "text": "Ressentez les premiers effets sur votre bien-être et votre santé"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "label": "2 MOIS",
+            "title": "Un réflexe quotidien",
+            "text": "Observez les effets s'installer en continu."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "label": "3 MOIS",
+            "title": "Un nouveau mode de vie",
+            "text": "Bénéficiez des effets durables de votre cure."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
