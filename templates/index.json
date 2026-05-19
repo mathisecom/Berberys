@@ -12,6 +12,12 @@
     "featured_product_khQ4Qz": {
       "type": "featured-product",
       "blocks": {
+        "liquid_pEcFnn": {
+          "type": "liquid",
+          "settings": {
+            "liquid": ""
+          }
+        },
         "title_HKBdXL": {
           "type": "title",
           "settings": {
@@ -72,6 +78,7 @@
         }
       },
       "block_order": [
+        "liquid_pEcFnn",
         "title_HKBdXL",
         "price_kfhCb7",
         "variant_picker_n94Ycf",
