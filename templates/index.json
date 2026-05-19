@@ -130,7 +130,7 @@
         "image_max_width": 460,
         "image_mobile_width": 340,
         "mobile_image_gap": 16,
-        "feature_icon_size": 40,
+        "feature_icon_size": 38,
         "feature_title_color": "#3a1e0e",
         "feature_title_size": 20,
         "feature_text_color": "#8a7a63",
