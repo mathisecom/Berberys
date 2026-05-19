@@ -106,28 +106,35 @@
     position: relative;
     z-index: 3;
   }
-  #fs-{{ section.id }} .fs-col--left { text-align: right; align-items: flex-end; }
-  #fs-{{ section.id }} .fs-col--right { text-align: left; align-items: flex-start; }
+  #fs-{{ section.id }} .fs-col--left,
+  #fs-{{ section.id }} .fs-col--right { align-items: center; }
 
-  #fs-{{ section.id }} .fs-feature { max-width: 280px; }
+  #fs-{{ section.id }} .fs-feature {
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
   #fs-{{ section.id }} .fs-f-icon {
     height: var(--fs-icon-size);
     width: auto;
     display: block;
-    margin-bottom: 12px;
+    margin: 0 auto 12px;
   }
-  #fs-{{ section.id }} .fs-col--left .fs-f-icon { margin-left: auto; }
   #fs-{{ section.id }} .fs-f-title {
     color: var(--fs-feature-title-color);
     font-size: var(--fs-feature-title-size);
     font-weight: 600;
     line-height: 1.25;
     margin: 0 0 8px;
+    text-align: center;
   }
   #fs-{{ section.id }} .fs-f-text {
     color: var(--fs-feature-text-color);
     font-size: var(--fs-feature-text-size);
     line-height: 1.5;
+    text-align: center;
     margin: 0;
   }
 
@@ -415,11 +422,11 @@
     { "type": "color", "id": "accent_color", "label": "Couleur d'accent (flèches & barré)", "default": "#E2682B" },
     {
       "type": "range", "id": "arrow_size", "label": "Taille des flèches",
-      "min": 50, "max": 220, "step": 5, "unit": "px", "default": 110
+      "min": 40, "max": 220, "step": 5, "unit": "px", "default": 70
     },
     {
       "type": "range", "id": "arrow_offset", "label": "Distance flèche ↔ image",
-      "min": 0, "max": 140, "step": 4, "unit": "px", "default": 24
+      "min": 0, "max": 140, "step": 4, "unit": "px", "default": 16
     },
 
     { "type": "header", "content": "Taglines (bandeau bas)" },
