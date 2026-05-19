@@ -1,0 +1,389 @@
+{%- comment -%}
+  ============================================================
+  Section : Marquee défilant (bandeau)
+  - Défilement infini et fluide (boucle sans couture)
+  - Icône personnalisable par élément (image / SVG uploadé)
+  - Fond au choix : couleur unie OU dégradé
+  - Typographie héritée de votre thème
+  ============================================================
+{%- endcomment -%}
+
+{%- liquid
+  assign s = section.settings
+
+  if s.bg_type == 'gradient'
+    if s.gradient_color_3 != blank
+      assign bg_value = 'linear-gradient(' | append: s.gradient_angle | append: 'deg, ' | append: s.gradient_color_1 | append: ', ' | append: s.gradient_color_2 | append: ', ' | append: s.gradient_color_3 | append: ')'
+    else
+      assign bg_value = 'linear-gradient(' | append: s.gradient_angle | append: 'deg, ' | append: s.gradient_color_1 | append: ', ' | append: s.gradient_color_2 | append: ')'
+    endif
+  else
+    assign bg_value = s.bg_color
+  endif
+
+  assign direction = '-50%'
+  if s.direction == 'right'
+    assign direction = '0'
+    assign start_pos = '-50%'
+  else
+    assign start_pos = '0'
+  endif
+-%}
+
+<style>
+  #marquee-{{ section.id }} {
+    --mq-text-color: {{ s.text_color }};
+    --mq-text-size: {{ s.text_size }}px;
+    --mq-icon-size: {{ s.icon_size }}px;
+    --mq-item-gap: {{ s.item_gap }}px;
+    --mq-icon-gap: {{ s.icon_gap }}px;
+
+    background: {{ bg_value }};
+    /* Hérite de la typographie de votre thème */
+    font-family: inherit;
+    overflow: hidden;
+    padding-top: {{ s.bar_padding }}px;
+    padding-bottom: {{ s.bar_padding }}px;
+  }
+
+  #marquee-{{ section.id }} * { box-sizing: border-box; }
+
+  #marquee-{{ section.id }} .mq-viewport {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+  }
+
+  #marquee-{{ section.id }} .mq-track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    animation: mq-scroll-{{ section.id }} {{ s.speed }}s linear infinite;
+  }
+
+  {%- if s.pause_on_hover -%}
+  #marquee-{{ section.id }}:hover .mq-track {
+    animation-play-state: paused;
+  }
+  {%- endif -%}
+
+  #marquee-{{ section.id }} .mq-group {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+  }
+
+  #marquee-{{ section.id }} .mq-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--mq-icon-gap);
+    padding: 0 calc(var(--mq-item-gap) / 2);
+    white-space: nowrap;
+    color: var(--mq-text-color);
+    font-size: var(--mq-text-size);
+    font-weight: {{ s.text_weight }};
+    text-transform: {{ s.text_transform }};
+    letter-spacing: {{ s.letter_spacing }}px;
+    line-height: 1;
+  }
+
+  #marquee-{{ section.id }} .mq-item img {
+    height: var(--mq-icon-size);
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  @keyframes mq-scroll-{{ section.id }} {
+    from { transform: translateX({{ start_pos }}); }
+    to   { transform: translateX({{ direction }}); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #marquee-{{ section.id }} .mq-track {
+      animation: none;
+      transform: none;
+    }
+  }
+</style>
+
+<div id="marquee-{{ section.id }}" role="marquee" aria-label="{{ s.aria_label | escape }}">
+  <div class="mq-viewport">
+    <div class="mq-track">
+      {%- comment -%} Deux groupes identiques = boucle sans couture {%- endcomment -%}
+      {%- for g in (1..2) -%}
+        <div class="mq-group" {% if g == 2 %}aria-hidden="true"{% endif %}>
+          {%- for r in (1..s.repeat) -%}
+            {%- for block in section.blocks -%}
+              <span class="mq-item" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon != blank -%}
+                  <img
+                    src="{{ block.settings.icon | image_url: width: 120 }}"
+                    alt=""
+                    loading="lazy"
+                    width="{{ s.icon_size }}"
+                    height="{{ s.icon_size }}"
+                  >
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                  <span>{{ block.settings.text }}</span>
+                {%- endif -%}
+              </span>
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Marquee défilant",
+  "tag": "section",
+  "class": "section-marquee",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Fond"
+    },
+    {
+      "type": "select",
+      "id": "bg_type",
+      "label": "Type de fond",
+      "options": [
+        { "value": "solid", "label": "Couleur unie" },
+        { "value": "gradient", "label": "Dégradé" }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur unie",
+      "info": "Utilisée si « Couleur unie » est sélectionné",
+      "default": "#F6D873"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Dégradé — couleur 1",
+      "default": "#F6D873"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Dégradé — couleur 2",
+      "default": "#F2B84B"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_3",
+      "label": "Dégradé — couleur 3 (optionnelle)"
+    },
+    {
+      "type": "range",
+      "id": "gradient_angle",
+      "label": "Angle du dégradé",
+      "min": 0,
+      "max": 360,
+      "step": 5,
+      "unit": "°",
+      "default": 90
+    },
+    {
+      "type": "header",
+      "content": "Défilement"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Sens du défilement",
+      "options": [
+        { "value": "left", "label": "Vers la gauche" },
+        { "value": "right", "label": "Vers la droite" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Durée d'un cycle",
+      "info": "Plus la valeur est élevée, plus le défilement est lent",
+      "min": 10,
+      "max": 120,
+      "step": 2,
+      "unit": "s",
+      "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Mettre en pause au survol",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "repeat",
+      "label": "Répétitions des éléments",
+      "info": "Augmentez si le bandeau présente un vide sur grand écran",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Bandeau & espacements"
+    },
+    {
+      "type": "range",
+      "id": "bar_padding",
+      "label": "Hauteur (marge intérieure haut/bas)",
+      "min": 6,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "label": "Espace entre les éléments",
+      "min": 16,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "icon_gap",
+      "label": "Espace entre l'icône et le texte",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Icônes"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Taille des icônes",
+      "min": 12,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "header",
+      "content": "Texte"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#2A2417"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Taille du texte",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Graisse du texte",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Moyen" },
+        { "value": "600", "label": "Semi-gras" },
+        { "value": "700", "label": "Gras" }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Casse",
+      "options": [
+        { "value": "none", "label": "Normale" },
+        { "value": "uppercase", "label": "MAJUSCULES" },
+        { "value": "lowercase", "label": "minuscules" },
+        { "value": "capitalize", "label": "Initiales Majuscules" }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Interlettrage",
+      "min": 0,
+      "max": 6,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Accessibilité"
+    },
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Description (lecteurs d'écran)",
+      "default": "Nos engagements produit"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Élément",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icône",
+          "info": "Image ou SVG (téléversez en .png/.svg). Laissez vide pour du texte seul."
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Vegan"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Marquee défilant",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": { "text": "No artificial colors or flavors" }
+        },
+        {
+          "type": "item",
+          "settings": { "text": "Vegan" }
+        },
+        {
+          "type": "item",
+          "settings": { "text": "Dairy-free" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
