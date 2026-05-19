@@ -9,6 +9,57 @@
  */
 {
   "sections": {
+    "marqueeicons_6jTM4T": {
+      "type": "marqueeicons",
+      "blocks": {
+        "item_RNYBfb": {
+          "type": "item",
+          "settings": {
+            "text": "No artificial colors or flavors"
+          }
+        },
+        "item_CepQFM": {
+          "type": "item",
+          "settings": {
+            "text": "Vegan"
+          }
+        },
+        "item_PDdARn": {
+          "type": "item",
+          "settings": {
+            "text": "Dairy-free"
+          }
+        }
+      },
+      "block_order": [
+        "item_RNYBfb",
+        "item_CepQFM",
+        "item_PDdARn"
+      ],
+      "name": "Marquee défilant",
+      "settings": {
+        "bg_type": "solid",
+        "bg_color": "#fff27b",
+        "gradient_color_1": "#F6D873",
+        "gradient_color_2": "#F2B84B",
+        "gradient_color_3": "",
+        "gradient_angle": 115,
+        "direction": "left",
+        "speed": 68,
+        "pause_on_hover": true,
+        "repeat": 6,
+        "bar_padding": 15,
+        "item_gap": 48,
+        "icon_gap": 8,
+        "icon_size": 22,
+        "text_color": "#1a1a1a",
+        "text_size": 12,
+        "text_weight": "600",
+        "text_transform": "uppercase",
+        "letter_spacing": 0.5,
+        "aria_label": "Nos engagements produit"
+      }
+    },
     "featured_product_khQ4Qz": {
       "type": "featured-product",
       "blocks": {
@@ -166,9 +217,9 @@
         "heading_bold": "prouvés",
         "heading_color": "#1a1a1a",
         "heading_size": 41,
-        "separator_color": "#D8D6D2",
+        "separator_color": "#d8d6d2",
         "separator_thickness": 1,
-        "divider_color": "#D8D6D2",
+        "divider_color": "#d8d6d2",
         "divider_thickness": 1,
         "stat_padding": 24,
         "number_color": "#1a1a1a",
@@ -468,6 +519,7 @@
     }
   },
   "order": [
+    "marqueeicons_6jTM4T",
     "featured_product_khQ4Qz",
     "resultatsprouves_b3gcMW",
     "routine_a4ebbj",
