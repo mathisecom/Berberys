@@ -216,7 +216,7 @@
       "settings": {
         "content_width": 1400,
         "columns_gap": 64,
-        "padding_top": 24,
+        "padding_top": 52,
         "padding_bottom": 28,
         "section_bg": "#fef9f0",
         "accent_color": "#ffb74a",
@@ -279,7 +279,7 @@
         "text_position": "center",
         "background": "",
         "background_gradient": "",
-        "text_color": ""
+        "text_color": "#1a1a1a"
       }
     },
     "logoscrooll_zK3aBh": {
