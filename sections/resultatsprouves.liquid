@@ -1,0 +1,458 @@
+{%- comment -%}
+  ============================================================
+  Section : Des résultats prouvés
+  Desktop : titre à gauche | séparateur vertical | stats à droite
+  Mobile  : titre empilé puis liste de stats
+  Tout est personnalisable depuis l'éditeur de thème.
+  La typographie hérite automatiquement de votre thème.
+  ============================================================
+{%- endcomment -%}
+
+{%- liquid
+  assign s = section.settings
+-%}
+
+<style>
+  #resultats-{{ section.id }} {
+    --rs-section-bg: {{ s.section_bg }};
+
+    --rs-heading-color: {{ s.heading_color }};
+    --rs-heading-size: {{ s.heading_size }}px;
+
+    --rs-number-color: {{ s.number_color }};
+    --rs-number-size: {{ s.number_size }}px;
+
+    --rs-label-color: {{ s.label_color }};
+    --rs-label-size: {{ s.label_size }}px;
+
+    --rs-text-color: {{ s.text_color }};
+    --rs-text-size: {{ s.text_size }}px;
+
+    --rs-divider-color: {{ s.divider_color }};
+    --rs-divider-thickness: {{ s.divider_thickness }}px;
+
+    --rs-separator-color: {{ s.separator_color }};
+    --rs-separator-thickness: {{ s.separator_thickness }}px;
+
+    background-color: var(--rs-section-bg);
+    /* Hérite de la typographie définie dans votre thème */
+    font-family: inherit;
+    padding-top: {{ s.padding_top }}px;
+    padding-bottom: {{ s.padding_bottom }}px;
+  }
+
+  #resultats-{{ section.id }},
+  #resultats-{{ section.id }} .rs-heading,
+  #resultats-{{ section.id }} .rs-number,
+  #resultats-{{ section.id }} .rs-label,
+  #resultats-{{ section.id }} .rs-text {
+    font-family: inherit;
+  }
+
+  #resultats-{{ section.id }} * {
+    box-sizing: border-box;
+  }
+
+  #resultats-{{ section.id }} .rs-wrapper {
+    max-width: {{ s.content_width }}px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ s.columns_gap }}px;
+    align-items: stretch;
+  }
+
+  /* ---------- Colonne titre ---------- */
+  #resultats-{{ section.id }} .rs-title-col {
+    display: flex;
+    align-items: center;
+    justify-content: {{ s.title_align }};
+  }
+
+  #resultats-{{ section.id }} .rs-heading {
+    color: var(--rs-heading-color);
+    font-size: var(--rs-heading-size);
+    font-weight: 300;
+    line-height: 1.15;
+    margin: 0;
+    text-align: {% if s.title_align == 'flex-start' %}left{% elsif s.title_align == 'flex-end' %}right{% else %}center{% endif %};
+  }
+  #resultats-{{ section.id }} .rs-heading strong {
+    font-weight: 700;
+    display: block;
+  }
+
+  /* ---------- Colonne stats ---------- */
+  #resultats-{{ section.id }} .rs-stats-col {
+    border-left: var(--rs-separator-thickness) solid var(--rs-separator-color);
+    padding-left: {{ s.stats_padding_left }}px;
+  }
+
+  #resultats-{{ section.id }} .rs-stat {
+    padding: {{ s.stat_padding }}px 0;
+    border-bottom: var(--rs-divider-thickness) solid var(--rs-divider-color);
+  }
+  #resultats-{{ section.id }} .rs-stat:first-child {
+    padding-top: 0;
+  }
+  #resultats-{{ section.id }} .rs-stat:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  #resultats-{{ section.id }} .rs-number {
+    color: var(--rs-number-color);
+    font-size: var(--rs-number-size);
+    font-weight: 300;
+    line-height: 1.1;
+    margin: 0 0 10px;
+  }
+
+  #resultats-{{ section.id }} .rs-label {
+    color: var(--rs-label-color);
+    font-size: var(--rs-label-size);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    margin: 0 0 4px;
+    line-height: 1.3;
+  }
+
+  #resultats-{{ section.id }} .rs-text {
+    color: var(--rs-text-color);
+    font-size: var(--rs-text-size);
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ---------- Responsive / mobile ---------- */
+  @media (max-width: 749px) {
+    #resultats-{{ section.id }} .rs-wrapper {
+      grid-template-columns: 1fr;
+      gap: {{ s.columns_gap | divided_by: 2 }}px;
+    }
+    #resultats-{{ section.id }} .rs-title-col {
+      justify-content: flex-start;
+    }
+    #resultats-{{ section.id }} .rs-heading {
+      text-align: left;
+      font-size: {{ s.heading_size | times: 0.8 | round }}px;
+    }
+    #resultats-{{ section.id }} .rs-stats-col {
+      border-left: 0;
+      padding-left: 0;
+    }
+    #resultats-{{ section.id }} .rs-number {
+      font-size: {{ s.number_size | times: 0.85 | round }}px;
+    }
+  }
+</style>
+
+<div id="resultats-{{ section.id }}">
+  <div class="rs-wrapper">
+
+    {%- comment -%} ---------- Titre ---------- {%- endcomment -%}
+    <div class="rs-title-col">
+      {%- if s.heading_light != blank or s.heading_bold != blank -%}
+        <h2 class="rs-heading">
+          {{ s.heading_light }}
+          {%- if s.heading_bold != blank -%}<strong>{{ s.heading_bold }}</strong>{%- endif -%}
+        </h2>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ---------- Statistiques ---------- {%- endcomment -%}
+    <div class="rs-stats-col">
+      {%- for block in section.blocks -%}
+        <div class="rs-stat" {{ block.shopify_attributes }}>
+          {%- if block.settings.number != blank -%}
+            <p class="rs-number">{{ block.settings.number }}</p>
+          {%- endif -%}
+          {%- if block.settings.label != blank -%}
+            <p class="rs-label">{{ block.settings.label }}</p>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p class="rs-text">{{ block.settings.text }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Résultats prouvés",
+  "tag": "section",
+  "class": "section-resultats-prouves",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Mise en page"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Largeur du contenu",
+      "min": 800,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "columns_gap",
+      "label": "Espace entre les colonnes",
+      "min": 20,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "stats_padding_left",
+      "label": "Retrait des stats après le trait vertical",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge intérieure haut",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge intérieure bas",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "select",
+      "id": "title_align",
+      "label": "Alignement du titre (desktop)",
+      "options": [
+        { "value": "flex-start", "label": "Gauche" },
+        { "value": "center", "label": "Centre" },
+        { "value": "flex-end", "label": "Droite" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Fond"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Fond de la section",
+      "default": "#F6F5F3"
+    },
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "text",
+      "id": "heading_light",
+      "label": "Titre (partie fine)",
+      "default": "Des résultats"
+    },
+    {
+      "type": "text",
+      "id": "heading_bold",
+      "label": "Titre (partie grasse)",
+      "default": "prouvés"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Couleur du titre",
+      "default": "#1A1A2E"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille du titre",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 44
+    },
+    {
+      "type": "header",
+      "content": "Traits de séparation"
+    },
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Couleur du trait vertical (desktop)",
+      "default": "#D8D6D2"
+    },
+    {
+      "type": "range",
+      "id": "separator_thickness",
+      "label": "Épaisseur du trait vertical",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Couleur des traits entre stats",
+      "default": "#D8D6D2"
+    },
+    {
+      "type": "range",
+      "id": "divider_thickness",
+      "label": "Épaisseur des traits entre stats",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Statistiques — styles communs"
+    },
+    {
+      "type": "range",
+      "id": "stat_padding",
+      "label": "Espacement vertical de chaque stat",
+      "min": 8,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Couleur du chiffre",
+      "default": "#1A1A2E"
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "label": "Taille du chiffre",
+      "min": 24,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 46
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Couleur de l'intitulé",
+      "default": "#5A5A65"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Taille de l'intitulé",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de la description",
+      "default": "#5A5A65"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Taille de la description",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Statistique",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Chiffre",
+          "default": "91%"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Intitulé",
+          "default": "De nos clients"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Constatent une amélioration sur leur besoin clé après 3 mois."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Résultats prouvés",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "number": "91%",
+            "label": "De nos clients",
+            "text": "Constatent une amélioration sur leur besoin clé après 3 mois."
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "94%",
+            "label": "De nos clients",
+            "text": "Constatent une amélioration de leur état général après 3 mois."
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "76",
+            "label": "Études cliniques",
+            "text": "et pré-cliniques réalisées sur nos ingrédients, incluant des études contre placebos."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
