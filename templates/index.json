@@ -120,6 +120,126 @@
         "input_text_color": ""
       }
     },
+    "logoscrooll_zK3aBh": {
+      "type": "logoscrooll",
+      "blocks": {
+        "image_F9fneM": {
+          "type": "image",
+          "settings": {
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_F9fneM"
+      ],
+      "disabled": true,
+      "name": "SS - Scrolling logo cloud #5",
+      "settings": {
+        "layout_radius": 30,
+        "layout_border_thickness": 0,
+        "heading": "",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 18,
+        "heading_size_mobile": 18,
+        "heading_height": 130,
+        "scrolling_velocity": 30,
+        "scrolling_velocity_mobile": 30,
+        "scrolling_direction": "left",
+        "pause_hover": false,
+        "scrolling_gap": 70,
+        "scrolling_gap_mobile": 20,
+        "card_width_desktop": 130,
+        "card_width_mobile": 100,
+        "heading_color": "#121212",
+        "layout_bg_color": "#fef9f0",
+        "layout_border_color": "#121212",
+        "background_color": "#fef9f0",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 0,
+        "full_width": false,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "routine_a4ebbj": {
+      "type": "routine",
+      "blocks": {
+        "step_ej3UTG": {
+          "type": "step",
+          "settings": {
+            "label": "1 MOIS",
+            "title": "Une nouvelle habitude",
+            "text": "Ressentez les premiers effets sur votre bien-être et votre santé"
+          }
+        },
+        "step_ePbciC": {
+          "type": "step",
+          "settings": {
+            "label": "2 MOIS",
+            "title": "Un réflexe quotidien",
+            "text": "Observez les effets s'installer en continu."
+          }
+        },
+        "step_bKBw9P": {
+          "type": "step",
+          "settings": {
+            "label": "3 MOIS",
+            "title": "Un nouveau mode de vie",
+            "text": "Bénéficiez des effets durables de votre cure."
+          }
+        }
+      },
+      "block_order": [
+        "step_ej3UTG",
+        "step_ePbciC",
+        "step_bKBw9P"
+      ],
+      "name": "Routine pensée",
+      "settings": {
+        "content_width": 1400,
+        "columns_gap": 64,
+        "padding_top": 24,
+        "padding_bottom": 28,
+        "section_bg": "#fef9f0",
+        "accent_color": "#ffb74a",
+        "card_bg": "#f8f1e6",
+        "card_radius": 20,
+        "card_padding": 48,
+        "avatar_size": 96,
+        "profile_name": "Armelle Marcilhacy",
+        "name_color": "#1a1a1a",
+        "name_size": 16,
+        "profile_subtitle": "Médecin nutritionniste et membre du Comité Scientifique de Cuure",
+        "subtitle_color": "#555555",
+        "subtitle_size": 13,
+        "quote_1": "<p>“Pour être bénéfique, la prise de compléments alimentaires doit <strong>s'insérer durablement</strong> dans une routine bien-être quotidienne.</p>",
+        "quote_2": "<p>La <strong>durée moyenne recommandée</strong> pour voir des effets durables est de <strong>3 mois</strong>.”</p>",
+        "quote_color": "#1a1a1a",
+        "quote_size": 14,
+        "heading_light": "Une routine pensée",
+        "heading_bold": "pour durer",
+        "heading_color": "#1a1a1a",
+        "heading_size": 33,
+        "step_gap": 36,
+        "step_label_color": "#1a1a1a",
+        "step_label_size": 15,
+        "step_title_color": "#1a1a1a",
+        "step_title_size": 14,
+        "step_text_color": "#6A6A75",
+        "step_text_size": 13
+      }
+    },
     "testimonials_fekFkB": {
       "type": "testimonials",
       "blocks": {
@@ -236,6 +356,8 @@
   },
   "order": [
     "featured_product_khQ4Qz",
+    "logoscrooll_zK3aBh",
+    "routine_a4ebbj",
     "testimonials_fekFkB",
     "faq"
   ]
