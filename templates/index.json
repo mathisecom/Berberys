@@ -95,7 +95,7 @@
           "settings": {
             "icon": "shopify://shop_images/categorie.svg",
             "title": "A Delicious Daily Habit",
-            "text": "Helps to strengthen your body's natural defenses, every single day."
+            "text": "Helps to strengthen your body's natural"
           }
         }
       },
@@ -127,13 +127,13 @@
         "sub_color": "#1a1a1a",
         "sub_size": 13,
         "image_max_width": 460,
-        "image_mobile_width": 340,
-        "mobile_image_gap": 16,
+        "image_mobile_width": 300,
+        "mobile_image_gap": 10,
         "feature_icon_size": 38,
-        "feature_title_color": "#3a1e0e",
-        "feature_title_size": 20,
-        "feature_text_color": "#8a7a63",
-        "feature_text_size": 14,
+        "feature_title_color": "#1a1a1a",
+        "feature_title_size": 18,
+        "feature_text_color": "#1a1a1a",
+        "feature_text_size": 13,
         "show_arrows": true,
         "accent_color": "#e2682b",
         "arrow_size": 110,
