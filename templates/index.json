@@ -15,18 +15,21 @@
         "item_RNYBfb": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/categorie.svg",
             "text": "No artificial colors or flavors"
           }
         },
         "item_CepQFM": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/categorie_b5bdb2ef-2088-4875-9a14-1667bb17bf30.svg",
             "text": "Vegan"
           }
         },
         "item_PDdARn": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
             "text": "Dairy-free"
           }
         }
@@ -40,8 +43,8 @@
       "settings": {
         "bg_type": "solid",
         "bg_color": "#fff27b",
-        "gradient_color_1": "#F6D873",
-        "gradient_color_2": "#F2B84B",
+        "gradient_color_1": "#f6d873",
+        "gradient_color_2": "#f2b84b",
         "gradient_color_3": "",
         "gradient_angle": 115,
         "direction": "left",
@@ -58,6 +61,80 @@
         "text_transform": "uppercase",
         "letter_spacing": 0.5,
         "aria_label": "Nos engagements produit"
+      }
+    },
+    "presentation_EkBfBH": {
+      "type": "presentation",
+      "blocks": {
+        "feature_HxGyEQ": {
+          "type": "feature",
+          "settings": {
+            "title": "Proactive Defense",
+            "text": "Support before you need it."
+          }
+        },
+        "feature_WpPjp4": {
+          "type": "feature",
+          "settings": {
+            "title": "Completely Clean",
+            "text": "Immün is vegan, non-GMO, and has zero artificial flavors."
+          }
+        },
+        "feature_AYaiwK": {
+          "type": "feature",
+          "settings": {
+            "title": "Everyday Stress Support",
+            "text": "Adaptogens like ashwagandha and holy basil support balance and resilience."
+          }
+        },
+        "feature_HyaHxU": {
+          "type": "feature",
+          "settings": {
+            "title": "A Delicious Daily Habit",
+            "text": "Helps to strengthen your body's natural defenses, every single day."
+          }
+        }
+      },
+      "block_order": [
+        "feature_HxGyEQ",
+        "feature_WpPjp4",
+        "feature_AYaiwK",
+        "feature_HyaHxU"
+      ],
+      "name": "Présentation produit",
+      "settings": {
+        "content_width": 1200,
+        "col_gap": 60,
+        "row_gap": 56,
+        "grid_margin_top": 48,
+        "taglines_margin_top": 48,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "bg_type": "solid",
+        "bg_color": "#fef9f0",
+        "gradient_color_1": "#FBF5E3",
+        "gradient_color_2": "#F7E9C6",
+        "gradient_color_3": "",
+        "gradient_angle": 135,
+        "heading": "Immune Support, and So Much More.",
+        "heading_color": "#1a1a1a",
+        "heading_size": 32,
+        "subheading": "<p>One daily pack, loaded with a whole bunch of powerhouse ingredients like vitamin C, elderberry, ashwagandha, and zinc. <span style=\"text-decoration:underline\"><strong>Not</strong></span> your backup plan.</p>",
+        "sub_color": "#1a1a1a",
+        "sub_size": 13,
+        "image_max_width": 460,
+        "image_mobile_width": 340,
+        "feature_icon_size": 40,
+        "feature_title_color": "#3A1E0E",
+        "feature_title_size": 20,
+        "feature_text_color": "#8A7A63",
+        "feature_text_size": 14,
+        "show_arrows": true,
+        "accent_color": "#E2682B",
+        "arrow_size": 110,
+        "tagline_color": "#3A1E0E",
+        "tagline_size": 24,
+        "strike_thickness": 2
       }
     },
     "featured_product_khQ4Qz": {
@@ -520,6 +597,7 @@
   },
   "order": [
     "marqueeicons_6jTM4T",
+    "presentation_EkBfBH",
     "featured_product_khQ4Qz",
     "resultatsprouves_b3gcMW",
     "routine_a4ebbj",
