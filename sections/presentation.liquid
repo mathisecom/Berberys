@@ -103,6 +103,8 @@
     flex-direction: column;
     justify-content: center;
     gap: {{ s.row_gap }}px;
+    position: relative;
+    z-index: 3;
   }
   #fs-{{ section.id }} .fs-col--left { text-align: right; align-items: flex-end; }
   #fs-{{ section.id }} .fs-col--right { text-align: left; align-items: flex-start; }
@@ -144,7 +146,7 @@
     height: auto;
     color: var(--fs-accent);
     pointer-events: none;
-    z-index: 2;
+    z-index: 0;
   }
   #fs-{{ section.id }} .fs-arrow svg { width: 100%; height: auto; display: block; }
 
