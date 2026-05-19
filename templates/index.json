@@ -69,6 +69,7 @@
         "feature_HxGyEQ": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
             "title": "Proactive Defense",
             "text": "Support before you need it."
           }
@@ -76,6 +77,7 @@
         "feature_WpPjp4": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/categorie.svg",
             "title": "Completely Clean",
             "text": "Immün is vegan, non-GMO, and has zero artificial flavors."
           }
@@ -122,6 +124,7 @@
         "subheading": "<p>One daily pack, loaded with a whole bunch of powerhouse ingredients like vitamin C, elderberry, ashwagandha, and zinc. <span style=\"text-decoration:underline\"><strong>Not</strong></span> your backup plan.</p>",
         "sub_color": "#1a1a1a",
         "sub_size": 13,
+        "product_image": "shopify://shop_images/ChatGPT_Image_14_mai_2026_14_26_05.png",
         "image_max_width": 460,
         "image_mobile_width": 340,
         "feature_icon_size": 40,

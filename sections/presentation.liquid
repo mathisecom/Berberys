@@ -46,6 +46,8 @@
     --fs-tagline-size: {{ s.tagline_size }}px;
     --fs-strike-thickness: {{ s.strike_thickness }}px;
 
+    --fs-mobile-image-gap: {{ s.mobile_image_gap }}px;
+
     background: {{ bg_value }};
     font-family: inherit; /* hérite de votre thème */
     padding-top: {{ s.padding_top }}px;
@@ -193,11 +195,13 @@
       align-items: start;
     }
 
-    /* Image en pleine largeur, placée en premier */
+    /* Image en pleine largeur, placée en premier.
+       L'écart image ↔ atouts = réglage dédié (la grille ajoute déjà
+       son row-gap, on le compense pour obtenir la valeur exacte). */
     #fs-{{ section.id }} .fs-center {
       grid-column: 1 / -1;
       order: -1;
-      margin-bottom: {{ s.row_gap }}px;
+      margin-bottom: calc(var(--fs-mobile-image-gap) - {{ s.row_gap }}px);
     }
     #fs-{{ section.id }} .fs-product { max-width: {{ s.image_mobile_width }}px; }
     #fs-{{ section.id }} .fs-arrow { display: none; }
@@ -382,6 +386,10 @@
     {
       "type": "range", "id": "image_mobile_width", "label": "Largeur max (mobile)",
       "min": 160, "max": 600, "step": 10, "unit": "px", "default": 340
+    },
+    {
+      "type": "range", "id": "mobile_image_gap", "label": "Espace image ↔ atouts (mobile)",
+      "min": 0, "max": 80, "step": 2, "unit": "px", "default": 16
     },
 
     { "type": "header", "content": "Atouts" },
