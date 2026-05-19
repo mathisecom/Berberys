@@ -214,7 +214,7 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Title",
+            "title": "CONSEILS D'UTILISATION",
             "content": "<p>Share some content to your customers about your products.</p>",
             "page": ""
           }
@@ -224,7 +224,17 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Title",
+            "title": "COMPOSITION",
+            "content": "<p>Share some content to your customers about your products.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_azzGWX": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "RÉSULTATS & ÉTUDES",
             "content": "<p>Share some content to your customers about your products.</p>",
             "page": ""
           }
@@ -241,7 +251,8 @@
         "liquid_kDtQpN",
         "liquid_DYyRaA",
         "collapsible_text_QWprnH",
-        "collapsible_text_Aeawcy"
+        "collapsible_text_Aeawcy",
+        "collapsible_text_azzGWX"
       ],
       "name": "Featured product",
       "settings": {
