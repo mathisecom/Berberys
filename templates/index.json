@@ -79,19 +79,21 @@
           "settings": {
             "icon": "shopify://shop_images/categorie.svg",
             "title": "Completely Clean",
-            "text": "Immün is vegan, non-GMO, and has zero artificial flavors."
+            "text": "Immün is vegan, non-GMO"
           }
         },
         "feature_AYaiwK": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
             "title": "Everyday Stress Support",
-            "text": "Adaptogens like ashwagandha and holy basil support balance and resilience."
+            "text": "Adaptogens like ashwagandha"
           }
         },
         "feature_HyaHxU": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/categorie.svg",
             "title": "A Delicious Daily Habit",
             "text": "Helps to strengthen your body's natural defenses, every single day."
           }
@@ -114,8 +116,8 @@
         "padding_bottom": 24,
         "bg_type": "solid",
         "bg_color": "#fef9f0",
-        "gradient_color_1": "#FBF5E3",
-        "gradient_color_2": "#F7E9C6",
+        "gradient_color_1": "#fbf5e3",
+        "gradient_color_2": "#f7e9c6",
         "gradient_color_3": "",
         "gradient_angle": 135,
         "heading": "Immune Support, and So Much More.",
@@ -127,15 +129,17 @@
         "product_image": "shopify://shop_images/ChatGPT_Image_14_mai_2026_14_26_05.png",
         "image_max_width": 460,
         "image_mobile_width": 340,
+        "mobile_image_gap": 16,
         "feature_icon_size": 40,
-        "feature_title_color": "#3A1E0E",
+        "feature_title_color": "#3a1e0e",
         "feature_title_size": 20,
-        "feature_text_color": "#8A7A63",
+        "feature_text_color": "#8a7a63",
         "feature_text_size": 14,
         "show_arrows": true,
-        "accent_color": "#E2682B",
+        "accent_color": "#e2682b",
         "arrow_size": 110,
-        "tagline_color": "#3A1E0E",
+        "arrow_offset": 16,
+        "tagline_color": "#3a1e0e",
         "tagline_size": 24,
         "strike_thickness": 2
       }
