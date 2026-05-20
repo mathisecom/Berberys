@@ -13,8 +13,8 @@
       "type": "herosection",
       "name": "Immune Hero",
       "settings": {
-        "eyebrow_text": "",
-        "stats_text": "<p><strong>10X</strong> plus assimilable | <strong>Fabriquée</strong> en France</p>",
+        "eyebrow_text": "10X plus assimilable | Fabriquée en France",
+        "stats_text": "",
         "heading": "L’équilibre Métabolique au Quotidien.",
         "description": "Une berbérine nouvelle génération, hautement assimilable, conçue pour aider à soutenir l’équilibre glycémique, le métabolisme des graisses et le maintien d’un cholestérol normal.",
         "guarantee_text": "Garantie 90 jours satisfait ou remboursé",
@@ -306,24 +306,28 @@
         "image_B8yHaM": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_28.png",
             "url": ""
           }
         },
         "image_Hn7LTd": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_29.png",
             "url": ""
           }
         },
         "image_npD4nH": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_27.png",
             "url": ""
           }
         },
         "image_7JWM4F": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_26.png",
             "url": ""
           }
         }
@@ -441,19 +445,19 @@
         "show_button": false,
         "button_label": "Voir les avis",
         "button_link": "",
-        "section_bg": "#FEF9F0",
-        "card_bg": "#FFFFFF",
+        "section_bg": "#fef9f0",
+        "card_bg": "#ffffff",
         "card_border": "#000000",
         "shadow_color": "#000000",
         "title_color": "#000000",
         "text_color": "#222222",
         "muted_color": "#555555",
-        "star_color": "#00B67A",
-        "verified_color": "#00B67A",
-        "button_bg": "#FFF27B",
+        "star_color": "#00b67a",
+        "verified_color": "#00b67a",
+        "button_bg": "#fff27b",
         "button_text_color": "#000000",
         "arrow_bg": "#000000",
-        "arrow_color": "#FFFFFF",
+        "arrow_color": "#ffffff",
         "font_family": "inherit",
         "title_size": 32,
         "mobile_title_size": 28,
