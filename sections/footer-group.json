@@ -18,6 +18,7 @@
           "type": "item",
           "settings": {
             "icon": "picto-box",
+            "custom_icon": "shopify://shop_images/aYsF_t0YXLCxVpLD_truck-2.svg",
             "mobile_icon_width": 24,
             "icon_width": 24,
             "icon_background_type": "none",
