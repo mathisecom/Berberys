@@ -669,7 +669,7 @@
         "heading_uppercase": true,
         "bg_color": "#f8f1e6",
         "heading_color": "#1a1a1a",
-        "label_color": "#1F1F1F",
+        "label_color": "#1f1f1f",
         "heading_font": "manrope_n7",
         "body_font": "dm_sans_n4",
         "heading_size": 22,
@@ -1026,7 +1026,6 @@
         "166442457738b23caf-1",
         "166442457738b23caf-2"
       ],
-      "disabled": true,
       "settings": {
         "full_width": false,
         "subheading": "",
