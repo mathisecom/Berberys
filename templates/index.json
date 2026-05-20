@@ -378,6 +378,7 @@
         "review_Pxrh4V": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/aYIObt0YXLCxVUHW_Armelle_homepage.webp",
             "image_alt": "Image avis client",
             "title": "Ça change la vie",
             "text": "Depuis que j’ai intégré ce produit à ma routine, je me sens plus équilibrée au quotidien. Simple à prendre, efficace, et vraiment agréable.",
@@ -435,9 +436,9 @@
       ],
       "name": "Avis clients custom",
       "settings": {
-        "heading": "Ce que nos clients en disent vraiment",
-        "rating_title": "Excellent",
-        "rating_text": "<p>4.9/5 sur <strong>16,900+ avis</strong> sur Trustpilot</p>",
+        "heading": "Témoignages de Femmes Comme Toi",
+        "rating_title": "Noté Excellent",
+        "rating_text": "<p>4.8/5 sur <strong>3,380+ Avis</strong></p>",
         "show_button": false,
         "button_label": "Voir les avis",
         "button_link": "",
