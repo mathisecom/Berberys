@@ -98,32 +98,32 @@
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
-            "title": "Proactive Defense",
-            "text": "Support before you need it."
+            "title": "Glycémie Stable",
+            "text": "Aide à limiter les pics de sucre."
           }
         },
         "feature_WpPjp4": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/categorie.svg",
-            "title": "Completely Clean",
-            "text": "Immün is vegan, non-GMO"
+            "title": "Insuline Optimisée",
+            "text": "Favorise une meilleure sensibilité à l’insuline."
           }
         },
         "feature_AYaiwK": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
-            "title": "Everyday Stress Support",
-            "text": "Adaptogens like ashwagandha"
+            "title": "Équilibre Lipidique",
+            "text": "Soutient le cholestérol et les triglycérides."
           }
         },
         "feature_HyaHxU": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/categorie.svg",
-            "title": "A Delicious Daily Habit",
-            "text": "Helps to strengthen your body's natural"
+            "title": "Digestion & Microbiote",
+            "text": "Aide à maintenir une flore intestinale équilibrée."
           }
         }
       },
