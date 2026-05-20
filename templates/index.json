@@ -540,113 +540,6 @@
         "padding_bottom": 36
       }
     },
-    "tabsvs_PaeA6x": {
-      "type": "tabsvs",
-      "blocks": {
-        "benefit_N9VF47": {
-          "type": "benefit",
-          "settings": {
-            "text": "Dosage Morosil® 400 mg (dose clinique)"
-          }
-        },
-        "benefit_qR6dK4": {
-          "type": "benefit",
-          "settings": {
-            "text": "Stack anti-cortisol (Ashwagandha + Rhodiola)"
-          }
-        },
-        "benefit_jb3bDR": {
-          "type": "benefit",
-          "settings": {
-            "text": "Drainage hépatique (Pissenlit + Artichaut)"
-          }
-        },
-        "benefit_bYqRx9": {
-          "type": "benefit",
-          "settings": {
-            "text": "Formulé spécifiquement pour les femmes 45+"
-          }
-        },
-        "benefit_L7Ncxi": {
-          "type": "benefit",
-          "settings": {
-            "text": "Made in France, labo certifié"
-          }
-        },
-        "benefit_7ecpHJ": {
-          "type": "benefit",
-          "settings": {
-            "text": "Sans sucre ajouté"
-          }
-        },
-        "benefit_UDLFPy": {
-          "type": "benefit",
-          "settings": {
-            "text": "Garantie satisfait ou remboursé 90 jours"
-          }
-        }
-      },
-      "block_order": [
-        "benefit_N9VF47",
-        "benefit_qR6dK4",
-        "benefit_jb3bDR",
-        "benefit_bYqRx9",
-        "benefit_L7Ncxi",
-        "benefit_7ecpHJ",
-        "benefit_UDLFPy"
-      ],
-      "name": "Comparatif LOVI",
-      "settings": {
-        "heading": "Pourquoi LOVI n'est pas comme les autres",
-        "subheading": "Une formule pensée pour les femmes 45+, là où les autres restent génériques.",
-        "other_label": "Autres",
-        "button_label": "JE CHOISIS LOVI →",
-        "button_link": "",
-        "product_image_width": 56,
-        "mobile_product_image_width": 52,
-        "other_image_width": 40,
-        "mobile_other_image_width": 36,
-        "section_bg": "#FEF9F0",
-        "accent_color": "#f8f1e6",
-        "accent_soft": "#f0c417",
-        "row_bg": "#F7EFD9",
-        "button_bg": "#FFF27B",
-        "button_text_color": "#2F5C47",
-        "title_color": "#111111",
-        "text_color": "#111111",
-        "muted_color": "#6F7480",
-        "cross_color": "#EF6B63",
-        "font_family": "inherit",
-        "title_size": 34,
-        "mobile_title_size": 26,
-        "title_weight": "400",
-        "subtitle_size": 16,
-        "mobile_subtitle_size": 14,
-        "row_text_size": 16,
-        "mobile_row_text_size": 15,
-        "row_text_weight": "500",
-        "max_width": 760,
-        "row_height": 72,
-        "mobile_row_height": 80,
-        "check_circle_size": 38,
-        "mobile_check_circle_size": 36,
-        "check_size": 22,
-        "mobile_check_size": 21,
-        "cross_size": 22,
-        "mobile_cross_size": 22,
-        "button_width": 240,
-        "button_height": 56,
-        "mobile_button_height": 58,
-        "button_text_size": 15,
-        "mobile_button_text_size": 15,
-        "padding_top": 20,
-        "padding_bottom": 24,
-        "mobile_padding_top": 28,
-        "mobile_padding_bottom": 32,
-        "check_svg": "<svg viewbox=\"0 0 24 24\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12.5l4.2 4.2L19 7\"></path></svg>",
-        "cross_svg": "<svg viewbox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2.6\" stroke-linecap=\"round\"><path d=\"M6 6l12 12\"></path><path d=\"M18 6L6 18\"></path></svg>"
-      }
-    },
     "rich_text_jm8eFe": {
       "type": "rich-text",
       "blocks": {
@@ -875,7 +768,6 @@
     "resultatsprouves_b3gcMW",
     "routine_a4ebbj",
     "imagewithtext_wCjhfr",
-    "tabsvs_PaeA6x",
     "rich_text_jm8eFe",
     "logoscrooll_zK3aBh",
     "testimonials_fekFkB",
