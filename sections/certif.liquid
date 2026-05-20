@@ -1,0 +1,757 @@
+{% liquid
+  assign s = section.settings
+%}
+
+<section
+  id="certifications-section-{{ section.id }}"
+  class="certifications-section"
+  style="
+    --section-bg: {{ s.section_bg }};
+    --title-box-bg: {{ s.title_box_bg }};
+    --card-bg: {{ s.card_bg }};
+    --border-color: {{ s.border_color }};
+    --title-color: {{ s.title_color }};
+    --text-color: {{ s.text_color }};
+    --heading-color: {{ s.heading_color }};
+    --icon-color: {{ s.icon_color }};
+    --button-bg: {{ s.button_bg }};
+    --button-text: {{ s.button_text_color }};
+    --font-family: {{ s.font_family }};
+  "
+>
+  <div class="certifications-wrapper">
+
+    <div class="certifications-title-box">
+      <div class="certifications-title-icon">
+        {% if s.title_icon_svg != blank %}
+          {{ s.title_icon_svg }}
+        {% else %}
+          <svg viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8h24l8 8v24"></path>
+            <path d="M18 8v42h20"></path>
+            <path d="M42 8v10h10"></path>
+            <path d="M24 22h14"></path>
+            <path d="M24 29h18"></path>
+            <path d="M24 36h10"></path>
+            <circle cx="45" cy="45" r="8"></circle>
+            <path d="M41.5 45l2.2 2.2 5-5"></path>
+            <path d="M40 53l-2 7 7-3 7 3-2-7"></path>
+          </svg>
+        {% endif %}
+      </div>
+
+      {% if s.title != blank %}
+        <h2>{{ s.title }}</h2>
+      {% endif %}
+    </div>
+
+    <div class="certifications-card">
+      <div class="certifications-logo">
+        {% if s.logo_image != blank %}
+          <img
+            src="{{ s.logo_image | image_url: width: 180 }}"
+            alt="{{ s.logo_alt | escape }}"
+            loading="lazy"
+          >
+        {% else %}
+          <div class="certifications-logo-placeholder">
+            <span>LOGO</span>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="certifications-content">
+        {% if s.card_title != blank %}
+          <h3>{{ s.card_title }}</h3>
+        {% endif %}
+
+        {% if s.card_text != blank %}
+          <p>{{ s.card_text }}</p>
+        {% endif %}
+
+        {% if s.button_label != blank %}
+          <a href="{{ s.button_link }}" class="certifications-button">
+            {{ s.button_label }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #certifications-section-{{ section.id }} {
+    background: var(--section-bg);
+    padding: {{ s.padding_top }}px 20px {{ s.padding_bottom }}px;
+    font-family: var(--font-family);
+  }
+
+  #certifications-section-{{ section.id }} .certifications-wrapper {
+    max-width: {{ s.max_width }}px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: {{ s.title_box_width }}px 1fr;
+    gap: {{ s.desktop_gap }}px;
+    align-items: stretch;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-title-box {
+    background: var(--title-box-bg);
+    border-radius: {{ s.border_radius }}px;
+    min-height: {{ s.desktop_box_height }}px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: {{ s.title_layout }};
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-title-icon {
+    width: {{ s.title_icon_size }}px;
+    height: {{ s.title_icon_size }}px;
+    color: var(--icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-title-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    stroke: currentColor;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-title-box h2 {
+    margin: 0;
+    color: var(--title-color);
+    font-size: {{ s.title_size }}px;
+    font-weight: {{ s.title_weight }};
+    line-height: 1.1;
+    text-transform: {{ s.title_transform }};
+    letter-spacing: {{ s.title_letter_spacing }}px;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: {{ s.border_radius }}px;
+    min-height: {{ s.desktop_box_height }}px;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    gap: {{ s.card_gap }}px;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-logo {
+    width: {{ s.logo_box_width }}px;
+    min-width: {{ s.logo_box_width }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-logo img {
+    width: {{ s.logo_width }}px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-logo-placeholder {
+    width: {{ s.logo_width }}px;
+    height: {{ s.logo_width }}px;
+    border-radius: 999px;
+    border: 2px solid var(--icon-color);
+    color: var(--icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-content {
+    flex: 1;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-content h3 {
+    margin: 0 0 10px;
+    color: var(--heading-color);
+    font-size: {{ s.card_title_size }}px;
+    font-weight: {{ s.card_title_weight }};
+    line-height: 1.2;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-content p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: {{ s.card_text_size }}px;
+    font-weight: {{ s.card_text_weight }};
+    line-height: 1.55;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    min-height: 44px;
+    padding: 0 24px;
+    border-radius: 999px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  #certifications-section-{{ section.id }} .certifications-button:hover {
+    transform: translateY(-2px);
+    opacity: .9;
+  }
+
+  @media screen and (max-width: 749px) {
+    #certifications-section-{{ section.id }} {
+      padding: {{ s.mobile_padding_top }}px 18px {{ s.mobile_padding_bottom }}px;
+    }
+
+    #certifications-section-{{ section.id }} .certifications-wrapper {
+      grid-template-columns: 1fr;
+      gap: {{ s.mobile_gap }}px;
+    }
+
+    #certifications-section-{{ section.id }} .certifications-title-box {
+      min-height: auto;
+      padding: 18px 20px;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    #certifications-section-{{ section.id }} .certifications-title-icon {
+      width: {{ s.mobile_title_icon_size }}px;
+      height: {{ s.mobile_title_icon_size }}px;
+    }
+
+    #certifications-section-{{ section.id }} .certifications-title-box h2 {
+      font-size: {{ s.mobile_title_size }}px;
+    }
+
+    #certifications-section-{{ section.id }} .certifications-card {
+      min-height: auto;
+      padding: 22px 20px;
+      flex-direction: {{ s.mobile_card_layout }};
+      align-items: {{ s.mobile_card_align }};
+      text-align: {{ s.mobile_text_align }};
+      gap: {{ s.mobile_card_gap }}px;
+    }
+
+    #certifications-section-{{ section.id }} .certifications-logo {
+      width: auto;
+      min-width: 0;
+    }
+
+    #certifications-section-{{ section.id }} .certifications-logo img {
+      width: {{ s.mobile_logo_width }}px;
+    }
+
+    #certifications-section-{{ section.id }} .certifications-content h3 {
+      font-size: {{ s.mobile_card_title_size }}px;
+    }
+
+    #certifications-section-{{ section.id }} .certifications-content p {
+      font-size: {{ s.mobile_card_text_size }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Certifications custom",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenu"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre bloc gauche",
+      "default": "CERTIFICATIONS"
+    },
+    {
+      "type": "text",
+      "id": "card_title",
+      "label": "Titre carte droite",
+      "default": "Qualité & traçabilité"
+    },
+    {
+      "type": "textarea",
+      "id": "card_text",
+      "label": "Texte carte droite",
+      "default": "Notre Berbérine BERBEVIS® est brevetée, cliniquement prouvée, vegan, sans sucre et formulée en France selon des standards stricts de qualité."
+    },
+    {
+      "type": "text",
+      "id": "logo_alt",
+      "label": "Texte alternatif logo",
+      "default": "Logo certification"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo / image certification"
+    },
+    {
+      "type": "html",
+      "id": "title_icon_svg",
+      "label": "Icône SVG du bloc gauche",
+      "default": "<svg viewBox='0 0 64 64' fill='none' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 8h24l8 8v24'></path><path d='M18 8v42h20'></path><path d='M42 8v10h10'></path><path d='M24 22h14'></path><path d='M24 29h18'></path><path d='M24 36h10'></path><circle cx='45' cy='45' r='8'></circle><path d='M41.5 45l2.2 2.2 5-5'></path><path d='M40 53l-2 7 7-3 7 3-2-7'></path></svg>"
+    },
+    {
+      "type": "header",
+      "content": "Bouton optionnel"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texte bouton",
+      "default": "En savoir plus"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien bouton"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Fond section",
+      "default": "#FEF9F0"
+    },
+    {
+      "type": "color",
+      "id": "title_box_bg",
+      "label": "Fond bloc titre",
+      "default": "#E7F1E5"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Fond carte texte",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Bordure carte",
+      "default": "#DDE2EA"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur titre bloc gauche",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Couleur titre carte",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur texte carte",
+      "default": "#4B5565"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Couleur icône",
+      "default": "#8BAF9E"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Fond bouton",
+      "default": "#FFF27B"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Texte bouton",
+      "default": "#1F2937"
+    },
+    {
+      "type": "header",
+      "content": "Typographie"
+    },
+    {
+      "type": "select",
+      "id": "font_family",
+      "label": "Typographie",
+      "default": "inherit",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Typographie du thème"
+        },
+        {
+          "value": "Arial, sans-serif",
+          "label": "Arial"
+        },
+        {
+          "value": "Helvetica, Arial, sans-serif",
+          "label": "Helvetica"
+        },
+        {
+          "value": "Georgia, serif",
+          "label": "Georgia"
+        },
+        {
+          "value": "'Poppins', sans-serif",
+          "label": "Poppins si installé"
+        },
+        {
+          "value": "'Montserrat', sans-serif",
+          "label": "Montserrat si installé"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille titre desktop",
+      "min": 14,
+      "max": 36,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_size",
+      "label": "Taille titre mobile",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Graisse titre",
+      "default": "800",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra-bold" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "title_transform",
+      "label": "Transformation titre",
+      "default": "uppercase",
+      "options": [
+        { "value": "none", "label": "Normal" },
+        { "value": "uppercase", "label": "Majuscules" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing",
+      "label": "Espacement lettres titre",
+      "min": -1,
+      "max": 3,
+      "step": 0.5,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Taille titre carte desktop",
+      "min": 13,
+      "max": 28,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_title_size",
+      "label": "Taille titre carte mobile",
+      "min": 13,
+      "max": 26,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "card_title_weight",
+      "label": "Graisse titre carte",
+      "default": "700",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra-bold" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "label": "Taille texte carte desktop",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_text_size",
+      "label": "Taille texte carte mobile",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "card_text_weight",
+      "label": "Graisse texte carte",
+      "default": "400",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Disposition desktop"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 700,
+      "max": 1500,
+      "step": 20,
+      "default": 1180
+    },
+    {
+      "type": "range",
+      "id": "title_box_width",
+      "label": "Largeur bloc gauche",
+      "min": 180,
+      "max": 420,
+      "step": 10,
+      "default": 260
+    },
+    {
+      "type": "range",
+      "id": "desktop_box_height",
+      "label": "Hauteur desktop",
+      "min": 80,
+      "max": 180,
+      "step": 5,
+      "default": 110
+    },
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "label": "Espace entre les blocs desktop",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "title_layout",
+      "label": "Disposition icône/titre desktop",
+      "default": "column",
+      "options": [
+        { "value": "column", "label": "Icône au-dessus" },
+        { "value": "row", "label": "Icône à gauche" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Espace logo/texte desktop",
+      "min": 12,
+      "max": 60,
+      "step": 2,
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Arrondi des blocs",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Images et icônes"
+    },
+    {
+      "type": "range",
+      "id": "title_icon_size",
+      "label": "Taille icône titre desktop",
+      "min": 20,
+      "max": 70,
+      "step": 2,
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_icon_size",
+      "label": "Taille icône titre mobile",
+      "min": 20,
+      "max": 70,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "logo_box_width",
+      "label": "Largeur zone logo desktop",
+      "min": 50,
+      "max": 180,
+      "step": 5,
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "Largeur logo desktop",
+      "min": 30,
+      "max": 140,
+      "step": 2,
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_width",
+      "label": "Largeur logo mobile",
+      "min": 30,
+      "max": 140,
+      "step": 2,
+      "default": 58
+    },
+    {
+      "type": "header",
+      "content": "Disposition mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Espace entre blocs mobile",
+      "min": 8,
+      "max": 36,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "mobile_card_layout",
+      "label": "Disposition carte mobile",
+      "default": "row",
+      "options": [
+        { "value": "row", "label": "Logo à gauche" },
+        { "value": "column", "label": "Logo au-dessus" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_card_align",
+      "label": "Alignement carte mobile",
+      "default": "center",
+      "options": [
+        { "value": "flex-start", "label": "Haut/gauche" },
+        { "value": "center", "label": "Centre" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_align",
+      "label": "Alignement texte mobile",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Gauche" },
+        { "value": "center", "label": "Centre" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_gap",
+      "label": "Espace logo/texte mobile",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Marges"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haut desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge bas desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Marge haut mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Marge bas mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Certifications custom"
+    }
+  ]
+}
+{% endschema %}
