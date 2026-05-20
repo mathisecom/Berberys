@@ -14,9 +14,9 @@
       "name": "Immune Hero",
       "settings": {
         "eyebrow_text": "",
-        "stats_text": "<p><strong>4.8</strong> stars | <strong>100K+</strong> reviews | <strong>1M+</strong> members</p>",
-        "heading": "Your Immune System's Daily Defense Gummy",
-        "description": "13 immune and everyday stress-supporting ingredients, in one pack of delicious sour pineapple-flavored gummy bears.",
+        "stats_text": "<p><strong>10X</strong> plus assimilable | <strong>Fabriquée</strong> en France</p>",
+        "heading": "L’équilibre Métabolique au Quotidien",
+        "description": "Une berbérine nouvelle génération, hautement assimilable, conçue pour aider à soutenir l’équilibre glycémique, le métabolisme des graisses et le maintien d’un cholestérol normal.",
         "guarantee_text": "Garantie 90 jours satisfait ou remboursé",
         "btn_label": "J’essaie Mirabel →",
         "btn_link": "#shopify-section-template--28743066943865__featured_product_khQ4Qz",
@@ -31,9 +31,9 @@
         "heading_font": "manrope_n7",
         "body_font": "dm_sans_n4",
         "heading_size": 38,
-        "body_size": 15,
+        "body_size": 14,
         "content_max_width": 500,
-        "padding_top": 0,
+        "padding_top": 4,
         "padding_bottom": 40
       }
     },
