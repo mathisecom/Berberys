@@ -525,7 +525,7 @@
         "padding_bottom": 0,
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 0,
-        "full_width": false,
+        "full_width": true,
         "content_width": 1200,
         "border_thickness": 0,
         "section_radius": 0,
@@ -622,6 +622,7 @@
         "166442457738b23caf-1",
         "166442457738b23caf-2"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "subheading": "",
