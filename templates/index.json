@@ -682,6 +682,60 @@
         "padding_bottom": 40
       }
     },
+    "marqueeicons_cmWtrX": {
+      "type": "marqueeicons",
+      "blocks": {
+        "item_KE44bz": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/categorie.svg",
+            "text": "No artificial colors or flavors"
+          }
+        },
+        "item_cXwUBX": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/categorie_b5bdb2ef-2088-4875-9a14-1667bb17bf30.svg",
+            "text": "Vegan"
+          }
+        },
+        "item_6ATNGc": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
+            "text": "Dairy-free"
+          }
+        }
+      },
+      "block_order": [
+        "item_KE44bz",
+        "item_cXwUBX",
+        "item_6ATNGc"
+      ],
+      "name": "Marquee défilant",
+      "settings": {
+        "bg_type": "solid",
+        "bg_color": "#fff27b",
+        "gradient_color_1": "#fff27b",
+        "gradient_color_2": "#f1e25c",
+        "gradient_color_3": "",
+        "gradient_angle": 175,
+        "direction": "left",
+        "speed": 68,
+        "pause_on_hover": true,
+        "repeat": 6,
+        "bar_padding": 15,
+        "item_gap": 48,
+        "icon_gap": 8,
+        "icon_size": 14,
+        "text_color": "#1a1a1a",
+        "text_size": 12,
+        "text_weight": "600",
+        "text_transform": "uppercase",
+        "letter_spacing": 0.5,
+        "aria_label": "Nos engagements produit"
+      }
+    },
     "imagewithtext_wCjhfr": {
       "type": "imagewithtext",
       "blocks": {
@@ -1006,6 +1060,7 @@
     "resultatsprouves_b3gcMW",
     "routine_a4ebbj",
     "iconsguarantee_cNPR3Q",
+    "marqueeicons_cmWtrX",
     "imagewithtext_wCjhfr",
     "certif_XH7DiP",
     "rich_text_jm8eFe",
