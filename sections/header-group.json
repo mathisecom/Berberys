@@ -27,11 +27,19 @@
             "text": "🌸 Offre de Printemps : Jusqu'à -50% !",
             "url": ""
           }
+        },
+        "message_6aU4jT": {
+          "type": "message",
+          "settings": {
+            "text": "💚 Yuka 94/100",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "message",
-        "message_eDP89E"
+        "message_eDP89E",
+        "message_6aU4jT"
       ],
       "settings": {
         "enable_sticky": false,
