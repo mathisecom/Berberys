@@ -13,7 +13,7 @@
       "type": "herosection",
       "name": "Immune Hero",
       "settings": {
-        "eyebrow_text": "From the makers of Grüns,",
+        "eyebrow_text": "",
         "stats_text": "<p><strong>4.8</strong> stars | <strong>100K+</strong> reviews | <strong>1M+</strong> members</p>",
         "heading": "Your Immune System's Daily Defense Gummy",
         "description": "13 immune and everyday stress-supporting ingredients, in one pack of delicious sour pineapple-flavored gummy bears.",
@@ -28,7 +28,7 @@
         "btn_bg": "#FFF27B",
         "btn_text_color": "#1F1F1F",
         "btn_hover_bg": "#FFE94A",
-        "heading_size": 48,
+        "heading_size": 38,
         "body_size": 16,
         "content_max_width": 520,
         "padding_top": 40,
