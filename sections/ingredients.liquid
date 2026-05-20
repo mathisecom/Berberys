@@ -1,0 +1,519 @@
+{%- liquid
+  assign section_id = section.id
+  assign bg_color = section.settings.bg_color
+  assign heading_color = section.settings.heading_color
+  assign description_color = section.settings.description_color
+  assign card_bg = section.settings.card_bg
+  assign card_title_color = section.settings.card_title_color
+  assign card_text_color = section.settings.card_text_color
+  assign card_radius = section.settings.card_radius
+  assign heading_alignment = section.settings.heading_alignment
+  assign heading_size = section.settings.heading_size
+  assign description_size = section.settings.description_size
+  assign card_title_size = section.settings.card_title_size
+  assign card_text_size = section.settings.card_text_size
+  assign desktop_columns = section.settings.desktop_columns
+  assign image_size = section.settings.image_size
+  assign image_overlap = section.settings.image_overlap
+  assign section_padding_top = section.settings.padding_top
+  assign section_padding_bottom = section.settings.padding_bottom
+  assign heading_font = section.settings.heading_font
+  assign body_font = section.settings.body_font
+  assign heading_font_bold = heading_font | font_modify: 'weight', 'bolder'
+  assign body_font_bold = body_font | font_modify: 'weight', 'bolder'
+-%}
+
+<style>
+  {{ heading_font | font_face: font_display: 'swap' }}
+  {{ heading_font_bold | font_face: font_display: 'swap' }}
+  {{ body_font | font_face: font_display: 'swap' }}
+  {{ body_font_bold | font_face: font_display: 'swap' }}
+
+  .ingredients-{{ section_id }} {
+    background-color: {{ bg_color }};
+    padding: {{ section_padding_top }}px 20px {{ section_padding_bottom }}px;
+    font-family: {{ body_font.family }}, {{ body_font.fallback_families }};
+    font-style: {{ body_font.style }};
+    font-weight: {{ body_font.weight }};
+  }
+
+  .ingredients-{{ section_id }} .ingredients__container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .ingredients-{{ section_id }} .ingredients__header {
+    margin-bottom: 60px;
+    text-align: {{ heading_alignment }};
+  }
+
+  .ingredients-{{ section_id }} .ingredients__heading {
+    font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+    font-style: {{ heading_font.style }};
+    font-size: {{ heading_size }}px;
+    line-height: 1.15;
+    color: {{ heading_color }};
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .ingredients-{{ section_id }} .ingredients__heading-line-1 {
+    display: block;
+    font-weight: 500;
+  }
+
+  .ingredients-{{ section_id }} .ingredients__heading-line-2 {
+    display: block;
+    font-weight: 800;
+  }
+
+  .ingredients-{{ section_id }} .ingredients__description {
+    font-size: {{ description_size }}px;
+    line-height: 1.55;
+    color: {{ description_color }};
+    margin: 0;
+    max-width: 720px;
+    {% if heading_alignment == 'center' %}margin-left: auto; margin-right: auto;{% endif %}
+  }
+
+  /* Grid desktop */
+  .ingredients-{{ section_id }} .ingredients__grid {
+    display: grid;
+    grid-template-columns: repeat({{ desktop_columns }}, 1fr);
+    gap: 24px;
+    padding-top: {{ image_overlap }}px;
+  }
+
+  /* Card */
+  .ingredients-{{ section_id }} .ingredient-card {
+    background-color: {{ card_bg }};
+    border-radius: {{ card_radius }}px;
+    padding: 28px 24px 28px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+  }
+
+  .ingredients-{{ section_id }} .ingredient-card__image {
+    width: {{ image_size }}px;
+    height: {{ image_size }}px;
+    margin: -{{ image_overlap | plus: 28 }}px auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ingredients-{{ section_id }} .ingredient-card__image img,
+  .ingredients-{{ section_id }} .ingredient-card__image svg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .ingredients-{{ section_id }} .ingredient-card__title {
+    font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+    font-size: {{ card_title_size }}px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: {{ card_title_color }};
+    margin: 8px 0 14px;
+  }
+
+  .ingredients-{{ section_id }} .ingredient-card__text {
+    font-size: {{ card_text_size }}px;
+    line-height: 1.55;
+    color: {{ card_text_color }};
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Tablet */
+  @media (max-width: 990px) {
+    .ingredients-{{ section_id }} .ingredients__header {
+      margin-bottom: 40px;
+    }
+    .ingredients-{{ section_id }} .ingredients__heading {
+      font-size: {{ heading_size | times: 0.85 | round }}px;
+    }
+    .ingredients-{{ section_id }} .ingredients__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Mobile: horizontal slider */
+  @media (max-width: 749px) {
+    .ingredients-{{ section_id }} {
+      padding: {{ section_padding_top | times: 0.6 | round }}px 0 {{ section_padding_bottom | times: 0.6 | round }}px;
+    }
+    .ingredients-{{ section_id }} .ingredients__container {
+      padding: 0;
+    }
+    .ingredients-{{ section_id }} .ingredients__header {
+      text-align: center;
+      padding: 0 20px;
+      margin-bottom: 32px;
+    }
+    .ingredients-{{ section_id }} .ingredients__heading {
+      font-size: {{ heading_size | times: 0.75 | round }}px;
+    }
+    .ingredients-{{ section_id }} .ingredients__description {
+      font-size: {{ description_size | times: 0.95 | round }}px;
+    }
+
+    .ingredients-{{ section_id }} .ingredients__grid {
+      display: flex;
+      grid-template-columns: none;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      padding: {{ image_overlap }}px 20px 20px;
+      scroll-padding-left: 20px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .ingredients-{{ section_id }} .ingredients__grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .ingredients-{{ section_id }} .ingredient-card {
+      flex: 0 0 75%;
+      max-width: 280px;
+      scroll-snap-align: start;
+      min-height: 260px;
+    }
+
+    .ingredients-{{ section_id }} .ingredient-card__image {
+      width: {{ image_size | times: 0.85 | round }}px;
+      height: {{ image_size | times: 0.85 | round }}px;
+    }
+
+    .ingredients-{{ section_id }} .ingredient-card__title {
+      font-size: {{ card_title_size | times: 0.95 | round }}px;
+    }
+  }
+</style>
+
+<section class="ingredients-{{ section_id }}">
+  <div class="ingredients__container">
+    {%- if section.settings.heading_line_1 != blank or section.settings.heading_line_2 != blank or section.settings.description != blank -%}
+      <div class="ingredients__header">
+        {%- if section.settings.heading_line_1 != blank or section.settings.heading_line_2 != blank -%}
+          <h2 class="ingredients__heading">
+            {%- if section.settings.heading_line_1 != blank -%}
+              <span class="ingredients__heading-line-1">{{ section.settings.heading_line_1 }}</span>
+            {%- endif -%}
+            {%- if section.settings.heading_line_2 != blank -%}
+              <span class="ingredients__heading-line-2">{{ section.settings.heading_line_2 }}</span>
+            {%- endif -%}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <p class="ingredients__description">{{ section.settings.description }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="ingredients__grid">
+        {%- for block in section.blocks -%}
+          <article class="ingredient-card" {{ block.shopify_attributes }}>
+            <div class="ingredient-card__image">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 400 | image_tag:
+                  loading: 'lazy',
+                  widths: '200, 300, 400',
+                  alt: block.settings.title | default: 'Ingredient'
+                }}
+              {%- else -%}
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="50" r="40" fill="#E5E5E5"/>
+                </svg>
+              {%- endif -%}
+            </div>
+            {%- if block.settings.title != blank -%}
+              <h3 class="ingredient-card__title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="ingredient-card__text">{{ block.settings.text }}</p>
+            {%- endif -%}
+          </article>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ingrédients actifs",
+  "tag": "section",
+  "class": "section-ingredients",
+  "settings": [
+    {
+      "type": "header",
+      "content": "En-tête"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Titre - Ligne 1 (regular)",
+      "default": "Basé sur les"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Titre - Ligne 2 (bold)",
+      "default": "meilleurs actifs"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Au coeur de nos solutions, des actifs puissants à l'efficacité scientifiquement prouvée, dans leur forme la plus biodisponible."
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Alignement de l'en-tête (desktop)",
+      "options": [
+        { "value": "left", "label": "Gauche" },
+        { "value": "center", "label": "Centré" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs section"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Couleur du titre",
+      "default": "#1F1F1F"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Couleur de la description",
+      "default": "#4A4A4A"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs cartes"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Fond des cartes",
+      "default": "#F5F5F5"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Couleur du titre des cartes",
+      "default": "#1F1F1F"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Couleur du texte des cartes",
+      "default": "#5A5A5A"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi des cartes (px)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Typographie"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Police des titres",
+      "default": "manrope_n7"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Police du corps de texte",
+      "default": "dm_sans_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille du titre (px)",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Taille de la description (px)",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Taille des titres de cartes (px)",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "label": "Taille du texte de cartes (px)",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Mise en page"
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "label": "Colonnes desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "label": "Taille des images (px)",
+      "min": 60,
+      "max": 200,
+      "step": 4,
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "image_overlap",
+      "label": "Débordement image au-dessus de la carte (px)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Espacement"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haute (px)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge basse (px)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingrédient",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "PNG transparent recommandé"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Nom de l'ingrédient"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Brève description de l'ingrédient et de ses bénéfices."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingrédients actifs",
+      "blocks": [
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Bisglycinate de magnésium",
+            "text": "Le magnésium est le onzième élément le plus présent dans le corps humain et indispensable à son fonctionnement."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Extrait de bacopa (BACOPIN®)",
+            "text": "Extrait de bacopa de qualité supérieure, avec une teneur en actifs standardisée (dosage HPLC)."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Huile de poisson OMEGAVIE® Qualitysilver®",
+            "text": "Nous utilisons l'huile de poissons sauvages Omegavie®, rigoureusement sélectionnée pour sa qualité."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Extrait lipidique de blé (Triticum vulgare) (CERAMOSIDES™)",
+            "text": "Les céramides sont des lipides naturellement présents dans la peau. Ils aident à former la barrière cutanée."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Extrait de feuille de Mûrier Blanc Reducose®",
+            "text": "Le Reducose® est un extrait de feuille de mûrier blanc breveté et cliniquement prouvé."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
