@@ -378,7 +378,6 @@
         "review_Pxrh4V": {
           "type": "review",
           "settings": {
-            "review_image": "shopify://shop_images/aYIObt0YXLCxVUHW_Armelle_homepage.webp",
             "image_alt": "Image avis client",
             "title": "Ça change la vie",
             "text": "Depuis que j’ai intégré ce produit à ma routine, je me sens plus équilibrée au quotidien. Simple à prendre, efficace, et vraiment agréable.",
@@ -456,7 +455,7 @@
         "arrow_bg": "#000000",
         "arrow_color": "#FFFFFF",
         "font_family": "inherit",
-        "title_size": 34,
+        "title_size": 32,
         "mobile_title_size": 28,
         "title_weight": "800",
         "rating_title_size": 18,
