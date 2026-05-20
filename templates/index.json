@@ -372,6 +372,130 @@
         "lazy": true
       }
     },
+    "testimonialreviews_DeQWnV": {
+      "type": "testimonialreviews",
+      "blocks": {
+        "review_Pxrh4V": {
+          "type": "review",
+          "settings": {
+            "image_alt": "Image avis client",
+            "title": "Ça change la vie",
+            "text": "Depuis que j’ai intégré ce produit à ma routine, je me sens plus équilibrée au quotidien. Simple à prendre, efficace, et vraiment agréable.",
+            "author": "Mary Morgane",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_bjiWPU": {
+          "type": "review",
+          "settings": {
+            "image_alt": "Image avis client",
+            "title": "Délicieux et SAV parfait !",
+            "text": "Excellent produit. J’apprécie la qualité, la composition et le sérieux de la marque. Une très belle découverte que je recommande.",
+            "author": "Capucine Chandon",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_j6WeAH": {
+          "type": "review",
+          "settings": {
+            "image_alt": "Image avis client",
+            "title": "Une révélation",
+            "text": "Je l’utilise chaque jour et je sens une vraie différence. C’est devenu un indispensable dans ma routine bien-être.",
+            "author": "Gilles Caubet",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_UwLDbr": {
+          "type": "review",
+          "settings": {
+            "image_alt": "Image avis client",
+            "title": "Très satisfaite",
+            "text": "La prise est simple, le produit est qualitatif et les effets se ressentent progressivement. Je suis ravie de mon achat.",
+            "author": "Claire Martin",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_Y99pAC": {
+          "type": "review",
+          "settings": {
+            "image_alt": "Image avis client",
+            "title": "Je recommande",
+            "text": "Très bonne expérience, livraison rapide et produit conforme à mes attentes. Je vais continuer sur plusieurs mois.",
+            "author": "Julie Bernard",
+            "verified_text": "Acheteur vérifié"
+          }
+        }
+      },
+      "block_order": [
+        "review_Pxrh4V",
+        "review_bjiWPU",
+        "review_j6WeAH",
+        "review_UwLDbr",
+        "review_Y99pAC"
+      ],
+      "name": "Avis clients custom",
+      "settings": {
+        "heading": "Ce que nos clients en disent vraiment",
+        "rating_title": "Excellent",
+        "rating_text": "<p>4.9/5 sur <strong>16,900+ avis</strong> sur Trustpilot</p>",
+        "show_button": false,
+        "button_label": "Voir les avis",
+        "button_link": "",
+        "section_bg": "#FEF9F0",
+        "card_bg": "#FFFFFF",
+        "card_border": "#000000",
+        "shadow_color": "#000000",
+        "title_color": "#000000",
+        "text_color": "#222222",
+        "muted_color": "#555555",
+        "star_color": "#00B67A",
+        "verified_color": "#00B67A",
+        "button_bg": "#FFF27B",
+        "button_text_color": "#000000",
+        "arrow_bg": "#000000",
+        "arrow_color": "#FFFFFF",
+        "font_family": "inherit",
+        "title_size": 34,
+        "mobile_title_size": 28,
+        "title_weight": "800",
+        "rating_title_size": 18,
+        "mobile_rating_title_size": 16,
+        "rating_text_size": 15,
+        "mobile_rating_text_size": 14,
+        "card_title_size": 20,
+        "mobile_card_title_size": 19,
+        "card_text_size": 15,
+        "mobile_card_text_size": 14,
+        "author_size": 12,
+        "verified_size": 13,
+        "max_width": 1280,
+        "cards_area_width": 1040,
+        "card_gap": 28,
+        "card_min_height": 440,
+        "mobile_card_min_height": 420,
+        "card_radius": 8,
+        "shadow_offset": 6,
+        "card_padding_top": 36,
+        "card_padding_horizontal": 32,
+        "card_padding_bottom": 38,
+        "mobile_card_padding_top": 32,
+        "mobile_card_padding_horizontal": 24,
+        "mobile_card_padding_bottom": 34,
+        "stars_size": 24,
+        "mobile_stars_size": 23,
+        "image_aspect_ratio": "4 / 3",
+        "image_radius": 8,
+        "show_arrows": true,
+        "show_dots": true,
+        "arrow_size": 42,
+        "arrow_icon_size": 34,
+        "header_bottom_spacing": 50,
+        "padding_top": 56,
+        "padding_bottom": 64,
+        "mobile_padding_top": 44,
+        "mobile_padding_bottom": 52
+      }
+    },
     "resultatsprouves_b3gcMW": {
       "type": "resultatsprouves",
       "blocks": {
@@ -551,16 +675,16 @@
         "title_icon_svg": "<svg viewbox=\"0 0 64 64\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 8h24l8 8v24\"></path><path d=\"M18 8v42h20\"></path><path d=\"M42 8v10h10\"></path><path d=\"M24 22h14\"></path><path d=\"M24 29h18\"></path><path d=\"M24 36h10\"></path><circle cx=\"45\" cy=\"45\" r=\"8\"></circle><path d=\"M41.5 45l2.2 2.2 5-5\"></path><path d=\"M40 53l-2 7 7-3 7 3-2-7\"></path></svg>",
         "button_label": "",
         "button_link": "",
-        "section_bg": "#FEF9F0",
-        "title_box_bg": "#E7F1E5",
-        "card_bg": "#FFFFFF",
-        "border_color": "#DDE2EA",
-        "title_color": "#1F2937",
-        "heading_color": "#1F2937",
-        "text_color": "#4B5565",
-        "icon_color": "#8BAF9E",
-        "button_bg": "#FFF27B",
-        "button_text_color": "#1F2937",
+        "section_bg": "#fef9f0",
+        "title_box_bg": "#e7f1e5",
+        "card_bg": "#ffffff",
+        "border_color": "#dde2ea",
+        "title_color": "#1f2937",
+        "heading_color": "#1f2937",
+        "text_color": "#4b5565",
+        "icon_color": "#8baf9e",
+        "button_bg": "#fff27b",
+        "button_text_color": "#1f2937",
         "font_family": "inherit",
         "title_size": 20,
         "mobile_title_size": 18,
@@ -821,6 +945,7 @@
     "presentation_EkBfBH",
     "featured_product_khQ4Qz",
     "logoscrooll_6mjgGf",
+    "testimonialreviews_DeQWnV",
     "resultatsprouves_b3gcMW",
     "routine_a4ebbj",
     "imagewithtext_wCjhfr",
