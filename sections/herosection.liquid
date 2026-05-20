@@ -13,14 +13,25 @@
   assign content_max_width = section.settings.content_max_width
   assign section_padding_top = section.settings.padding_top
   assign section_padding_bottom = section.settings.padding_bottom
+  assign heading_font = section.settings.heading_font
+  assign body_font = section.settings.body_font
+  assign heading_font_bold = heading_font | font_modify: 'weight', 'bolder'
+  assign body_font_bold = body_font | font_modify: 'weight', 'bolder'
 -%}
+
+{{ heading_font | font_face: font_display: 'swap' }}
+{{ heading_font_bold | font_face: font_display: 'swap' }}
+{{ body_font | font_face: font_display: 'swap' }}
+{{ body_font_bold | font_face: font_display: 'swap' }}
 
 <style>
   .immune-hero-{{ section_id }} {
     background-color: {{ bg_color }};
     color: {{ text_color }};
     padding: {{ section_padding_top }}px 20px {{ section_padding_bottom }}px;
-    font-family: {{ section.settings.font_family | default: 'inherit' }};
+    font-family: {{ body_font.family }}, {{ body_font.fallback_families }};
+    font-style: {{ body_font.style }};
+    font-weight: {{ body_font.weight }};
     overflow: hidden;
   }
 
@@ -67,6 +78,8 @@
   }
 
   .immune-hero-{{ section_id }} .immune-hero__heading {
+    font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+    font-style: {{ heading_font.style }};
     font-size: {{ heading_size }}px;
     line-height: 1.1;
     font-weight: 800;
@@ -350,9 +363,15 @@
     },
     {
       "type": "font_picker",
-      "id": "font_family",
-      "label": "Police",
-      "default": "assistant_n4"
+      "id": "heading_font",
+      "label": "Police des titres",
+      "default": "manrope_n7"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Police du corps de texte",
+      "default": "dm_sans_n4"
     },
     {
       "type": "range",
