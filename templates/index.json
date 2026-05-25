@@ -97,7 +97,6 @@
         "feature_HxGyEQ": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
             "title": "Glycémie Stable",
             "text": "Aide à limiter les pics de sucre."
           }
@@ -105,7 +104,6 @@
         "feature_WpPjp4": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/categorie.svg",
             "title": "Insuline Optimisée",
             "text": "Favorise une meilleure sensibilité à l’insuline."
           }
@@ -113,7 +111,6 @@
         "feature_AYaiwK": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
             "title": "Équilibre Lipidique",
             "text": "Soutient le cholestérol et les triglycérides."
           }
@@ -121,7 +118,6 @@
         "feature_HyaHxU": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/categorie.svg",
             "title": "Digestion & Microbiote",
             "text": "Aide à maintenir une flore intestinale équilibrée."
           }
