@@ -1140,29 +1140,45 @@
         "166442457738b23caf-0": {
           "type": "item",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "title": "À quoi sert Vitalité Minceur ?",
+            "content": "<p>Vitalité Minceur aide à soutenir l’équilibre glycémique, le métabolisme et la gestion des fringales grâce à sa formule à base de berbérine.</p>"
           }
         },
         "166442457738b23caf-1": {
           "type": "item",
           "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "title": "Quand prendre les gélules ?",
+            "content": "<p>Il est conseillé de prendre les gélules au moment des repas, avec un grand verre d’eau. Respecte toujours la dose journalière indiquée sur l’emballage.</p>"
           }
         },
         "166442457738b23caf-2": {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "Au bout de combien de temps voit-on les effets ?",
+            "content": "<p>Les effets peuvent varier selon les personnes. Une utilisation régulière pendant plusieurs semaines, associée à une alimentation équilibrée, permet généralement de mieux ressentir les bénéfices.</p>"
+          }
+        },
+        "item_NFaxk8": {
+          "type": "item",
+          "settings": {
+            "title": "Est-ce que Vitalité Minceur aide à réduire les fringales ?",
+            "content": "<p>Oui, la formule peut aider à limiter les envies de grignotage en participant à une meilleure stabilité de la glycémie au cours de la journée.</p>"
+          }
+        },
+        "item_MiQQa4": {
+          "type": "item",
+          "settings": {
+            "title": "Le produit est-il naturel et fabriqué en France ?",
+            "content": "<p>Oui, Vitalité Minceur est formulé avec des actifs d’origine naturelle, vegan, sans colorant ni conservateur, et fabriqué en France.</p>"
           }
         }
       },
       "block_order": [
         "166442457738b23caf-0",
         "166442457738b23caf-1",
-        "166442457738b23caf-2"
+        "166442457738b23caf-2",
+        "item_NFaxk8",
+        "item_MiQQa4"
       ],
       "settings": {
         "full_width": false,
