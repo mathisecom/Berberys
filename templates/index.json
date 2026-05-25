@@ -44,21 +44,21 @@
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/categorie.svg",
-            "text": "No artificial colors or flavors"
+            "text": "Validé par les pharmaciens"
           }
         },
         "item_CepQFM": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/categorie_b5bdb2ef-2088-4875-9a14-1667bb17bf30.svg",
-            "text": "Vegan"
+            "text": "100% Vegan et naturel"
           }
         },
         "item_PDdARn": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
-            "text": "Dairy-free"
+            "text": "Fabriqué en France"
           }
         }
       },
@@ -774,14 +774,14 @@
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/categorie_b5bdb2ef-2088-4875-9a14-1667bb17bf30.svg",
-            "text": "Vegan"
+            "text": "100% Vegan et naturel"
           }
         },
         "item_6ATNGc": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
-            "text": "Dairy-free"
+            "text": "Fabriqué en France"
           }
         }
       },
