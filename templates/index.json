@@ -524,36 +524,36 @@
         "ingredient_CVF7yc": {
           "type": "ingredient",
           "settings": {
-            "title": "Bisglycinate de magnésium",
-            "text": "Le magnésium est le onzième élément le plus présent dans le corps humain et indispensable à son fonctionnement."
+            "title": "Berbérine",
+            "text": "Soutient l’équilibre glycémique et le métabolisme. La berbérine aide à accompagner la régulation du sucre dans le sang et participe au bon fonctionnement métabolique."
           }
         },
         "ingredient_MRHtyf": {
           "type": "ingredient",
           "settings": {
-            "title": "Extrait de bacopa (BACOPIN®)",
-            "text": "Extrait de bacopa de qualité supérieure, avec une teneur en actifs standardisée (dosage HPLC)."
+            "title": "Gymnema Sylvestre",
+            "text": "Aide à réduire les envies de sucre. Traditionnellement utilisée pour accompagner le contrôle des fringales, cette plante soutient une meilleure gestion des apports sucrés."
           }
         },
         "ingredient_gTrr9f": {
           "type": "ingredient",
           "settings": {
-            "title": "Huile de poisson OMEGAVIE® Qualitysilver®",
-            "text": "Nous utilisons l'huile de poissons sauvages Omegavie®, rigoureusement sélectionnée pour sa qualité."
+            "title": "Chrome",
+            "text": "Contribue au maintien d’une glycémie normale. Le chrome participe au métabolisme normal des macronutriments et aide à maintenir un taux de glucose équilibré."
           }
         },
         "ingredient_YjPYmi": {
           "type": "ingredient",
           "settings": {
-            "title": "Extrait lipidique de blé (Triticum vulgare) (CERAMOSIDES™)",
-            "text": "Les céramides sont des lipides naturellement présents dans la peau. Ils aident à former la barrière cutanée."
+            "title": "Fenugrec",
+            "text": "Soutient le métabolisme des glucides et des lipides. Le fenugrec accompagne l’équilibre énergétique et aide l’organisme dans la gestion des sucres et des graisses."
           }
         },
         "ingredient_xKqaM9": {
           "type": "ingredient",
           "settings": {
-            "title": "Extrait de feuille de Mûrier Blanc Reducose®",
-            "text": "Le Reducose® est un extrait de feuille de mûrier blanc breveté et cliniquement prouvé."
+            "title": "Pipérine",
+            "text": "Favorise l’assimilation des actifs. Issue du poivre noir, la pipérine est souvent utilisée pour améliorer la biodisponibilité des ingrédients naturels."
           }
         }
       },
