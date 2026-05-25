@@ -183,10 +183,10 @@
             "liquid": "<div class=\"product-info__block-item\" data-block-id=\"liquid_xrwBGz\" data-block-type=\"liquid\"><div class=\"product-info__liquid\">\n              <div class=\"product-info__block-item\" data-block-id=\"liquid_VYgyhr\" data-block-type=\"liquid\"><div class=\"product-info__liquid\">\n              <div class=\"product-info__block-item\" data-block-id=\"liquid_ayckTY\" data-block-type=\"liquid\">\n  <div class=\"product-info__liquid\">\n    <div class=\"main-product__block main-product__block-custom_liquid\">\n      <div class=\"m-product-text\">\n        <div class=\"main-product__block main-product__block-custom_liquid\">\n          <div class=\"m-product-text\">\n            <div class=\"main-product__block main-product__block-custom_liquid\">\n              <div class=\"m-product-text\">\n                <div class=\"product-info__liquid\">\n                  <a class=\"image-size\" style=\"display: flex; align-items: center; gap: 8px;\">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0776/3751/7627/files/avis.png?v=1687213619\" alt=\"Étoiles\" width=\"63\" height=\"13\">\n                    <span class=\"text-size\">Noté <b>4,8/5</b> sur la base de 3,380 avis</span>\n                  </a>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n            </div></div>\n            </div></div>"
           }
         },
-        "text_mNawEX": {
-          "type": "text",
+        "liquid_hDrpnd": {
+          "type": "liquid",
           "settings": {
-            "text": "<h3>Gélules de Berberine</h3>"
+            "liquid": "<style>\n  .mirabel-title-block {\n    margin: 12px 0 16px;\n    color: #111111;\n  }\n\n  .mirabel-title-block h2 {\n    margin: 0 0 8px;\n    font-size: 36px;\n    font-weight: 700;\n    line-height: 1.1;\n    color: #111111;\n  }\n\n  .mirabel-title-block p {\n    margin: 0;\n    font-size: 15px;\n    font-weight: 400;\n    line-height: 1.4;\n    color: #111111;\n  }\n\n  @media screen and (max-width: 480px) {\n    .mirabel-title-block h2 {\n      font-size: 30px;\n    }\n\n    .mirabel-title-block p {\n      font-size: 14px;\n    }\n  }\n</style>\n\n<div class=\"mirabel-title-block\">\n  <h2>Gélules de Berberine</h2>\n  <p>Extrait de berbéris standardisé à 97% en berbérine hydrochloride.</p>\n</div>"
           }
         },
         "price_kfhCb7": {
@@ -278,7 +278,7 @@
       "block_order": [
         "liquid_Lrc8VW",
         "liquid_pEcFnn",
-        "text_mNawEX",
+        "liquid_hDrpnd",
         "price_kfhCb7",
         "liquid_pKkQHQ",
         "kaching_bundles_app_block_KG9GBf",
