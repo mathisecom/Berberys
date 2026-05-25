@@ -201,6 +201,7 @@
         },
         "variant_picker_n94Ycf": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "hide_sold_out_variants": false,
             "stack_blocks": true,
@@ -209,10 +210,6 @@
             "variant_image_options": "",
             "size_chart_page": ""
           }
-        },
-        "quantity_selector_HLczLm": {
-          "type": "quantity_selector",
-          "settings": {}
         },
         "buy_buttons_CCMmLm": {
           "type": "buy_buttons",
@@ -274,7 +271,6 @@
         "price_kfhCb7",
         "liquid_pKkQHQ",
         "variant_picker_n94Ycf",
-        "quantity_selector_HLczLm",
         "buy_buttons_CCMmLm",
         "liquid_kDtQpN",
         "liquid_DYyRaA",
