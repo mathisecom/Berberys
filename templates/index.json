@@ -20,6 +20,7 @@
         "guarantee_text": "Garantie 90 jours satisfait ou remboursé",
         "btn_label": "J’essaie Mirabel →",
         "btn_link": "#shopify-section-template--28743066943865__featured_product_khQ4Qz",
+        "product_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T144347.545.png",
         "image_position": "right",
         "bg_color": "#fef9f0",
         "text_color": "#1a1a1a",
@@ -33,7 +34,7 @@
         "heading_size": 40,
         "body_size": 14,
         "content_max_width": 500,
-        "padding_top": 0,
+        "padding_top": 40,
         "padding_bottom": 40
       }
     },
