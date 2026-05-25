@@ -524,6 +524,7 @@
         "ingredient_CVF7yc": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T142945.579.png",
             "title": "Berbérine",
             "text": "Soutient l’équilibre glycémique et le métabolisme. La berbérine aide à accompagner la régulation du sucre dans le sang et participe au bon fonctionnement métabolique."
           }
@@ -531,12 +532,14 @@
         "ingredient_MRHtyf": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143015.562.png",
             "title": "Gymnema Sylvestre",
             "text": "Aide à réduire les envies de sucre. Traditionnellement utilisée pour accompagner le contrôle des fringales, cette plante soutient une meilleure gestion des apports sucrés."
           }
         },
         "ingredient_gTrr9f": {
           "type": "ingredient",
+          "disabled": true,
           "settings": {
             "title": "Chrome",
             "text": "Contribue au maintien d’une glycémie normale. Le chrome participe au métabolisme normal des macronutriments et aide à maintenir un taux de glucose équilibré."
@@ -545,6 +548,7 @@
         "ingredient_YjPYmi": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143107.552.png",
             "title": "Fenugrec",
             "text": "Soutient le métabolisme des glucides et des lipides. Le fenugrec accompagne l’équilibre énergétique et aide l’organisme dans la gestion des sucres et des graisses."
           }
@@ -552,6 +556,7 @@
         "ingredient_xKqaM9": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143202.547.png",
             "title": "Pipérine",
             "text": "Favorise l’assimilation des actifs. Issue du poivre noir, la pipérine est souvent utilisée pour améliorer la biodisponibilité des ingrédients naturels."
           }
@@ -583,7 +588,7 @@
         "description_size": 15,
         "card_title_size": 18,
         "card_text_size": 14,
-        "desktop_columns": 5,
+        "desktop_columns": 4,
         "image_size": 120,
         "image_overlap": 48,
         "padding_top": 44,
