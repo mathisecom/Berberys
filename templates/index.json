@@ -97,6 +97,7 @@
         "feature_HxGyEQ": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/sugar-svgrepo-com.png",
             "title": "Glycémie Stable",
             "text": "Aide à limiter les pics de sucre."
           }
@@ -111,6 +112,7 @@
         "feature_AYaiwK": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/sugar-svgrepo-com_1.png",
             "title": "Équilibre Lipidique",
             "text": "Soutient le cholestérol et les triglycérides."
           }
