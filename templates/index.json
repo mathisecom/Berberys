@@ -105,6 +105,7 @@
         "feature_WpPjp4": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/sugar-svgrepo-com_3.png",
             "title": "Insuline Optimisée",
             "text": "Favorise une meilleure sensibilité à l’insuline."
           }
