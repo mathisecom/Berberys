@@ -382,6 +382,7 @@
         "review_Pxrh4V": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113224.587.jpg",
             "image_alt": "Image avis client",
             "title": "Ça change la vie",
             "text": "Depuis que j’ai intégré ce produit à ma routine, je me sens plus équilibrée au quotidien. Simple à prendre, efficace, et vraiment agréable.",
@@ -392,6 +393,7 @@
         "review_bjiWPU": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113209.105.jpg",
             "image_alt": "Image avis client",
             "title": "Délicieux et SAV parfait !",
             "text": "Excellent produit. J’apprécie la qualité, la composition et le sérieux de la marque. Une très belle découverte que je recommande.",
@@ -402,6 +404,7 @@
         "review_j6WeAH": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113319.574.jpg",
             "image_alt": "Image avis client",
             "title": "Une révélation",
             "text": "Je l’utilise chaque jour et je sens une vraie différence. C’est devenu un indispensable dans ma routine bien-être.",
@@ -412,6 +415,7 @@
         "review_UwLDbr": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113305.122.jpg",
             "image_alt": "Image avis client",
             "title": "Très satisfaite",
             "text": "La prise est simple, le produit est qualitatif et les effets se ressentent progressivement. Je suis ravie de mon achat.",
@@ -422,6 +426,7 @@
         "review_Y99pAC": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113402.607.jpg",
             "image_alt": "Image avis client",
             "title": "Je recommande",
             "text": "Très bonne expérience, livraison rapide et produit conforme à mes attentes. Je vais continuer sur plusieurs mois.",
