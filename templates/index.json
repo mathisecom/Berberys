@@ -1033,9 +1033,9 @@
             "round_avatar": true,
             "show_rating": true,
             "rating": 4,
-            "author": "John S.",
-            "title": "Testimonial 1",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "author": "Sophie M.",
+            "title": "Je me sens plus légère",
+            "content": "<p>Après quelques semaines, je me sens plus légère et j’ai beaucoup moins envie de grignoter dans la journée. Le produit est facile à intégrer dans ma routine.</p>"
           }
         },
         "testimonial_dVmE74": {
@@ -1044,9 +1044,9 @@
             "round_avatar": true,
             "show_rating": true,
             "rating": 5,
-            "author": "Mary U.",
-            "title": "Testimonial 2",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "author": "Claire D.",
+            "title": "Je recommande",
+            "content": "<p>J’ai surtout remarqué une meilleure stabilité dans mon énergie. Moins de coups de fatigue et moins de fringales après les repas.</p>"
           }
         },
         "testimonial_bR8Ppm": {
@@ -1055,16 +1055,28 @@
             "round_avatar": true,
             "show_rating": true,
             "rating": 4,
-            "author": "Joshua A.",
-            "title": "Testimonial 3",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "author": "Nathalie R.",
+            "title": "Très satisfaite",
+            "content": "<p>Très satisfaite. La composition est rassurante, le packaging est propre et j’apprécie que ce soit fabriqué en France.</p>"
+          }
+        },
+        "testimonial_ECqyMy": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Nathalie R.",
+            "title": "Très satisfaite",
+            "content": "<p>Très satisfaite. La composition est rassurante, le packaging est propre et j’apprécie que ce soit fabriqué en France.</p>"
           }
         }
       },
       "block_order": [
         "testimonial_43bMHi",
         "testimonial_dVmE74",
-        "testimonial_bR8Ppm"
+        "testimonial_bR8Ppm",
+        "testimonial_ECqyMy"
       ],
       "name": "Testimonials",
       "settings": {
