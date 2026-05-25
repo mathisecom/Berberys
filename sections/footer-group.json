@@ -99,7 +99,7 @@
           "type": "text",
           "settings": {
             "title": "Besoin d'aide",
-            "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>",
+            "content": "<p>contact@mirabel.com</p>",
             "enable_follow_on_shop": true
           }
         }
