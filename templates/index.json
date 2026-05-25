@@ -1066,9 +1066,20 @@
             "round_avatar": true,
             "show_rating": true,
             "rating": 4,
-            "author": "Nathalie R.",
+            "author": "Marine L.",
             "title": "Très satisfaite",
-            "content": "<p>Très satisfaite. La composition est rassurante, le packaging est propre et j’apprécie que ce soit fabriqué en France.</p>"
+            "content": "<p>Je cherchais un complément naturel pour accompagner mon rééquilibrage alimentaire. Mirabel m’aide à rester régulière et motivée.</p>"
+          }
+        },
+        "testimonial_aNzgEM": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Isabelle T.",
+            "title": "Bon produit",
+            "content": "<p>Bon produit, agréable à prendre au quotidien. Je sens une vraie différence sur mes envies de sucre et mon confort après les repas.</p>"
           }
         }
       },
@@ -1076,7 +1087,8 @@
         "testimonial_43bMHi",
         "testimonial_dVmE74",
         "testimonial_bR8Ppm",
-        "testimonial_ECqyMy"
+        "testimonial_ECqyMy",
+        "testimonial_aNzgEM"
       ],
       "name": "Testimonials",
       "settings": {
