@@ -267,7 +267,7 @@
             "icon": "none",
             "icon_width": 20,
             "title": "RÉSULTATS & ÉTUDES",
-            "content": "<p>Share some content to your customers about your products.</p>",
+            "content": "<ul><li>500mg de berbérine par gélule</li><li>40µg de chrome par gélule (100% des VNR)</li><li>Le chrome contribue au maintien d’une glycémie normale¹</li><li>Le chrome contribue au métabolisme des nutriments²</li><li>Convient aux végétaliens</li><li>Une gélule par jour – pas de préparation, pas de tracas</li></ul>",
             "page": ""
           }
         }
