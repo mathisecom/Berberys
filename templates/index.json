@@ -962,24 +962,35 @@
         "image_F9fneM": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113209.105.jpg",
             "url": ""
           }
         },
         "image_z7LWzc": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113224.587.jpg",
             "url": ""
           }
         },
         "image_pGCiHh": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113319.574.jpg",
             "url": ""
           }
         },
         "image_yB96YA": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113305.122.jpg",
+            "url": ""
+          }
+        },
+        "image_LMLJ9J": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113402.607.jpg",
             "url": ""
           }
         }
@@ -988,7 +999,8 @@
         "image_F9fneM",
         "image_z7LWzc",
         "image_pGCiHh",
-        "image_yB96YA"
+        "image_yB96YA",
+        "image_LMLJ9J"
       ],
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
@@ -1006,8 +1018,8 @@
         "pause_hover": false,
         "scrolling_gap": 70,
         "scrolling_gap_mobile": 20,
-        "card_width_desktop": 130,
-        "card_width_mobile": 100,
+        "card_width_desktop": 140,
+        "card_width_mobile": 140,
         "heading_color": "#121212",
         "layout_bg_color": "#fef9f0",
         "layout_border_color": "#121212",
