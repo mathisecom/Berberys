@@ -730,24 +730,28 @@
         "guarantee_KLbiaC": {
           "type": "guarantee",
           "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143418.005.png",
             "label": "Ingrédients Naturelle"
           }
         },
         "guarantee_rFnKLx": {
           "type": "guarantee",
           "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143446.514.png",
             "label": "Sans Conservateurs"
           }
         },
         "guarantee_9Jbcd8": {
           "type": "guarantee",
           "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143512.522.png",
             "label": "Sans Lactose"
           }
         },
         "guarantee_a3PcwR": {
           "type": "guarantee",
           "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143540.532.png",
             "label": "Vegan"
           }
         }
