@@ -120,6 +120,7 @@
         "feature_HyaHxU": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/sugar-svgrepo-com_2.png",
             "title": "Digestion & Microbiote",
             "text": "Aide à maintenir une flore intestinale équilibrée."
           }
