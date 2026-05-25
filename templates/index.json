@@ -867,6 +867,7 @@
         "card_title": "Marque Mirabel",
         "card_text": "Notre Berbérine Mirabel® est brevetée, cliniquement prouvée, vegan, sans sucre et formulée en France selon des standards stricts de qualité.",
         "logo_alt": "Logo certification",
+        "logo_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T123509.583.png",
         "title_icon_svg": "<svg viewbox=\"0 0 64 64\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 8h24l8 8v24\"></path><path d=\"M18 8v42h20\"></path><path d=\"M42 8v10h10\"></path><path d=\"M24 22h14\"></path><path d=\"M24 29h18\"></path><path d=\"M24 36h10\"></path><circle cx=\"45\" cy=\"45\" r=\"8\"></circle><path d=\"M41.5 45l2.2 2.2 5-5\"></path><path d=\"M40 53l-2 7 7-3 7 3-2-7\"></path></svg>",
         "button_label": "",
         "button_link": "",
