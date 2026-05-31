@@ -432,11 +432,11 @@
         "show_bottom_line": true,
         "line_margin_top": 14,
         "section_bg": "#fef9f0",
-        "padding_top_desktop": 36,
+        "padding_top_desktop": 14,
         "padding_bottom_desktop": 0,
         "padding_left_desktop": 40,
         "padding_right_desktop": 40,
-        "padding_top_mobile": 30,
+        "padding_top_mobile": 14,
         "padding_bottom_mobile": 0,
         "padding_left_mobile": 20,
         "padding_right_mobile": 0
