@@ -1104,6 +1104,91 @@
         "step_text_size": 13
       }
     },
+    "cleanlabel_VxG8gr": {
+      "type": "cleanlabel",
+      "blocks": {
+        "clean_item_MHejqd": {
+          "type": "clean_item",
+          "settings": {
+            "title": "Sourcing éthique & local",
+            "text": "Chez Mirabel, nous sélectionnons rigoureusement chaque ingrédient, en privilégiant les filières durables et locales, dans le respect de l’humain et de l’environnement."
+          }
+        },
+        "clean_item_xCH7bJ": {
+          "type": "clean_item",
+          "settings": {
+            "title": "Pureté & naturalité",
+            "text": "Nos formules sont conçues sans additifs ni excipients controversés, pour garantir la meilleure assimilation et une parfaite tolérance."
+          }
+        },
+        "clean_item_J8fVaa": {
+          "type": "clean_item",
+          "settings": {
+            "title": "Traçabilité & transparence",
+            "text": "Du sourcing à la fabrication, chaque étape est tracée. Nous partageons en toute transparence l’origine, la composition et les procédés de nos produits."
+          }
+        }
+      },
+      "block_order": [
+        "clean_item_MHejqd",
+        "clean_item_xCH7bJ",
+        "clean_item_J8fVaa"
+      ],
+      "name": "Clean label slider",
+      "settings": {
+        "title": "Clean Label Mirabel",
+        "bg_color": "#fef9f0",
+        "title_color": "#071344",
+        "text_color": "#071344",
+        "card_bg": "#ffffff",
+        "card_border": "#dddddd",
+        "line_color": "#dddddd",
+        "dot_color": "#b8b8b8",
+        "dot_active_color": "#071344",
+        "title_size_desktop": 43,
+        "title_size_mobile": 27,
+        "title_weight": "500",
+        "title_align_mobile": "center",
+        "title_margin_bottom_mobile": 38,
+        "image_size_desktop": 210,
+        "image_size_mobile": 230,
+        "image_gap_desktop": 0,
+        "card_column_width": 430,
+        "card_min_height": 160,
+        "card_gap_desktop": 18,
+        "card_padding_x": 38,
+        "card_padding_y": 34,
+        "card_radius": 10,
+        "line_width_desktop": 96,
+        "card_title_size_desktop": 25,
+        "card_title_size_mobile": 23,
+        "card_title_weight": "700",
+        "card_title_margin_bottom": 14,
+        "mobile_title_margin_bottom": 14,
+        "card_text_size_desktop": 14,
+        "card_text_size_mobile": 13,
+        "card_text_weight": "500",
+        "mobile_text_max_width": 345,
+        "mobile_image_margin_bottom": 36,
+        "mobile_slide_side_padding": 4,
+        "dots_margin_top": 12,
+        "dot_size": 6,
+        "dot_gap": 8,
+        "max_width": 1320,
+        "title_column_width": 430,
+        "desktop_main_gap": 120,
+        "desktop_content_gap": 100,
+        "tablet_gap": 48,
+        "padding_top_desktop": 90,
+        "padding_bottom_desktop": 90,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 36,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 16
+      }
+    },
     "iconsguarantee_cNPR3Q": {
       "type": "iconsguarantee",
       "blocks": {
@@ -1595,6 +1680,7 @@
     "resultatsprouves_b3gcMW",
     "efficaciteprouve_zx4pBJ",
     "routine_a4ebbj",
+    "cleanlabel_VxG8gr",
     "iconsguarantee_cNPR3Q",
     "marqueeicons_cmWtrX",
     "imagewithtext_wCjhfr",
