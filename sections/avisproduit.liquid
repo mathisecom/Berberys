@@ -1,0 +1,830 @@
+{% comment %}
+  Section : Avis produit custom
+  Fonts : Manrope + DM Sans
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<section
+  class="product-reviews section-{{ section.id }}"
+  style="
+    --section-bg: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+    --muted-color: {{ section.settings.muted_text_color }};
+    --accent-color: {{ section.settings.accent_color }};
+    --line-color: {{ section.settings.line_color }};
+    --verified-color: {{ section.settings.verified_color }};
+    --pagination-bg: {{ section.settings.pagination_background }};
+    --pagination-text: {{ section.settings.pagination_text_color }};
+
+    --max-width: {{ section.settings.max_width }}px;
+
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+    --padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+
+    --title-size-desktop: {{ section.settings.title_size_desktop }}px;
+    --title-size-mobile: {{ section.settings.title_size_mobile }}px;
+    --rating-size-desktop: {{ section.settings.rating_size_desktop }}px;
+    --rating-size-mobile: {{ section.settings.rating_size_mobile }}px;
+    --stars-size: {{ section.settings.stars_size }}px;
+    --summary-size: {{ section.settings.summary_size }}px;
+    --name-size: {{ section.settings.name_size }}px;
+    --verified-size: {{ section.settings.verified_size }}px;
+    --review-title-size: {{ section.settings.review_title_size }}px;
+    --review-text-size: {{ section.settings.review_text_size }}px;
+    --date-size: {{ section.settings.date_size }}px;
+
+    --title-bottom-space: {{ section.settings.title_bottom_space }}px;
+    --summary-bottom-space: {{ section.settings.summary_bottom_space }}px;
+    --review-padding-y: {{ section.settings.review_padding_y }}px;
+  "
+>
+  <div class="product-reviews__inner">
+
+    {% if section.settings.title != blank %}
+      <h2 class="product-reviews__title">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+
+    <div class="product-reviews__summary">
+      <div class="product-reviews__rating-line">
+        {% if section.settings.rating != blank %}
+          <span class="product-reviews__rating">
+            {{ section.settings.rating }}
+          </span>
+        {% endif %}
+
+        {% if section.settings.stars != blank %}
+          <span class="product-reviews__stars">
+            {{ section.settings.stars }}
+          </span>
+        {% endif %}
+      </div>
+
+      {% if section.settings.based_text != blank %}
+        <div class="product-reviews__based">
+          {{ section.settings.based_text }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="product-reviews__list">
+      {% for block in section.blocks %}
+        {% if block.type == 'review' %}
+          <article class="product-reviews__item" {{ block.shopify_attributes }}>
+            
+            <div class="product-reviews__author">
+              {% if block.settings.name != blank %}
+                <div class="product-reviews__name">
+                  {{ block.settings.name }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.verified != blank %}
+                <div class="product-reviews__verified">
+                  <span class="product-reviews__verified-icon">✓</span>
+                  {{ block.settings.verified }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="product-reviews__content">
+              <div class="product-reviews__review-head">
+                <div class="product-reviews__review-left">
+                  {% if block.settings.stars != blank %}
+                    <span class="product-reviews__review-stars">
+                      {{ block.settings.stars }}
+                    </span>
+                  {% endif %}
+
+                  {% if block.settings.review_title != blank %}
+                    <h3 class="product-reviews__review-title">
+                      {{ block.settings.review_title }}
+                    </h3>
+                  {% endif %}
+                </div>
+
+                {% if block.settings.date != blank %}
+                  <div class="product-reviews__date">
+                    {{ block.settings.date }}
+                  </div>
+                {% endif %}
+              </div>
+
+              {% if block.settings.text != blank %}
+                <div class="product-reviews__text">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+            </div>
+
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.show_pagination %}
+      <div class="product-reviews__pagination">
+        <button class="product-reviews__page-arrow" type="button" aria-label="Page précédente">
+          ‹
+        </button>
+
+        {% assign pages = section.settings.pagination_pages | split: ',' %}
+        {% for page in pages %}
+          {% assign clean_page = page | strip %}
+          <button
+            class="product-reviews__page {% if forloop.first %}is-active{% endif %}"
+            type="button"
+          >
+            {{ clean_page }}
+          </button>
+        {% endfor %}
+
+        <button class="product-reviews__page-arrow" type="button" aria-label="Page suivante">
+          ›
+        </button>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+<style>
+  .section-{{ section.id }} {
+    width: 100%;
+    background: var(--section-bg);
+    color: var(--text-color);
+    overflow: hidden;
+  }
+
+  .section-{{ section.id }} .product-reviews__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--padding-top-desktop) 48px var(--padding-bottom-desktop);
+  }
+
+  .section-{{ section.id }} .product-reviews__title {
+    font-family: "Manrope", sans-serif;
+    font-size: var(--title-size-desktop);
+    line-height: 1.2;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+    margin: 0 0 var(--title-bottom-space);
+  }
+
+  .section-{{ section.id }} .product-reviews__summary {
+    text-align: center;
+    margin-bottom: var(--summary-bottom-space);
+  }
+
+  .section-{{ section.id }} .product-reviews__rating-line {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-{{ section.id }} .product-reviews__rating {
+    font-family: "DM Sans", sans-serif;
+    font-size: var(--rating-size-desktop);
+    line-height: 1;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+
+  .section-{{ section.id }} .product-reviews__stars,
+  .section-{{ section.id }} .product-reviews__review-stars {
+    font-family: "DM Sans", sans-serif;
+    font-size: var(--stars-size);
+    line-height: 1;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .section-{{ section.id }} .product-reviews__based {
+    font-family: "DM Sans", sans-serif;
+    font-size: var(--summary-size);
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--muted-color);
+    margin-top: 4px;
+  }
+
+  .section-{{ section.id }} .product-reviews__list {
+    width: 100%;
+  }
+
+  .section-{{ section.id }} .product-reviews__item {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 28px;
+    padding: var(--review-padding-y) 0;
+    border-bottom: 1px solid var(--line-color);
+  }
+
+  .section-{{ section.id }} .product-reviews__author {
+    padding-top: 4px;
+  }
+
+  .section-{{ section.id }} .product-reviews__name {
+    font-family: "DM Sans", sans-serif;
+    font-size: var(--name-size);
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+
+  .section-{{ section.id }} .product-reviews__verified {
+    font-family: "DM Sans", sans-serif;
+    font-size: var(--verified-size);
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .section-{{ section.id }} .product-reviews__verified-icon {
+    width: 13px;
+    height: 13px;
+    border-radius: 999px;
+    background: var(--verified-color);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .section-{{ section.id }} .product-reviews__review-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .section-{{ section.id }} .product-reviews__review-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .section-{{ section.id }} .product-reviews__review-title {
+    font-family: "DM Sans", sans-serif;
+    font-size: var(--review-title-size);
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+  }
+
+  .section-{{ section.id }} .product-reviews__date {
+    font-family: "DM Sans", sans-serif;
+    font-size: var(--date-size);
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--text-color);
+    white-space: nowrap;
+  }
+
+  .section-{{ section.id }} .product-reviews__text {
+    font-family: "DM Sans", sans-serif;
+    font-size: var(--review-text-size);
+    line-height: 1.55;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: 18px;
+  }
+
+  .section-{{ section.id }} .product-reviews__text p {
+    margin: 0;
+  }
+
+  .section-{{ section.id }} .product-reviews__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 54px;
+  }
+
+  .section-{{ section.id }} .product-reviews__page,
+  .section-{{ section.id }} .product-reviews__page-arrow {
+    appearance: none;
+    border: none;
+    background: transparent;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .section-{{ section.id }} .product-reviews__page {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+  }
+
+  .section-{{ section.id }} .product-reviews__page.is-active {
+    background: var(--pagination-bg);
+    color: var(--pagination-text);
+  }
+
+  .section-{{ section.id }} .product-reviews__page-arrow {
+    font-size: 28px;
+    color: var(--muted-color);
+  }
+
+  @media screen and (max-width: 989px) {
+    .section-{{ section.id }} .product-reviews__inner {
+      padding: var(--padding-top-mobile) 24px var(--padding-bottom-mobile);
+    }
+
+    .section-{{ section.id }} .product-reviews__title {
+      font-size: var(--title-size-mobile);
+      margin-bottom: 46px;
+    }
+
+    .section-{{ section.id }} .product-reviews__rating {
+      font-size: var(--rating-size-mobile);
+    }
+
+    .section-{{ section.id }} .product-reviews__summary {
+      margin-bottom: 48px;
+    }
+
+    .section-{{ section.id }} .product-reviews__item {
+      grid-template-columns: 1fr;
+      gap: 18px;
+      padding: calc(var(--review-padding-y) * 0.72) 0;
+    }
+
+    .section-{{ section.id }} .product-reviews__author {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-top: 0;
+    }
+
+    .section-{{ section.id }} .product-reviews__review-head {
+      gap: 14px;
+    }
+
+    .section-{{ section.id }} .product-reviews__review-left {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .section-{{ section.id }} .product-reviews__text {
+      margin-top: 14px;
+    }
+
+    .section-{{ section.id }} .product-reviews__pagination {
+      gap: 16px;
+      margin-top: 38px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }} .product-reviews__inner {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .section-{{ section.id }} .product-reviews__title {
+      line-height: 1.25;
+    }
+
+    .section-{{ section.id }} .product-reviews__rating-line {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .section-{{ section.id }} .product-reviews__review-head {
+      flex-direction: column;
+    }
+
+    .section-{{ section.id }} .product-reviews__date {
+      align-self: flex-start;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Avis produit custom",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Titre et résumé"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Avis sur notre Berbérine pure"
+    },
+    {
+      "type": "text",
+      "id": "rating",
+      "label": "Note",
+      "default": "4.5"
+    },
+    {
+      "type": "text",
+      "id": "stars",
+      "label": "Étoiles résumé",
+      "default": "★★★★★"
+    },
+    {
+      "type": "text",
+      "id": "based_text",
+      "label": "Texte sous la note",
+      "default": "Basé sur 1188 avis"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagination",
+      "label": "Afficher la pagination",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "pagination_pages",
+      "label": "Pages pagination",
+      "default": "1,2,3,4,5"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fond section",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texte principal",
+      "default": "#071846"
+    },
+    {
+      "type": "color",
+      "id": "muted_text_color",
+      "label": "Texte secondaire",
+      "default": "#071846"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Couleur étoiles",
+      "default": "#FFC94A"
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Lignes séparatrices",
+      "default": "#E9E9E9"
+    },
+    {
+      "type": "color",
+      "id": "verified_color",
+      "label": "Pastille vérifiée",
+      "default": "#071846"
+    },
+    {
+      "type": "color",
+      "id": "pagination_background",
+      "label": "Fond page active",
+      "default": "#071846"
+    },
+    {
+      "type": "color",
+      "id": "pagination_text_color",
+      "label": "Texte page active",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Tailles textes"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Taille titre desktop",
+      "min": 22,
+      "max": 52,
+      "step": 1,
+      "unit": "px",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille titre mobile",
+      "min": 22,
+      "max": 42,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "rating_size_desktop",
+      "label": "Taille note desktop",
+      "min": 26,
+      "max": 58,
+      "step": 1,
+      "unit": "px",
+      "default": 46
+    },
+    {
+      "type": "range",
+      "id": "rating_size_mobile",
+      "label": "Taille note mobile",
+      "min": 24,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "stars_size",
+      "label": "Taille étoiles",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "summary_size",
+      "label": "Taille texte résumé",
+      "min": 9,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "label": "Taille nom",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "verified_size",
+      "label": "Taille acheteur vérifié",
+      "min": 9,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "review_title_size",
+      "label": "Taille titre avis",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "review_text_size",
+      "label": "Taille texte avis",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "date_size",
+      "label": "Taille date",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Dimensions et espacements"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximum",
+      "min": 760,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "default": 1120
+    },
+    {
+      "type": "range",
+      "id": "title_bottom_space",
+      "label": "Espace titre / note",
+      "min": 30,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "summary_bottom_space",
+      "label": "Espace note / avis",
+      "min": 40,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 86
+    },
+    {
+      "type": "range",
+      "id": "review_padding_y",
+      "label": "Espacement vertical avis",
+      "min": 28,
+      "max": 90,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Marges section"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Marge haute desktop",
+      "min": 30,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Marge basse desktop",
+      "min": 30,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Marge haute mobile",
+      "min": 24,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Marge basse mobile",
+      "min": 24,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avis",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nom client",
+          "default": "Evelyne E."
+        },
+        {
+          "type": "text",
+          "id": "verified",
+          "label": "Texte vérifié",
+          "default": "Acheteur vérifié"
+        },
+        {
+          "type": "text",
+          "id": "stars",
+          "label": "Étoiles",
+          "default": "★★★★★"
+        },
+        {
+          "type": "text",
+          "id": "review_title",
+          "label": "Titre avis",
+          "default": "Très bien , efficace sur"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texte avis",
+          "default": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default": "30/05/26"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avis produit custom",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Sylvie A.",
+            "stars": "★★★★★",
+            "review_title": "Produit de qualité",
+            "text": "<p>Bon produit pour maintenir sa glycémie à niveau stable avec une alimentation équilibrée</p>",
+            "date": "26/05/26"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Sophie B.",
+            "stars": "★★★★★",
+            "review_title": ".",
+            "text": "<p>.</p>",
+            "date": "25/05/26"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Céline H.",
+            "stars": "★★★★☆",
+            "review_title": "Prit avec le chardon Marie",
+            "text": "<p>Prit avec le chardon Marie de chez dynveo Bon produit Je recommande</p>",
+            "date": "23/05/26"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "chantal m.",
+            "stars": "★★★★★",
+            "review_title": "Je me sens mieux après",
+            "text": "<p>Je me sens mieux après un mois de prise de berberine plus légère au moment de la digestion Je recommande</p>",
+            "date": "22/05/26"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
