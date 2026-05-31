@@ -1,0 +1,1097 @@
+{% comment %}
+  Section Shopify : Berbérine Benefits Slider
+  Police titres : Manrope
+  Police paragraphes : DM Sans
+{% endcomment %}
+
+<section
+  id="berberine-benefits-{{ section.id }}"
+  class="berberine-benefits-section"
+  style="
+    --cream: {{ section.settings.cream_color }};
+    --yellow: {{ section.settings.yellow_color }};
+    --blue: {{ section.settings.blue_color }};
+    --left-bg: {{ section.settings.left_bg }};
+    --title-color: {{ section.settings.title_color }};
+    --text-color: {{ section.settings.text_color }};
+    --card-bg: {{ section.settings.card_bg }};
+    --card-border: {{ section.settings.card_border }};
+    --check-bg: {{ section.settings.check_bg }};
+    --track-bg: {{ section.settings.track_bg }};
+    --progress-bg: {{ section.settings.progress_bg }};
+    --max-width: {{ section.settings.max_width }}px;
+    --desktop-card-width: {{ section.settings.desktop_card_width }}px;
+    --mobile-card-width: {{ section.settings.mobile_card_width }}px;
+    --card-radius: {{ section.settings.card_radius }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+    --padding-left-desktop: {{ section.settings.padding_left_desktop }}px;
+    --padding-right-desktop: {{ section.settings.padding_right_desktop }}px;
+    --padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+    --padding-left-mobile: {{ section.settings.padding_left_mobile }}px;
+    --padding-right-mobile: {{ section.settings.padding_right_mobile }}px;
+  "
+>
+  <div class="berberine-benefits-bg">
+    <div class="berberine-benefits-bg-left"></div>
+
+    <div class="berberine-benefits-bg-image">
+      {% if section.settings.bg_image != blank %}
+        {{
+          section.settings.bg_image
+          | image_url: width: 1800
+          | image_tag:
+            loading: 'lazy',
+            class: 'berberine-benefits-image',
+            alt: section.settings.title
+        }}
+      {% else %}
+        <div class="berberine-benefits-placeholder">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="berberine-benefits-inner">
+    <div class="berberine-benefits-title-wrap">
+      {% if section.settings.title != blank %}
+        <h2>{{ section.settings.title }}</h2>
+      {% endif %}
+    </div>
+
+    <div class="berberine-benefits-slider-wrap">
+      <div class="berberine-benefits-slider">
+        {% for block in section.blocks %}
+          <article class="berberine-benefits-card" {{ block.shopify_attributes }}>
+            <div class="benefit-card-progress">
+              <span class="benefit-progress-minus">−</span>
+
+              <div class="benefit-progress-track">
+                <span
+                  class="benefit-progress-fill"
+                  style="width: {{ block.settings.progress_width }}%;"
+                ></span>
+              </div>
+
+              <span class="benefit-progress-plus">+</span>
+            </div>
+
+            {% if block.settings.title != blank %}
+              <h3>{{ block.settings.title }}</h3>
+            {% endif %}
+
+            {% if block.settings.subtitle != blank %}
+              <p class="benefit-subtitle">{{ block.settings.subtitle }}</p>
+            {% endif %}
+
+            <ul class="benefit-list">
+              {% if block.settings.bullet_1 != blank %}
+                <li>{{ block.settings.bullet_1 }}</li>
+              {% endif %}
+
+              {% if block.settings.bullet_2 != blank %}
+                <li>{{ block.settings.bullet_2 }}</li>
+              {% endif %}
+
+              {% if block.settings.bullet_3 != blank %}
+                <li>{{ block.settings.bullet_3 }}</li>
+              {% endif %}
+
+              {% if block.settings.bullet_4 != blank %}
+                <li>{{ block.settings.bullet_4 }}</li>
+              {% endif %}
+
+              {% if block.settings.bullet_5 != blank %}
+                <li>{{ block.settings.bullet_5 }}</li>
+              {% endif %}
+            </ul>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+  #berberine-benefits-{{ section.id }} {
+    position: relative;
+    overflow: hidden;
+    background: var(--left-bg);
+    padding:
+      var(--padding-top-desktop)
+      var(--padding-right-desktop)
+      var(--padding-bottom-desktop)
+      var(--padding-left-desktop);
+  }
+
+  #berberine-benefits-{{ section.id }} * {
+    box-sizing: border-box;
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-bg {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: {{ section.settings.desktop_left_width }}% 1fr;
+    z-index: 0;
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-bg-left {
+    background: var(--left-bg);
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-bg-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--blue);
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-image,
+  #berberine-benefits-{{ section.id }} .berberine-benefits-placeholder svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-bg-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: {{ section.settings.image_overlay }};
+    pointer-events: none;
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-inner {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-title-wrap {
+    margin-bottom: {{ section.settings.title_margin_bottom }}px;
+    max-width: {{ section.settings.title_max_width }}px;
+  }
+
+  #berberine-benefits-{{ section.id }} h2 {
+    margin: 0;
+    color: var(--title-color);
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ section.settings.title_size_desktop }}px;
+    line-height: 1.08;
+    font-weight: {{ section.settings.title_weight }};
+    letter-spacing: -0.055em;
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-slider-wrap {
+    width: 100%;
+    overflow: visible;
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-slider {
+    display: flex;
+    gap: {{ section.settings.card_gap_desktop }}px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 2px;
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-card {
+    flex: 0 0 var(--desktop-card-width);
+    width: var(--desktop-card-width);
+    min-height: {{ section.settings.card_min_height_desktop }}px;
+    display: flex;
+    flex-direction: column;
+    padding:
+      {{ section.settings.card_padding_y_desktop }}px
+      {{ section.settings.card_padding_x_desktop }}px;
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    background: var(--card-bg);
+    color: var(--text-color);
+    scroll-snap-align: start;
+    backdrop-filter: blur({{ section.settings.card_blur }}px);
+    -webkit-backdrop-filter: blur({{ section.settings.card_blur }}px);
+  }
+
+  #berberine-benefits-{{ section.id }} .benefit-card-progress {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    height: {{ section.settings.progress_height }}px;
+    margin-bottom: {{ section.settings.progress_margin_bottom }}px;
+    padding: 0 8px;
+    border-radius: 999px;
+    background: rgba(254, 249, 240, 0.18);
+  }
+
+  #berberine-benefits-{{ section.id }} .benefit-progress-minus,
+  #berberine-benefits-{{ section.id }} .benefit-progress-plus {
+    color: var(--cream);
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ section.settings.progress_symbol_size }}px;
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  #berberine-benefits-{{ section.id }} .benefit-progress-track {
+    position: relative;
+    width: 100%;
+    height: {{ section.settings.progress_line_height }}px;
+    border-radius: 999px;
+    background: var(--track-bg);
+    overflow: hidden;
+  }
+
+  #berberine-benefits-{{ section.id }} .benefit-progress-track::before,
+  #berberine-benefits-{{ section.id }} .benefit-progress-track::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    width: 1px;
+    background: rgba(254, 249, 240, 0.8);
+    z-index: 2;
+  }
+
+  #berberine-benefits-{{ section.id }} .benefit-progress-track::before {
+    left: 25%;
+    box-shadow:
+      calc({{ section.settings.desktop_card_width }}px * 0.16) 0 0 rgba(254, 249, 240, 0.8),
+      calc({{ section.settings.desktop_card_width }}px * 0.32) 0 0 rgba(254, 249, 240, 0.8);
+  }
+
+  #berberine-benefits-{{ section.id }} .benefit-progress-track::after {
+    left: 75%;
+  }
+
+  #berberine-benefits-{{ section.id }} .benefit-progress-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    border-radius: 999px;
+    background: var(--progress-bg);
+  }
+
+  #berberine-benefits-{{ section.id }} .berberine-benefits-card h3 {
+    margin: 0 0 {{ section.settings.card_title_margin_bottom }}px;
+    color: var(--cream);
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ section.settings.card_title_size_desktop }}px;
+    line-height: 1.12;
+    font-weight: {{ section.settings.card_title_weight }};
+    letter-spacing: -0.05em;
+  }
+
+  #berberine-benefits-{{ section.id }} .benefit-subtitle {
+    margin: 0;
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: {{ section.settings.card_text_size_desktop }}px;
+    line-height: 1.35;
+    font-weight: {{ section.settings.card_text_weight }};
+    letter-spacing: -0.02em;
+  }
+
+  #berberine-benefits-{{ section.id }} .benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.bullet_gap }}px;
+    margin: auto 0 0;
+    padding: {{ section.settings.bullets_margin_top }}px 0 0;
+    list-style: none;
+  }
+
+  #berberine-benefits-{{ section.id }} .benefit-list li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: {{ section.settings.bullet_size_desktop }}px;
+    line-height: 1.35;
+    font-weight: {{ section.settings.bullet_weight }};
+    letter-spacing: -0.02em;
+  }
+
+  #berberine-benefits-{{ section.id }} .benefit-list li::before {
+    content: "✓";
+    width: {{ section.settings.check_size }}px;
+    height: {{ section.settings.check_size }}px;
+    min-width: {{ section.settings.check_size }}px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    border-radius: 50%;
+    background: var(--check-bg);
+    color: var(--cream);
+    font-size: calc({{ section.settings.check_size }}px * 0.58);
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  @media screen and (max-width: 989px) {
+    #berberine-benefits-{{ section.id }} {
+      padding:
+        var(--padding-top-mobile)
+        var(--padding-right-mobile)
+        var(--padding-bottom-mobile)
+        var(--padding-left-mobile);
+      background: var(--left-bg);
+    }
+
+    #berberine-benefits-{{ section.id }} .berberine-benefits-bg {
+      display: block;
+    }
+
+    #berberine-benefits-{{ section.id }} .berberine-benefits-bg-left {
+      display: none;
+    }
+
+    #berberine-benefits-{{ section.id }} .berberine-benefits-bg-image {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: {{ section.settings.mobile_image_top }}px;
+      bottom: 0;
+      height: auto;
+    }
+
+    #berberine-benefits-{{ section.id }} .berberine-benefits-bg-image::after {
+      background: {{ section.settings.mobile_image_overlay }};
+    }
+
+    #berberine-benefits-{{ section.id }} .berberine-benefits-title-wrap {
+      margin-bottom: {{ section.settings.title_margin_bottom_mobile }}px;
+      max-width: {{ section.settings.title_max_width_mobile }}px;
+    }
+
+    #berberine-benefits-{{ section.id }} h2 {
+      font-size: {{ section.settings.title_size_mobile }}px;
+      line-height: 1.06;
+    }
+
+    #berberine-benefits-{{ section.id }} .berberine-benefits-slider {
+      gap: {{ section.settings.card_gap_mobile }}px;
+      padding-right: {{ section.settings.mobile_peek_width }}px;
+    }
+
+    #berberine-benefits-{{ section.id }} .berberine-benefits-card {
+      flex: 0 0 var(--mobile-card-width);
+      width: var(--mobile-card-width);
+      min-height: {{ section.settings.card_min_height_mobile }}px;
+      padding:
+        {{ section.settings.card_padding_y_mobile }}px
+        {{ section.settings.card_padding_x_mobile }}px;
+    }
+
+    #berberine-benefits-{{ section.id }} .berberine-benefits-card h3 {
+      font-size: {{ section.settings.card_title_size_mobile }}px;
+    }
+
+    #berberine-benefits-{{ section.id }} .benefit-subtitle {
+      font-size: {{ section.settings.card_text_size_mobile }}px;
+    }
+
+    #berberine-benefits-{{ section.id }} .benefit-list li {
+      font-size: {{ section.settings.bullet_size_mobile }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Berbérine benefits",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenu"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Les bienfaits de la Berbérine pure"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Image de fond"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs du site"
+    },
+    {
+      "type": "color",
+      "id": "cream_color",
+      "label": "Crème",
+      "default": "#FEF9F0"
+    },
+    {
+      "type": "color",
+      "id": "yellow_color",
+      "label": "Jaune",
+      "default": "#FFF27B"
+    },
+    {
+      "type": "color",
+      "id": "blue_color",
+      "label": "Bleu",
+      "default": "#A5BFDB"
+    },
+    {
+      "type": "color",
+      "id": "left_bg",
+      "label": "Fond partie gauche / mobile haut",
+      "default": "#A5BFDB"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#FEF9F0"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur texte",
+      "default": "#FEF9F0"
+    },
+    {
+      "type": "color_background",
+      "id": "card_bg",
+      "label": "Fond des cartes",
+      "default": "linear-gradient(145deg, rgba(165,191,219,0.88), rgba(14,35,64,0.78))"
+    },
+    {
+      "type": "color",
+      "id": "card_border",
+      "label": "Bordure des cartes",
+      "default": "#FEF9F0"
+    },
+    {
+      "type": "color",
+      "id": "check_bg",
+      "label": "Fond des checks",
+      "default": "#A5BFDB"
+    },
+    {
+      "type": "color",
+      "id": "track_bg",
+      "label": "Fond barre",
+      "default": "#A5BFDB"
+    },
+    {
+      "type": "color",
+      "id": "progress_bg",
+      "label": "Remplissage barre",
+      "default": "#FFF27B"
+    },
+    {
+      "type": "color_background",
+      "id": "image_overlay",
+      "label": "Overlay image PC",
+      "default": "linear-gradient(90deg, rgba(165,191,219,0.15), rgba(165,191,219,0.05))"
+    },
+    {
+      "type": "color_background",
+      "id": "mobile_image_overlay",
+      "label": "Overlay image mobile",
+      "default": "linear-gradient(180deg, rgba(165,191,219,0.05), rgba(165,191,219,0.18))"
+    },
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Taille titre PC",
+      "min": 28,
+      "max": 80,
+      "step": 1,
+      "default": 47
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille titre mobile",
+      "min": 26,
+      "max": 56,
+      "step": 1,
+      "default": 34
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Épaisseur titre",
+      "default": "600",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra-bold" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "title_max_width",
+      "label": "Largeur max titre PC",
+      "min": 400,
+      "max": 1100,
+      "step": 10,
+      "default": 840
+    },
+    {
+      "type": "range",
+      "id": "title_max_width_mobile",
+      "label": "Largeur max titre mobile",
+      "min": 260,
+      "max": 600,
+      "step": 10,
+      "default": 390
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "label": "Marge sous titre PC",
+      "min": 20,
+      "max": 110,
+      "step": 2,
+      "default": 76
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom_mobile",
+      "label": "Marge sous titre mobile",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "default": 34
+    },
+    {
+      "type": "header",
+      "content": "Cartes"
+    },
+    {
+      "type": "range",
+      "id": "desktop_card_width",
+      "label": "Largeur carte PC",
+      "min": 260,
+      "max": 460,
+      "step": 10,
+      "default": 370
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_width",
+      "label": "Largeur carte mobile",
+      "min": 250,
+      "max": 360,
+      "step": 5,
+      "default": 280
+    },
+    {
+      "type": "range",
+      "id": "card_min_height_desktop",
+      "label": "Hauteur minimum carte PC",
+      "min": 220,
+      "max": 420,
+      "step": 10,
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "card_min_height_mobile",
+      "label": "Hauteur minimum carte mobile",
+      "min": 250,
+      "max": 460,
+      "step": 5,
+      "default": 335
+    },
+    {
+      "type": "range",
+      "id": "card_gap_desktop",
+      "label": "Espace entre cartes PC",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_gap_mobile",
+      "label": "Espace entre cartes mobile",
+      "min": 8,
+      "max": 32,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi cartes",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "card_blur",
+      "label": "Flou arrière-plan carte",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "card_padding_x_desktop",
+      "label": "Padding horizontal carte PC",
+      "min": 14,
+      "max": 44,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_padding_y_desktop",
+      "label": "Padding vertical carte PC",
+      "min": 14,
+      "max": 44,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_padding_x_mobile",
+      "label": "Padding horizontal carte mobile",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "card_padding_y_mobile",
+      "label": "Padding vertical carte mobile",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "type": "header",
+      "content": "Typographie cartes"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_desktop",
+      "label": "Taille titre carte PC",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "label": "Taille titre carte mobile",
+      "min": 18,
+      "max": 34,
+      "step": 1,
+      "default": 22
+    },
+    {
+      "type": "select",
+      "id": "card_title_weight",
+      "label": "Épaisseur titre carte",
+      "default": "700",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra-bold" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "card_title_margin_bottom",
+      "label": "Marge sous titre carte",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_desktop",
+      "label": "Taille sous-texte PC",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_mobile",
+      "label": "Taille sous-texte mobile",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "card_text_weight",
+      "label": "Épaisseur sous-texte",
+      "default": "600",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "bullet_size_desktop",
+      "label": "Taille puces PC",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "bullet_size_mobile",
+      "label": "Taille puces mobile",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "bullet_weight",
+      "label": "Épaisseur puces",
+      "default": "700",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "bullets_margin_top",
+      "label": "Marge avant les puces",
+      "min": 20,
+      "max": 90,
+      "step": 2,
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "bullet_gap",
+      "label": "Espace entre puces",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "check_size",
+      "label": "Taille icône check",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Barre de niveau"
+    },
+    {
+      "type": "range",
+      "id": "progress_height",
+      "label": "Hauteur bloc barre",
+      "min": 16,
+      "max": 34,
+      "step": 1,
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "progress_line_height",
+      "label": "Hauteur ligne barre",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "progress_symbol_size",
+      "label": "Taille - et +",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "progress_margin_bottom",
+      "label": "Marge sous barre",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "default": 22
+    },
+    {
+      "type": "header",
+      "content": "Disposition"
+    },
+    {
+      "type": "range",
+      "id": "desktop_left_width",
+      "label": "Largeur partie gauche PC en %",
+      "min": 30,
+      "max": 70,
+      "step": 1,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximum contenu",
+      "min": 1000,
+      "max": 1900,
+      "step": 20,
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_top",
+      "label": "Début image mobile",
+      "min": 80,
+      "max": 240,
+      "step": 2,
+      "default": 112
+    },
+    {
+      "type": "range",
+      "id": "mobile_peek_width",
+      "label": "Aperçu carte suivante mobile",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Padding section"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding haut PC",
+      "min": 20,
+      "max": 160,
+      "step": 2,
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bas PC",
+      "min": 20,
+      "max": 160,
+      "step": 2,
+      "default": 66
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "label": "Padding gauche PC",
+      "min": 20,
+      "max": 140,
+      "step": 2,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "label": "Padding droite PC",
+      "min": 20,
+      "max": 140,
+      "step": 2,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding haut mobile",
+      "min": 16,
+      "max": 100,
+      "step": 2,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bas mobile",
+      "min": 16,
+      "max": 100,
+      "step": 2,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "label": "Padding gauche mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "label": "Padding droite mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Carte bienfait",
+      "settings": [
+        {
+          "type": "range",
+          "id": "progress_width",
+          "label": "Remplissage barre en %",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 90
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Glycémie"
+        },
+        {
+          "type": "textarea",
+          "id": "subtitle",
+          "label": "Sous-titre",
+          "default": "Contribue à maintenir une glycémie normale"
+        },
+        {
+          "type": "text",
+          "id": "bullet_1",
+          "label": "Puce 1",
+          "default": "Aide à maintenir la glycémie à jeun"
+        },
+        {
+          "type": "text",
+          "id": "bullet_2",
+          "label": "Puce 2",
+          "default": "Limite les pics de sucre après les repas"
+        },
+        {
+          "type": "text",
+          "id": "bullet_3",
+          "label": "Puce 3",
+          "default": "Favorise la sensibilité à l’insuline"
+        },
+        {
+          "type": "text",
+          "id": "bullet_4",
+          "label": "Puce 4"
+        },
+        {
+          "type": "text",
+          "id": "bullet_5",
+          "label": "Puce 5"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Berbérine benefits",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 95,
+            "title": "Glycémie",
+            "subtitle": "Contribue à maintenir une glycémie normale",
+            "bullet_1": "Aide à maintenir la glycémie à jeun",
+            "bullet_2": "Limite les pics de sucre après les repas",
+            "bullet_3": "Favorise la sensibilité à l’insuline"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 80,
+            "title": "Lipides sanguins",
+            "subtitle": "Contribue à maintenir des lipides sanguins normaux",
+            "bullet_1": "Favorise un taux de cholestérol normal",
+            "bullet_2": "Aide à contrôler les triglycérides",
+            "bullet_3": "Soutient la santé cardiovasculaire"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 65,
+            "title": "Santé génitale et urinaire",
+            "subtitle": "Soutient la sphère gynécologique et urinaire",
+            "bullet_1": "Contribue à l’équilibre du système reproducteur féminin",
+            "bullet_2": "Soutient la santé de la vessie"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 62,
+            "title": "Santé de la peau",
+            "subtitle": "Aide les peaux matures et à imperfections",
+            "bullet_1": "Aide les peaux d’adolescents",
+            "bullet_2": "A des effets anti-âge"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
