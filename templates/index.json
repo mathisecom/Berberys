@@ -14,10 +14,10 @@
       "name": "Immune Hero",
       "settings": {
         "hero_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T144347.545.png",
-        "image_alt": "Image promotionnelle",
+        "image_alt": "",
         "image_bg_color": "#fef9f0",
-        "text_width_desktop": 50,
-        "banner_min_height_desktop": 410,
+        "text_width_desktop": 70,
+        "banner_min_height_desktop": 360,
         "image_height_mobile": 350,
         "image_position_desktop": "center center",
         "image_position_mobile": "center center",
