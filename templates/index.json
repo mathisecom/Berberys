@@ -1509,6 +1509,7 @@
         "clean_item_MHejqd": {
           "type": "clean_item",
           "settings": {
+            "image": "shopify://shop_images/pexels-lan-yao-324969-9937951_b8645a2d-eee7-44ef-8f0c-057e1e174a13.avif",
             "title": "Sourcing éthique & local",
             "text": "Chez Mirabel, nous sélectionnons rigoureusement chaque ingrédient, en privilégiant les filières durables et locales, dans le respect de l’humain et de l’environnement."
           }
@@ -1516,6 +1517,7 @@
         "clean_item_xCH7bJ": {
           "type": "clean_item",
           "settings": {
+            "image": "shopify://shop_images/IMG_2845.avif",
             "title": "Pureté & naturalité",
             "text": "Nos formules sont conçues sans additifs ni excipients controversés, pour garantir la meilleure assimilation et une parfaite tolérance."
           }
@@ -1523,6 +1525,7 @@
         "clean_item_J8fVaa": {
           "type": "clean_item",
           "settings": {
+            "image": "shopify://shop_images/Firefly_Une_vue_rapprochee_de_differents_tubes_a_essai_en_verre_transparent_remplis_d_eau_et_682333.avif",
             "title": "Traçabilité & transparence",
             "text": "Du sourcing à la fabrication, chaque étape est tracée. Nous partageons en toute transparence l’origine, la composition et les procédés de nos produits."
           }
@@ -1549,8 +1552,8 @@
         "title_weight": "500",
         "title_align_mobile": "center",
         "title_margin_bottom_mobile": 38,
-        "image_size_desktop": 210,
-        "image_size_mobile": 230,
+        "image_size_desktop": 190,
+        "image_size_mobile": 170,
         "image_gap_desktop": 0,
         "card_column_width": 430,
         "card_min_height": 160,
