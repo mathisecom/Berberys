@@ -526,7 +526,7 @@
           "settings": {
             "position": "left",
             "title": "EXTRAITE DE \"BERBERIS ARISTATA\"",
-            "text": "<ul><li>Authentification botanique et traçabilité certifiées</li><li>Seule espèce avec des allégations santé sur la glycémie</li><li>Origine Laos</li></ul>"
+            "text": "<p>Authentification botanique et traçabilité certifiées </p><p>Seule espèce avec des allégations santé sur la glycémie </p><p>Origine Laos</p>"
           }
         },
         "feature_34EEHe": {
@@ -534,7 +534,7 @@
           "settings": {
             "position": "left",
             "title": "STANDARDISÉE ET CONTRÔLÉE À PLUS DE 98%",
-            "text": "<ul><li>Haut grade de Berbérine pure & stabilisée</li><li>Forme stable et naturelle</li></ul>"
+            "text": "<p>Haut grade de Berbérine pure & stabilisée</p><p>Forme stable et naturelle</p>"
           }
         },
         "feature_4X7rpN": {
@@ -542,7 +542,7 @@
           "settings": {
             "position": "right",
             "title": "100% PURE",
-            "text": "<ul><li>Gélule végétale & vegan en pullulan</li><li>Aucun support ni contaminant</li><li>Sans additifs ni excipients</li></ul>"
+            "text": "<p>Gélule végétale & vegan en pullulan</p><p>Aucun support ni contaminant</p><p>Sans additifs ni excipients</p>"
           }
         },
         "feature_QkfnjA": {
@@ -550,7 +550,7 @@
           "settings": {
             "position": "right",
             "title": "LE JUSTE DOSAGE",
-            "text": "<ul><li>300 mg / gélule</li><li>Dosage physiologique et validé par les autorités</li><li>Absence de surdosage</li></ul>"
+            "text": "<p>300 mg / gélule</p><p>Dosage physiologique et validé par les autorités</p><p>Absence de surdosage</p>"
           }
         },
         "accordion_i4YedE": {
@@ -613,18 +613,18 @@
         "header_margin_bottom": 56,
         "header_margin_bottom_mobile": 34,
         "center_image": "shopify://shop_images/berberine-image-matiere_43fca13c-6b64-4fe6-b8da-be41a91899b9.webp",
-        "center_image_size": 340,
+        "center_image_size": 350,
         "center_image_size_mobile": 280,
         "center_border_width": 0,
         "center_border_color": "#bfc1c9",
         "main_gap": 70,
         "feature_gap": 48,
         "feature_gap_mobile": 30,
-        "feature_title_size": 25,
-        "feature_title_size_mobile": 21,
+        "feature_title_size": 20,
+        "feature_title_size_mobile": 15,
         "feature_title_weight": "600",
-        "feature_text_size": 15,
-        "feature_text_size_mobile": 14,
+        "feature_text_size": 14,
+        "feature_text_size_mobile": 12,
         "main_margin_bottom": 90,
         "main_margin_bottom_mobile": 44,
         "close_others": true,
