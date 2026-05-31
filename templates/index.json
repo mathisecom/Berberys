@@ -20,7 +20,7 @@
         "banner_min_height_desktop": 360,
         "image_height_mobile": 350,
         "image_position_desktop": "center center",
-        "image_position_mobile": "center center",
+        "image_position_mobile": "top center",
         "badge_text": "Offre de Printemps",
         "offer_prefix": "Jusqu’à",
         "offer_value": "-50%",
