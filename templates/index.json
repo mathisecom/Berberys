@@ -518,6 +518,149 @@
         "lazy": true
       }
     },
+    "berberineaccordeon_QdbmeP": {
+      "type": "berberineaccordeon",
+      "blocks": {
+        "feature_UGqgDm": {
+          "type": "feature",
+          "settings": {
+            "position": "left",
+            "title": "EXTRAITE DE \"BERBERIS ARISTATA\"",
+            "text": "<ul><li>Authentification botanique et traçabilité certifiées</li><li>Seule espèce avec des allégations santé sur la glycémie</li><li>Origine Laos</li></ul>"
+          }
+        },
+        "feature_34EEHe": {
+          "type": "feature",
+          "settings": {
+            "position": "left",
+            "title": "STANDARDISÉE ET CONTRÔLÉE À PLUS DE 98%",
+            "text": "<ul><li>Haut grade de Berbérine pure & stabilisée</li><li>Forme stable et naturelle</li></ul>"
+          }
+        },
+        "feature_4X7rpN": {
+          "type": "feature",
+          "settings": {
+            "position": "right",
+            "title": "100% PURE",
+            "text": "<ul><li>Gélule végétale & vegan en pullulan</li><li>Aucun support ni contaminant</li><li>Sans additifs ni excipients</li></ul>"
+          }
+        },
+        "feature_QkfnjA": {
+          "type": "feature",
+          "settings": {
+            "position": "right",
+            "title": "LE JUSTE DOSAGE",
+            "text": "<ul><li>300 mg / gélule</li><li>Dosage physiologique et validé par les autorités</li><li>Absence de surdosage</li></ul>"
+          }
+        },
+        "accordion_i4YedE": {
+          "type": "accordion",
+          "settings": {
+            "open_by_default": true,
+            "title": "Un grade ultra pur",
+            "content": "<p>La plante Berberis aristata à l’origine de notre extrait est produite selon des <strong>méthodes durables</strong>. La plante est cultivée au Laos dans son environnement naturel, et les fruits sont récoltés manuellement.</p><p>L’extrait obtenu est contrôlé afin de garantir une <strong>qualité optimale</strong> et une excellente stabilité.</p>"
+          }
+        },
+        "accordion_TjmrWK": {
+          "type": "accordion",
+          "settings": {
+            "open_by_default": false,
+            "title": "Efficacité et synergie",
+            "content": "<p>Une formule pensée pour accompagner le corps avec une concentration précise et une assimilation optimale.</p>"
+          }
+        },
+        "accordion_D9eFwa": {
+          "type": "accordion",
+          "settings": {
+            "open_by_default": false,
+            "title": "Pourquoi des gélules de 300 mg plutôt que 500 mg ?",
+            "content": "<p>Le dosage est pensé pour rester cohérent avec une utilisation quotidienne maîtrisée.</p>"
+          }
+        },
+        "accordion_Xf6yA7": {
+          "type": "accordion",
+          "settings": {
+            "open_by_default": false,
+            "title": "Formule clean ultra stable",
+            "content": "<p>Une formule simple, propre et stable, sans additifs inutiles.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_UGqgDm",
+        "feature_34EEHe",
+        "feature_4X7rpN",
+        "feature_QkfnjA",
+        "accordion_i4YedE",
+        "accordion_TjmrWK",
+        "accordion_D9eFwa",
+        "accordion_Xf6yA7"
+      ],
+      "name": "Plus produit accordéon",
+      "settings": {
+        "bg_color": "#fef9f0",
+        "card_bg": "#ffffff",
+        "heading_color": "#111b4d",
+        "text_color": "#111b4d",
+        "line_color": "#b9bfd5",
+        "title": "Les plus de notre Berbérine pure",
+        "subtitle": "Extrait Berberis aristata",
+        "title_size_desktop": 42,
+        "title_size_mobile": 30,
+        "title_weight": "600",
+        "subtitle_size_desktop": 14,
+        "subtitle_size_mobile": 13,
+        "header_margin_bottom": 56,
+        "header_margin_bottom_mobile": 34,
+        "center_image": "shopify://shop_images/berberine-image-matiere_43fca13c-6b64-4fe6-b8da-be41a91899b9.webp",
+        "center_image_size": 340,
+        "center_image_size_mobile": 280,
+        "center_border_width": 0,
+        "center_border_color": "#bfc1c9",
+        "main_gap": 70,
+        "feature_gap": 48,
+        "feature_gap_mobile": 30,
+        "feature_title_size": 25,
+        "feature_title_size_mobile": 21,
+        "feature_title_weight": "600",
+        "feature_text_size": 15,
+        "feature_text_size_mobile": 14,
+        "main_margin_bottom": 90,
+        "main_margin_bottom_mobile": 44,
+        "close_others": true,
+        "accordion_max_width": 1540,
+        "accordion_gap": 14,
+        "radius": 10,
+        "accordion_padding_x": 22,
+        "accordion_padding_y": 18,
+        "accordion_padding_x_mobile": 16,
+        "accordion_padding_y_mobile": 16,
+        "accordion_title_size": 15,
+        "accordion_title_size_mobile": 14,
+        "symbol_size": 24,
+        "accordion_icon_width": 66,
+        "accordion_icon_height": 42,
+        "accordion_icon_width_mobile": 54,
+        "accordion_icon_height_mobile": 42,
+        "accordion_icon_radius": 7,
+        "content_image_width": 49,
+        "content_image_height": 530,
+        "content_image_height_mobile": 260,
+        "content_image_radius": 6,
+        "content_gap": 44,
+        "content_padding_bottom": 26,
+        "content_padding_bottom_mobile": 22,
+        "content_text_size": 18,
+        "content_text_size_mobile": 15,
+        "max_width": 1480,
+        "padding_top_desktop": 50,
+        "padding_bottom_desktop": 50,
+        "padding_side_desktop": 80,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 30,
+        "padding_side_mobile": 16
+      }
+    },
     "testimonialreviews_DeQWnV": {
       "type": "testimonialreviews",
       "blocks": {
@@ -1338,6 +1481,7 @@
     "featured_product_khQ4Qz",
     "carouselbienfait_K94Rki",
     "logoscrooll_6mjgGf",
+    "berberineaccordeon_QdbmeP",
     "testimonialreviews_DeQWnV",
     "ingredients_GxTqXY",
     "resultatsprouves_b3gcMW",
