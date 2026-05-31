@@ -27,8 +27,6 @@
     color: {{ text_color }};
     padding: {{ section.settings.padding_top_desktop }}px {{ section.settings.padding_x_desktop }}px {{ section.settings.padding_bottom_desktop }}px;
     font-family: {{ body_font.family }}, {{ body_font.fallback_families }};
-    font-style: {{ body_font.style }};
-    font-weight: {{ body_font.weight }};
     overflow: hidden;
   }
 
@@ -36,10 +34,32 @@
     box-sizing: border-box;
   }
 
-  .immune-hero-{{ section_id }} .immune-hero__container {
+  .immune-hero-{{ section_id }} .immune-hero__wrapper {
     width: 100%;
     max-width: {{ section.settings.content_max_width }}px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: {% if section.settings.hero_image != blank %}{{ section.settings.image_column_width }}% minmax(0, 1fr){% else %}1fr{% endif %};
+    align-items: center;
+    gap: {{ section.settings.image_content_gap }}px;
+  }
+
+  .immune-hero-{{ section_id }} .immune-hero__image-wrap {
+    display: {% if section.settings.hero_image != blank %}flex{% else %}none{% endif %};
+    justify-content: {{ section.settings.image_align_desktop }};
+    align-items: center;
+  }
+
+  .immune-hero-{{ section_id }} .immune-hero__image {
+    width: 100%;
+    max-width: {{ section.settings.image_width_desktop }}px;
+    border-radius: {{ section.settings.image_radius }}px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .immune-hero-{{ section_id }} .immune-hero__container {
+    width: 100%;
     text-align: center;
   }
 
@@ -66,7 +86,6 @@
     margin: 0 0 {{ section.settings.offer_margin_bottom }}px;
     color: {{ heading_color }};
     font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
-    font-style: {{ heading_font.style }};
     line-height: 1;
     letter-spacing: -0.04em;
   }
@@ -156,6 +175,23 @@
       padding: {{ section.settings.padding_top_mobile }}px {{ section.settings.padding_x_mobile }}px {{ section.settings.padding_bottom_mobile }}px;
     }
 
+    .immune-hero-{{ section_id }} .immune-hero__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: {{ section.settings.image_content_gap_mobile }}px;
+    }
+
+    .immune-hero-{{ section_id }} .immune-hero__image-wrap {
+      width: 100%;
+      justify-content: center;
+      order: -1;
+    }
+
+    .immune-hero-{{ section_id }} .immune-hero__image {
+      max-width: {{ section.settings.image_width_mobile }}px;
+      border-radius: {{ section.settings.image_radius_mobile }}px;
+    }
+
     .immune-hero-{{ section_id }} .immune-hero__container {
       max-width: 100%;
     }
@@ -204,62 +240,77 @@
 </style>
 
 <section class="immune-hero-{{ section_id }}">
-  <div class="immune-hero__container">
+  <div class="immune-hero__wrapper">
 
-    {%- if section.settings.badge_text != blank -%}
-      <div class="immune-hero__badge">
-        {{ section.settings.badge_text }}
+    {%- if section.settings.hero_image != blank -%}
+      <div class="immune-hero__image-wrap">
+        {{
+          section.settings.hero_image
+          | image_url: width: 900
+          | image_tag:
+            loading: 'lazy',
+            class: 'immune-hero__image',
+            alt: section.settings.image_alt
+        }}
       </div>
     {%- endif -%}
 
-    <div class="immune-hero__offer">
-      {%- if section.settings.offer_prefix != blank -%}
-        <span class="immune-hero__offer-prefix">
-          {{ section.settings.offer_prefix }}
-        </span>
+    <div class="immune-hero__container">
+      {%- if section.settings.badge_text != blank -%}
+        <div class="immune-hero__badge">
+          {{ section.settings.badge_text }}
+        </div>
       {%- endif -%}
 
-      {%- if section.settings.offer_value != blank -%}
-        <span class="immune-hero__offer-value">
-          {{ section.settings.offer_value }}
-        </span>
-      {%- endif -%}
-    </div>
-
-    {%- if section.settings.description != blank -%}
-      <p class="immune-hero__description">
-        {{ section.settings.description }}
-      </p>
-    {%- endif -%}
-
-    {%- if section.settings.btn_label != blank -%}
-      <a href="{{ section.settings.btn_link | default: '#' }}" class="immune-hero__btn">
-        {{ section.settings.btn_label }}
-      </a>
-    {%- endif -%}
-
-    {%- if section.settings.show_trustpilot -%}
-      <div class="immune-hero__trust">
-        {%- if section.settings.trust_label != blank -%}
-          <span>{{ section.settings.trust_label }}</span>
+      <div class="immune-hero__offer">
+        {%- if section.settings.offer_prefix != blank -%}
+          <span class="immune-hero__offer-prefix">
+            {{ section.settings.offer_prefix }}
+          </span>
         {%- endif -%}
 
-        {%- if section.settings.stars_text != blank -%}
-          <span class="immune-hero__stars">{{ section.settings.stars_text }}</span>
-        {%- endif -%}
-
-        {%- if section.settings.trust_score != blank -%}
-          <span>{{ section.settings.trust_score }}</span>
-        {%- endif -%}
-
-        {%- if section.settings.trust_brand != blank -%}
-          <span class="immune-hero__trust-brand">
-            <span class="immune-hero__trust-star">★</span>
-            {{ section.settings.trust_brand }}
+        {%- if section.settings.offer_value != blank -%}
+          <span class="immune-hero__offer-value">
+            {{ section.settings.offer_value }}
           </span>
         {%- endif -%}
       </div>
-    {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <p class="immune-hero__description">
+          {{ section.settings.description }}
+        </p>
+      {%- endif -%}
+
+      {%- if section.settings.btn_label != blank -%}
+        <a href="{{ section.settings.btn_link | default: '#' }}" class="immune-hero__btn">
+          {{ section.settings.btn_label }}
+        </a>
+      {%- endif -%}
+
+      {%- if section.settings.show_trustpilot -%}
+        <div class="immune-hero__trust">
+          {%- if section.settings.trust_label != blank -%}
+            <span>{{ section.settings.trust_label }}</span>
+          {%- endif -%}
+
+          {%- if section.settings.stars_text != blank -%}
+            <span class="immune-hero__stars">{{ section.settings.stars_text }}</span>
+          {%- endif -%}
+
+          {%- if section.settings.trust_score != blank -%}
+            <span>{{ section.settings.trust_score }}</span>
+          {%- endif -%}
+
+          {%- if section.settings.trust_brand != blank -%}
+            <span class="immune-hero__trust-brand">
+              <span class="immune-hero__trust-star">★</span>
+              {{ section.settings.trust_brand }}
+            </span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
 
   </div>
 </section>
@@ -270,6 +321,95 @@
   "tag": "section",
   "class": "section-immune-hero",
   "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Image à gauche PC / haut mobile"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Texte alternatif image",
+      "default": "Image promotionnelle"
+    },
+    {
+      "type": "range",
+      "id": "image_column_width",
+      "label": "Largeur colonne image PC en %",
+      "min": 20,
+      "max": 50,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "image_align_desktop",
+      "label": "Alignement image PC",
+      "default": "center",
+      "options": [
+        { "value": "flex-start", "label": "Gauche" },
+        { "value": "center", "label": "Centre" },
+        { "value": "flex-end", "label": "Droite" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "image_width_desktop",
+      "label": "Largeur image PC",
+      "min": 80,
+      "max": 500,
+      "step": 5,
+      "default": 280
+    },
+    {
+      "type": "range",
+      "id": "image_width_mobile",
+      "label": "Largeur image mobile",
+      "min": 80,
+      "max": 360,
+      "step": 5,
+      "default": 220
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Arrondi image PC",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "image_radius_mobile",
+      "label": "Arrondi image mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "image_content_gap",
+      "label": "Espace image / contenu PC",
+      "min": 20,
+      "max": 120,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "image_content_gap_mobile",
+      "label": "Espace image / contenu mobile",
+      "min": 10,
+      "max": 80,
+      "step": 2,
+      "default": 20
+    },
     {
       "type": "header",
       "content": "Contenu principal"
