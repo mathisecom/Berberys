@@ -900,6 +900,7 @@
         "stat_tADknP",
         "stat_DGi9GW"
       ],
+      "disabled": true,
       "name": "Résultats prouvés",
       "settings": {
         "content_width": 1200,
