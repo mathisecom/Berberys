@@ -356,6 +356,22 @@
             "title": "Digestion sereine et régulière",
             "text": "Apaise les inconforts, favorise un transit harmonieux au quotidien."
           }
+        },
+        "benefit_iCi7gr": {
+          "type": "benefit",
+          "settings": {
+            "badge": "ÉNERGIE",
+            "title": "Énergie stable toute la journée",
+            "text": "Soutient la vitalité et la concentration, sans coup de fatigue."
+          }
+        },
+        "benefit_x4Ap7E": {
+          "type": "benefit",
+          "settings": {
+            "badge": "ÉNERGIE",
+            "title": "Énergie stable toute la journée",
+            "text": "Soutient la vitalité et la concentration, sans coup de fatigue."
+          }
         }
       },
       "block_order": [
@@ -363,7 +379,9 @@
         "benefit_d8xCXn",
         "benefit_cj3bzf",
         "benefit_AUpHaM",
-        "benefit_pRGzY9"
+        "benefit_pRGzY9",
+        "benefit_iCi7gr",
+        "benefit_x4Ap7E"
       ],
       "name": "Bienfaits cure slider",
       "settings": {
@@ -383,8 +401,8 @@
         "arrow_size": 26,
         "gap_desktop": 20,
         "gap_mobile": 16,
-        "desktop_card_width": 280,
-        "desktop_card_height": 345,
+        "cards_per_view_desktop": 5,
+        "desktop_card_height": 425,
         "mobile_card_width": 300,
         "mobile_card_height": 425,
         "card_radius": 6,
@@ -415,11 +433,11 @@
         "line_margin_top": 14,
         "section_bg": "#fef9f0",
         "padding_top_desktop": 36,
-        "padding_bottom_desktop": 36,
+        "padding_bottom_desktop": 0,
         "padding_left_desktop": 40,
         "padding_right_desktop": 40,
         "padding_top_mobile": 30,
-        "padding_bottom_mobile": 40,
+        "padding_bottom_mobile": 0,
         "padding_left_mobile": 20,
         "padding_right_mobile": 0
       }
