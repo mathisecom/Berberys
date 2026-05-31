@@ -1,48 +1,1274 @@
+{% comment %}
+  Section : Featured Product Premium Custom
+{% endcomment %}
+
+<section
+  class="fp-detox-section"
+  style="
+    --fp-bg: {{ section.settings.page_background }};
+    --fp-card-bg: {{ section.settings.card_background }};
+    --fp-primary: {{ section.settings.primary_color }};
+    --fp-text: {{ section.settings.text_color }};
+    --fp-muted: {{ section.settings.muted_color }};
+    --fp-border: {{ section.settings.border_color }};
+    --fp-radius: {{ section.settings.radius }}px;
+  "
+>
+  {% assign product = section.settings.product %}
+
+  <div class="fp-detox-wrapper">
+
+    <div class="fp-gallery">
+
+      <div class="fp-main-image-wrap">
+        {% assign top_badge_text = section.settings.top_badge_text | strip %}
+        {% if top_badge_text != blank %}
+          <div class="fp-top-badge">
+            <span>{{ section.settings.top_badge_icon }}</span>
+            {{ top_badge_text }}
+          </div>
+        {% endif %}
+
+        <button class="fp-arrow fp-arrow-left" type="button" aria-label="Image précédente">
+          ‹
+        </button>
+
+        <div class="fp-main-image">
+          {% if section.settings.custom_main_image != blank %}
+            <img
+              src="{{ section.settings.custom_main_image | image_url: width: 1200 }}"
+              alt="{{ section.settings.custom_main_image.alt | escape }}"
+              loading="lazy"
+              class="fp-active-image"
+            >
+          {% elsif product != blank and product.featured_image != blank %}
+            <img
+              src="{{ product.featured_image | image_url: width: 1200 }}"
+              alt="{{ product.featured_image.alt | escape }}"
+              loading="lazy"
+              class="fp-active-image"
+            >
+          {% else %}
+            {{ 'product-1' | placeholder_svg_tag: 'fp-placeholder' }}
+          {% endif %}
+        </div>
+
+        <button class="fp-arrow fp-arrow-right" type="button" aria-label="Image suivante">
+          ›
+        </button>
+      </div>
+
+      <div class="fp-thumbnails">
+        {% if product != blank and product.media.size > 0 %}
+          {% for media in product.media limit: 7 %}
+            {% if media.media_type == 'image' %}
+              <button
+                type="button"
+                class="fp-thumb {% if forloop.first %}active{% endif %}"
+                data-image="{{ media.preview_image | image_url: width: 1200 }}"
+              >
+                <img
+                  src="{{ media.preview_image | image_url: width: 180 }}"
+                  alt="{{ media.alt | escape }}"
+                  loading="lazy"
+                >
+              </button>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          {% assign manual_gallery_count = 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'gallery_image' %}
+              {% assign manual_gallery_count = manual_gallery_count | plus: 1 %}
+              <button
+                type="button"
+                class="fp-thumb {% if manual_gallery_count == 1 %}active{% endif %}"
+                {% if block.settings.image != blank %}
+                  data-image="{{ block.settings.image | image_url: width: 1200 }}"
+                {% endif %}
+                {{ block.shopify_attributes }}
+              >
+                {% if block.settings.image != blank %}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 180 }}"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    loading="lazy"
+                  >
+                {% else %}
+                  {{ 'product-1' | placeholder_svg_tag: 'fp-thumb-placeholder' }}
+                {% endif %}
+              </button>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      <div class="fp-accordions fp-desktop-accordions">
+        {% for block in section.blocks %}
+          {% if block.type == 'accordion' %}
+            <details class="fp-accordion" {{ block.shopify_attributes }}>
+              <summary>
+                <span>{{ block.settings.title }}</span>
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </summary>
+              <div class="fp-accordion-content">
+                {{ block.settings.content }}
+              </div>
+            </details>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="fp-info-card">
+
+      {% assign review_text = section.settings.review_text | strip %}
+      {% if review_text != blank %}
+        <div class="fp-reviews">
+          <span class="fp-stars">{{ section.settings.stars }}</span>
+          <span>{{ review_text }}</span>
+        </div>
+      {% endif %}
+
+      <h1 class="fp-title">
+        {{ section.settings.title }}
+        {% assign title_italic = section.settings.title_italic | strip %}
+        {% if title_italic != blank %}
+          <em>{{ title_italic }}</em>
+        {% endif %}
+      </h1>
+
+      {% assign subtitle = section.settings.subtitle | strip %}
+      {% if subtitle != blank %}
+        <p class="fp-subtitle">{{ subtitle }}</p>
+      {% endif %}
+
+      <div class="fp-badges">
+        {% for block in section.blocks %}
+          {% if block.type == 'badge' %}
+            {% assign badge_text = block.settings.text | strip %}
+            {% if badge_text != blank %}
+              <div class="fp-badge" {{ block.shopify_attributes }}>
+                <span>{{ block.settings.icon }}</span>
+                {{ badge_text }}
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <ul class="fp-benefits">
+        {% for block in section.blocks %}
+          {% if block.type == 'benefit' %}
+            {% assign benefit_text = block.settings.text | strip %}
+            {% if benefit_text != blank %}
+              <li {{ block.shopify_attributes }}>
+                <span>✓</span>
+                {{ benefit_text }}
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <div class="fp-quantity-title">
+        {{ section.settings.quantity_title }}
+      </div>
+
+      {% if product != blank %}
+        {% form 'product', product, class: 'fp-product-form' %}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <input type="hidden" name="quantity" value="1" class="fp-real-quantity">
+
+          <div class="fp-offers">
+            {% for block in section.blocks %}
+              {% if block.type == 'offer' %}
+                {% assign offer_discount = block.settings.discount | strip %}
+                {% assign offer_compare_price = block.settings.compare_price | strip %}
+                {% assign offer_bottom_text = block.settings.bottom_text | strip %}
+
+                <label
+                  class="fp-offer-card {% if block.settings.selected %}active{% endif %}"
+                  data-quantity="{{ block.settings.quantity }}"
+                  {{ block.shopify_attributes }}
+                >
+                  {% if offer_discount != blank %}
+                    <div class="fp-discount">{{ offer_discount }}</div>
+                  {% endif %}
+
+                  <input
+                    type="radio"
+                    name="fp_quantity_selector"
+                    value="{{ block.settings.quantity }}"
+                    {% if block.settings.selected %}checked{% endif %}
+                  >
+
+                  <div class="fp-offer-title">{{ block.settings.title }}</div>
+
+                  <div class="fp-offer-price">
+                    {% if offer_compare_price != blank %}
+                      <span class="fp-compare">{{ offer_compare_price }}</span>
+                    {% endif %}
+                    <strong>{{ block.settings.price }}</strong>
+                  </div>
+
+                  {% if offer_bottom_text != blank %}
+                    <div class="fp-offer-bottom">{{ offer_bottom_text }}</div>
+                  {% endif %}
+                </label>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% assign stock_text = section.settings.stock_text | strip %}
+          {% if stock_text != blank %}
+            <div class="fp-stock">
+              <span></span>
+              {{ stock_text }}
+            </div>
+          {% endif %}
+
+          <button
+            type="submit"
+            name="add"
+            class="fp-add-button"
+            {% if product.available == false %}disabled{% endif %}
+          >
+            <span>{{ section.settings.button_text }}</span>
+            <span class="fp-button-divider"></span>
+            <span>{{ section.settings.button_price }}</span>
+          </button>
+        {% endform %}
+      {% else %}
+        <div class="fp-product-warning">
+          Sélectionnez un produit dans les paramètres de la section.
+        </div>
+      {% endif %}
+
+      <div class="fp-guarantees">
+        {% for block in section.blocks %}
+          {% if block.type == 'guarantee' %}
+            {% assign guarantee_text = block.settings.text | strip %}
+            {% if guarantee_text != blank %}
+              <div class="fp-guarantee" {{ block.shopify_attributes }}>
+                <span class="fp-guarantee-icon">{{ block.settings.icon }}</span>
+                <span>{{ guarantee_text }}</span>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="fp-accordions fp-mobile-accordions">
+        {% for block in section.blocks %}
+          {% if block.type == 'accordion' %}
+            <details class="fp-accordion" {{ block.shopify_attributes }}>
+              <summary>
+                <span>{{ block.settings.title }}</span>
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </summary>
+              <div class="fp-accordion-content">
+                {{ block.settings.content }}
+              </div>
+            </details>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .fp-detox-section {
+    background: var(--fp-bg);
+    padding: 18px 20px 44px;
+    color: var(--fp-text);
+  }
+
+  .fp-detox-wrapper {
+    max-width: 1540px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.03fr) minmax(420px, 0.97fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .fp-gallery {
+    min-width: 0;
+  }
+
+  .fp-main-image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--fp-radius);
+    overflow: hidden;
+    background: #f4f0e8;
+  }
+
+  .fp-main-image,
+  .fp-main-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .fp-main-image img {
+    display: block;
+    object-fit: cover;
+  }
+
+  .fp-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #eee;
+  }
+
+  .fp-top-badge {
+    position: absolute;
+    top: 24px;
+    right: 46px;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(8px);
+    color: #4c432d;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 7px 18px;
+    display: inline-flex;
+    gap: 7px;
+    align-items: center;
+  }
+
+  .fp-arrow {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255, 255, 255, 0.88);
+    color: #102b12;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fp-arrow-left {
+    left: 14px;
+  }
+
+  .fp-arrow-right {
+    right: 14px;
+  }
+
+  .fp-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 13px;
+    margin-top: 24px;
+  }
+
+  .fp-thumb {
+    border: 1px solid transparent;
+    background: #f3eee6;
+    padding: 0;
+    border-radius: 7px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+  }
+
+  .fp-thumb.active {
+    border-color: #111;
+  }
+
+  .fp-thumb img,
+  .fp-thumb svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .fp-info-card {
+    background: var(--fp-card-bg);
+    border-radius: 9px;
+    padding: 43px 36px 36px;
+    min-height: 100%;
+  }
+
+  .fp-reviews {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .fp-stars {
+    color: #dd9b59;
+    letter-spacing: 1px;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .fp-title {
+    color: var(--fp-primary);
+    font-size: clamp(34px, 3vw, 47px);
+    line-height: 1.02;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+  }
+
+  .fp-title em {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.04em;
+  }
+
+  .fp-subtitle {
+    margin: 8px 0 18px;
+    font-size: 20px;
+    line-height: 1.25;
+    color: #000;
+  }
+
+  .fp-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px 9px;
+    margin-bottom: 20px;
+  }
+
+  .fp-badge {
+    background: #fff;
+    border-radius: 999px;
+    padding: 6px 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    color: #282319;
+    line-height: 1;
+  }
+
+  .fp-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+    display: grid;
+    gap: 8px;
+  }
+
+  .fp-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 17px;
+    line-height: 1.2;
+  }
+
+  .fp-benefits span {
+    color: #697b38;
+    font-weight: 700;
+  }
+
+  .fp-quantity-title {
+    font-weight: 700;
+    margin-bottom: 13px;
+    font-size: 16px;
+  }
+
+  .fp-offers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 27px;
+  }
+
+  .fp-offer-card {
+    position: relative;
+    min-height: 103px;
+    border: 1px solid var(--fp-border);
+    background: #fff;
+    border-radius: 4px;
+    padding: 24px 10px 0;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .fp-offer-card.active {
+    border: 2px solid #111;
+  }
+
+  .fp-offer-card input {
+    display: none;
+  }
+
+  .fp-discount {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #005a35;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 3px 8px;
+  }
+
+  .fp-offer-title {
+    color: #7b7831;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
+
+  .fp-offer-price {
+    font-size: 16px;
+    color: #000;
+  }
+
+  .fp-compare {
+    color: #8b8578;
+    text-decoration: line-through;
+    font-size: 13px;
+    margin-right: 3px;
+  }
+
+  .fp-offer-bottom {
+    margin: 13px -10px 0;
+    background: #d8f3d4;
+    color: #7a7b2b;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 4px;
+    text-transform: uppercase;
+  }
+
+  .fp-stock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    font-size: 15px;
+  }
+
+  .fp-stock span {
+    width: 11px;
+    height: 11px;
+    background: #05b975;
+    border-radius: 50%;
+    flex: none;
+  }
+
+  .fp-add-button {
+    width: 100%;
+    border: none;
+    background: #0d2a0e;
+    color: #fff;
+    min-height: 60px;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .fp-add-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .fp-button-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .fp-guarantees {
+    border-top: 1px solid #e4dfd6;
+    border-bottom: 1px solid #e4dfd6;
+    margin-top: 20px;
+    padding: 14px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+  }
+
+  .fp-guarantee {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 14px;
+    line-height: 1.15;
+  }
+
+  .fp-guarantee-icon {
+    font-size: 21px;
+    flex: none;
+  }
+
+  .fp-accordions {
+    margin-top: 28px;
+  }
+
+  .fp-accordion {
+    border-bottom: 1px solid #dfdfdf;
+  }
+
+  .fp-accordion summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 0;
+    font-size: 17px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .fp-accordion summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .fp-accordion svg {
+    transition: transform 0.2s ease;
+  }
+
+  .fp-accordion[open] svg {
+    transform: rotate(180deg);
+  }
+
+  .fp-accordion-content {
+    padding: 0 0 18px;
+    color: var(--fp-muted);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .fp-mobile-accordions {
+    display: none;
+  }
+
+  .fp-product-warning {
+    padding: 16px;
+    background: #fff3cd;
+    border: 1px solid #ffe69c;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  @media screen and (max-width: 990px) {
+    .fp-detox-section {
+      padding: 12px 12px 32px;
+    }
+
+    .fp-detox-wrapper {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .fp-info-card {
+      padding: 24px 18px 22px;
+      border-radius: 10px;
+    }
+
+    .fp-desktop-accordions {
+      display: none;
+    }
+
+    .fp-mobile-accordions {
+      display: block;
+      margin-top: 20px;
+    }
+
+    .fp-main-image-wrap {
+      border-radius: 10px;
+    }
+
+    .fp-thumbnails {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .fp-top-badge {
+      top: 12px;
+      right: 12px;
+      font-size: 10px;
+      padding: 6px 12px;
+    }
+
+    .fp-title {
+      font-size: 34px;
+    }
+
+    .fp-subtitle {
+      font-size: 16px;
+    }
+
+    .fp-badge {
+      font-size: 12px;
+      padding: 6px 9px;
+    }
+
+    .fp-benefits li {
+      font-size: 15px;
+    }
+
+    .fp-offers {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .fp-offer-card {
+      min-height: 86px;
+      padding: 18px 10px 12px;
+    }
+
+    .fp-offer-bottom {
+      margin-top: 10px;
+    }
+
+    .fp-guarantees {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .fp-add-button {
+      min-height: 56px;
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    .fp-main-image-wrap {
+      aspect-ratio: 1 / 1;
+    }
+
+    .fp-thumbnails {
+      display: flex;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+
+    .fp-thumbnails::-webkit-scrollbar {
+      display: none;
+    }
+
+    .fp-thumb {
+      min-width: 64px;
+      width: 64px;
+      height: 64px;
+    }
+
+    .fp-arrow {
+      width: 31px;
+      height: 31px;
+      font-size: 27px;
+    }
+
+    .fp-title {
+      font-size: 31px;
+    }
+
+    .fp-reviews {
+      font-size: 12px;
+      gap: 8px;
+    }
+
+    .fp-stars {
+      font-size: 15px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('.fp-detox-section');
+
+    sections.forEach(function(section) {
+      const mainImage = section.querySelector('.fp-active-image');
+      const thumbs = section.querySelectorAll('.fp-thumb');
+      const offerCards = section.querySelectorAll('.fp-offer-card');
+      const quantityInput = section.querySelector('.fp-real-quantity');
+      const leftArrow = section.querySelector('.fp-arrow-left');
+      const rightArrow = section.querySelector('.fp-arrow-right');
+
+      let currentIndex = 0;
+
+      function setImage(index) {
+        if (!thumbs[index]) return;
+
+        const imageUrl = thumbs[index].dataset.image;
+
+        if (mainImage && imageUrl) {
+          mainImage.src = imageUrl;
+        }
+
+        thumbs.forEach(function(t) {
+          t.classList.remove('active');
+        });
+
+        thumbs[index].classList.add('active');
+        currentIndex = index;
+      }
+
+      thumbs.forEach(function(thumb, index) {
+        thumb.addEventListener('click', function() {
+          setImage(index);
+        });
+      });
+
+      if (leftArrow) {
+        leftArrow.addEventListener('click', function() {
+          if (!thumbs.length) return;
+          const nextIndex = currentIndex === 0 ? thumbs.length - 1 : currentIndex - 1;
+          setImage(nextIndex);
+        });
+      }
+
+      if (rightArrow) {
+        rightArrow.addEventListener('click', function() {
+          if (!thumbs.length) return;
+          const nextIndex = currentIndex === thumbs.length - 1 ? 0 : currentIndex + 1;
+          setImage(nextIndex);
+        });
+      }
+
+      offerCards.forEach(function(card) {
+        card.addEventListener('click', function() {
+          offerCards.forEach(function(c) {
+            c.classList.remove('active');
+          });
+
+          card.classList.add('active');
+
+          const radio = card.querySelector('input[type="radio"]');
+          if (radio) radio.checked = true;
+
+          if (quantityInput && card.dataset.quantity) {
+            quantityInput.value = card.dataset.quantity;
+          }
+        });
+      });
+
+      const selectedOffer = section.querySelector('.fp-offer-card.active');
+      if (selectedOffer && quantityInput && selectedOffer.dataset.quantity) {
+        quantityInput.value = selectedOffer.dataset.quantity;
+      }
+    });
+  });
+</script>
+
+{% schema %}
 {
-  "type": "offer",
-  "name": "Offre quantité",
+  "name": "Featured product premium",
   "settings": [
     {
+      "type": "product",
+      "id": "product",
+      "label": "Produit Shopify"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_main_image",
+      "label": "Image principale personnalisée"
+    },
+    {
       "type": "text",
-      "id": "discount",
-      "label": "Badge réduction",
-      "default": " "
+      "id": "top_badge_icon",
+      "label": "Icône badge image",
+      "default": "🔥"
+    },
+    {
+      "type": "text",
+      "id": "top_badge_text",
+      "label": "Texte badge image",
+      "default": "BEST SELLER"
+    },
+    {
+      "type": "text",
+      "id": "stars",
+      "label": "Étoiles avis",
+      "default": "★★★★★"
+    },
+    {
+      "type": "text",
+      "id": "review_text",
+      "label": "Texte avis",
+      "default": "40.000 clients sont passés chez Happy Detox"
     },
     {
       "type": "text",
       "id": "title",
-      "label": "Titre",
-      "default": "2+1 offert"
+      "label": "Titre principal",
+      "default": "Detox Colon -"
     },
     {
       "type": "text",
-      "id": "compare_price",
-      "label": "Prix barré",
-      "default": " "
+      "id": "title_italic",
+      "label": "Partie italique du titre",
+      "default": "14 jours"
     },
     {
       "type": "text",
-      "id": "price",
-      "label": "Prix",
-      "default": "59,99€"
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": "Libérez votre côlon de ses toxines accumulées"
     },
     {
       "type": "text",
-      "id": "bottom_text",
-      "label": "Texte bas",
-      "default": " "
+      "id": "quantity_title",
+      "label": "Titre quantité",
+      "default": "Quantité"
     },
     {
-      "type": "number",
-      "id": "quantity",
-      "label": "Quantité ajoutée",
-      "default": 1
+      "type": "text",
+      "id": "stock_text",
+      "label": "Texte stock",
+      "default": "En stock, livraison prévue le 03/06"
     },
     {
-      "type": "checkbox",
-      "id": "selected",
-      "label": "Offre sélectionnée par défaut",
-      "default": false
+      "type": "text",
+      "id": "button_text",
+      "label": "Texte bouton panier",
+      "default": "AJOUTER AU PANIER"
+    },
+    {
+      "type": "text",
+      "id": "button_price",
+      "label": "Prix affiché dans le bouton",
+      "default": "29,99€"
+    },
+    {
+      "type": "color",
+      "id": "page_background",
+      "label": "Fond de la section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Fond carte de droite",
+      "default": "#f4f0e8"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Couleur principale",
+      "default": "#0d351b"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur texte",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Couleur texte secondaire",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Couleur bordures",
+      "default": "#dedbd2"
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "label": "Arrondi images",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 8
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gallery_image",
+      "name": "Image galerie",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "badge",
+      "name": "Badge info",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icône",
+          "default": "🇫🇷"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Laboratoire Français"
+        }
+      ]
+    },
+    {
+      "type": "benefit",
+      "name": "Bénéfice",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Soulagement rapide des ballonnements"
+        }
+      ]
+    },
+    {
+      "type": "offer",
+      "name": "Offre quantité",
+      "settings": [
+        {
+          "type": "text",
+          "id": "discount",
+          "label": "Badge réduction"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "2+1 offert"
+        },
+        {
+          "type": "text",
+          "id": "compare_price",
+          "label": "Prix barré"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Prix",
+          "default": "59,99€"
+        },
+        {
+          "type": "text",
+          "id": "bottom_text",
+          "label": "Texte bas"
+        },
+        {
+          "type": "number",
+          "id": "quantity",
+          "label": "Quantité ajoutée",
+          "default": 1
+        },
+        {
+          "type": "checkbox",
+          "id": "selected",
+          "label": "Offre sélectionnée par défaut",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "guarantee",
+      "name": "Garantie",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icône",
+          "default": "📦"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte",
+          "default": "Livraison gratuite dès 49€"
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordéon",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Description"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Contenu",
+          "default": "<p>Ajoutez ici votre description produit.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured product premium",
+      "blocks": [
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "🇫🇷",
+            "text": "Laboratoire Français"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "🔬",
+            "text": "Formulée par des scientifiques"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "🧪",
+            "text": "Testée en laboratoire"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "❌",
+            "text": "Sans produits chimiques"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "💊",
+            "text": "Ingrédients cliniquement prouvés"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Soulagement rapide des ballonnements"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Transit régulier & confort intestinal"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Énergie & bien-être global liés au microbiome"
+          }
+        },
+        {
+          "type": "offer",
+          "settings": {
+            "title": "1 flacon",
+            "price": "29,99€",
+            "quantity": 1,
+            "selected": true
+          }
+        },
+        {
+          "type": "offer",
+          "settings": {
+            "discount": "-33%",
+            "title": "2+1 offert",
+            "compare_price": "89,97€",
+            "price": "59,99€",
+            "quantity": 3,
+            "selected": false
+          }
+        },
+        {
+          "type": "offer",
+          "settings": {
+            "discount": "-40%",
+            "title": "3+2 offerts",
+            "compare_price": "149,95€",
+            "price": "89,99€",
+            "bottom_text": "Livraison gratuite",
+            "quantity": 5,
+            "selected": false
+          }
+        },
+        {
+          "type": "guarantee",
+          "settings": {
+            "icon": "📦",
+            "text": "Livraison Colissimo 2 à 4 jours ouvrés gratuite dès 49€"
+          }
+        },
+        {
+          "type": "guarantee",
+          "settings": {
+            "icon": "🛡️",
+            "text": "Satisfait ou remboursé sous 14 jours"
+          }
+        },
+        {
+          "type": "guarantee",
+          "settings": {
+            "icon": "💳",
+            "text": "Paiement 100% sécurisé"
+          }
+        },
+        {
+          "type": "accordion",
+          "settings": {
+            "title": "Description",
+            "content": "<p>Ajoutez ici la description complète de votre produit.</p>"
+          }
+        },
+        {
+          "type": "accordion",
+          "settings": {
+            "title": "Ingrédients",
+            "content": "<p>Ajoutez ici la liste des ingrédients.</p>"
+          }
+        },
+        {
+          "type": "accordion",
+          "settings": {
+            "title": "Conseils d’utilisation",
+            "content": "<p>Ajoutez ici les conseils d’utilisation du produit.</p>"
+          }
+        }
+      ]
     }
   ]
 }
+{% endschema %}
