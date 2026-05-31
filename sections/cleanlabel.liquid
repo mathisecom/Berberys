@@ -1,0 +1,1014 @@
+{% comment %}
+  Section Shopify : Clean Label Slider
+  Police titres : Manrope
+  Police paragraphes : DM Sans
+{% endcomment %}
+
+<section
+  id="clean-label-{{ section.id }}"
+  class="clean-label-section"
+  style="
+    --bg-color: {{ section.settings.bg_color }};
+    --title-color: {{ section.settings.title_color }};
+    --text-color: {{ section.settings.text_color }};
+    --card-bg: {{ section.settings.card_bg }};
+    --card-border: {{ section.settings.card_border }};
+    --line-color: {{ section.settings.line_color }};
+    --dot-color: {{ section.settings.dot_color }};
+    --dot-active-color: {{ section.settings.dot_active_color }};
+
+    --max-width: {{ section.settings.max_width }}px;
+
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+    --padding-left-desktop: {{ section.settings.padding_left_desktop }}px;
+    --padding-right-desktop: {{ section.settings.padding_right_desktop }}px;
+
+    --padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+    --padding-left-mobile: {{ section.settings.padding_left_mobile }}px;
+    --padding-right-mobile: {{ section.settings.padding_right_mobile }}px;
+
+    --image-size-desktop: {{ section.settings.image_size_desktop }}px;
+    --image-size-mobile: {{ section.settings.image_size_mobile }}px;
+  "
+>
+  <div class="clean-label-inner">
+
+    <div class="clean-label-title-wrap">
+      {% if section.settings.title != blank %}
+        <h2 class="clean-label-main-title">{{ section.settings.title }}</h2>
+      {% endif %}
+    </div>
+
+    <div class="clean-label-desktop">
+      <div class="clean-label-images">
+        {% for block in section.blocks %}
+          <div class="clean-label-image-item" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              {{
+                block.settings.image
+                | image_url: width: 700
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'clean-label-image',
+                  alt: block.settings.title
+              }}
+            {% else %}
+              <div class="clean-label-placeholder">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="clean-label-cards">
+        {% for block in section.blocks %}
+          <article class="clean-label-card" {{ block.shopify_attributes }}>
+            <span class="clean-label-line"></span>
+
+            {% if block.settings.title != blank %}
+              <h3>{{ block.settings.title }}</h3>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <p>{{ block.settings.text }}</p>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="clean-label-mobile">
+      <div class="clean-label-mobile-slider">
+        {% for block in section.blocks %}
+          <article class="clean-label-mobile-slide" data-slide-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+            <div class="clean-label-mobile-image-wrap">
+              {% if block.settings.image != blank %}
+                {{
+                  block.settings.image
+                  | image_url: width: 700
+                  | image_tag:
+                    loading: 'lazy',
+                    class: 'clean-label-mobile-image',
+                    alt: block.settings.title
+                }}
+              {% else %}
+                <div class="clean-label-placeholder">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+
+            {% if block.settings.title != blank %}
+              <h3>{{ block.settings.title }}</h3>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <p>{{ block.settings.text }}</p>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+
+      {% if section.blocks.size > 1 %}
+        <div class="clean-label-dots">
+          {% for block in section.blocks %}
+            <button
+              class="clean-label-dot {% if forloop.first %}is-active{% endif %}"
+              type="button"
+              aria-label="Aller à la slide {{ forloop.index }}"
+              data-dot-index="{{ forloop.index0 }}"
+            ></button>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+  #clean-label-{{ section.id }} {
+    background: var(--bg-color);
+    padding:
+      var(--padding-top-desktop)
+      var(--padding-right-desktop)
+      var(--padding-bottom-desktop)
+      var(--padding-left-desktop);
+    overflow: hidden;
+  }
+
+  #clean-label-{{ section.id }} * {
+    box-sizing: border-box;
+  }
+
+  #clean-label-{{ section.id }} .clean-label-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(240px, {{ section.settings.title_column_width }}px) minmax(0, 1fr);
+    align-items: center;
+    gap: {{ section.settings.desktop_main_gap }}px;
+  }
+
+  #clean-label-{{ section.id }} .clean-label-main-title {
+    margin: 0;
+    color: var(--title-color);
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ section.settings.title_size_desktop }}px;
+    line-height: 1.06;
+    font-weight: {{ section.settings.title_weight }};
+    letter-spacing: -0.06em;
+  }
+
+  #clean-label-{{ section.id }} .clean-label-desktop {
+    display: grid;
+    grid-template-columns: auto minmax(300px, {{ section.settings.card_column_width }}px);
+    align-items: center;
+    gap: {{ section.settings.desktop_content_gap }}px;
+  }
+
+  #clean-label-{{ section.id }} .clean-label-images {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.image_gap_desktop }}px;
+    align-items: center;
+  }
+
+  #clean-label-{{ section.id }} .clean-label-image-item {
+    width: var(--image-size-desktop);
+    height: var(--image-size-desktop);
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f2f2f2;
+    flex-shrink: 0;
+  }
+
+  #clean-label-{{ section.id }} .clean-label-image,
+  #clean-label-{{ section.id }} .clean-label-placeholder svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  #clean-label-{{ section.id }} .clean-label-cards {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.card_gap_desktop }}px;
+  }
+
+  #clean-label-{{ section.id }} .clean-label-card {
+    position: relative;
+    min-height: {{ section.settings.card_min_height }}px;
+    padding:
+      {{ section.settings.card_padding_y }}px
+      {{ section.settings.card_padding_x }}px;
+    border: 1px solid var(--card-border);
+    border-radius: {{ section.settings.card_radius }}px;
+    background: var(--card-bg);
+  }
+
+  #clean-label-{{ section.id }} .clean-label-line {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: {{ section.settings.line_width_desktop }}px;
+    height: 1px;
+    background: var(--line-color);
+    transform: translateY(-50%);
+  }
+
+  #clean-label-{{ section.id }} .clean-label-card h3 {
+    margin: 0 0 {{ section.settings.card_title_margin_bottom }}px;
+    color: var(--title-color);
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ section.settings.card_title_size_desktop }}px;
+    line-height: 1.15;
+    font-weight: {{ section.settings.card_title_weight }};
+    letter-spacing: -0.05em;
+  }
+
+  #clean-label-{{ section.id }} .clean-label-card p {
+    margin: 0;
+    color: var(--text-color);
+    font-family: 'DM Sans', sans-serif;
+    font-size: {{ section.settings.card_text_size_desktop }}px;
+    line-height: 1.35;
+    font-weight: {{ section.settings.card_text_weight }};
+    letter-spacing: -0.015em;
+  }
+
+  #clean-label-{{ section.id }} .clean-label-mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 989px) {
+    #clean-label-{{ section.id }} .clean-label-inner {
+      grid-template-columns: 1fr;
+      gap: {{ section.settings.tablet_gap }}px;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-title-wrap {
+      text-align: center;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-desktop {
+      grid-template-columns: auto minmax(280px, 1fr);
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #clean-label-{{ section.id }} {
+      padding:
+        var(--padding-top-mobile)
+        var(--padding-right-mobile)
+        var(--padding-bottom-mobile)
+        var(--padding-left-mobile);
+    }
+
+    #clean-label-{{ section.id }} .clean-label-inner {
+      display: block;
+      max-width: 100%;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-title-wrap {
+      text-align: {{ section.settings.title_align_mobile }};
+      margin-bottom: {{ section.settings.title_margin_bottom_mobile }}px;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-main-title {
+      font-size: {{ section.settings.title_size_mobile }}px;
+      line-height: 1.08;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-desktop {
+      display: none;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-mobile {
+      display: block;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-mobile-slider {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-mobile-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-mobile-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      scroll-snap-align: center;
+      text-align: center;
+      padding: 0 {{ section.settings.mobile_slide_side_padding }}px;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-mobile-image-wrap {
+      width: var(--image-size-mobile);
+      height: var(--image-size-mobile);
+      margin: 0 auto {{ section.settings.mobile_image_margin_bottom }}px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #f2f2f2;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-mobile-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-mobile-slide h3 {
+      margin: 0 0 {{ section.settings.mobile_title_margin_bottom }}px;
+      color: var(--title-color);
+      font-family: 'Manrope', sans-serif;
+      font-size: {{ section.settings.card_title_size_mobile }}px;
+      line-height: 1.15;
+      font-weight: {{ section.settings.card_title_weight }};
+      letter-spacing: -0.055em;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-mobile-slide p {
+      max-width: {{ section.settings.mobile_text_max_width }}px;
+      margin: 0 auto;
+      color: var(--text-color);
+      font-family: 'DM Sans', sans-serif;
+      font-size: {{ section.settings.card_text_size_mobile }}px;
+      line-height: 1.35;
+      font-weight: {{ section.settings.card_text_weight }};
+      letter-spacing: -0.015em;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: {{ section.settings.dot_gap }}px;
+      margin-top: {{ section.settings.dots_margin_top }}px;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-dot {
+      width: {{ section.settings.dot_size }}px;
+      height: {{ section.settings.dot_size }}px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: var(--dot-color);
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    #clean-label-{{ section.id }} .clean-label-dot.is-active {
+      background: var(--dot-active-color);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const section = document.querySelector('#clean-label-{{ section.id }}');
+    if (!section) return;
+
+    const slider = section.querySelector('.clean-label-mobile-slider');
+    const dots = section.querySelectorAll('.clean-label-dot');
+
+    if (!slider || !dots.length) return;
+
+    function setActiveDot(index) {
+      dots.forEach(function (dot) {
+        dot.classList.remove('is-active');
+      });
+
+      if (dots[index]) {
+        dots[index].classList.add('is-active');
+      }
+    }
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        const index = Number(dot.dataset.dotIndex);
+        const width = slider.clientWidth;
+
+        slider.scrollTo({
+          left: width * index,
+          behavior: 'smooth'
+        });
+
+        setActiveDot(index);
+      });
+    });
+
+    slider.addEventListener('scroll', function () {
+      const index = Math.round(slider.scrollLeft / slider.clientWidth);
+      setActiveDot(index);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Clean label slider",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenu principal"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre principal",
+      "default": "Clean label Dynveo"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur des titres",
+      "default": "#071344"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur des paragraphes",
+      "default": "#071344"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Fond des cartes PC",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border",
+      "label": "Bordure des cartes PC",
+      "default": "#dddddd"
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Couleur des traits PC",
+      "default": "#dddddd"
+    },
+    {
+      "type": "color",
+      "id": "dot_color",
+      "label": "Couleur points inactifs mobile",
+      "default": "#b8b8b8"
+    },
+    {
+      "type": "color",
+      "id": "dot_active_color",
+      "label": "Couleur point actif mobile",
+      "default": "#071344"
+    },
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Taille titre PC",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "default": 43
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille titre mobile",
+      "min": 24,
+      "max": 52,
+      "step": 1,
+      "default": 35
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Épaisseur titre",
+      "default": "500",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "title_align_mobile",
+      "label": "Alignement titre mobile",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom_mobile",
+      "label": "Marge sous titre mobile",
+      "min": 10,
+      "max": 80,
+      "step": 2,
+      "default": 38
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "range",
+      "id": "image_size_desktop",
+      "label": "Taille images PC",
+      "min": 120,
+      "max": 300,
+      "step": 10,
+      "default": 210
+    },
+    {
+      "type": "range",
+      "id": "image_size_mobile",
+      "label": "Taille image mobile",
+      "min": 140,
+      "max": 300,
+      "step": 10,
+      "default": 230
+    },
+    {
+      "type": "range",
+      "id": "image_gap_desktop",
+      "label": "Espace entre images PC",
+      "min": -30,
+      "max": 40,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Cartes PC"
+    },
+    {
+      "type": "range",
+      "id": "card_column_width",
+      "label": "Largeur colonne cartes PC",
+      "min": 320,
+      "max": 620,
+      "step": 10,
+      "default": 430
+    },
+    {
+      "type": "range",
+      "id": "card_min_height",
+      "label": "Hauteur minimum carte PC",
+      "min": 120,
+      "max": 260,
+      "step": 10,
+      "default": 160
+    },
+    {
+      "type": "range",
+      "id": "card_gap_desktop",
+      "label": "Espace entre cartes PC",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_padding_x",
+      "label": "Padding horizontal cartes PC",
+      "min": 18,
+      "max": 60,
+      "step": 2,
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "card_padding_y",
+      "label": "Padding vertical cartes PC",
+      "min": 18,
+      "max": 60,
+      "step": 2,
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Arrondi cartes PC",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "line_width_desktop",
+      "label": "Longueur traits PC",
+      "min": 30,
+      "max": 160,
+      "step": 2,
+      "default": 96
+    },
+    {
+      "type": "header",
+      "content": "Typographie cartes"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_desktop",
+      "label": "Taille titre carte PC",
+      "min": 18,
+      "max": 42,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "label": "Taille titre slide mobile",
+      "min": 20,
+      "max": 42,
+      "step": 1,
+      "default": 27
+    },
+    {
+      "type": "select",
+      "id": "card_title_weight",
+      "label": "Épaisseur titre carte",
+      "default": "500",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "card_title_margin_bottom",
+      "label": "Marge sous titre carte PC",
+      "min": 4,
+      "max": 30,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_margin_bottom",
+      "label": "Marge sous titre mobile",
+      "min": 4,
+      "max": 30,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_desktop",
+      "label": "Taille paragraphe carte PC",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_mobile",
+      "label": "Taille paragraphe mobile",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "type": "select",
+      "id": "card_text_weight",
+      "label": "Épaisseur paragraphe",
+      "default": "500",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_max_width",
+      "label": "Largeur max paragraphe mobile",
+      "min": 240,
+      "max": 390,
+      "step": 5,
+      "default": 345
+    },
+    {
+      "type": "header",
+      "content": "Slider mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_margin_bottom",
+      "label": "Marge sous image mobile",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "mobile_slide_side_padding",
+      "label": "Padding côtés slide mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "dots_margin_top",
+      "label": "Marge au-dessus points",
+      "min": 6,
+      "max": 40,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "dot_size",
+      "label": "Taille points",
+      "min": 4,
+      "max": 14,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "dot_gap",
+      "label": "Espace entre points",
+      "min": 4,
+      "max": 18,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Largeurs et espacements PC"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximum section",
+      "min": 900,
+      "max": 1800,
+      "step": 20,
+      "default": 1320
+    },
+    {
+      "type": "range",
+      "id": "title_column_width",
+      "label": "Largeur colonne titre PC",
+      "min": 240,
+      "max": 620,
+      "step": 10,
+      "default": 430
+    },
+    {
+      "type": "range",
+      "id": "desktop_main_gap",
+      "label": "Espace titre / contenu PC",
+      "min": 40,
+      "max": 220,
+      "step": 4,
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "desktop_content_gap",
+      "label": "Espace images / cartes PC",
+      "min": 40,
+      "max": 180,
+      "step": 4,
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "tablet_gap",
+      "label": "Espace tablette",
+      "min": 20,
+      "max": 100,
+      "step": 4,
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Padding section"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding haut PC",
+      "min": 20,
+      "max": 180,
+      "step": 2,
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bas PC",
+      "min": 20,
+      "max": 180,
+      "step": 2,
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "label": "Padding gauche PC",
+      "min": 20,
+      "max": 200,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "label": "Padding droite PC",
+      "min": 20,
+      "max": 200,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding haut mobile",
+      "min": 20,
+      "max": 120,
+      "step": 2,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bas mobile",
+      "min": 20,
+      "max": 120,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "label": "Padding gauche mobile",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "label": "Padding droite mobile",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "clean_item",
+      "name": "Élément clean label",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image ronde"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Sourcing éthique & local"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Paragraphe",
+          "default": "Chez Dynveo, nous sélectionnons rigoureusement chaque ingrédient, en privilégiant les filières durables et locales, dans le respect de l’humain et de l’environnement."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Clean label slider",
+      "blocks": [
+        {
+          "type": "clean_item",
+          "settings": {
+            "title": "Sourcing éthique & local",
+            "text": "Chez Dynveo, nous sélectionnons rigoureusement chaque ingrédient, en privilégiant les filières durables et locales, dans le respect de l’humain et de l’environnement."
+          }
+        },
+        {
+          "type": "clean_item",
+          "settings": {
+            "title": "Pureté & naturalité",
+            "text": "Nos formules sont conçues sans additifs ni excipients controversés, pour garantir la meilleure assimilation et une parfaite tolérance."
+          }
+        },
+        {
+          "type": "clean_item",
+          "settings": {
+            "title": "Traçabilité & transparence",
+            "text": "Du sourcing à la fabrication, chaque étape est tracée. Nous partageons en toute transparence l’origine, la composition et les procédés de nos produits."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
