@@ -314,6 +314,116 @@
         "input_text_color": ""
       }
     },
+    "carouselbienfait_K94Rki": {
+      "type": "carouselbienfait",
+      "blocks": {
+        "benefit_GKEfL9": {
+          "type": "benefit",
+          "settings": {
+            "badge": "ÉNERGIE",
+            "title": "Énergie stable toute la journée",
+            "text": "Soutient la vitalité et la concentration, sans coup de fatigue."
+          }
+        },
+        "benefit_d8xCXn": {
+          "type": "benefit",
+          "settings": {
+            "badge": "ABSORPTION",
+            "title": "Meilleure assimilation des nutriments",
+            "text": "Optimise l’assimilation des vitamines et minéraux essentiels."
+          }
+        },
+        "benefit_cj3bzf": {
+          "type": "benefit",
+          "settings": {
+            "badge": "POIDS",
+            "title": "Gestion du poids facilitée",
+            "text": "Favorise la satiété et limite les fringales pour des résultats durables."
+          }
+        },
+        "benefit_AUpHaM": {
+          "type": "benefit",
+          "settings": {
+            "badge": "NETTOYAGE",
+            "title": "Nettoyage doux, résultats rapides",
+            "text": "Élimine en douceur les toxines sans agresser l’organisme."
+          }
+        },
+        "benefit_pRGzY9": {
+          "type": "benefit",
+          "settings": {
+            "badge": "DIGESTION",
+            "title": "Digestion sereine et régulière",
+            "text": "Apaise les inconforts, favorise un transit harmonieux au quotidien."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_GKEfL9",
+        "benefit_d8xCXn",
+        "benefit_cj3bzf",
+        "benefit_AUpHaM",
+        "benefit_pRGzY9"
+      ],
+      "name": "Bienfaits cure slider",
+      "settings": {
+        "title_before": "Les",
+        "title_italic": "bienfaits",
+        "title_after": "de la cure",
+        "title_color": "#000000",
+        "italic_color": "#53643f",
+        "title_size_desktop": 28,
+        "title_size_mobile": 24,
+        "title_weight": "500",
+        "title_margin_bottom": 24,
+        "title_margin_bottom_mobile": 24,
+        "show_arrows": true,
+        "hide_arrows_mobile": true,
+        "arrow_color": "#000000",
+        "arrow_size": 26,
+        "gap_desktop": 20,
+        "gap_mobile": 16,
+        "desktop_card_width": 280,
+        "desktop_card_height": 345,
+        "mobile_card_width": 300,
+        "mobile_card_height": 425,
+        "card_radius": 6,
+        "overlay_opacity": 45,
+        "badge_color": "#ffffff",
+        "badge_bg": "rgba(0,0,0,0.15)",
+        "badge_size": 13,
+        "badge_size_mobile": 14,
+        "badge_top": 18,
+        "badge_left": 18,
+        "badge_top_mobile": 18,
+        "badge_left_mobile": 20,
+        "badge_padding_x": 10,
+        "badge_padding_y": 4,
+        "card_title_color": "#ffffff",
+        "card_text_color": "#ffffff",
+        "card_title_size_desktop": 17,
+        "card_title_size_mobile": 20,
+        "card_text_size_desktop": 13,
+        "card_text_size_mobile": 15,
+        "content_left": 18,
+        "content_right": 18,
+        "content_bottom": 28,
+        "content_left_mobile": 20,
+        "content_right_mobile": 20,
+        "content_bottom_mobile": 30,
+        "show_bottom_line": true,
+        "line_margin_top": 14,
+        "section_bg": "#ffffff",
+        "padding_top_desktop": 36,
+        "padding_bottom_desktop": 36,
+        "padding_left_desktop": 40,
+        "padding_right_desktop": 40,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 40,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 0
+      }
+    },
     "logoscrooll_6mjgGf": {
       "type": "logoscrooll",
       "blocks": {
@@ -1208,6 +1318,7 @@
     "marqueeicons_6jTM4T",
     "presentation_EkBfBH",
     "featured_product_khQ4Qz",
+    "carouselbienfait_K94Rki",
     "logoscrooll_6mjgGf",
     "testimonialreviews_DeQWnV",
     "ingredients_GxTqXY",
