@@ -790,6 +790,134 @@
         "mobile_padding_bottom": 52
       }
     },
+    "berberineresult_RCjNgU": {
+      "type": "berberineresult",
+      "blocks": {
+        "benefit_xXzHhK": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 95,
+            "title": "Glycémie",
+            "subtitle": "Contribue à maintenir une glycémie normale",
+            "bullet_1": "Aide à maintenir la glycémie à jeun",
+            "bullet_2": "Limite les pics de sucre après les repas",
+            "bullet_3": "Favorise la sensibilité à l’insuline",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        },
+        "benefit_7He8LL": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 80,
+            "title": "Lipides sanguins",
+            "subtitle": "Contribue à maintenir des lipides sanguins normaux",
+            "bullet_1": "Favorise un taux de cholestérol normal",
+            "bullet_2": "Aide à contrôler les triglycérides",
+            "bullet_3": "Soutient la santé cardiovasculaire",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        },
+        "benefit_gxpmpN": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 65,
+            "title": "Santé génitale et urinaire",
+            "subtitle": "Soutient la sphère gynécologique et urinaire",
+            "bullet_1": "Contribue à l’équilibre du système reproducteur féminin",
+            "bullet_2": "Soutient la santé de la vessie",
+            "bullet_3": "Favorise la sensibilité à l’insuline",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        },
+        "benefit_G3itBg": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 62,
+            "title": "Santé de la peau",
+            "subtitle": "Aide les peaux matures et à imperfections",
+            "bullet_1": "Aide les peaux d’adolescents",
+            "bullet_2": "A des effets anti-âge",
+            "bullet_3": "Favorise la sensibilité à l’insuline",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_xXzHhK",
+        "benefit_7He8LL",
+        "benefit_gxpmpN",
+        "benefit_G3itBg"
+      ],
+      "name": "Berbérine benefits",
+      "settings": {
+        "title": "Les bienfaits de la Berbérine pure",
+        "cream_color": "#FEF9F0",
+        "yellow_color": "#FFF27B",
+        "blue_color": "#A5BFDB",
+        "left_bg": "#A5BFDB",
+        "title_color": "#FEF9F0",
+        "text_color": "#FEF9F0",
+        "card_bg": "linear-gradient(145deg, rgba(165, 191, 219, 0.88), rgba(14, 35, 64, 0.78) 100%)",
+        "card_border": "#FEF9F0",
+        "check_bg": "#A5BFDB",
+        "track_bg": "#A5BFDB",
+        "progress_bg": "#FFF27B",
+        "image_overlay": "linear-gradient(90deg, rgba(165, 191, 219, 0.15), rgba(165, 191, 219, 0.05) 100%)",
+        "mobile_image_overlay": "linear-gradient(180deg, rgba(165, 191, 219, 0.05), rgba(165, 191, 219, 0.18) 100%)",
+        "title_size_desktop": 47,
+        "title_size_mobile": 34,
+        "title_weight": "600",
+        "title_max_width": 840,
+        "title_max_width_mobile": 390,
+        "title_margin_bottom": 76,
+        "title_margin_bottom_mobile": 34,
+        "desktop_card_width": 370,
+        "mobile_card_width": 280,
+        "card_min_height_desktop": 300,
+        "card_min_height_mobile": 335,
+        "card_gap_desktop": 12,
+        "card_gap_mobile": 14,
+        "card_radius": 8,
+        "card_blur": 4,
+        "card_padding_x_desktop": 20,
+        "card_padding_y_desktop": 18,
+        "card_padding_x_mobile": 17,
+        "card_padding_y_mobile": 17,
+        "card_title_size_desktop": 24,
+        "card_title_size_mobile": 22,
+        "card_title_weight": "700",
+        "card_title_margin_bottom": 10,
+        "card_text_size_desktop": 15,
+        "card_text_size_mobile": 15,
+        "card_text_weight": "600",
+        "bullet_size_desktop": 15,
+        "bullet_size_mobile": 15,
+        "bullet_weight": "700",
+        "bullets_margin_top": 64,
+        "bullet_gap": 10,
+        "check_size": 18,
+        "progress_height": 22,
+        "progress_line_height": 6,
+        "progress_symbol_size": 14,
+        "progress_margin_bottom": 22,
+        "desktop_left_width": 50,
+        "max_width": 1400,
+        "mobile_image_top": 112,
+        "mobile_peek_width": 80,
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 66,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 0
+      }
+    },
     "ingredients_GxTqXY": {
       "type": "ingredients",
       "blocks": {
@@ -1676,6 +1804,7 @@
     "carouselbienfait_K94Rki",
     "berberineaccordeon_QdbmeP",
     "testimonialreviews_DeQWnV",
+    "berberineresult_RCjNgU",
     "ingredients_GxTqXY",
     "resultatsprouves_b3gcMW",
     "efficaciteprouve_zx4pBJ",
