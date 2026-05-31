@@ -3,6 +3,7 @@
   Créée pour Shopify Online Store 2.0
   Police titres : Manrope
   Police paragraphes : DM Sans
+  Modification : choix du nombre de cartes visibles sur PC + largeur automatique
 {% endcomment %}
 
 <section
@@ -13,7 +14,7 @@
     --title-color: {{ section.settings.title_color }};
     --italic-color: {{ section.settings.italic_color }};
     --card-radius: {{ section.settings.card_radius }}px;
-    --desktop-card-width: {{ section.settings.desktop_card_width }}px;
+    --cards-per-view-desktop: {{ section.settings.cards_per_view_desktop }};
     --mobile-card-width: {{ section.settings.mobile_card_width }}px;
     --desktop-card-height: {{ section.settings.desktop_card_height }}px;
     --mobile-card-height: {{ section.settings.mobile_card_height }}px;
@@ -186,8 +187,16 @@
 
   #benefits-cure-{{ section.id }} .benefits-cure-card {
     position: relative;
-    flex: 0 0 var(--desktop-card-width);
-    width: var(--desktop-card-width);
+    flex: 0 0 calc(
+      (
+        100% - (var(--gap-desktop) * (var(--cards-per-view-desktop) - 1))
+      ) / var(--cards-per-view-desktop)
+    );
+    width: calc(
+      (
+        100% - (var(--gap-desktop) * (var(--cards-per-view-desktop) - 1))
+      ) / var(--cards-per-view-desktop)
+    );
     height: var(--desktop-card-height);
     border-radius: var(--card-radius);
     overflow: hidden;
@@ -303,7 +312,7 @@
     }
 
     #benefits-cure-{{ section.id }} .benefits-cure-card {
-      flex-basis: var(--mobile-card-width);
+      flex: 0 0 var(--mobile-card-width);
       width: var(--mobile-card-width);
       height: var(--mobile-card-height);
     }
@@ -522,12 +531,12 @@
     },
     {
       "type": "range",
-      "id": "desktop_card_width",
-      "label": "Largeur carte PC",
-      "min": 180,
-      "max": 420,
-      "step": 5,
-      "default": 280
+      "id": "cards_per_view_desktop",
+      "label": "Nombre de cartes visibles sur PC",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
     },
     {
       "type": "range",
