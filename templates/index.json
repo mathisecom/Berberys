@@ -456,6 +456,7 @@
         "benefit_GKEfL9": {
           "type": "benefit",
           "settings": {
+            "image": "shopify://shop_images/18293190-456e-4589-82fb-099d807dfc85.avif",
             "badge": "ÉNERGIE",
             "title": "Énergie stable toute la journée",
             "text": "Soutient la vitalité et la concentration, sans coup de fatigue."
@@ -464,6 +465,7 @@
         "benefit_d8xCXn": {
           "type": "benefit",
           "settings": {
+            "image": "shopify://shop_images/feaf6ae5-2c35-43ce-adcd-ce161fefaae6.avif",
             "badge": "ABSORPTION",
             "title": "Meilleure assimilation des nutriments",
             "text": "Optimise l’assimilation des vitamines et minéraux essentiels."
@@ -472,6 +474,7 @@
         "benefit_cj3bzf": {
           "type": "benefit",
           "settings": {
+            "image": "shopify://shop_images/86082bb2-e67a-476b-bef2-7c9b01b88b81.avif",
             "badge": "POIDS",
             "title": "Gestion du poids facilitée",
             "text": "Favorise la satiété et limite les fringales pour des résultats durables."
@@ -480,6 +483,7 @@
         "benefit_AUpHaM": {
           "type": "benefit",
           "settings": {
+            "image": "shopify://shop_images/Digestion.webp",
             "badge": "NETTOYAGE",
             "title": "Nettoyage doux, résultats rapides",
             "text": "Élimine en douceur les toxines sans agresser l’organisme."
@@ -488,25 +492,10 @@
         "benefit_pRGzY9": {
           "type": "benefit",
           "settings": {
+            "image": "shopify://shop_images/Design_sans_titre_25.png",
             "badge": "DIGESTION",
             "title": "Digestion sereine et régulière",
             "text": "Apaise les inconforts, favorise un transit harmonieux au quotidien."
-          }
-        },
-        "benefit_iCi7gr": {
-          "type": "benefit",
-          "settings": {
-            "badge": "ÉNERGIE",
-            "title": "Énergie stable toute la journée",
-            "text": "Soutient la vitalité et la concentration, sans coup de fatigue."
-          }
-        },
-        "benefit_x4Ap7E": {
-          "type": "benefit",
-          "settings": {
-            "badge": "ÉNERGIE",
-            "title": "Énergie stable toute la journée",
-            "text": "Soutient la vitalité et la concentration, sans coup de fatigue."
           }
         }
       },
@@ -515,9 +504,7 @@
         "benefit_d8xCXn",
         "benefit_cj3bzf",
         "benefit_AUpHaM",
-        "benefit_pRGzY9",
-        "benefit_iCi7gr",
-        "benefit_x4Ap7E"
+        "benefit_pRGzY9"
       ],
       "name": "Bienfaits cure slider",
       "settings": {
