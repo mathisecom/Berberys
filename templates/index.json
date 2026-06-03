@@ -1392,6 +1392,39 @@
         "aria_label": "Nos engagements produit"
       }
     },
+    "metabolisme_B8ignr": {
+      "type": "metabolisme",
+      "name": "Lovi métabolisme",
+      "settings": {
+        "badge_text_content": "Votre nouvel allié pour perdre du poids",
+        "heading_line_1": "Comment Lovi",
+        "heading_line_2": "Agit sur ton Métabolisme",
+        "title_1": "Ton métabolisme se réveille",
+        "text_1": "<p>Ton corps arrête de stocker et recommence à brûler. Tu le sens dès les premières semaines.</p>",
+        "title_2": "La graisse abdominale fond en douceur",
+        "text_2": "<p>Pas de régime, pas de restriction. Ton ventre s’affine naturellement.</p>",
+        "title_3": "Tu retrouves ton énergie et ta légèreté",
+        "text_3": "<p>Le stress hormonal se calme. Tu dors mieux, tu grignotes moins, tu te sens toi.</p>",
+        "background_color": "#fef9f0",
+        "heading_color": "#1a1a1a",
+        "text_color": "#333333",
+        "accent_color": "#1a1a1a",
+        "highlight_bg": "#fef9f0",
+        "badge_bg": "#1a1a1a",
+        "badge_text": "#ffffff",
+        "arrow_color": "#a5bfdc",
+        "image_max_width": 360,
+        "image_radius": 18,
+        "shadow_opacity": 12,
+        "show_arrows": true,
+        "max_width": 980,
+        "section_radius": 0,
+        "padding_top": 32,
+        "padding_bottom": 60,
+        "mobile_padding_top": 16,
+        "mobile_padding_bottom": 32
+      }
+    },
     "imagewithtext_wCjhfr": {
       "type": "imagewithtext",
       "blocks": {
@@ -1863,6 +1896,7 @@
     "routine_a4ebbj",
     "iconsguarantee_cNPR3Q",
     "marqueeicons_cmWtrX",
+    "metabolisme_B8ignr",
     "imagewithtext_wCjhfr",
     "certif_XH7DiP",
     "cleanlabel_VxG8gr",
