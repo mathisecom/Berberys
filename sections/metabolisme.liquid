@@ -1,0 +1,651 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    --lovi-bg: {{ section.settings.background_color }};
+    --lovi-text: {{ section.settings.text_color }};
+    --lovi-heading: {{ section.settings.heading_color }};
+    --lovi-accent: {{ section.settings.accent_color }};
+    --lovi-badge-bg: {{ section.settings.badge_bg }};
+    --lovi-badge-text: {{ section.settings.badge_text }};
+    --lovi-card-radius: {{ section.settings.image_radius }}px;
+    --lovi-section-radius: {{ section.settings.section_radius }}px;
+    --lovi-max-width: {{ section.settings.max_width }}px;
+    --lovi-arrow-color: {{ section.settings.arrow_color }};
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism {
+    background: var(--lovi-bg);
+    color: var(--lovi-text);
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+    font-family: inherit;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__inner {
+    max-width: var(--lovi-max-width);
+    margin: 0 auto;
+    border-radius: var(--lovi-section-radius);
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__top {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--lovi-badge-bg);
+    color: var(--lovi-badge-text);
+    padding: 12px 34px;
+    border-radius: 999px;
+    font-size: clamp(15px, 1.5vw, 22px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 34px;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__heading {
+    color: var(--lovi-heading);
+    font-family: inherit;
+    font-size: clamp(34px, 6vw, 72px);
+    line-height: 1.05;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__highlight {
+    display: inline-block;
+    background: {{ section.settings.highlight_bg }};
+    color: var(--lovi-heading);
+    border-radius: 18px;
+    padding: 4px 18px 10px;
+    margin-top: 10px;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(28px, 6vw, 80px);
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse .lovi-metabolism__image-wrap {
+    order: 2;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse .lovi-metabolism__content {
+    order: 1;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__image-wrap {
+    width: 100%;
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__image {
+    width: 100%;
+    max-width: {{ section.settings.image_max_width }}px;
+    aspect-ratio: 1.15 / 1;
+    object-fit: cover;
+    border-radius: var(--lovi-card-radius);
+    display: block;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, {{ section.settings.shadow_opacity | divided_by: 100.0 }});
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse .lovi-metabolism__image {
+    margin-left: auto;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__content {
+    max-width: 520px;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__title {
+    color: var(--lovi-heading);
+    font-family: inherit;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.2;
+    font-weight: 500;
+    margin: 0 0 18px;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__text {
+    font-size: clamp(18px, 2.2vw, 28px);
+    line-height: 1.55;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__arrow {
+    display: flex;
+    justify-content: center;
+    color: var(--lovi-arrow-color);
+    margin: -4px 0 -2px;
+    pointer-events: none;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__arrow svg {
+    width: min(46vw, 360px);
+    height: auto;
+    overflow: visible;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__arrow path {
+    stroke-dasharray: 820;
+    stroke-dashoffset: 820;
+    animation: lovi-draw-arrow-{{ section.id }} 2.2s ease-in-out infinite;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__arrow svg {
+    animation: lovi-float-arrow-{{ section.id }} 2.2s ease-in-out infinite;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__arrow--left {
+    justify-content: flex-start;
+    padding-left: 22%;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__arrow--right {
+    justify-content: flex-end;
+    padding-right: 22%;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__placeholder {
+    width: 100%;
+    max-width: {{ section.settings.image_max_width }}px;
+    aspect-ratio: 1.15 / 1;
+    border-radius: var(--lovi-card-radius);
+    background: rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lovi-text);
+    font-size: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse .lovi-metabolism__placeholder {
+    margin-left: auto;
+  }
+
+  @keyframes lovi-draw-arrow-{{ section.id }} {
+    0% {
+      stroke-dashoffset: 820;
+      opacity: 0.3;
+    }
+    45% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0.75;
+    }
+  }
+
+  @keyframes lovi-float-arrow-{{ section.id }} {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .lovi-metabolism {
+      padding: {{ section.settings.mobile_padding_top }}px 16px {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__top {
+      margin-bottom: 38px;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__badge {
+      padding: 10px 22px;
+      margin-bottom: 26px;
+      max-width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__heading {
+      font-size: clamp(36px, 12vw, 56px);
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__highlight {
+      border-radius: 14px;
+      padding: 4px 12px 8px;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__timeline {
+      gap: 22px;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__row,
+    #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse .lovi-metabolism__image-wrap,
+    #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse .lovi-metabolism__content {
+      order: unset;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__image,
+    #shopify-section-{{ section.id }} .lovi-metabolism__placeholder {
+      max-width: 82%;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__row:nth-of-type(1) .lovi-metabolism__image,
+    #shopify-section-{{ section.id }} .lovi-metabolism__row:nth-of-type(1) .lovi-metabolism__placeholder {
+      margin-right: auto;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse .lovi-metabolism__image,
+    #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse .lovi-metabolism__placeholder {
+      margin-left: auto;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__content {
+      max-width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__title {
+      font-size: clamp(24px, 8vw, 34px);
+      margin-bottom: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__text {
+      font-size: clamp(18px, 6vw, 26px);
+      line-height: 1.5;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__arrow {
+      margin: -8px 0;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__arrow svg {
+      width: 58vw;
+      max-width: 280px;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__arrow--left {
+      justify-content: flex-start;
+      padding-left: 26%;
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__arrow--right {
+      justify-content: flex-end;
+      padding-right: 22%;
+    }
+  }
+{% endstyle %}
+
+<section class="lovi-metabolism">
+  <div class="lovi-metabolism__inner">
+
+    <div class="lovi-metabolism__top">
+      {% if section.settings.badge_text_content != blank %}
+        <div class="lovi-metabolism__badge">
+          {{ section.settings.badge_text_content }}
+        </div>
+      {% endif %}
+
+      <h2 class="lovi-metabolism__heading">
+        {{ section.settings.heading_line_1 }}
+        <br>
+        <span class="lovi-metabolism__highlight">
+          {{ section.settings.heading_line_2 }}
+        </span>
+      </h2>
+    </div>
+
+    <div class="lovi-metabolism__timeline">
+
+      <div class="lovi-metabolism__row">
+        <div class="lovi-metabolism__image-wrap">
+          {% if section.settings.image_1 != blank %}
+            {{ section.settings.image_1 | image_url: width: 900 | image_tag:
+              class: 'lovi-metabolism__image',
+              loading: 'lazy',
+              sizes: '(max-width: 749px) 82vw, 45vw'
+            }}
+          {% else %}
+            <div class="lovi-metabolism__placeholder">Image 1</div>
+          {% endif %}
+        </div>
+
+        <div class="lovi-metabolism__content">
+          <h3 class="lovi-metabolism__title">{{ section.settings.title_1 }}</h3>
+          <div class="lovi-metabolism__text">
+            {{ section.settings.text_1 }}
+          </div>
+        </div>
+      </div>
+
+      {% if section.settings.show_arrows %}
+        <div class="lovi-metabolism__arrow lovi-metabolism__arrow--right">
+          <svg viewBox="0 0 420 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M46 8C46 8 35 104 150 137C238 162 344 144 390 146M390 146L358 123M390 146L356 169" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      {% endif %}
+
+      <div class="lovi-metabolism__row lovi-metabolism__row--reverse">
+        <div class="lovi-metabolism__image-wrap">
+          {% if section.settings.image_2 != blank %}
+            {{ section.settings.image_2 | image_url: width: 900 | image_tag:
+              class: 'lovi-metabolism__image',
+              loading: 'lazy',
+              sizes: '(max-width: 749px) 82vw, 45vw'
+            }}
+          {% else %}
+            <div class="lovi-metabolism__placeholder">Image 2</div>
+          {% endif %}
+        </div>
+
+        <div class="lovi-metabolism__content">
+          <h3 class="lovi-metabolism__title">{{ section.settings.title_2 }}</h3>
+          <div class="lovi-metabolism__text">
+            {{ section.settings.text_2 }}
+          </div>
+        </div>
+      </div>
+
+      {% if section.settings.show_arrows %}
+        <div class="lovi-metabolism__arrow lovi-metabolism__arrow--left">
+          <svg viewBox="0 0 420 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M374 8C374 8 385 104 270 137C182 162 76 144 30 146M30 146L62 123M30 146L64 169" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      {% endif %}
+
+      <div class="lovi-metabolism__row">
+        <div class="lovi-metabolism__image-wrap">
+          {% if section.settings.image_3 != blank %}
+            {{ section.settings.image_3 | image_url: width: 900 | image_tag:
+              class: 'lovi-metabolism__image',
+              loading: 'lazy',
+              sizes: '(max-width: 749px) 82vw, 45vw'
+            }}
+          {% else %}
+            <div class="lovi-metabolism__placeholder">Image 3</div>
+          {% endif %}
+        </div>
+
+        <div class="lovi-metabolism__content">
+          <h3 class="lovi-metabolism__title">{{ section.settings.title_3 }}</h3>
+          <div class="lovi-metabolism__text">
+            {{ section.settings.text_3 }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lovi métabolisme",
+  "tag": "section",
+  "class": "section-lovi-metabolism",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenu principal"
+    },
+    {
+      "type": "text",
+      "id": "badge_text_content",
+      "label": "Texte du badge",
+      "default": "Votre nouvel allié pour perdre du poids"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Titre ligne 1",
+      "default": "Comment Lovi"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Titre ligne 2",
+      "default": "Agit sur ton Métabolisme"
+    },
+    {
+      "type": "header",
+      "content": "Bloc 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Titre 1",
+      "default": "Ton métabolisme se réveille"
+    },
+    {
+      "type": "richtext",
+      "id": "text_1",
+      "label": "Texte 1",
+      "default": "<p>Ton corps arrête de stocker et recommence à brûler. Tu le sens dès les premières semaines.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Bloc 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Titre 2",
+      "default": "La graisse abdominale fond en douceur"
+    },
+    {
+      "type": "richtext",
+      "id": "text_2",
+      "label": "Texte 2",
+      "default": "<p>Pas de régime, pas de restriction. Ton ventre s’affine naturellement.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Bloc 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Titre 3",
+      "default": "Tu retrouves ton énergie et ta légèreté"
+    },
+    {
+      "type": "richtext",
+      "id": "text_3",
+      "label": "Texte 3",
+      "default": "<p>Le stress hormonal se calme. Tu dors mieux, tu grignotes moins, tu te sens toi.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Couleur de fond",
+      "default": "#eef8f1"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Couleur des titres",
+      "default": "#315d48"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Couleur accent",
+      "default": "#315d48"
+    },
+    {
+      "type": "color",
+      "id": "highlight_bg",
+      "label": "Fond du titre surligné",
+      "default": "#d3f1d6"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Fond du badge",
+      "default": "#315d48"
+    },
+    {
+      "type": "color",
+      "id": "badge_text",
+      "label": "Texte du badge",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "arrow_color",
+      "label": "Couleur des flèches",
+      "default": "#315d48"
+    },
+    {
+      "type": "header",
+      "content": "Images et style"
+    },
+    {
+      "type": "range",
+      "id": "image_max_width",
+      "label": "Largeur max des images",
+      "min": 180,
+      "max": 620,
+      "step": 10,
+      "unit": "px",
+      "default": 360
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Arrondi des images",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "label": "Intensité de l’ombre",
+      "min": 0,
+      "max": 35,
+      "step": 1,
+      "unit": "%",
+      "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Afficher les flèches animées",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Mise en page"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale de la section",
+      "min": 720,
+      "max": 1500,
+      "step": 20,
+      "unit": "px",
+      "default": 980
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Arrondi global",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haute ordinateur",
+      "min": 20,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge basse ordinateur",
+      "min": 20,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Marge haute mobile",
+      "min": 10,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Marge basse mobile",
+      "min": 10,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lovi métabolisme"
+    }
+  ]
+}
+{% endschema %}
