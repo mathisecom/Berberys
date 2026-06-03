@@ -1653,7 +1653,7 @@
             "name": "Evelyne E.",
             "verified": "Acheteur vérifié",
             "stars": "★★★★★",
-            "review_title": "Très bien , efficace sur",
+            "review_title": "Très bien , je recommande",
             "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
             "date": "30/05/26"
           }
@@ -1701,6 +1701,17 @@
             "text": "<p>Je me sens mieux après un mois de prise de berberine plus légère au moment de la digestion Je recommande</p>",
             "date": "22/05/26"
           }
+        },
+        "review_WRLYpk": {
+          "type": "review",
+          "settings": {
+            "name": "Emeline L.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace",
+            "text": "<p>Efficace sur ma glycémie et mon taux de cholestérol, et bien supportée. Très bien.</p>",
+            "date": "30/05/26"
+          }
         }
       },
       "block_order": [
@@ -1708,7 +1719,8 @@
         "review_tBAtHM",
         "review_EAhjfL",
         "review_TVbcte",
-        "review_gATent"
+        "review_gATent",
+        "review_WRLYpk"
       ],
       "name": "Avis produit custom",
       "settings": {
@@ -1716,16 +1728,16 @@
         "rating": "4.8",
         "stars": "★★★★★",
         "based_text": "Basé sur 3,380 avis",
-        "show_pagination": true,
+        "show_pagination": false,
         "pagination_pages": "1,2,3,4,5",
         "background_color": "#fef9f0",
         "text_color": "#1a1a1a",
         "muted_text_color": "#1a1a1a",
-        "accent_color": "#FFC94A",
-        "line_color": "#E9E9E9",
+        "accent_color": "#ffc94a",
+        "line_color": "#e9e9e9",
         "verified_color": "#1a1a1a",
         "pagination_background": "#1a1a1a",
-        "pagination_text_color": "#FFFFFF",
+        "pagination_text_color": "#ffffff",
         "title_size_desktop": 30,
         "title_size_mobile": 30,
         "rating_size_desktop": 46,
