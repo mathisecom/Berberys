@@ -3,7 +3,6 @@
     --lovi-bg: {{ section.settings.background_color }};
     --lovi-text: {{ section.settings.text_color }};
     --lovi-heading: {{ section.settings.heading_color }};
-    --lovi-accent: {{ section.settings.accent_color }};
     --lovi-badge-bg: {{ section.settings.badge_bg }};
     --lovi-badge-text: {{ section.settings.badge_text }};
     --lovi-card-radius: {{ section.settings.image_radius }}px;
@@ -29,7 +28,7 @@
 
   #shopify-section-{{ section.id }} .lovi-metabolism__top {
     text-align: center;
-    margin-bottom: 56px;
+    margin-bottom: {{ section.settings.header_spacing }}px;
   }
 
   #shopify-section-{{ section.id }} .lovi-metabolism__badge {
@@ -40,7 +39,7 @@
     color: var(--lovi-badge-text);
     padding: 12px 34px;
     border-radius: 999px;
-    font-size: clamp(15px, 1.5vw, 22px);
+    font-size: {{ section.settings.badge_size_desktop }}px;
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 34px;
@@ -49,9 +48,9 @@
   #shopify-section-{{ section.id }} .lovi-metabolism__heading {
     color: var(--lovi-heading);
     font-family: inherit;
-    font-size: clamp(34px, 6vw, 72px);
+    font-size: {{ section.settings.main_title_size_desktop }}px;
     line-height: 1.05;
-    font-weight: 500;
+    font-weight: {{ section.settings.title_weight }};
     margin: 0;
   }
 
@@ -67,7 +66,7 @@
   #shopify-section-{{ section.id }} .lovi-metabolism__timeline {
     display: flex;
     flex-direction: column;
-    gap: 34px;
+    gap: {{ section.settings.row_gap_desktop }}px;
     position: relative;
   }
 
@@ -95,7 +94,7 @@
   #shopify-section-{{ section.id }} .lovi-metabolism__image {
     width: 100%;
     max-width: {{ section.settings.image_max_width }}px;
-    aspect-ratio: 1.15 / 1;
+    aspect-ratio: {{ section.settings.image_ratio }};
     object-fit: cover;
     border-radius: var(--lovi-card-radius);
     display: block;
@@ -113,31 +112,37 @@
   #shopify-section-{{ section.id }} .lovi-metabolism__title {
     color: var(--lovi-heading);
     font-family: inherit;
-    font-size: clamp(24px, 3vw, 36px);
+    font-size: {{ section.settings.block_title_size_desktop }}px;
     line-height: 1.2;
-    font-weight: 500;
+    font-weight: {{ section.settings.block_title_weight }};
     margin: 0 0 18px;
   }
 
   #shopify-section-{{ section.id }} .lovi-metabolism__text {
-    font-size: clamp(18px, 2.2vw, 28px);
-    line-height: 1.55;
-    font-weight: 500;
+    font-size: {{ section.settings.text_size_desktop }}px;
+    line-height: {{ section.settings.text_line_height | divided_by: 100.0 }};
+    font-weight: {{ section.settings.text_weight }};
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .lovi-metabolism__text p {
     margin: 0;
   }
 
   #shopify-section-{{ section.id }} .lovi-metabolism__arrow {
     display: flex;
-    justify-content: center;
     color: var(--lovi-arrow-color);
-    margin: -4px 0 -2px;
     pointer-events: none;
+    position: relative;
+    z-index: 1;
   }
 
   #shopify-section-{{ section.id }} .lovi-metabolism__arrow svg {
-    width: min(46vw, 360px);
+    width: {{ section.settings.arrow_width_desktop }}px;
+    max-width: 45vw;
     height: auto;
     overflow: visible;
+    animation: lovi-float-arrow-{{ section.id }} 2.2s ease-in-out infinite;
   }
 
   #shopify-section-{{ section.id }} .lovi-metabolism__arrow path {
@@ -146,24 +151,28 @@
     animation: lovi-draw-arrow-{{ section.id }} 2.2s ease-in-out infinite;
   }
 
-  #shopify-section-{{ section.id }} .lovi-metabolism__arrow svg {
-    animation: lovi-float-arrow-{{ section.id }} 2.2s ease-in-out infinite;
+  #shopify-section-{{ section.id }} .lovi-metabolism__arrow--right {
+    justify-content: center;
+    transform: translate(
+      {{ section.settings.arrow_1_desktop_x }}px,
+      {{ section.settings.arrow_1_desktop_y }}px
+    );
+    margin: {{ section.settings.arrow_margin_desktop }}px 0;
   }
 
   #shopify-section-{{ section.id }} .lovi-metabolism__arrow--left {
-    justify-content: flex-start;
-    padding-left: 22%;
-  }
-
-  #shopify-section-{{ section.id }} .lovi-metabolism__arrow--right {
-    justify-content: flex-end;
-    padding-right: 22%;
+    justify-content: center;
+    transform: translate(
+      {{ section.settings.arrow_2_desktop_x }}px,
+      {{ section.settings.arrow_2_desktop_y }}px
+    );
+    margin: {{ section.settings.arrow_margin_desktop }}px 0;
   }
 
   #shopify-section-{{ section.id }} .lovi-metabolism__placeholder {
     width: 100%;
     max-width: {{ section.settings.image_max_width }}px;
-    aspect-ratio: 1.15 / 1;
+    aspect-ratio: {{ section.settings.image_ratio }};
     border-radius: var(--lovi-card-radius);
     background: rgba(0, 0, 0, 0.06);
     display: flex;
@@ -180,7 +189,7 @@
   @keyframes lovi-draw-arrow-{{ section.id }} {
     0% {
       stroke-dashoffset: 820;
-      opacity: 0.3;
+      opacity: 0.25;
     }
     45% {
       stroke-dashoffset: 0;
@@ -197,7 +206,7 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(8px);
+      transform: translateY(7px);
     }
   }
 
@@ -207,17 +216,18 @@
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__top {
-      margin-bottom: 38px;
+      margin-bottom: {{ section.settings.header_spacing_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__badge {
+      font-size: {{ section.settings.badge_size_mobile }}px;
       padding: 10px 22px;
       margin-bottom: 26px;
       max-width: 100%;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__heading {
-      font-size: clamp(36px, 12vw, 56px);
+      font-size: {{ section.settings.main_title_size_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__highlight {
@@ -226,13 +236,13 @@
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__timeline {
-      gap: 22px;
+      gap: {{ section.settings.row_gap_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__row,
     #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse {
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: {{ section.settings.mobile_content_gap }}px;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse .lovi-metabolism__image-wrap,
@@ -242,17 +252,21 @@
 
     #shopify-section-{{ section.id }} .lovi-metabolism__image,
     #shopify-section-{{ section.id }} .lovi-metabolism__placeholder {
-      max-width: 82%;
+      max-width: {{ section.settings.mobile_image_width }}%;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__row:nth-of-type(1) .lovi-metabolism__image,
-    #shopify-section-{{ section.id }} .lovi-metabolism__row:nth-of-type(1) .lovi-metabolism__placeholder {
+    #shopify-section-{{ section.id }} .lovi-metabolism__row:nth-of-type(1) .lovi-metabolism__placeholder,
+    #shopify-section-{{ section.id }} .lovi-metabolism__row:nth-of-type(5) .lovi-metabolism__image,
+    #shopify-section-{{ section.id }} .lovi-metabolism__row:nth-of-type(5) .lovi-metabolism__placeholder {
       margin-right: auto;
+      margin-left: 0;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse .lovi-metabolism__image,
     #shopify-section-{{ section.id }} .lovi-metabolism__row--reverse .lovi-metabolism__placeholder {
       margin-left: auto;
+      margin-right: 0;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__content {
@@ -260,32 +274,39 @@
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__title {
-      font-size: clamp(24px, 8vw, 34px);
+      font-size: {{ section.settings.block_title_size_mobile }}px;
       margin-bottom: 12px;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__text {
-      font-size: clamp(18px, 6vw, 26px);
-      line-height: 1.5;
+      font-size: {{ section.settings.text_size_mobile }}px;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__arrow {
-      margin: -8px 0;
+      margin: {{ section.settings.arrow_margin_mobile }}px 0;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__arrow svg {
-      width: 58vw;
-      max-width: 280px;
-    }
-
-    #shopify-section-{{ section.id }} .lovi-metabolism__arrow--left {
-      justify-content: flex-start;
-      padding-left: 26%;
+      width: {{ section.settings.arrow_width_mobile }}px;
+      max-width: 78vw;
     }
 
     #shopify-section-{{ section.id }} .lovi-metabolism__arrow--right {
       justify-content: flex-end;
-      padding-right: 22%;
+      padding-right: calc((100% - {{ section.settings.mobile_image_width }}%) / 2);
+      transform: translate(
+        {{ section.settings.arrow_1_mobile_x }}px,
+        {{ section.settings.arrow_1_mobile_y }}px
+      );
+    }
+
+    #shopify-section-{{ section.id }} .lovi-metabolism__arrow--left {
+      justify-content: flex-start;
+      padding-left: calc((100% - {{ section.settings.mobile_image_width }}%) / 2);
+      transform: translate(
+        {{ section.settings.arrow_2_mobile_x }}px,
+        {{ section.settings.arrow_2_mobile_y }}px
+      );
     }
   }
 {% endstyle %}
@@ -335,7 +356,7 @@
       {% if section.settings.show_arrows %}
         <div class="lovi-metabolism__arrow lovi-metabolism__arrow--right">
           <svg viewBox="0 0 420 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M46 8C46 8 35 104 150 137C238 162 344 144 390 146M390 146L358 123M390 146L356 169" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M46 8C46 8 35 104 150 137C238 162 344 144 390 146M390 146L358 123M390 146L356 169" stroke="currentColor" stroke-width="{{ section.settings.arrow_thickness }}" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
       {% endif %}
@@ -364,7 +385,7 @@
       {% if section.settings.show_arrows %}
         <div class="lovi-metabolism__arrow lovi-metabolism__arrow--left">
           <svg viewBox="0 0 420 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M374 8C374 8 385 104 270 137C182 162 76 144 30 146M30 146L62 123M30 146L64 169" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M374 8C374 8 385 104 270 137C182 162 76 144 30 146M30 146L62 123M30 146L64 169" stroke="currentColor" stroke-width="{{ section.settings.arrow_thickness }}" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
       {% endif %}
@@ -422,6 +443,7 @@
       "label": "Titre ligne 2",
       "default": "Agit sur ton Métabolisme"
     },
+
     {
       "type": "header",
       "content": "Bloc 1"
@@ -443,6 +465,7 @@
       "label": "Texte 1",
       "default": "<p>Ton corps arrête de stocker et recommence à brûler. Tu le sens dès les premières semaines.</p>"
     },
+
     {
       "type": "header",
       "content": "Bloc 2"
@@ -464,6 +487,7 @@
       "label": "Texte 2",
       "default": "<p>Pas de régime, pas de restriction. Ton ventre s’affine naturellement.</p>"
     },
+
     {
       "type": "header",
       "content": "Bloc 3"
@@ -485,6 +509,151 @@
       "label": "Texte 3",
       "default": "<p>Le stress hormonal se calme. Tu dors mieux, tu grignotes moins, tu te sens toi.</p>"
     },
+
+    {
+      "type": "header",
+      "content": "Tailles des textes ordinateur"
+    },
+    {
+      "type": "range",
+      "id": "badge_size_desktop",
+      "label": "Taille badge ordinateur",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "main_title_size_desktop",
+      "label": "Taille grand titre ordinateur",
+      "min": 28,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 62
+    },
+    {
+      "type": "range",
+      "id": "block_title_size_desktop",
+      "label": "Taille titres des blocs ordinateur",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "text_size_desktop",
+      "label": "Taille paragraphes ordinateur",
+      "min": 12,
+      "max": 46,
+      "step": 1,
+      "unit": "px",
+      "default": 27
+    },
+
+    {
+      "type": "header",
+      "content": "Tailles des textes mobile"
+    },
+    {
+      "type": "range",
+      "id": "badge_size_mobile",
+      "label": "Taille badge mobile",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "main_title_size_mobile",
+      "label": "Taille grand titre mobile",
+      "min": 24,
+      "max": 70,
+      "step": 1,
+      "unit": "px",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "block_title_size_mobile",
+      "label": "Taille titres des blocs mobile",
+      "min": 16,
+      "max": 46,
+      "step": 1,
+      "unit": "px",
+      "default": 27
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Taille paragraphes mobile",
+      "min": 12,
+      "max": 38,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+
+    {
+      "type": "header",
+      "content": "Graisses et lisibilité"
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Graisse grand titre",
+      "default": "500",
+      "options": [
+        { "value": "300", "label": "Léger" },
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Moyen" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "block_title_weight",
+      "label": "Graisse titres blocs",
+      "default": "500",
+      "options": [
+        { "value": "300", "label": "Léger" },
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Moyen" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Graisse paragraphes",
+      "default": "500",
+      "options": [
+        { "value": "300", "label": "Léger" },
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Moyen" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "text_line_height",
+      "label": "Hauteur de ligne des paragraphes",
+      "min": 100,
+      "max": 220,
+      "step": 5,
+      "unit": "%",
+      "default": 155
+    },
+
     {
       "type": "header",
       "content": "Couleurs"
@@ -506,12 +675,6 @@
       "id": "text_color",
       "label": "Couleur du texte",
       "default": "#333333"
-    },
-    {
-      "type": "color",
-      "id": "accent_color",
-      "label": "Couleur accent",
-      "default": "#315d48"
     },
     {
       "type": "color",
@@ -537,19 +700,42 @@
       "label": "Couleur des flèches",
       "default": "#315d48"
     },
+
     {
       "type": "header",
-      "content": "Images et style"
+      "content": "Images"
     },
     {
       "type": "range",
       "id": "image_max_width",
-      "label": "Largeur max des images",
+      "label": "Largeur max des images ordinateur",
       "min": 180,
       "max": 620,
       "step": 10,
       "unit": "px",
       "default": 360
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_width",
+      "label": "Largeur images mobile",
+      "min": 50,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 82
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Format des images",
+      "default": "1.15 / 1",
+      "options": [
+        { "value": "1 / 1", "label": "Carré" },
+        { "value": "1.15 / 1", "label": "Comme l’exemple" },
+        { "value": "4 / 3", "label": "Paysage 4:3" },
+        { "value": "3 / 4", "label": "Portrait 3:4" }
+      ]
     },
     {
       "type": "range",
@@ -571,12 +757,148 @@
       "unit": "%",
       "default": 12
     },
+
+    {
+      "type": "header",
+      "content": "Flèches"
+    },
     {
       "type": "checkbox",
       "id": "show_arrows",
       "label": "Afficher les flèches animées",
       "default": true
     },
+    {
+      "type": "range",
+      "id": "arrow_width_desktop",
+      "label": "Largeur flèches ordinateur",
+      "min": 120,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "default": 360
+    },
+    {
+      "type": "range",
+      "id": "arrow_width_mobile",
+      "label": "Largeur flèches mobile",
+      "min": 100,
+      "max": 360,
+      "step": 5,
+      "unit": "px",
+      "default": 240
+    },
+    {
+      "type": "range",
+      "id": "arrow_thickness",
+      "label": "Épaisseur des flèches",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "arrow_margin_desktop",
+      "label": "Marge verticale flèches ordinateur",
+      "min": -80,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": -4
+    },
+    {
+      "type": "range",
+      "id": "arrow_margin_mobile",
+      "label": "Marge verticale flèches mobile",
+      "min": -80,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": -12
+    },
+    {
+      "type": "range",
+      "id": "arrow_1_desktop_x",
+      "label": "Flèche 1 position X ordinateur",
+      "min": -300,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "arrow_1_desktop_y",
+      "label": "Flèche 1 position Y ordinateur",
+      "min": -200,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "arrow_2_desktop_x",
+      "label": "Flèche 2 position X ordinateur",
+      "min": -300,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": -80
+    },
+    {
+      "type": "range",
+      "id": "arrow_2_desktop_y",
+      "label": "Flèche 2 position Y ordinateur",
+      "min": -200,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "arrow_1_mobile_x",
+      "label": "Flèche 1 position X mobile",
+      "min": -160,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": -16
+    },
+    {
+      "type": "range",
+      "id": "arrow_1_mobile_y",
+      "label": "Flèche 1 position Y mobile",
+      "min": -160,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": -4
+    },
+    {
+      "type": "range",
+      "id": "arrow_2_mobile_x",
+      "label": "Flèche 2 position X mobile",
+      "min": -160,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "arrow_2_mobile_y",
+      "label": "Flèche 2 position Y mobile",
+      "min": -160,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": -4
+    },
+
     {
       "type": "header",
       "content": "Mise en page"
@@ -600,6 +922,56 @@
       "step": 2,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Espace sous le titre ordinateur",
+      "min": 10,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "header_spacing_mobile",
+      "label": "Espace sous le titre mobile",
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "row_gap_desktop",
+      "label": "Espacement des blocs ordinateur",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "row_gap_mobile",
+      "label": "Espacement des blocs mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_gap",
+      "label": "Espace image / texte mobile",
+      "min": 8,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
     },
     {
       "type": "range",
