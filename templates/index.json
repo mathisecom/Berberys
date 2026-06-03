@@ -1713,18 +1713,18 @@
       "name": "Avis produit custom",
       "settings": {
         "title": "Avis sur notre Berbérine Mirabel",
-        "rating": "4.5",
+        "rating": "4.8",
         "stars": "★★★★★",
-        "based_text": "Basé sur 1188 avis",
+        "based_text": "Basé sur 3,380 avis",
         "show_pagination": true,
         "pagination_pages": "1,2,3,4,5",
         "background_color": "#fef9f0",
-        "text_color": "#071846",
-        "muted_text_color": "#071846",
+        "text_color": "#1a1a1a",
+        "muted_text_color": "#1a1a1a",
         "accent_color": "#FFC94A",
         "line_color": "#E9E9E9",
-        "verified_color": "#071846",
-        "pagination_background": "#071846",
+        "verified_color": "#1a1a1a",
+        "pagination_background": "#1a1a1a",
         "pagination_text_color": "#FFFFFF",
         "title_size_desktop": 30,
         "title_size_mobile": 30,
@@ -1743,8 +1743,8 @@
         "review_padding_y": 48,
         "padding_top_desktop": 42,
         "padding_bottom_desktop": 40,
-        "padding_top_mobile": 34,
-        "padding_bottom_mobile": 36
+        "padding_top_mobile": 26,
+        "padding_bottom_mobile": 26
       }
     },
     "rich_text_jm8eFe": {
@@ -1770,6 +1770,7 @@
         "subheading_eXD7nf",
         "heading_CQwE9d"
       ],
+      "disabled": true,
       "name": "Rich text",
       "settings": {
         "full_width": true,
@@ -1826,6 +1827,7 @@
         "image_yB96YA",
         "image_LMLJ9J"
       ],
+      "disabled": true,
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
         "layout_radius": 30,
@@ -1930,6 +1932,7 @@
         "testimonial_ECqyMy",
         "testimonial_aNzgEM"
       ],
+      "disabled": true,
       "name": "Testimonials",
       "settings": {
         "full_width": true,
