@@ -1455,8 +1455,8 @@
         "mobile_content_gap": 24,
         "padding_top": 32,
         "padding_bottom": 60,
-        "mobile_padding_top": 16,
-        "mobile_padding_bottom": 32
+        "mobile_padding_top": 46,
+        "mobile_padding_bottom": 38
       }
     },
     "imagewithtext_wCjhfr": {
@@ -1642,6 +1642,109 @@
         "padding_bottom_mobile": 36,
         "padding_left_mobile": 16,
         "padding_right_mobile": 16
+      }
+    },
+    "avisproduit_j8FVDL": {
+      "type": "avisproduit",
+      "blocks": {
+        "review_CEqjJQ": {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
+        "review_tBAtHM": {
+          "type": "review",
+          "settings": {
+            "name": "Sylvie A.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Produit de qualité",
+            "text": "<p>Bon produit pour maintenir sa glycémie à niveau stable avec une alimentation équilibrée</p>",
+            "date": "26/05/26"
+          }
+        },
+        "review_EAhjfL": {
+          "type": "review",
+          "settings": {
+            "name": "Sophie B.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": ".",
+            "text": "<p>.</p>",
+            "date": "25/05/26"
+          }
+        },
+        "review_TVbcte": {
+          "type": "review",
+          "settings": {
+            "name": "Céline H.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★☆",
+            "review_title": "Prit avec le chardon Marie",
+            "text": "<p>Prit avec le chardon Marie de chez dynveo Bon produit Je recommande</p>",
+            "date": "23/05/26"
+          }
+        },
+        "review_gATent": {
+          "type": "review",
+          "settings": {
+            "name": "chantal m.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Je me sens mieux après",
+            "text": "<p>Je me sens mieux après un mois de prise de berberine plus légère au moment de la digestion Je recommande</p>",
+            "date": "22/05/26"
+          }
+        }
+      },
+      "block_order": [
+        "review_CEqjJQ",
+        "review_tBAtHM",
+        "review_EAhjfL",
+        "review_TVbcte",
+        "review_gATent"
+      ],
+      "name": "Avis produit custom",
+      "settings": {
+        "title": "Avis sur notre Berbérine Mirabel",
+        "rating": "4.5",
+        "stars": "★★★★★",
+        "based_text": "Basé sur 1188 avis",
+        "show_pagination": true,
+        "pagination_pages": "1,2,3,4,5",
+        "background_color": "#fef9f0",
+        "text_color": "#071846",
+        "muted_text_color": "#071846",
+        "accent_color": "#FFC94A",
+        "line_color": "#E9E9E9",
+        "verified_color": "#071846",
+        "pagination_background": "#071846",
+        "pagination_text_color": "#FFFFFF",
+        "title_size_desktop": 30,
+        "title_size_mobile": 30,
+        "rating_size_desktop": 46,
+        "rating_size_mobile": 38,
+        "stars_size": 24,
+        "summary_size": 13,
+        "name_size": 16,
+        "verified_size": 12,
+        "review_title_size": 18,
+        "review_text_size": 16,
+        "date_size": 16,
+        "max_width": 1120,
+        "title_bottom_space": 70,
+        "summary_bottom_space": 86,
+        "review_padding_y": 48,
+        "padding_top_desktop": 42,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 34,
+        "padding_bottom_mobile": 36
       }
     },
     "rich_text_jm8eFe": {
@@ -1934,6 +2037,7 @@
     "imagewithtext_wCjhfr",
     "certif_XH7DiP",
     "cleanlabel_VxG8gr",
+    "avisproduit_j8FVDL",
     "rich_text_jm8eFe",
     "logoscrooll_zK3aBh",
     "testimonials_fekFkB",
