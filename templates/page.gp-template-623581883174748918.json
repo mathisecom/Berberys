@@ -11,7 +11,9 @@
   "sections": {
     "gp_section_623581886966399816": {
       "settings": {
-        "checksum": "1fd633d7b24238bb59497e39d3355199210dbdf0ec762ba603ee8eb9509b214a_1_1_1_0__1",
+        "checksum": "c26f85e58049df5cb37dfef56c4827e52130a0a59f6e11c1ca9e491c416deb8c_1_1_1_0__1",
+        "ggWqntl2OWt_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/2005/9307/files/image_demo.jpg",
+        "ggWqntl2OWt_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0997/4064/7801/files/POP_23_1_498f61a5-95fc-4504-bc03-d20b4b085c84.png",
         "section_preload": "true"
       },
       "type": "gp-section-623581886966399816"
@@ -76,7 +78,7 @@
     },
     "gp_section_623587870241719252": {
       "settings": {
-        "checksum": "2a4405c213c4efa077b7ee58c2c38e501b7f6b134bb34f351dce1f2c54c3c26d_1_1_1_0__1",
+        "checksum": "c57a3a811f7b102449e2208597a91f758724dbaab2073b10e3b25b71048cbc79_1_1_1_0__1",
         "ggC1IYXD6Vi_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0997/4064/7801/files/CREA_1080X1080_-_2026-05-25T144347.545.webp",
         "ggC1IYXD6Vi_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0997/4064/7801/files/CREA_1080X1080_-_2026-05-25T144347.545.webp",
         "ggaVhM9sjm6_label": "<p>Vérifier la disponibilité</p>",
