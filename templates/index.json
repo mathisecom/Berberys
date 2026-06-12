@@ -18,7 +18,7 @@
         "image_bg_color": "#fef9f0",
         "text_width_desktop": 60,
         "banner_min_height_desktop": 360,
-        "image_height_mobile": 350,
+        "image_height_mobile": 410,
         "image_position_desktop": "center center",
         "image_position_mobile": "top center",
         "badge_text": "Offre de Printemps",
