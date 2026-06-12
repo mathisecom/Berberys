@@ -9,140 +9,2032 @@
  */
 {
   "sections": {
-    "slideshow": {
-      "type": "slideshow",
-      "blocks": {
-        "slide-1": {
-          "type": "image",
-          "settings": {
-            "content_max_width": 780,
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "subheading": "Tell your story",
-            "title": "Slide title",
-            "heading_tag": "h0",
-            "button_text": "",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "background": "",
-            "background_gradient": ""
-          }
-        },
-        "slide-2": {
-          "type": "image",
-          "settings": {
-            "content_max_width": 780,
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "subheading": "Tell your story",
-            "title": "Slide title",
-            "heading_tag": "h0",
-            "button_text": "",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "background": "",
-            "background_gradient": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide-1",
-        "slide-2"
-      ],
+    "herosection_TxKGFm": {
+      "type": "herosection",
+      "name": "Immune Hero",
       "settings": {
-        "full_width": true,
-        "allow_transparent_header": true,
-        "image_size": "auto",
-        "controls_type": "numbers",
-        "transition_type": "fade_with_text",
-        "autoplay": true,
-        "cycle_speed": 6,
-        "background": "#F2F2F2",
-        "background_gradient": "linear-gradient(60deg, rgba(60, 65, 68, 1), rgba(23, 29, 33, 1) 98%)"
+        "hero_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T144347.545.png",
+        "image_alt": "",
+        "image_bg_color": "#fef9f0",
+        "text_width_desktop": 60,
+        "banner_min_height_desktop": 360,
+        "image_height_mobile": 410,
+        "image_position_desktop": "center center",
+        "image_position_mobile": "top center",
+        "badge_text": "Offre de Printemps",
+        "offer_prefix": "Jusqu’à",
+        "offer_value": "-50%",
+        "description": "Une berbérine nouvelle génération, hautement assimilable, conçue pour aider à soutenir l’équilibre glycémique, le métabolisme des graisses et le maintien d’un cholestérol normal.",
+        "btn_label": "J’essaie Mirabel →",
+        "btn_link": "#shopify-section-template--28743066943865__featured_product_khQ4Qz",
+        "show_trustpilot": true,
+        "trust_label": "Excellent",
+        "stars_text": "★★★★★",
+        "trust_score": "Noté 4,7/5 sur",
+        "trust_brand": "Trustpilot",
+        "bg_color": "#fef9f0",
+        "text_color": "#1a1a1a",
+        "heading_color": "#1a1a1a",
+        "badge_bg": "#fff27b",
+        "badge_text_color": "#1a1a1a",
+        "btn_bg": "#fff27b",
+        "btn_text_color": "#1a1a1a",
+        "btn_hover_bg": "#ffe94a",
+        "stars_color": "#00b67a",
+        "trust_text_color": "#000000",
+        "heading_font": "manrope_n7",
+        "body_font": "dm_sans_n4",
+        "badge_weight": "700",
+        "prefix_weight": "700",
+        "discount_weight": "800",
+        "body_weight": "500",
+        "button_weight": "800",
+        "badge_size_desktop": 19,
+        "prefix_size_desktop": 26,
+        "discount_size_desktop": 78,
+        "body_size_desktop": 15,
+        "button_size_desktop": 17,
+        "trust_size_desktop": 12,
+        "stars_size_desktop": 22,
+        "badge_size_mobile": 16,
+        "prefix_size_mobile": 22,
+        "discount_size_mobile": 58,
+        "body_size_mobile": 13,
+        "button_size_mobile": 15,
+        "trust_size_mobile": 12,
+        "stars_size_mobile": 20,
+        "content_max_width": 500,
+        "description_max_width": 680,
+        "button_max_width": 720,
+        "badge_radius": 4,
+        "button_radius": 32,
+        "badge_padding_x": 20,
+        "badge_padding_y": 12,
+        "badge_padding_x_mobile": 18,
+        "badge_padding_y_mobile": 10,
+        "button_padding_x": 48,
+        "button_padding_y": 20,
+        "button_padding_x_mobile": 28,
+        "button_padding_y_mobile": 18,
+        "badge_margin_bottom": 18,
+        "badge_margin_bottom_mobile": 16,
+        "offer_gap": 10,
+        "offer_gap_mobile": 8,
+        "offer_margin_bottom": 18,
+        "offer_margin_bottom_mobile": 16,
+        "description_margin_bottom": 12,
+        "description_margin_bottom_mobile": 18,
+        "button_margin_bottom": 14,
+        "button_margin_bottom_mobile": 14,
+        "trust_gap": 12,
+        "trust_gap_mobile": 8,
+        "stars_letter_spacing": 2,
+        "trust_icon_size": 20,
+        "padding_top_desktop": 36,
+        "padding_bottom_desktop": 72,
+        "padding_x_desktop": 48,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 48,
+        "padding_x_mobile": 16
       }
     },
-    "image-link-blocks": {
-      "type": "image-link-blocks",
+    "marqueeicons_6jTM4T": {
+      "type": "marqueeicons",
       "blocks": {
-        "1664424046b00c932c-0": {
+        "item_RNYBfb": {
           "type": "item",
           "settings": {
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "icon": "shopify://shop_images/categorie.svg",
+            "text": "Validé par les pharmaciens"
           }
         },
-        "1664424046b00c932c-1": {
+        "item_CepQFM": {
           "type": "item",
           "settings": {
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "icon": "shopify://shop_images/categorie_b5bdb2ef-2088-4875-9a14-1667bb17bf30.svg",
+            "text": "100% Vegan et naturel"
           }
         },
-        "1664424046b00c932c-2": {
+        "item_PDdARn": {
           "type": "item",
           "settings": {
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "1664424046b00c932c-3": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "e4a0ef18-1856-4ddd-83d8-871a60d7acac": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
+            "text": "Fabriqué en France"
           }
         }
       },
       "block_order": [
-        "1664424046b00c932c-0",
-        "1664424046b00c932c-1",
-        "1664424046b00c932c-2",
-        "1664424046b00c932c-3",
-        "e4a0ef18-1856-4ddd-83d8-871a60d7acac"
+        "item_RNYBfb",
+        "item_CepQFM",
+        "item_PDdARn"
       ],
+      "name": "Marquee défilant",
+      "settings": {
+        "bg_type": "solid",
+        "bg_color": "#fff27b",
+        "gradient_color_1": "#fff27b",
+        "gradient_color_2": "#f1e25c",
+        "gradient_color_3": "",
+        "gradient_angle": 175,
+        "direction": "left",
+        "speed": 68,
+        "pause_on_hover": true,
+        "repeat": 6,
+        "bar_padding": 15,
+        "item_gap": 48,
+        "icon_gap": 8,
+        "icon_size": 14,
+        "text_color": "#1a1a1a",
+        "text_size": 12,
+        "text_weight": "600",
+        "text_transform": "uppercase",
+        "letter_spacing": 0.5,
+        "aria_label": "Nos engagements produit"
+      }
+    },
+    "presentation_EkBfBH": {
+      "type": "presentation",
+      "blocks": {
+        "feature_HxGyEQ": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/sugar-svgrepo-com.png",
+            "title": "Glycémie  Stable",
+            "text": "Aide à limiter les pics de sucre."
+          }
+        },
+        "feature_WpPjp4": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/sugar-svgrepo-com_3.png",
+            "title": "Insuline Optimisée",
+            "text": "Favorise une meilleure sensibilité à l’insuline."
+          }
+        },
+        "feature_AYaiwK": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/sugar-svgrepo-com_1.png",
+            "title": "Équilibre Lipidique",
+            "text": "Soutient le cholestérol et les triglycérides."
+          }
+        },
+        "feature_HyaHxU": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/sugar-svgrepo-com_2.png",
+            "title": "Digestion & Microbiote",
+            "text": "Aide à maintenir une flore intestinale équilibrée."
+          }
+        }
+      },
+      "block_order": [
+        "feature_HxGyEQ",
+        "feature_WpPjp4",
+        "feature_AYaiwK",
+        "feature_HyaHxU"
+      ],
+      "name": "Présentation produit",
+      "settings": {
+        "content_width": 1200,
+        "col_gap": 60,
+        "row_gap": 56,
+        "grid_margin_top": 48,
+        "taglines_margin_top": 48,
+        "padding_top": 40,
+        "padding_bottom": 36,
+        "bg_type": "solid",
+        "bg_color": "#ffffff",
+        "gradient_color_1": "#fbf5e3",
+        "gradient_color_2": "#f7e9c6",
+        "gradient_color_3": "",
+        "gradient_angle": 135,
+        "heading": "Régulation naturelle des graisses et sucres",
+        "heading_color": "#1a1a1a",
+        "heading_size": 36,
+        "subheading": "",
+        "sub_color": "#1a1a1a",
+        "sub_size": 13,
+        "product_image": "shopify://shop_images/ChatGPT_Image_25_mai_2026_12_33_23.png",
+        "image_max_width": 460,
+        "image_mobile_width": 300,
+        "mobile_image_gap": 38,
+        "feature_icon_size": 38,
+        "feature_title_color": "#1a1a1a",
+        "feature_title_size": 18,
+        "feature_text_color": "#1a1a1a",
+        "feature_text_size": 13,
+        "show_arrows": true,
+        "accent_color": "#e2682b",
+        "arrow_size": 110,
+        "arrow_offset": 16,
+        "tagline_color": "#3a1e0e",
+        "tagline_size": 24,
+        "strike_thickness": 2
+      }
+    },
+    "featured_product_khQ4Qz": {
+      "type": "featured-product",
+      "blocks": {
+        "liquid_Lrc8VW": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  .mirabel-tags {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 6px;\n    margin: 12px 0;\n  }\n\n  .mirabel-tag {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    padding: 4px 8px;\n    border: 1px solid #8EAFD1;\n    background-color: #F8F2EA;\n    color: #111111;\n    font-size: 12px;\n    font-weight: 500;\n    line-height: 1;\n    text-transform: uppercase;\n    white-space: nowrap;\n  }\n\n  @media screen and (max-width: 480px) {\n    .mirabel-tags {\n      gap: 5px;\n    }\n\n    .mirabel-tag {\n      font-size: 11px;\n      padding: 4px 7px;\n    }\n  }\n</style>\n\n<div class=\"mirabel-tags\">\n  <span class=\"mirabel-tag\">Glycémie stable</span>\n  <span class=\"mirabel-tag\">Moins de fringales</span>\n</div>"
+          }
+        },
+        "liquid_pEcFnn": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"product-info__block-item\" data-block-id=\"liquid_xrwBGz\" data-block-type=\"liquid\"><div class=\"product-info__liquid\">\n              <div class=\"product-info__block-item\" data-block-id=\"liquid_VYgyhr\" data-block-type=\"liquid\"><div class=\"product-info__liquid\">\n              <div class=\"product-info__block-item\" data-block-id=\"liquid_ayckTY\" data-block-type=\"liquid\">\n  <div class=\"product-info__liquid\">\n    <div class=\"main-product__block main-product__block-custom_liquid\">\n      <div class=\"m-product-text\">\n        <div class=\"main-product__block main-product__block-custom_liquid\">\n          <div class=\"m-product-text\">\n            <div class=\"main-product__block main-product__block-custom_liquid\">\n              <div class=\"m-product-text\">\n                <div class=\"product-info__liquid\">\n                  <a class=\"image-size\" style=\"display: flex; align-items: center; gap: 8px;\">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0776/3751/7627/files/avis.png?v=1687213619\" alt=\"Étoiles\" width=\"63\" height=\"13\">\n                    <span class=\"text-size\">Noté <b>4,8/5</b> sur la base de 3,380 avis</span>\n                  </a>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n            </div></div>\n            </div></div>"
+          }
+        },
+        "liquid_hDrpnd": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  .mirabel-title-block {\n    margin: 12px 0 16px;\n    color: #111111;\n  }\n\n  .mirabel-title-block h2 {\n    margin: 0 0 8px;\n    font-size: 36px;\n    font-weight: 700;\n    line-height: 1.1;\n    color: #111111;\n  }\n\n  .mirabel-title-block p {\n    margin: 0;\n    font-size: 15px;\n    font-weight: 400;\n    line-height: 1.4;\n    color: #111111;\n  }\n\n  @media screen and (max-width: 480px) {\n    .mirabel-title-block h2 {\n      font-size: 30px;\n    }\n\n    .mirabel-title-block p {\n      font-size: 14px;\n    }\n  }\n</style>\n\n<div class=\"mirabel-title-block\">\n  <h2>Gélules de Berberine</h2>\n  <p>Extrait de berbéris standardisé à 97% en berbérine hydrochloride.</p>\n</div>"
+          }
+        },
+        "price_kfhCb7": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "liquid_pKkQHQ": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"custom-product-trust-block\">\n  <div class=\"custom-product-badges\">\n    <span class=\"custom-product-badge\">\n      <span class=\"badge-icon\">🇫🇷</span>\n      Laboratoire Français\n    </span>\n\n    <span class=\"custom-product-badge\">\n      <span class=\"badge-icon\">🔬</span>\n      Formulée par des scientifiques\n    </span>\n\n    <span class=\"custom-product-badge\">\n      <span class=\"badge-icon\">🧪</span>\n      Testée en laboratoire\n    </span>\n\n    <span class=\"custom-product-badge\">\n      <span class=\"badge-icon\">❌</span>\n      Sans produits chimiques\n    </span>\n\n    <span class=\"custom-product-badge\">\n      <span class=\"badge-icon\">💜</span>\n      Ingrédients cliniquement prouvés\n    </span>\n  </div>\n\n  <ul class=\"custom-product-benefits\">\n    <li>\n      <span class=\"check-icon\">✓</span>\n      Aide à limiter les pics de sucre.\n    </li>\n\n    <li>\n      <span class=\"check-icon\">✓</span>\n      Soutient le cholestérol et les triglycérides.\n    </li>\n\n    <li>\n      <span class=\"check-icon\">✓</span>\n      Favorise une meilleure sensibilité à l’insuline.\n    </li>\n  </ul>\n</div>\n\n<style>\n  .custom-product-trust-block {\n    width: 100%;\n    margin: 14px 0 18px;\n  }\n\n  .custom-product-badges {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 8px 10px;\n    margin-bottom: 14px;\n  }\n\n  .custom-product-badge {\n    display: inline-flex;\n    align-items: center;\n    gap: 6px;\n    background: #ffffff;\n    color: #151515;\n    border-radius: 999px;\n    padding: 5px 10px;\n    font-size: 14px;\n    line-height: 1.1;\n    font-weight: 400;\n    white-space: nowrap;\n    box-shadow: none;\n  }\n\n  .custom-product-badge .badge-icon {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 15px;\n    line-height: 1;\n  }\n\n  .custom-product-benefits {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n    display: grid;\n    gap: 6px;\n  }\n\n  .custom-product-benefits li {\n    display: flex;\n    align-items: flex-start;\n    gap: 9px;\n    color: #000000;\n    font-size: 16px;\n    line-height: 1.25;\n    font-weight: 400;\n  }\n\n  .custom-product-benefits .check-icon {\n    color: #1A1A1A;\n    font-size: 18px;\n    line-height: 1;\n    margin-top: 1px;\n    flex: 0 0 auto;\n  }\n\n  @media screen and (max-width: 749px) {\n    .custom-product-trust-block {\n      margin: 12px 0 16px;\n    }\n\n    .custom-product-badges {\n      display: flex;\n      flex-wrap: nowrap;\n      overflow-x: auto;\n      gap: 7px;\n      margin-bottom: 13px;\n      padding-bottom: 4px;\n      -webkit-overflow-scrolling: touch;\n      scrollbar-width: none;\n    }\n\n    .custom-product-badges::-webkit-scrollbar {\n      display: none;\n    }\n\n    .custom-product-badge {\n      flex: 0 0 auto;\n      font-size: 12.5px;\n      padding: 5px 9px;\n      white-space: nowrap;\n    }\n\n    .custom-product-badge .badge-icon {\n      font-size: 14px;\n    }\n\n    .custom-product-benefits {\n      gap: 7px;\n    }\n\n    .custom-product-benefits li {\n      font-size: 14.5px;\n      line-height: 1.25;\n    }\n\n    .custom-product-benefits .check-icon {\n      color: #1A1A1A;\n      font-size: 17px;\n    }\n  }\n</style>"
+          }
+        },
+        "kaching_bundles_app_block_KG9GBf": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "{{section.settings.product}}",
+            "manual_deal_block_id": ""
+          }
+        },
+        "variant_picker_n94Ycf": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "buy_buttons_CCMmLm": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "#fff27b",
+            "atc_button_text_color": "#1a1a1a",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "liquid_kDtQpN": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"product-info__block-item\" data-block-id=\"liquid_GgaU7b\" data-block-type=\"liquid\"><div class=\"product-info__liquid\">\n              <style>\n  .payment-icons__list {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    list-style: none;\n    padding: 0;\n    margin: 16px 0;\n  }\n  .payment-icons__item {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    line-height: 0;\n  }\n  .payment-icons__item svg {\n    display: block;\n    width: 38px;\n    height: 24px;\n  }\n  @media (max-width: 480px) {\n    .payment-icons__list {\n      gap: 6px;\n    }\n    .payment-icons__item svg {\n      width: 34px;\n      height: 22px;\n    }\n  }\n</style>\n\n<ul class=\"payment-icons__list\" role=\"list\">\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"pi-american_express\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\"><title id=\"pi-american_express\">American Express</title><path fill=\"#000\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3Z\" opacity=\".07\"></path><path fill=\"#006FCF\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32Z\"></path><path fill=\"#FFF\" d=\"M22.012 19.936v-8.421L37 11.528v2.326l-1.732 1.852L37 17.573v2.375h-2.766l-1.47-1.622-1.46 1.628-9.292-.02Z\"></path><path fill=\"#006FCF\" d=\"M23.013 19.012v-6.57h5.572v1.513h-3.768v1.028h3.678v1.488h-3.678v1.01h3.768v1.531h-5.572Z\"></path><path fill=\"#006FCF\" d=\"m28.557 19.012 3.083-3.289-3.083-3.282h2.386l1.884 2.083 1.89-2.082H37v.051l-3.017 3.23L37 18.92v.093h-2.307l-1.917-2.103-1.898 2.104h-2.321Z\"></path><path fill=\"#FFF\" d=\"M22.71 4.04h3.614l1.269 2.881V4.04h4.46l.77 2.159.771-2.159H37v8.421H19l3.71-8.421Z\"></path><path fill=\"#006FCF\" d=\"m23.395 4.955-2.916 6.566h2l.55-1.315h2.98l.55 1.315h2.05l-2.904-6.566h-2.31Zm.25 3.777.875-2.09.873 2.09h-1.748Z\"></path><path fill=\"#006FCF\" d=\"M28.581 11.52V4.953l2.811.01L32.84 9l1.456-4.046H37v6.565l-1.74.016v-4.51l-1.644 4.494h-1.59L30.35 7.01v4.51h-1.768Z\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" x=\"0\" y=\"0\" width=\"38\" height=\"24\" viewBox=\"0 0 165.521 105.965\" xml:space=\"preserve\" aria-labelledby=\"pi-apple_pay\"><title id=\"pi-apple_pay\">Apple Pay</title><path fill=\"#000\" d=\"M150.698 0H14.823c-.566 0-1.133 0-1.698.003-.477.004-.953.009-1.43.022-1.039.028-2.087.09-3.113.274a10.51 10.51 0 0 0-2.958.975 9.932 9.932 0 0 0-4.35 4.35 10.463 10.463 0 0 0-.975 2.96C.113 9.611.052 10.658.024 11.696a70.22 70.22 0 0 0-.022 1.43C0 13.69 0 14.256 0 14.823v76.318c0 .567 0 1.132.002 1.699.003.476.009.953.022 1.43.028 1.036.09 2.084.275 3.11a10.46 10.46 0 0 0 .974 2.96 9.897 9.897 0 0 0 1.83 2.52 9.874 9.874 0 0 0 2.52 1.83c.947.483 1.917.79 2.96.977 1.025.183 2.073.245 3.112.273.477.011.953.017 1.43.02.565.004 1.132.004 1.698.004h135.875c.565 0 1.132 0 1.697-.004.476-.002.952-.009 1.431-.02 1.037-.028 2.085-.09 3.113-.273a10.478 10.478 0 0 0 2.958-.977 9.955 9.955 0 0 0 4.35-4.35c.483-.947.789-1.917.974-2.96.186-1.026.246-2.074.274-3.11.013-.477.02-.954.022-1.43.004-.567.004-1.132.004-1.699V14.824c0-.567 0-1.133-.004-1.699a63.067 63.067 0 0 0-.022-1.429c-.028-1.038-.088-2.085-.274-3.112a10.4 10.4 0 0 0-.974-2.96 9.94 9.94 0 0 0-4.35-4.35A10.52 10.52 0 0 0 156.939.3c-1.028-.185-2.076-.246-3.113-.274a71.417 71.417 0 0 0-1.431-.022C151.83 0 151.263 0 150.698 0z\"></path><path fill=\"#FFF\" d=\"M150.698 3.532l1.672.003c.452.003.905.008 1.36.02.793.022 1.719.065 2.583.22.75.135 1.38.34 1.984.648a6.392 6.392 0 0 1 2.804 2.807c.306.6.51 1.226.645 1.983.154.854.197 1.783.218 2.58.013.45.019.9.02 1.36.005.557.005 1.113.005 1.671v76.318c0 .558 0 1.114-.004 1.682-.002.45-.008.9-.02 1.35-.022.796-.065 1.725-.221 2.589a6.855 6.855 0 0 1-.645 1.975 6.397 6.397 0 0 1-2.808 2.807c-.6.306-1.228.511-1.971.645-.881.157-1.847.2-2.574.22-.457.01-.912.017-1.379.019-.555.004-1.113.004-1.669.004H14.801c-.55 0-1.1 0-1.66-.004a74.993 74.993 0 0 1-1.35-.018c-.744-.02-1.71-.064-2.584-.22a6.938 6.938 0 0 1-1.986-.65 6.337 6.337 0 0 1-1.622-1.18 6.355 6.355 0 0 1-1.178-1.623 6.935 6.935 0 0 1-.646-1.985c-.156-.863-.2-1.788-.22-2.578a66.088 66.088 0 0 1-.02-1.355l-.003-1.327V14.474l.002-1.325a66.7 66.7 0 0 1 .02-1.357c.022-.792.065-1.717.222-2.587a6.924 6.924 0 0 1 .646-1.981c.304-.598.7-1.144 1.18-1.623a6.386 6.386 0 0 1 1.624-1.18 6.96 6.96 0 0 1 1.98-.646c.865-.155 1.792-.198 2.586-.22.452-.012.905-.017 1.354-.02l1.677-.003h135.875\"></path><g><g><path fill=\"#000\" d=\"M43.508 35.77c1.404-1.755 2.356-4.112 2.105-6.52-2.054.102-4.56 1.355-6.012 3.112-1.303 1.504-2.456 3.959-2.156 6.266 2.306.2 4.61-1.152 6.063-2.858\"></path><path fill=\"#000\" d=\"M45.587 39.079c-3.35-.2-6.196 1.9-7.795 1.9-1.6 0-4.049-1.8-6.698-1.751-3.447.05-6.645 2-8.395 5.1-3.598 6.2-.95 15.4 2.55 20.45 1.699 2.5 3.747 5.25 6.445 5.151 2.55-.1 3.549-1.65 6.647-1.65 3.097 0 3.997 1.65 6.696 1.6 2.798-.05 4.548-2.5 6.247-5 1.95-2.85 2.747-5.6 2.797-5.75-.05-.05-5.396-2.101-5.446-8.251-.05-5.15 4.198-7.6 4.398-7.751-2.399-3.548-6.147-3.948-7.447-4.048\"></path></g><g><path fill=\"#000\" d=\"M78.973 32.11c7.278 0 12.347 5.017 12.347 12.321 0 7.33-5.173 12.373-12.529 12.373h-8.058V69.62h-5.822V32.11h14.062zm-8.24 19.807h6.68c5.07 0 7.954-2.729 7.954-7.46 0-4.73-2.885-7.434-7.928-7.434h-6.706v14.894z\"></path><path fill=\"#000\" d=\"M92.764 61.847c0-4.809 3.665-7.564 10.423-7.98l7.252-.442v-2.08c0-3.04-2.001-4.704-5.562-4.704-2.938 0-5.07 1.507-5.51 3.82h-5.252c.157-4.86 4.731-8.395 10.918-8.395 6.654 0 10.995 3.483 10.995 8.89v18.663h-5.38v-4.497h-.13c-1.534 2.937-4.914 4.782-8.579 4.782-5.406 0-9.175-3.222-9.175-8.057zm17.675-2.417v-2.106l-6.472.416c-3.64.234-5.536 1.585-5.536 3.95 0 2.288 1.975 3.77 5.068 3.77 3.95 0 6.94-2.522 6.94-6.03z\"></path><path fill=\"#000\" d=\"M120.975 79.652v-4.496c.364.051 1.247.103 1.715.103 2.573 0 4.029-1.09 4.913-3.899l.52-1.663-9.852-27.293h6.082l6.863 22.146h.13l6.862-22.146h5.927l-10.216 28.67c-2.34 6.577-5.017 8.735-10.683 8.735-.442 0-1.872-.052-2.261-.157z\"></path></g></g></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" xmlns=\"http://www.w3.org/2000/svg\" aria-labelledby=\"pi-bancontact\" role=\"img\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\"><title id=\"pi-bancontact\">Bancontact</title><path fill=\"#000\" opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><path d=\"M4.703 3.077h28.594c.139 0 .276.023.405.068.128.045.244.11.343.194a.9.9 0 0 1 .229.29c.053.107.08.223.08.34V20.03a.829.829 0 0 1-.31.631 1.164 1.164 0 0 1-.747.262H4.703a1.23 1.23 0 0 1-.405-.068 1.09 1.09 0 0 1-.343-.194.9.9 0 0 1-.229-.29.773.773 0 0 1-.08-.34V3.97c0-.118.027-.234.08-.342a.899.899 0 0 1 .23-.29c.098-.082.214-.148.342-.193a1.23 1.23 0 0 1 .405-.068Z\" fill=\"#fff\"></path><path d=\"M6.38 18.562v-3.077h1.125c.818 0 1.344.259 1.344.795 0 .304-.167.515-.401.638.338.132.536.387.536.734 0 .62-.536.91-1.37.91H6.38Zm.724-1.798h.537c.328 0 .468-.136.468-.387 0-.268-.255-.356-.599-.356h-.406v.743Zm0 1.262h.448c.438 0 .693-.093.693-.383 0-.286-.219-.404-.63-.404h-.51v.787Zm3.284.589c-.713 0-1.073-.295-1.073-.69 0-.436.422-.69 1.047-.695.156.002.31.014.464.035v-.105c0-.269-.183-.396-.531-.396a2.128 2.128 0 0 0-.688.105l-.13-.474a3.01 3.01 0 0 1 .9-.132c.767 0 1.147.343 1.147.936v1.222c-.214.093-.615.194-1.136.194Zm.438-.497v-.47a2.06 2.06 0 0 0-.37-.036c-.24 0-.427.08-.427.286 0 .185.156.281.432.281a.947.947 0 0 0 .365-.061Zm1.204.444v-2.106a3.699 3.699 0 0 1 1.177-.193c.76 0 1.198.316 1.198.9v1.399h-.719v-1.354c0-.303-.167-.444-.484-.444a1.267 1.267 0 0 0-.459.079v1.719h-.713Zm4.886-2.167-.135.479a1.834 1.834 0 0 0-.588-.11c-.422 0-.652.25-.652.664 0 .453.24.685.688.685.2-.004.397-.043.578-.114l.115.488a2.035 2.035 0 0 1-.75.128c-.865 0-1.365-.453-1.365-1.17 0-.712.495-1.182 1.323-1.182.27-.001.538.043.787.132Zm1.553 2.22c-.802 0-1.302-.47-1.302-1.178 0-.704.5-1.174 1.302-1.174.807 0 1.297.47 1.297 1.173 0 .708-.49 1.179-1.297 1.179Zm0-.502c.37 0 .563-.259.563-.677 0-.413-.193-.672-.563-.672-.364 0-.568.26-.568.672 0 .418.204.677.568.677Zm1.713.449v-2.106a3.699 3.699 0 0 1 1.177-.193c.76 0 1.198.316 1.198.9v1.399h-.719v-1.354c0-.303-.166-.444-.484-.444a1.268 1.268 0 0 0-.459.079v1.719h-.713Zm3.996.053c-.62 0-.938-.286-.938-.866v-.95h-.354v-.484h.355v-.488l.718-.03v.518h.578v.484h-.578v.94c0 .256.125.374.36.374.093 0 .185-.008.276-.026l.036.488c-.149.028-.3.041-.453.04Zm1.814 0c-.713 0-1.073-.295-1.073-.69 0-.436.422-.69 1.047-.695.155.002.31.014.464.035v-.105c0-.269-.183-.396-.532-.396a2.128 2.128 0 0 0-.687.105l-.13-.474a3.01 3.01 0 0 1 .9-.132c.766 0 1.146.343 1.146.936v1.222c-.213.093-.614.194-1.135.194Zm.438-.497v-.47a2.06 2.06 0 0 0-.37-.036c-.24 0-.427.08-.427.286 0 .185.156.281.432.281a.946.946 0 0 0 .365-.061Zm3.157-1.723-.136.479a1.834 1.834 0 0 0-.588-.11c-.422 0-.651.25-.651.664 0 .453.24.685.687.685.2-.004.397-.043.578-.114l.115.488a2.035 2.035 0 0 1-.75.128c-.865 0-1.365-.453-1.365-1.17 0-.712.495-1.182 1.323-1.182.27-.001.538.043.787.132Zm1.58 2.22c-.62 0-.938-.286-.938-.866v-.95h-.354v-.484h.354v-.488l.72-.03v.518h.577v.484h-.578v.94c0 .256.125.374.36.374.092 0 .185-.008.276-.026l.036.488c-.149.028-.3.041-.453.04Z\" fill=\"#1E3764\"></path><path d=\"M11.394 13.946c3.803 0 5.705-2.14 7.606-4.28H6.38v4.28h5.014Z\" fill=\"url(#pi-bancontact-a)\"></path><path d=\"M26.607 5.385c-3.804 0-5.705 2.14-7.607 4.28h12.62v-4.28h-5.013Z\" fill=\"url(#pi-bancontact-b)\"></path><defs><linearGradient id=\"pi-bancontact-a\" x1=\"8.933\" y1=\"12.003\" x2=\"17.734\" y2=\"8.13\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#005AB9\"></stop><stop offset=\"1\" stop-color=\"#1E3764\"></stop></linearGradient><linearGradient id=\"pi-bancontact-b\" x1=\"19.764\" y1=\"10.037\" x2=\"29.171\" y2=\"6.235\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FBA900\"></stop><stop offset=\"1\" stop-color=\"#FFD800\"></stop></linearGradient></defs></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" width=\"38\" height=\"24\" role=\"img\" aria-labelledby=\"pi-maestro\"><title id=\"pi-maestro\">Maestro</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><circle fill=\"#EB001B\" cx=\"15\" cy=\"12\" r=\"7\"></circle><circle fill=\"#00A2E5\" cx=\"23\" cy=\"12\" r=\"7\"></circle><path fill=\"#7375CF\" d=\"M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"38\" height=\"24\" aria-labelledby=\"pi-master\"><title id=\"pi-master\">Mastercard</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><circle fill=\"#EB001B\" cx=\"15\" cy=\"12\" r=\"7\"></circle><circle fill=\"#F79E1B\" cx=\"23\" cy=\"12\" r=\"7\"></circle><path fill=\"#FF5F00\" d=\"M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\" aria-labelledby=\"pi-shopify_pay\"><title id=\"pi-shopify_pay\">Shop Pay</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\" fill=\"#000\"></path><path d=\"M35.889 0C37.05 0 38 .982 38 2.182v19.636c0 1.2-.95 2.182-2.111 2.182H2.11C.95 24 0 23.018 0 21.818V2.182C0 .982.95 0 2.111 0H35.89z\" fill=\"#5A31F4\"></path><path d=\"M9.35 11.368c-1.017-.223-1.47-.31-1.47-.705 0-.372.306-.558.92-.558.54 0 .934.238 1.225.704a.079.079 0 00.104.03l1.146-.584a.082.082 0 00.032-.114c-.475-.831-1.353-1.286-2.51-1.286-1.52 0-2.464.755-2.464 1.956 0 1.275 1.15 1.597 2.17 1.82 1.02.222 1.474.31 1.474.705 0 .396-.332.582-.993.582-.612 0-1.065-.282-1.34-.83a.08.08 0 00-.107-.035l-1.143.57a.083.083 0 00-.036.111c.454.92 1.384 1.437 2.627 1.437 1.583 0 2.539-.742 2.539-1.98s-1.155-1.598-2.173-1.82v-.003zM15.49 8.855c-.65 0-1.224.232-1.636.646a.04.04 0 01-.069-.03v-2.64a.08.08 0 00-.08-.081H12.27a.08.08 0 00-.08.082v8.194a.08.08 0 00.08.082h1.433a.08.08 0 00.081-.082v-3.594c0-.695.528-1.227 1.239-1.227.71 0 1.226.521 1.226 1.227v3.594a.08.08 0 00.081.082h1.433a.08.08 0 00.081-.082v-3.594c0-1.51-.981-2.577-2.355-2.577zM20.753 8.62c-.778 0-1.507.24-2.03.588a.082.082 0 00-.027.109l.632 1.088a.08.08 0 00.11.03 2.5 2.5 0 011.318-.366c1.25 0 2.17.891 2.17 2.068 0 1.003-.736 1.745-1.669 1.745-.76 0-1.288-.446-1.288-1.077 0-.361.152-.657.548-.866a.08.08 0 00.032-.113l-.596-1.018a.08.08 0 00-.098-.035c-.799.299-1.359 1.018-1.359 1.984 0 1.46 1.152 2.55 2.76 2.55 1.877 0 3.227-1.313 3.227-3.195 0-2.018-1.57-3.492-3.73-3.492zM28.675 8.843c-.724 0-1.373.27-1.845.746-.026.027-.069.007-.069-.029v-.572a.08.08 0 00-.08-.082h-1.397a.08.08 0 00-.08.082v8.182a.08.08 0 00.08.081h1.433a.08.08 0 00.081-.081v-2.683c0-.036.043-.054.069-.03a2.6 2.6 0 001.808.7c1.682 0 2.993-1.373 2.993-3.157s-1.313-3.157-2.993-3.157zm-.271 4.929c-.956 0-1.681-.768-1.681-1.783s.723-1.783 1.681-1.783c.958 0 1.68.755 1.68 1.783 0 1.027-.713 1.783-1.681 1.783h.001z\" fill=\"#fff\"></path></svg>\n  </li>\n  <li class=\"payment-icons__item\">\n    <svg class=\"icon icon--full-color\" viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"38\" height=\"24\" aria-labelledby=\"pi-visa\"><title id=\"pi-visa\">Visa</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><path d=\"M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z\" fill=\"#142688\"></path></svg>\n  </li>\n</ul>\n            </div></div>"
+          }
+        },
+        "liquid_DYyRaA": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"product-info__block-item\" data-block-id=\"liquid_di9ANb\" data-block-type=\"liquid\"><div class=\"product-info__liquid\">\n              <div class=\"product-info__liquid\">\n<!-- VALORISE — Livraison dynamique (court, mobile, point animé) -->\n<div class=\"valo-delivery\" id=\"valoDelivery\" role=\"status\">\n  <style>\n    [data-block-id=\"liquid_wYHnTz\"],\n    [data-block-id=\"liquid_xgmDkm\"] {\n      padding-top: 0 !important;\n      margin-top: -20px !important;\n    }\n    .valo-delivery{\n      display:flex; align-items:center; gap:6px;\n      justify-content:center;\n      font-size:12px; font-weight:500; color:#111;\n      background:transparent; padding:4px 0;\n      white-space:nowrap;\n    }\n    .valo-delivery .dot{\n      width:9px; height:9px; border-radius:9999px;\n      background:rgba(34,197,94,.25);\n      box-shadow:0 0 0 0 rgba(34,197,94,.35);\n      animation:valoPulse 1.6s infinite;\n      flex-shrink:0;\n    }\n    .valo-delivery b{\n      color:#262324; font-weight:600;\n    }\n    @keyframes valoPulse{\n      0%{box-shadow:0 0 0 0 rgba(34,197,94,.35);}\n      70%{box-shadow:0 0 0 6px rgba(34,197,94,0);}\n      100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}\n    }\n    @media(max-width:420px){\n      .valo-delivery{font-size:11px; gap:5px; white-space:normal;}\n    }\n  </style>\n  <span class=\"dot\" aria-hidden=\"true\"></span>\n  <span id=\"valoDeliveryText\">En stock · Livraison <b>sam 23 mai</b> – <b>jeu 28 mai</b></span>\n  <script>\n    (function(){\n      const el = document.getElementById(\"valoDeliveryText\");\n      const today = new Date();\n      function addDaysSkipSunday(date, days){\n        const d = new Date(date);\n        let added = 0;\n        while(added < days){\n          d.setDate(d.getDate() + 1);\n          if (d.getDay() !== 0) added++;\n        }\n        return d;\n      }\n      const ship = new Date(today);\n      ship.setDate(ship.getDate() + 1);\n      if (ship.getDay() === 0) ship.setDate(ship.getDate() + 1);\n      const min = addDaysSkipSunday(ship, 3);\n      const max = addDaysSkipSunday(ship, 7);\n      const opt = { weekday: \"short\", day: \"numeric\", month: \"short\" };\n      const s1 = min.toLocaleDateString(\"fr-FR\", opt).replace(\".\", \"\");\n      const s2 = max.toLocaleDateString(\"fr-FR\", opt).replace(\".\", \"\");\n      el.innerHTML = `En stock · Livraison <b>${s1}</b> – <b>${s2}</b>`;\n    })();\n  </script>\n</div>\n</div>\n            </div></div>"
+          }
+        },
+        "collapsible_text_QWprnH": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "CONSEILS D'UTILISATION",
+            "content": "<p><strong>À qui s'adresse-t-il ?</strong></p><p>Personnes souhaitant soutenir la régulation de leur glycémie.</p><p><strong>Conseils d'utilisation</strong></p><p><strong>2 gélules par jour</strong>, à prendre de préférence à jeun ou au cours du premier repas de la journée selon votre tolérance, avec un grand verre d’eau.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_Aeawcy": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "COMPOSITION",
+            "content": "<p><strong>Extrait de Berberis aristata</strong><br/><br/>Standardisé à 97% en berbérine hydrochloride.</p><p><strong>Gymnema Sylvestre</strong><br/><br/>Plante traditionnellement utilisée pour accompagner la gestion des envies de sucre.</p><p><strong>Chrome</strong><br/><br/>Contribue au maintien d’une glycémie normale et au métabolisme normal des macronutriments.</p><p><strong>Extrait de Fenugrec</strong><br/><br/>Soutient le métabolisme des glucides et des lipides.</p><p><strong>Pipérine</strong><br/><br/>Issue du poivre noir, elle aide à favoriser l’assimilation des actifs.</p><p><strong>Enveloppe de la gélule</strong><br/><br/>Gélule d’origine végétale, adaptée à une formule vegan.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_azzGWX": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "RÉSULTATS & ÉTUDES",
+            "content": "<ul><li>500mg de berbérine par gélule</li><li>40µg de chrome par gélule (100% des VNR)</li><li>Le chrome contribue au maintien d’une glycémie normale¹</li><li>Le chrome contribue au métabolisme des nutriments²</li><li>Convient aux végétaliens</li><li>Une gélule par jour – pas de préparation, pas de tracas</li></ul>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "liquid_Lrc8VW",
+        "liquid_pEcFnn",
+        "liquid_hDrpnd",
+        "price_kfhCb7",
+        "liquid_pKkQHQ",
+        "kaching_bundles_app_block_KG9GBf",
+        "variant_picker_n94Ycf",
+        "buy_buttons_CCMmLm",
+        "liquid_kDtQpN",
+        "liquid_DYyRaA",
+        "collapsible_text_QWprnH",
+        "collapsible_text_Aeawcy",
+        "collapsible_text_azzGWX"
+      ],
+      "name": "Featured product",
       "settings": {
         "full_width": false,
-        "block_size": "medium",
+        "product": "gelules-de-berberine",
+        "desktop_media_width": 50,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "contained",
+        "mobile_carousel_control": "thumbnails",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": false,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "logoscrooll_6mjgGf": {
+      "type": "logoscrooll",
+      "blocks": {
+        "image_Hn7LTd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_29.png",
+            "url": ""
+          }
+        },
+        "image_npD4nH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_27.png",
+            "url": ""
+          }
+        },
+        "image_7JWM4F": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_26.png",
+            "url": ""
+          }
+        },
+        "image_B8yHaM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_28.png",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_Hn7LTd",
+        "image_npD4nH",
+        "image_7JWM4F",
+        "image_B8yHaM"
+      ],
+      "name": "SS - Scrolling logo cloud #5",
+      "settings": {
+        "layout_radius": 30,
+        "layout_border_thickness": 0,
+        "heading": "",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 18,
+        "heading_size_mobile": 18,
+        "heading_height": 130,
+        "scrolling_velocity": 28,
+        "scrolling_velocity_mobile": 16,
+        "scrolling_direction": "left",
+        "pause_hover": false,
+        "scrolling_gap": 70,
+        "scrolling_gap_mobile": 6,
+        "card_width_desktop": 130,
+        "card_width_mobile": 130,
+        "heading_color": "#121212",
+        "layout_bg_color": "#ffffff",
+        "layout_border_color": "#121212",
+        "background_color": "#ffffff",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 20,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "carouselbienfait_K94Rki": {
+      "type": "carouselbienfait",
+      "blocks": {
+        "benefit_GKEfL9": {
+          "type": "benefit",
+          "settings": {
+            "image": "shopify://shop_images/18293190-456e-4589-82fb-099d807dfc85.avif",
+            "badge": "ÉNERGIE",
+            "title": "Énergie stable toute la journée",
+            "text": "Soutient la vitalité et la concentration, sans coup de fatigue."
+          }
+        },
+        "benefit_d8xCXn": {
+          "type": "benefit",
+          "settings": {
+            "image": "shopify://shop_images/feaf6ae5-2c35-43ce-adcd-ce161fefaae6.avif",
+            "badge": "ABSORPTION",
+            "title": "Meilleure assimilation des nutriments",
+            "text": "Optimise l’assimilation des vitamines et minéraux essentiels."
+          }
+        },
+        "benefit_cj3bzf": {
+          "type": "benefit",
+          "settings": {
+            "image": "shopify://shop_images/86082bb2-e67a-476b-bef2-7c9b01b88b81.avif",
+            "badge": "POIDS",
+            "title": "Gestion du poids facilitée",
+            "text": "Favorise la satiété et limite les fringales pour des résultats durables."
+          }
+        },
+        "benefit_AUpHaM": {
+          "type": "benefit",
+          "settings": {
+            "image": "shopify://shop_images/Digestion.webp",
+            "badge": "NETTOYAGE",
+            "title": "Nettoyage doux, résultats rapides",
+            "text": "Élimine en douceur les toxines sans agresser l’organisme."
+          }
+        },
+        "benefit_pRGzY9": {
+          "type": "benefit",
+          "settings": {
+            "image": "shopify://shop_images/Design_sans_titre_25.png",
+            "badge": "DIGESTION",
+            "title": "Digestion sereine et régulière",
+            "text": "Apaise les inconforts, favorise un transit harmonieux au quotidien."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_GKEfL9",
+        "benefit_d8xCXn",
+        "benefit_cj3bzf",
+        "benefit_AUpHaM",
+        "benefit_pRGzY9"
+      ],
+      "name": "Bienfaits cure slider",
+      "settings": {
+        "title_before": "Les",
+        "title_italic": "bienfaits",
+        "title_after": "de la cure",
+        "title_color": "#000000",
+        "italic_color": "#a5bfdb",
+        "title_size_desktop": 32,
+        "title_size_mobile": 26,
+        "title_weight": "500",
+        "title_margin_bottom": 24,
+        "title_margin_bottom_mobile": 24,
+        "show_arrows": true,
+        "hide_arrows_mobile": true,
+        "arrow_color": "#000000",
+        "arrow_size": 26,
+        "gap_desktop": 20,
+        "gap_mobile": 16,
+        "cards_per_view_desktop": 5,
+        "desktop_card_height": 425,
+        "mobile_card_width": 300,
+        "mobile_card_height": 425,
+        "card_radius": 6,
+        "overlay_opacity": 45,
+        "badge_color": "#ffffff",
+        "badge_bg": "rgba(0,0,0,0.15)",
+        "badge_size": 13,
+        "badge_size_mobile": 14,
+        "badge_top": 18,
+        "badge_left": 18,
+        "badge_top_mobile": 18,
+        "badge_left_mobile": 20,
+        "badge_padding_x": 10,
+        "badge_padding_y": 4,
+        "card_title_color": "#ffffff",
+        "card_text_color": "#ffffff",
+        "card_title_size_desktop": 17,
+        "card_title_size_mobile": 20,
+        "card_text_size_desktop": 13,
+        "card_text_size_mobile": 15,
+        "content_left": 18,
+        "content_right": 18,
+        "content_bottom": 28,
+        "content_left_mobile": 20,
+        "content_right_mobile": 20,
+        "content_bottom_mobile": 30,
+        "show_bottom_line": true,
+        "line_margin_top": 14,
+        "section_bg": "#ffffff",
+        "padding_top_desktop": 52,
+        "padding_bottom_desktop": 0,
+        "padding_left_desktop": 40,
+        "padding_right_desktop": 40,
+        "padding_top_mobile": 14,
+        "padding_bottom_mobile": 50,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 0
+      }
+    },
+    "berberineaccordeon_QdbmeP": {
+      "type": "berberineaccordeon",
+      "blocks": {
+        "feature_UGqgDm": {
+          "type": "feature",
+          "settings": {
+            "position": "left",
+            "title": "EXTRAITE DE \"BERBERIS ARISTATA\"",
+            "text": "<p>Authentification botanique et traçabilité certifiées </p><p>Seule espèce avec des allégations santé sur la glycémie </p><p>Origine Laos</p>"
+          }
+        },
+        "feature_34EEHe": {
+          "type": "feature",
+          "settings": {
+            "position": "left",
+            "title": "STANDARDISÉE ET CONTRÔLÉE À PLUS DE 98%",
+            "text": "<p>Haut grade de Berbérine pure & stabilisée</p><p>Forme stable et naturelle</p>"
+          }
+        },
+        "feature_4X7rpN": {
+          "type": "feature",
+          "settings": {
+            "position": "right",
+            "title": "100% PURE",
+            "text": "<p>Gélule végétale & vegan en pullulan</p><p>Aucun support ni contaminant</p><p>Sans additifs ni excipients</p>"
+          }
+        },
+        "feature_QkfnjA": {
+          "type": "feature",
+          "settings": {
+            "position": "right",
+            "title": "LE JUSTE DOSAGE",
+            "text": "<p>300 mg / gélule</p><p>Dosage physiologique et validé par les autorités</p><p>Absence de surdosage</p>"
+          }
+        },
+        "accordion_i4YedE": {
+          "type": "accordion",
+          "settings": {
+            "open_by_default": true,
+            "title": "Un grade ultra pur",
+            "content": "<p>La plante Berberis aristata à l’origine de notre extrait est produite selon des <strong>méthodes durables</strong>. La plante est cultivée au Laos dans son environnement naturel, et les fruits sont récoltés manuellement.</p><p>L’extrait obtenu est contrôlé afin de garantir une <strong>qualité optimale</strong> et une excellente stabilité.</p>"
+          }
+        },
+        "accordion_TjmrWK": {
+          "type": "accordion",
+          "settings": {
+            "open_by_default": false,
+            "title": "Efficacité et synergie",
+            "content": "<p>Une formule pensée pour accompagner le corps avec une concentration précise et une assimilation optimale.</p>"
+          }
+        },
+        "accordion_D9eFwa": {
+          "type": "accordion",
+          "settings": {
+            "open_by_default": false,
+            "title": "Pourquoi des gélules de 300 mg plutôt que 500 mg ?",
+            "content": "<p>Le dosage est pensé pour rester cohérent avec une utilisation quotidienne maîtrisée.</p>"
+          }
+        },
+        "accordion_Xf6yA7": {
+          "type": "accordion",
+          "settings": {
+            "open_by_default": false,
+            "title": "Formule clean ultra stable",
+            "content": "<p>Une formule simple, propre et stable, sans additifs inutiles.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_UGqgDm",
+        "feature_34EEHe",
+        "feature_4X7rpN",
+        "feature_QkfnjA",
+        "accordion_i4YedE",
+        "accordion_TjmrWK",
+        "accordion_D9eFwa",
+        "accordion_Xf6yA7"
+      ],
+      "name": "Plus produit accordéon",
+      "settings": {
+        "bg_color": "#ffffff",
+        "card_bg": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "text_color": "#1a1a1a",
+        "line_color": "#b9bfd5",
+        "title": "Les plus de notre Berbérine pure",
+        "subtitle": "Extrait Berberis aristata",
+        "title_size_desktop": 40,
+        "title_size_mobile": 35,
+        "title_weight": "600",
+        "subtitle_size_desktop": 14,
+        "subtitle_size_mobile": 13,
+        "header_margin_bottom": 56,
+        "header_margin_bottom_mobile": 34,
+        "center_image": "shopify://shop_images/berberine-image-matiere_43fca13c-6b64-4fe6-b8da-be41a91899b9.webp",
+        "center_image_size": 350,
+        "center_image_size_mobile": 280,
+        "center_border_width": 0,
+        "center_border_color": "#bfc1c9",
+        "main_gap": 70,
+        "feature_gap": 48,
+        "feature_gap_mobile": 30,
+        "feature_title_size": 20,
+        "feature_title_size_mobile": 15,
+        "feature_title_weight": "600",
+        "feature_text_size": 14,
+        "feature_text_size_mobile": 12,
+        "main_margin_bottom": 90,
+        "main_margin_bottom_mobile": 44,
+        "close_others": true,
+        "accordion_max_width": 1540,
+        "accordion_gap": 14,
+        "radius": 10,
+        "accordion_padding_x": 22,
+        "accordion_padding_y": 18,
+        "accordion_padding_x_mobile": 16,
+        "accordion_padding_y_mobile": 16,
+        "accordion_title_size": 15,
+        "accordion_title_size_mobile": 14,
+        "symbol_size": 24,
+        "accordion_icon_width": 66,
+        "accordion_icon_height": 42,
+        "accordion_icon_width_mobile": 54,
+        "accordion_icon_height_mobile": 42,
+        "accordion_icon_radius": 7,
+        "content_image_width": 49,
+        "content_image_height": 530,
+        "content_image_height_mobile": 260,
+        "content_image_radius": 6,
+        "content_gap": 44,
+        "content_padding_bottom": 26,
+        "content_padding_bottom_mobile": 22,
+        "content_text_size": 18,
+        "content_text_size_mobile": 15,
+        "max_width": 1480,
+        "padding_top_desktop": 116,
+        "padding_bottom_desktop": 50,
+        "padding_side_desktop": 80,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 30,
+        "padding_side_mobile": 16
+      }
+    },
+    "testimonialreviews_DeQWnV": {
+      "type": "testimonialreviews",
+      "blocks": {
+        "review_Pxrh4V": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113224.587.jpg",
+            "image_alt": "Image avis client",
+            "title": "Ça change la vie",
+            "text": "Depuis que j’ai intégré ce produit à ma routine, je me sens plus équilibrée au quotidien. Simple à prendre, efficace, et vraiment agréable.",
+            "author": "Mary Morgane",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_bjiWPU": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113209.105.jpg",
+            "image_alt": "Image avis client",
+            "title": "Délicieux et SAV parfait !",
+            "text": "Excellent produit. J’apprécie la qualité, la composition et le sérieux de la marque. Une très belle découverte que je recommande.",
+            "author": "Capucine Chandon",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_j6WeAH": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113319.574.jpg",
+            "image_alt": "Image avis client",
+            "title": "Une révélation",
+            "text": "Je l’utilise chaque jour et je sens une vraie différence. C’est devenu un indispensable dans ma routine bien-être.",
+            "author": "Gilles Caubet",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_UwLDbr": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113305.122.jpg",
+            "image_alt": "Image avis client",
+            "title": "Très satisfaite",
+            "text": "La prise est simple, le produit est qualitatif et les effets se ressentent progressivement. Je suis ravie de mon achat.",
+            "author": "Claire Martin",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_Y99pAC": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113402.607.jpg",
+            "image_alt": "Image avis client",
+            "title": "Je recommande",
+            "text": "Très bonne expérience, livraison rapide et produit conforme à mes attentes. Je vais continuer sur plusieurs mois.",
+            "author": "Julie Bernard",
+            "verified_text": "Acheteur vérifié"
+          }
+        }
+      },
+      "block_order": [
+        "review_Pxrh4V",
+        "review_bjiWPU",
+        "review_j6WeAH",
+        "review_UwLDbr",
+        "review_Y99pAC"
+      ],
+      "name": "Avis clients custom",
+      "settings": {
+        "heading": "Témoignages de Femmes Comme Toi",
+        "rating_title": "Noté Excellent",
+        "rating_text": "<p>4.8/5 sur <strong>3,380+ Avis</strong></p>",
+        "show_button": false,
+        "button_label": "Voir les avis",
+        "button_link": "",
+        "section_bg": "#ffffff",
+        "card_bg": "#ffffff",
+        "card_border": "#000000",
+        "shadow_color": "#000000",
+        "title_color": "#000000",
+        "text_color": "#222222",
+        "muted_color": "#555555",
+        "star_color": "#00b67a",
+        "verified_color": "#00b67a",
+        "button_bg": "#fff27b",
+        "button_text_color": "#000000",
+        "arrow_bg": "#000000",
+        "arrow_color": "#ffffff",
+        "font_family": "inherit",
+        "title_size": 32,
+        "mobile_title_size": 28,
+        "title_weight": "800",
+        "rating_title_size": 18,
+        "mobile_rating_title_size": 16,
+        "rating_text_size": 15,
+        "mobile_rating_text_size": 14,
+        "card_title_size": 20,
+        "mobile_card_title_size": 19,
+        "card_text_size": 15,
+        "mobile_card_text_size": 14,
+        "author_size": 12,
+        "verified_size": 13,
+        "max_width": 1280,
+        "cards_area_width": 1040,
+        "card_gap": 28,
+        "card_min_height": 440,
+        "mobile_card_min_height": 420,
+        "card_radius": 8,
+        "shadow_offset": 6,
+        "card_padding_top": 36,
+        "card_padding_horizontal": 32,
+        "card_padding_bottom": 38,
+        "mobile_card_padding_top": 32,
+        "mobile_card_padding_horizontal": 24,
+        "mobile_card_padding_bottom": 34,
+        "stars_size": 24,
+        "mobile_stars_size": 23,
+        "image_aspect_ratio": "4 / 3",
+        "image_radius": 8,
+        "show_arrows": true,
+        "show_dots": true,
+        "arrow_size": 42,
+        "arrow_icon_size": 34,
+        "header_bottom_spacing": 50,
+        "padding_top": 56,
+        "padding_bottom": 64,
+        "mobile_padding_top": 28,
+        "mobile_padding_bottom": 52
+      }
+    },
+    "berberineresult_RCjNgU": {
+      "type": "berberineresult",
+      "blocks": {
+        "benefit_xXzHhK": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 95,
+            "title": "Glycémie",
+            "subtitle": "Contribue à maintenir une glycémie normale",
+            "bullet_1": "Aide à maintenir la glycémie à jeun",
+            "bullet_2": "Limite les pics de sucre après les repas",
+            "bullet_3": "Favorise la sensibilité à l’insuline",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        },
+        "benefit_7He8LL": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 80,
+            "title": "Lipides sanguins",
+            "subtitle": "Contribue à maintenir des lipides sanguins normaux",
+            "bullet_1": "Favorise un taux de cholestérol normal",
+            "bullet_2": "Aide à contrôler les triglycérides",
+            "bullet_3": "Soutient la santé cardiovasculaire",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        },
+        "benefit_gxpmpN": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 65,
+            "title": "Santé génitale et urinaire",
+            "subtitle": "Soutient la sphère gynécologique et urinaire",
+            "bullet_1": "Contribue à l’équilibre du système reproducteur féminin",
+            "bullet_2": "Soutient la santé de la vessie",
+            "bullet_3": "Favorise la sensibilité à l’insuline",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        },
+        "benefit_G3itBg": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 62,
+            "title": "Santé de la peau",
+            "subtitle": "Aide les peaux matures et à imperfections",
+            "bullet_1": "Aide les peaux d’adolescents",
+            "bullet_2": "A des effets anti-âge",
+            "bullet_3": "Favorise la sensibilité à l’insuline",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_xXzHhK",
+        "benefit_7He8LL",
+        "benefit_gxpmpN",
+        "benefit_G3itBg"
+      ],
+      "name": "Berbérine benefits",
+      "settings": {
+        "title": "Les bienfaits de la Berbérine pure",
+        "bg_image": "shopify://shop_images/berberine-image-ingredient.webp",
+        "cream_color": "#fef9f0",
+        "yellow_color": "#fff27b",
+        "blue_color": "#a5bfdb",
+        "left_bg": "#a5bfdb",
+        "title_color": "#fef9f0",
+        "text_color": "#fef9f0",
+        "card_bg": "linear-gradient(145deg, rgba(165, 191, 219, 0.88), rgba(14, 35, 64, 0.78) 100%)",
+        "card_border": "#fef9f0",
+        "check_bg": "#a5bfdb",
+        "track_bg": "#a5bfdb",
+        "progress_bg": "#fff27b",
+        "image_overlay": "linear-gradient(90deg, rgba(165, 191, 219, 0.15), rgba(165, 191, 219, 0.05) 100%)",
+        "mobile_image_overlay": "linear-gradient(180deg, rgba(165, 191, 219, 0.05), rgba(165, 191, 219, 0.18) 100%)",
+        "title_size_desktop": 40,
+        "title_size_mobile": 34,
+        "title_weight": "600",
+        "title_max_width": 840,
+        "title_max_width_mobile": 390,
+        "title_margin_bottom": 76,
+        "title_margin_bottom_mobile": 34,
+        "desktop_card_width": 330,
+        "mobile_card_width": 280,
+        "card_min_height_desktop": 300,
+        "card_min_height_mobile": 335,
+        "card_gap_desktop": 12,
+        "card_gap_mobile": 14,
+        "card_radius": 8,
+        "card_blur": 4,
+        "card_padding_x_desktop": 20,
+        "card_padding_y_desktop": 18,
+        "card_padding_x_mobile": 17,
+        "card_padding_y_mobile": 17,
+        "card_title_size_desktop": 24,
+        "card_title_size_mobile": 22,
+        "card_title_weight": "700",
+        "card_title_margin_bottom": 10,
+        "card_text_size_desktop": 15,
+        "card_text_size_mobile": 15,
+        "card_text_weight": "600",
+        "bullet_size_desktop": 15,
+        "bullet_size_mobile": 15,
+        "bullet_weight": "700",
+        "bullets_margin_top": 64,
+        "bullet_gap": 10,
+        "check_size": 18,
+        "progress_height": 22,
+        "progress_line_height": 6,
+        "progress_symbol_size": 14,
+        "progress_margin_bottom": 22,
+        "desktop_left_width": 50,
+        "max_width": 1400,
+        "mobile_image_top": 112,
+        "mobile_peek_width": 80,
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 66,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 0
+      }
+    },
+    "ingredients_GxTqXY": {
+      "type": "ingredients",
+      "blocks": {
+        "ingredient_CVF7yc": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T142945.579.png",
+            "title": "Berbérine",
+            "text": "Soutient l’équilibre glycémique et le métabolisme. La berbérine aide à accompagner la régulation du sucre dans le sang et participe au bon fonctionnement métabolique."
+          }
+        },
+        "ingredient_MRHtyf": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143015.562.png",
+            "title": "Gymnema Sylvestre",
+            "text": "Aide à réduire les envies de sucre. Traditionnellement utilisée pour accompagner le contrôle des fringales, cette plante soutient une meilleure gestion des apports sucrés."
+          }
+        },
+        "ingredient_gTrr9f": {
+          "type": "ingredient",
+          "disabled": true,
+          "settings": {
+            "title": "Chrome",
+            "text": "Contribue au maintien d’une glycémie normale. Le chrome participe au métabolisme normal des macronutriments et aide à maintenir un taux de glucose équilibré."
+          }
+        },
+        "ingredient_YjPYmi": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143107.552.png",
+            "title": "Fenugrec",
+            "text": "Soutient le métabolisme des glucides et des lipides. Le fenugrec accompagne l’équilibre énergétique et aide l’organisme dans la gestion des sucres et des graisses."
+          }
+        },
+        "ingredient_xKqaM9": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143202.547.png",
+            "title": "Pipérine",
+            "text": "Favorise l’assimilation des actifs. Issue du poivre noir, la pipérine est souvent utilisée pour améliorer la biodisponibilité des ingrédients naturels."
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_CVF7yc",
+        "ingredient_MRHtyf",
+        "ingredient_gTrr9f",
+        "ingredient_YjPYmi",
+        "ingredient_xKqaM9"
+      ],
+      "name": "Ingrédients actifs",
+      "settings": {
+        "heading_line_1": "Basé sur les",
+        "heading_line_2": "meilleurs actifs",
+        "description": "Au coeur de nos solutions, des actifs puissants à l'efficacité scientifiquement prouvée, dans leur forme la plus biodisponible.",
+        "heading_alignment": "left",
+        "bg_color": "#fef9f0",
+        "heading_color": "#1f1f1f",
+        "description_color": "#4a4a4a",
+        "card_bg": "#f8f1e6",
+        "card_title_color": "#1f1f1f",
+        "card_text_color": "#5a5a5a",
+        "card_radius": 16,
+        "heading_font": "manrope_n7",
+        "body_font": "dm_sans_n4",
+        "heading_size": 40,
+        "description_size": 15,
+        "card_title_size": 18,
+        "card_text_size": 14,
+        "desktop_columns": 4,
+        "image_size": 120,
+        "image_overlap": 48,
+        "padding_top": 84,
+        "padding_bottom": 44
+      }
+    },
+    "resultatsprouves_b3gcMW": {
+      "type": "resultatsprouves",
+      "blocks": {
+        "stat_rnFyQg": {
+          "type": "stat",
+          "settings": {
+            "number": "91%",
+            "label": "De nos clients",
+            "text": "Constatent une amélioration sur leur besoin clé après 3 mois."
+          }
+        },
+        "stat_tADknP": {
+          "type": "stat",
+          "settings": {
+            "number": "94%",
+            "label": "De nos clients",
+            "text": "Constatent une amélioration de leur état général après 3 mois."
+          }
+        },
+        "stat_DGi9GW": {
+          "type": "stat",
+          "settings": {
+            "number": "76",
+            "label": "Études cliniques",
+            "text": "et pré-cliniques réalisées sur nos ingrédients, incluant des études contre placebos."
+          }
+        }
+      },
+      "block_order": [
+        "stat_rnFyQg",
+        "stat_tADknP",
+        "stat_DGi9GW"
+      ],
+      "disabled": true,
+      "name": "Résultats prouvés",
+      "settings": {
+        "content_width": 1200,
+        "columns_gap": 64,
+        "stats_padding_left": 48,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "title_align": "center",
+        "section_bg": "#f8f1e6",
+        "heading_light": "Des résultats",
+        "heading_bold": "prouvés",
+        "heading_color": "#1a1a1a",
+        "heading_size": 41,
+        "separator_color": "#d8d6d2",
+        "separator_thickness": 1,
+        "divider_color": "#d8d6d2",
+        "divider_thickness": 1,
+        "stat_padding": 24,
+        "number_color": "#1a1a1a",
+        "number_size": 46,
+        "label_color": "#1a1a1a",
+        "label_size": 13,
+        "text_color": "#1a1a1a",
+        "text_size": 15
+      }
+    },
+    "efficaciteprouve_zx4pBJ": {
+      "type": "efficaciteprouve",
+      "blocks": {
+        "stat_qhXFf7": {
+          "type": "stat",
+          "settings": {
+            "number": "+37",
+            "text": "essais randomisés sur pubmed pour la gestion de la glycémie ¹"
+          }
+        },
+        "stat_kCLWp3": {
+          "type": "stat",
+          "settings": {
+            "number": "4",
+            "text": "semaines les effets perçus sur la glycémie ²"
+          }
+        },
+        "stat_wVtqT4": {
+          "type": "stat",
+          "settings": {
+            "number": "+13",
+            "text": "méta-analyses sur son impact sur le profil lipidique ¹"
+          }
+        },
+        "stat_W7TjmH": {
+          "type": "stat",
+          "settings": {
+            "number": "8",
+            "text": "semaines les effets perçus sur la gestion des lipides ³"
+          }
+        }
+      },
+      "block_order": [
+        "stat_qhXFf7",
+        "stat_kCLWp3",
+        "stat_wVtqT4",
+        "stat_W7TjmH"
+      ],
+      "name": "Efficacité prouvée",
+      "settings": {
+        "title": "Efficacité prouvée",
+        "badge_text": "PAR LA SCIENCE",
+        "sources": "<p>¹ Recherche base pubmed, 2025<br/>² Rashidi et al, Jundishapur Journal of Natural Products – 2018<br/>³ Ruscica et al, Journal of Clinical Lipidology, 2014</p>",
+        "main_image": "shopify://shop_images/Design_sans_titre_24.png",
+        "bg_color": "#ffffff",
+        "title_color": "#1a1a1a",
+        "text_color": "#6f6f6f",
+        "muted_color": "#c7c7c7",
+        "line_color": "#d2d2d2",
+        "badge_bg": "#fff27b",
+        "badge_color": "#1a1a1a",
+        "title_size_desktop": 58,
+        "title_size_mobile": 39,
+        "title_weight": "500",
+        "badge_size_desktop": 15,
+        "badge_size_mobile": 12,
+        "badge_padding_x": 9,
+        "badge_padding_y": 5,
+        "badge_padding_x_mobile": 7,
+        "badge_padding_y_mobile": 5,
+        "badge_radius": 2,
+        "badge_margin_top": 40,
+        "badge_margin_top_mobile": 34,
+        "number_size_desktop": 58,
+        "number_size_mobile": 49,
+        "number_weight": "500",
+        "text_size_desktop": 18,
+        "text_size_mobile": 15,
+        "text_weight": "500",
+        "stats_column_gap": 60,
+        "stat_padding_top": 28,
+        "stat_padding_bottom": 30,
+        "stat_padding_top_mobile": 28,
+        "stat_padding_bottom_mobile": 28,
+        "number_margin_bottom": 16,
+        "number_margin_bottom_mobile": 14,
+        "line_width": 1,
+        "sources_size_desktop": 12,
+        "sources_size_mobile": 10,
+        "sources_margin_top": 24,
+        "sources_margin_top_mobile": 18,
+        "image_size_desktop": 390,
+        "image_size_tablet": 280,
+        "image_size_mobile": 120,
+        "image_top_mobile": 0,
+        "image_right_mobile": 0,
+        "image_border_width": 0,
+        "image_border_color": "#ffffff",
+        "image_shadow_x": 0,
+        "image_shadow_y": 4,
+        "image_shadow_blur": 14,
+        "image_shadow_opacity": 25,
+        "max_width": 1420,
+        "content_width": 900,
+        "desktop_gap": 140,
+        "tablet_gap": 60,
+        "header_margin_bottom": 0,
+        "header_margin_bottom_mobile": 12,
+        "padding_top_desktop": 100,
+        "padding_bottom_desktop": 90,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 20,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 14
+      }
+    },
+    "researchpopup_rtnacP": {
+      "type": "researchpopup",
+      "name": "Research popups",
+      "settings": {
+        "question_1": "Découvrez nos données de recherche complètes",
+        "button_1_text": "ÉTUDE MÉDICALE",
+        "question_2": "Consultez les derniers résultats de tests indépendants",
+        "button_2_text": "VOIR LES RÉSULTATS",
+        "popup_1_title": "ÉTUDE MÉDICALE",
+        "popup_1_text": "<p><strong>Revue des preuves cliniques Mirabel </strong></p><p><strong>5 actifs, plus de 37 essais cliniques</strong><br/><br/>La formule Mirabel associe 5 actifs sélectionnés pour leur intérêt dans l’accompagnement du métabolisme, de l’équilibre glycémique et du contrôle des envies de sucre.<br/><br/>Chaque ingrédient a été choisi pour son rôle spécifique dans une approche globale : soutenir la sensibilité à l’insuline, aider à limiter les pics de glycémie, favoriser une meilleure gestion des envies sucrées et accompagner l’organisme dans son équilibre quotidien.<br/><br/><br/>1. Berbérine HCl — 750 mg<br/><br/>Une revue systématique et méta-analyse publiée en 2022, portant sur 37 essais contrôlés randomisés avec plus de 3 000 participants, a montré que la berbérine pouvait contribuer à réduire la glycémie à jeun, l’HbA1c et la résistance à l’insuline.<br/><br/>La berbérine est aujourd’hui l’un des actifs végétaux les plus étudiés pour l’accompagnement du métabolisme glucidique.<br/><br/>✓ Dose Mirabel : 750 mg<br/>✓ Dose complète inspirée des dosages étudiés dans la littérature clinique<br/>✗ Beaucoup de formules concurrentes : 200 à 500 mg seulement<br/><br/>Référence : Liang Y, et al. Front Pharmacol. 2022;13:1068443<br/><br/><br/>2. Gymnema Sylvestre — 500 mg<br/><br/>Le Gymnema sylvestre est une plante traditionnellement utilisée pour accompagner l’équilibre du sucre. Son nom est parfois associé à l’expression “destructeur de sucre”, en raison de ses composés actifs appelés acides gymnémiques.<br/><br/>Ces composés peuvent aider à réduire la perception du goût sucré et accompagner la gestion des envies de sucre, notamment après les repas.<br/><br/>✓ Dose Mirabel : 500 mg<br/>✓ Actif végétal ciblé pour les envies sucrées<br/>✗ Souvent absent des compléments classiques<br/><br/>Référence : Devangan S, et al. J Diet Suppl. 2021;18(6):698–725<br/><br/><br/>3. Picolinate de chrome — 300 mcg<br/><br/>Le chrome est un oligo-élément reconnu pour contribuer au maintien d’une glycémie normale.<br/><br/>Sous forme de picolinate, il est souvent utilisé dans les formules dédiées au métabolisme des glucides et à la sensibilité à l’insuline.<br/><br/>✓ Dose Mirabel : 300 mcg<br/>✓ Forme picolinate sélectionnée pour sa bonne assimilation<br/>✗ Souvent absent ou faiblement dosé dans les formules génériques<br/><br/>Référence : Asbaghi O, et al. Pharmacol Res. 2020;161:105098<br/><br/><br/>4. Benfotiamine — 50 mg<br/><br/>La benfotiamine est une forme liposoluble de vitamine B1, étudiée pour sa biodisponibilité supérieure à celle de la vitamine B1 classique.<br/><br/>Elle est utilisée dans certaines recherches pour son rôle dans la protection cellulaire face au stress oxydatif lié au sucre.<br/><br/>✓ Dose Mirabel : 50 mg<br/>✓ Forme hautement assimilable de vitamine B1<br/>✗ Beaucoup de formules utilisent une vitamine B1 classique, moins bien absorbée<br/><br/>Référence : Stracke H, et al. Exp Clin Endocrinol Diabetes. 2008;116(10):600–605<br/><br/><br/>5. Extrait de graines de fenugrec — 250 mg<br/><br/>Le fenugrec est naturellement riche en fibres solubles et en composés végétaux actifs. Il est étudié pour son rôle dans le métabolisme du glucose, la satiété et l’équilibre après les repas.<br/><br/>Dans Mirabel, il vient compléter l’action du Gymnema pour accompagner les envies de sucre et soutenir une sensation de contrôle alimentaire plus stable.<br/><br/>✓ Dose Mirabel : 250 mg<br/>✓ Extrait sélectionné plutôt qu’une simple poudre de graines<br/>✗ Les formules basiques utilisent souvent de la poudre entière, moins ciblée<br/><br/>Référence : Gong J, et al. Nutrients. 2023;15(4):1038<br/><br/><br/>Une formule pensée en synergie<br/><br/>Mirabel ne repose pas sur un seul ingrédient. La formule a été conçue pour agir sur plusieurs leviers complémentaires du métabolisme :<br/><br/>1. Gestion des envies sucrées<br/>Le Gymnema et le fenugrec accompagnent la réduction des envies de sucre et favorisent une meilleure maîtrise des grignotages.<br/><br/>2. Équilibre glycémique<br/>La berbérine et le chrome soutiennent le métabolisme du glucose et participent au maintien d’une glycémie normale.<br/><br/>3. Protection cellulaire<br/>La benfotiamine accompagne l’organisme face au stress oxydatif lié à une consommation excessive de sucre.<br/><br/><br/>Pourquoi Mirabel ?<br/><br/>Mirabel a été pensé pour celles et ceux qui veulent reprendre le contrôle de leurs envies de sucre, soutenir leur métabolisme et retrouver un meilleur équilibre au quotidien.<br/><br/>Une formule claire, dosée sérieusement, avec des actifs sélectionnés pour leur complémentarité.<br/><br/><br/>Références complètes<br/><br/>Liang Y, et al. Front Pharmacol. 2022;13:1068443. PMID: 36467075<br/><br/>Devangan S, et al. J Diet Suppl. 2021;18(6):698–725. PMID: 34467577<br/><br/>Asbaghi O, et al. Pharmacol Res. 2020;161:105098. PMID: 32730903<br/><br/>Stracke H, et al. Exp Clin Endocrinol Diabetes. 2008;116(10):600–605. PMID: 18473286<br/><br/>Gong J, et al. Nutrients. 2023;15(4):1038. PMC9962665</p>",
+        "popup_1_link_label": "En savoir plus",
+        "popup_1_link": "",
+        "popup_2_image": "shopify://shop_images/ChatGPT_Image_3_juin_2026_18_54_31.png",
+        "popup_2_title": "",
+        "popup_2_text": "",
+        "popup_2_link_label": "Voir les résultats",
+        "popup_2_link": "",
+        "section_outer_bg": "#ffffff",
+        "background_color": "#ffffff",
+        "border_color": "#1a1a1a",
+        "text_color": "#1a1a1a",
+        "icon_bg": "#f7f7ff",
+        "button_bg": "#a5bfdb",
+        "button_text": "#ffffff",
+        "button_border": "#1a1a1a",
+        "shadow_color": "#f2f7fd",
+        "popup_bg": "#ffffff",
+        "popup_text": "#252525",
+        "popup_title_color": "#1a1a1a",
+        "overlay_color": "#000000",
+        "close_bg": "#a5bfdb",
+        "close_color": "#ffffff",
+        "text_size_desktop": 17,
+        "text_weight": "800",
+        "button_text_size": 14,
+        "button_text_weight": "900",
+        "button_text_transform": "uppercase",
+        "text_line_height": 110,
+        "text_size_mobile": 16,
+        "mobile_button_text_size": 16,
+        "popup_title_size": 23,
+        "popup_text_size": 14,
+        "mobile_popup_title_size": 21,
+        "mobile_popup_text_size": 14,
+        "popup_title_weight": "800",
+        "popup_text_weight": "400",
+        "popup_text_line_height": 150,
+        "max_width": 920,
+        "inner_padding": 30,
+        "border_radius": 20,
+        "border_width": 3,
+        "line_gap": 26,
+        "icon_size": 60,
+        "icon_image_size": 50,
+        "icon_border_width": 2,
+        "icon_text_gap": 22,
+        "button_width": 290,
+        "button_height": 50,
+        "button_gap": 26,
+        "button_radius": 8,
+        "button_border_width": 2,
+        "button_shadow_x": 6,
+        "button_shadow_y": 6,
+        "mobile_inner_padding": 14,
+        "mobile_border_radius": 14,
+        "mobile_grid_gap": 26,
+        "mobile_line_gap": 22,
+        "mobile_icon_size": 46,
+        "mobile_icon_text_gap": 12,
+        "mobile_button_height": 44,
+        "mobile_button_gap": 16,
+        "popup_width": 900,
+        "popup_padding": 42,
+        "mobile_popup_padding": 24,
+        "popup_radius": 12,
+        "mobile_popup_radius": 14,
+        "popup_image_radius": 12,
+        "overlay_opacity": 45,
+        "close_size": 54,
+        "close_icon_size": 42,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "routine_a4ebbj": {
+      "type": "routine",
+      "blocks": {
+        "step_ej3UTG": {
+          "type": "step",
+          "settings": {
+            "label": "1 MOIS",
+            "title": "Une nouvelle habitude",
+            "text": "Ressentez les premiers effets sur votre bien-être et votre santé"
+          }
+        },
+        "step_ePbciC": {
+          "type": "step",
+          "settings": {
+            "label": "2 MOIS",
+            "title": "Un réflexe quotidien",
+            "text": "Observez les effets s'installer en continu."
+          }
+        },
+        "step_bKBw9P": {
+          "type": "step",
+          "settings": {
+            "label": "3 MOIS",
+            "title": "Un nouveau mode de vie",
+            "text": "Bénéficiez des effets durables de votre cure."
+          }
+        }
+      },
+      "block_order": [
+        "step_ej3UTG",
+        "step_ePbciC",
+        "step_bKBw9P"
+      ],
+      "name": "Routine pensée",
+      "settings": {
+        "content_width": 1400,
+        "columns_gap": 64,
+        "padding_top": 40,
+        "padding_bottom": 76,
+        "section_bg": "#ffffff",
+        "accent_color": "#ffb74a",
+        "line_thickness": 2,
+        "card_bg": "#fef9f0",
+        "card_radius": 20,
+        "card_padding": 48,
+        "avatar": "shopify://shop_images/gempages_525964246647833823-0dec0ae4-b161-4e0b-a568-67cdb26aa1cf.webp",
+        "avatar_size": 84,
+        "profile_name": "Armelle Marcilhacy",
+        "name_color": "#1a1a1a",
+        "name_size": 16,
+        "profile_subtitle": "Médecin nutritionniste et membre du Comité Scientifique de Mirabel",
+        "subtitle_color": "#555555",
+        "subtitle_size": 13,
+        "quote_1": "<p>“Pour être bénéfique, la prise de compléments alimentaires doit <strong>s'insérer durablement</strong> dans une routine bien-être quotidienne.</p>",
+        "quote_2": "<p>La <strong>durée moyenne recommandée</strong> pour voir des effets durables est de <strong>3 mois</strong>.”</p>",
+        "quote_color": "#1a1a1a",
+        "quote_size": 14,
+        "heading_light": "Une routine pensée",
+        "heading_bold": "pour durer",
+        "heading_color": "#1a1a1a",
+        "heading_size": 25,
+        "step_gap": 36,
+        "step_label_color": "#1a1a1a",
+        "step_label_size": 15,
+        "step_title_color": "#1a1a1a",
+        "step_title_size": 14,
+        "step_text_color": "#6a6a75",
+        "step_text_size": 13
+      }
+    },
+    "iconsguarantee_cNPR3Q": {
+      "type": "iconsguarantee",
+      "blocks": {
+        "guarantee_KLbiaC": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143418.005.png",
+            "label": "Ingrédients Naturelle"
+          }
+        },
+        "guarantee_rFnKLx": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143446.514.png",
+            "label": "Sans Conservateurs"
+          }
+        },
+        "guarantee_9Jbcd8": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143512.522.png",
+            "label": "Sans Lactose"
+          }
+        },
+        "guarantee_a3PcwR": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143540.532.png",
+            "label": "Vegan"
+          }
+        }
+      },
+      "block_order": [
+        "guarantee_KLbiaC",
+        "guarantee_rFnKLx",
+        "guarantee_9Jbcd8",
+        "guarantee_a3PcwR"
+      ],
+      "name": "Garanties",
+      "settings": {
+        "heading": "Les Garanties Mirabel",
+        "heading_uppercase": true,
+        "bg_color": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "label_color": "#1f1f1f",
+        "heading_font": "manrope_n7",
+        "body_font": "dm_sans_n4",
+        "heading_size": 22,
+        "label_size": 15,
+        "icon_size": 80,
+        "icon_gap": 40,
+        "desktop_columns": 4,
+        "mobile_columns": 2,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "marqueeicons_cmWtrX": {
+      "type": "marqueeicons",
+      "blocks": {
+        "item_KE44bz": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/categorie.svg",
+            "text": "Validé par les pharmaciens"
+          }
+        },
+        "item_cXwUBX": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/categorie_b5bdb2ef-2088-4875-9a14-1667bb17bf30.svg",
+            "text": "100% Vegan et naturel"
+          }
+        },
+        "item_6ATNGc": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
+            "text": "Fabriqué en France"
+          }
+        }
+      },
+      "block_order": [
+        "item_KE44bz",
+        "item_cXwUBX",
+        "item_6ATNGc"
+      ],
+      "name": "Marquee défilant",
+      "settings": {
+        "bg_type": "solid",
+        "bg_color": "#fff27b",
+        "gradient_color_1": "#fff27b",
+        "gradient_color_2": "#f1e25c",
+        "gradient_color_3": "",
+        "gradient_angle": 175,
+        "direction": "left",
+        "speed": 68,
+        "pause_on_hover": true,
+        "repeat": 6,
+        "bar_padding": 15,
+        "item_gap": 48,
+        "icon_gap": 8,
+        "icon_size": 14,
+        "text_color": "#1a1a1a",
+        "text_size": 12,
+        "text_weight": "600",
+        "text_transform": "uppercase",
+        "letter_spacing": 0.5,
+        "aria_label": "Nos engagements produit"
+      }
+    },
+    "metabolisme_B8ignr": {
+      "type": "metabolisme",
+      "name": "Lovi métabolisme",
+      "settings": {
+        "badge_text_content": "Votre nouvel allié pour perdre du poids",
+        "heading_line_1": "Comment Mirabel",
+        "heading_line_2": "Agit sur ton Métabolisme",
+        "image_1": "shopify://shop_images/metabolism-step1-CjtJfZDy.webp",
+        "title_1": "Ton métabolisme se réveille",
+        "text_1": "<p>Ton corps arrête de stocker et recommence à brûler. Tu le sens dès les premières semaines.</p>",
+        "image_2": "shopify://shop_images/metabolism-step2-D_a3_iN7.webp",
+        "title_2": "La graisse abdominale fond en douceur",
+        "text_2": "<p>Pas de régime, pas de restriction. Ton ventre s’affine naturellement.</p>",
+        "image_3": "shopify://shop_images/metabolism-step3-BblnMMk6.webp",
+        "title_3": "Tu retrouves ton énergie et ta légèreté",
+        "text_3": "<p>Le stress hormonal se calme. Tu dors mieux, tu grignotes moins, tu te sens toi.</p>",
+        "badge_size_desktop": 17,
+        "main_title_size_desktop": 48,
+        "block_title_size_desktop": 28,
+        "text_size_desktop": 21,
+        "badge_size_mobile": 13,
+        "main_title_size_mobile": 25,
+        "block_title_size_mobile": 19,
+        "text_size_mobile": 14,
+        "title_weight": "500",
+        "block_title_weight": "500",
+        "text_weight": "500",
+        "text_line_height": 155,
+        "background_color": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "text_color": "#333333",
+        "highlight_bg": "#f2ede5",
+        "badge_bg": "#1a1a1a",
+        "badge_text": "#ffffff",
+        "arrow_color": "#a5bfdc",
+        "image_max_width": 360,
+        "mobile_image_width": 58,
+        "image_ratio": "1.15 / 1",
+        "image_radius": 18,
+        "shadow_opacity": 12,
+        "show_arrows": true,
+        "arrow_width_desktop": 360,
+        "arrow_width_mobile": 225,
+        "arrow_thickness": 6,
+        "arrow_margin_desktop": -4,
+        "arrow_margin_mobile": -12,
+        "arrow_1_desktop_x": 80,
+        "arrow_1_desktop_y": 0,
+        "arrow_2_desktop_x": -80,
+        "arrow_2_desktop_y": 0,
+        "arrow_1_mobile_x": -16,
+        "arrow_1_mobile_y": -4,
+        "arrow_2_mobile_x": 16,
+        "arrow_2_mobile_y": -4,
+        "max_width": 980,
+        "section_radius": 0,
+        "header_spacing": 56,
+        "header_spacing_mobile": 38,
+        "row_gap_desktop": 34,
+        "row_gap_mobile": 22,
+        "mobile_content_gap": 24,
+        "padding_top": 32,
+        "padding_bottom": 60,
+        "mobile_padding_top": 46,
+        "mobile_padding_bottom": 38
+      }
+    },
+    "imagewithtext_wCjhfr": {
+      "type": "imagewithtext",
+      "blocks": {
+        "bullet_tFtREW": {
+          "type": "bullet",
+          "settings": {
+            "text": "<p><strong>Maintenir une glycémie stable</strong> en favorisant l'absorption du glucose par l'organisme,</p>"
+          }
+        },
+        "bullet_44pUkc": {
+          "type": "bullet",
+          "settings": {
+            "text": "<p>Améliorer la sensibilité à l'insuline et <strong>réduire les pics de sucre dans le sang.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_tFtREW",
+        "bullet_44pUkc"
+      ],
+      "name": "Product Benefits",
+      "settings": {
+        "heading": "Un actif puissant pour l'équilibre métabolique",
+        "intro_text": "<p>Utilisé depuis des siècles dans la médecine traditionnelle chinoise, la berbérine est reconnue pour <strong>ses effets sur la glycémie et le stockage des graisses.</strong> Elle agit en effet en stimulant l'AMPK, une enzyme clé dans la gestion de l'énergie et du métabolisme. Une prise de Berbérine vous aidera ainsi à :</p>",
+        "product_image": "shopify://shop_images/ChatGPT_Image_25_mai_2026_12_30_33.png",
+        "image_position": "right",
+        "image_radius": 20,
+        "bg_color": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "text_color": "#1a1a1a",
+        "bullet_color": "#f0c417",
+        "heading_font": "manrope_n7",
+        "body_font": "dm_sans_n4",
+        "heading_size": 40,
+        "body_size": 14,
+        "content_max_width": 560,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "certif_XH7DiP": {
+      "type": "certif",
+      "name": "Certifications custom",
+      "settings": {
+        "title": "CERTIFICATIONS",
+        "card_title": "Marque Mirabel",
+        "card_text": "Notre Berbérine Mirabel® est brevetée, cliniquement prouvée, vegan, sans sucre et formulée en France selon des standards stricts de qualité.",
+        "logo_alt": "Logo certification",
+        "logo_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T123509.583.png",
+        "title_icon_svg": "<svg viewbox=\"0 0 64 64\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 8h24l8 8v24\"></path><path d=\"M18 8v42h20\"></path><path d=\"M42 8v10h10\"></path><path d=\"M24 22h14\"></path><path d=\"M24 29h18\"></path><path d=\"M24 36h10\"></path><circle cx=\"45\" cy=\"45\" r=\"8\"></circle><path d=\"M41.5 45l2.2 2.2 5-5\"></path><path d=\"M40 53l-2 7 7-3 7 3-2-7\"></path></svg>",
+        "button_label": "",
+        "button_link": "",
+        "section_bg": "#ffffff",
+        "title_box_bg": "#e7f1e5",
+        "card_bg": "#ffffff",
+        "border_color": "#dde2ea",
+        "title_color": "#1f2937",
+        "heading_color": "#1f2937",
+        "text_color": "#4b5565",
+        "icon_color": "#8baf9e",
+        "button_bg": "#fff27b",
+        "button_text_color": "#1f2937",
+        "font_family": "inherit",
+        "title_size": 20,
+        "mobile_title_size": 18,
+        "title_weight": "800",
+        "title_transform": "uppercase",
+        "title_letter_spacing": 0,
+        "card_title_size": 16,
+        "mobile_card_title_size": 18,
+        "card_title_weight": "700",
+        "card_text_size": 13,
+        "mobile_card_text_size": 13,
+        "card_text_weight": "400",
+        "max_width": 1180,
+        "title_box_width": 260,
+        "desktop_box_height": 110,
+        "desktop_gap": 16,
+        "title_layout": "column",
+        "card_gap": 26,
+        "border_radius": 6,
+        "title_icon_size": 44,
+        "mobile_title_icon_size": 36,
+        "logo_box_width": 70,
+        "logo_width": 58,
+        "mobile_logo_width": 58,
+        "mobile_gap": 16,
+        "mobile_card_layout": "row",
+        "mobile_card_align": "center",
+        "mobile_text_align": "left",
+        "mobile_card_gap": 18,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 16,
+        "mobile_padding_bottom": 16
+      }
+    },
+    "cleanlabel_VxG8gr": {
+      "type": "cleanlabel",
+      "blocks": {
+        "clean_item_MHejqd": {
+          "type": "clean_item",
+          "settings": {
+            "image": "shopify://shop_images/pexels-lan-yao-324969-9937951_b8645a2d-eee7-44ef-8f0c-057e1e174a13.avif",
+            "title": "Sourcing éthique & local",
+            "text": "Chez Mirabel, nous sélectionnons rigoureusement chaque ingrédient, en privilégiant les filières durables et locales, dans le respect de l’humain et de l’environnement."
+          }
+        },
+        "clean_item_xCH7bJ": {
+          "type": "clean_item",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2845.avif",
+            "title": "Pureté & naturalité",
+            "text": "Nos formules sont conçues sans additifs ni excipients controversés, pour garantir la meilleure assimilation et une parfaite tolérance."
+          }
+        },
+        "clean_item_J8fVaa": {
+          "type": "clean_item",
+          "settings": {
+            "image": "shopify://shop_images/Firefly_Une_vue_rapprochee_de_differents_tubes_a_essai_en_verre_transparent_remplis_d_eau_et_682333.avif",
+            "title": "Traçabilité & transparence",
+            "text": "Du sourcing à la fabrication, chaque étape est tracée. Nous partageons en toute transparence l’origine, la composition et les procédés de nos produits."
+          }
+        }
+      },
+      "block_order": [
+        "clean_item_MHejqd",
+        "clean_item_xCH7bJ",
+        "clean_item_J8fVaa"
+      ],
+      "name": "Clean label slider",
+      "settings": {
+        "title": "Clean Label Mirabel",
+        "bg_color": "#ffffff",
+        "title_color": "#071344",
+        "text_color": "#071344",
+        "card_bg": "#ffffff",
+        "card_border": "#dddddd",
+        "line_color": "#dddddd",
+        "dot_color": "#b8b8b8",
+        "dot_active_color": "#071344",
+        "title_size_desktop": 43,
+        "title_size_mobile": 27,
+        "title_weight": "500",
+        "title_align_mobile": "center",
+        "title_margin_bottom_mobile": 38,
+        "image_size_desktop": 190,
+        "image_size_mobile": 170,
+        "image_gap_desktop": 0,
+        "card_column_width": 430,
+        "card_min_height": 160,
+        "card_gap_desktop": 18,
+        "card_padding_x": 38,
+        "card_padding_y": 34,
+        "card_radius": 10,
+        "line_width_desktop": 96,
+        "card_title_size_desktop": 25,
+        "card_title_size_mobile": 23,
+        "card_title_weight": "700",
+        "card_title_margin_bottom": 14,
+        "mobile_title_margin_bottom": 14,
+        "card_text_size_desktop": 14,
+        "card_text_size_mobile": 13,
+        "card_text_weight": "500",
+        "mobile_text_max_width": 345,
+        "mobile_image_margin_bottom": 36,
+        "mobile_slide_side_padding": 4,
+        "dots_margin_top": 12,
+        "dot_size": 6,
+        "dot_gap": 8,
+        "max_width": 1320,
+        "title_column_width": 430,
+        "desktop_main_gap": 120,
+        "desktop_content_gap": 100,
+        "tablet_gap": 48,
+        "padding_top_desktop": 90,
+        "padding_bottom_desktop": 90,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 36,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 16
+      }
+    },
+    "avisproduit_j8FVDL": {
+      "type": "avisproduit",
+      "blocks": {
+        "review_CEqjJQ": {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , je recommande",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
+        "review_tBAtHM": {
+          "type": "review",
+          "settings": {
+            "name": "Sylvie A.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Produit de qualité",
+            "text": "<p>Bon produit pour maintenir sa glycémie à niveau stable avec une alimentation équilibrée</p>",
+            "date": "26/05/26"
+          }
+        },
+        "review_EAhjfL": {
+          "type": "review",
+          "settings": {
+            "name": "Sophie B.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": ".",
+            "text": "<p>.</p>",
+            "date": "25/05/26"
+          }
+        },
+        "review_TVbcte": {
+          "type": "review",
+          "settings": {
+            "name": "Céline H.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★☆",
+            "review_title": "Prit avec le chardon Marie",
+            "text": "<p>Prit avec le chardon Marie de chez dynveo Bon produit Je recommande</p>",
+            "date": "23/05/26"
+          }
+        },
+        "review_gATent": {
+          "type": "review",
+          "settings": {
+            "name": "chantal m.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Je me sens mieux après",
+            "text": "<p>Je me sens mieux après un mois de prise de berberine plus légère au moment de la digestion Je recommande</p>",
+            "date": "22/05/26"
+          }
+        },
+        "review_WRLYpk": {
+          "type": "review",
+          "settings": {
+            "name": "Emeline L.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace",
+            "text": "<p>Efficace sur ma glycémie et mon taux de cholestérol, et bien supportée. Très bien.</p>",
+            "date": "30/05/26"
+          }
+        }
+      },
+      "block_order": [
+        "review_CEqjJQ",
+        "review_tBAtHM",
+        "review_EAhjfL",
+        "review_TVbcte",
+        "review_gATent",
+        "review_WRLYpk"
+      ],
+      "name": "Avis produit custom",
+      "settings": {
+        "title": "Avis sur notre Berbérine Mirabel",
+        "rating": "4.8",
+        "stars": "★★★★★",
+        "based_text": "Basé sur 3,380 avis",
+        "show_pagination": false,
+        "pagination_pages": "1,2,3,4,5",
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "muted_text_color": "#1a1a1a",
+        "accent_color": "#ffc94a",
+        "line_color": "#e9e9e9",
+        "verified_color": "#1a1a1a",
+        "pagination_background": "#1a1a1a",
+        "pagination_text_color": "#ffffff",
+        "title_size_desktop": 30,
+        "title_size_mobile": 30,
+        "rating_size_desktop": 46,
+        "rating_size_mobile": 38,
+        "stars_size": 24,
+        "summary_size": 13,
+        "name_size": 16,
+        "verified_size": 12,
+        "review_title_size": 18,
+        "review_text_size": 16,
+        "date_size": 16,
+        "max_width": 1120,
+        "title_bottom_space": 52,
+        "summary_bottom_space": 50,
+        "review_padding_y": 30,
+        "padding_top_desktop": 42,
+        "padding_bottom_desktop": 40,
+        "padding_top_mobile": 26,
+        "padding_bottom_mobile": 26
+      }
+    },
+    "rich_text_jm8eFe": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_eXD7nf": {
+          "type": "subheading",
+          "settings": {
+            "text": "ILS EN PARLENT MIEUX QUE NOUS"
+          }
+        },
+        "heading_CQwE9d": {
+          "type": "heading",
+          "settings": {
+            "text": "+3,300 Clients Satisfaits",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_eXD7nf",
+        "heading_CQwE9d"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "#1a1a1a"
+      }
+    },
+    "logoscrooll_zK3aBh": {
+      "type": "logoscrooll",
+      "blocks": {
+        "image_F9fneM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113209.105.jpg",
+            "url": ""
+          }
+        },
+        "image_z7LWzc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113224.587.jpg",
+            "url": ""
+          }
+        },
+        "image_pGCiHh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113319.574.jpg",
+            "url": ""
+          }
+        },
+        "image_yB96YA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113305.122.jpg",
+            "url": ""
+          }
+        },
+        "image_LMLJ9J": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113402.607.jpg",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_F9fneM",
+        "image_z7LWzc",
+        "image_pGCiHh",
+        "image_yB96YA",
+        "image_LMLJ9J"
+      ],
+      "disabled": true,
+      "name": "SS - Scrolling logo cloud #5",
+      "settings": {
+        "layout_radius": 30,
+        "layout_border_thickness": 0,
+        "heading": "",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 18,
+        "heading_size_mobile": 18,
+        "heading_height": 130,
+        "scrolling_velocity": 30,
+        "scrolling_velocity_mobile": 30,
+        "scrolling_direction": "left",
+        "pause_hover": false,
+        "scrolling_gap": 70,
+        "scrolling_gap_mobile": 20,
+        "card_width_desktop": 140,
+        "card_width_mobile": 140,
+        "heading_color": "#121212",
+        "layout_bg_color": "#fef9f0",
+        "layout_border_color": "#121212",
+        "background_color": "#fef9f0",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "testimonials_fekFkB": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_43bMHi": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Sophie M.",
+            "title": "Je me sens plus légère",
+            "content": "<p>Après quelques semaines, je me sens plus légère et j’ai beaucoup moins envie de grignoter dans la journée. Le produit est facile à intégrer dans ma routine.</p>"
+          }
+        },
+        "testimonial_dVmE74": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Claire D.",
+            "title": "Je recommande",
+            "content": "<p>J’ai surtout remarqué une meilleure stabilité dans mon énergie. Moins de coups de fatigue et moins de fringales après les repas.</p>"
+          }
+        },
+        "testimonial_bR8Ppm": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Nathalie R.",
+            "title": "Très satisfaite",
+            "content": "<p>Très satisfaite. La composition est rassurante, le packaging est propre et j’apprécie que ce soit fabriqué en France.</p>"
+          }
+        },
+        "testimonial_ECqyMy": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Marine L.",
+            "title": "Mirabel m’aide à rester régulière",
+            "content": "<p>Je cherchais un complément naturel pour accompagner mon rééquilibrage alimentaire. Mirabel m’aide à rester régulière et motivée.</p>"
+          }
+        },
+        "testimonial_aNzgEM": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Isabelle T.",
+            "title": "Bon produit",
+            "content": "<p>Bon produit, agréable à prendre au quotidien. Je sens une vraie différence sur mes envies de sucre et mon confort après les repas.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_43bMHi",
+        "testimonial_dVmE74",
+        "testimonial_bR8Ppm",
+        "testimonial_ECqyMy",
+        "testimonial_aNzgEM"
+      ],
+      "disabled": true,
+      "name": "Testimonials",
+      "settings": {
+        "full_width": true,
+        "stack_testimonials": false,
         "subheading": "",
         "title": "",
         "content": "",
@@ -152,554 +2044,9 @@
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
-        "heading_gradient": ""
-      }
-    },
-    "scrolling-text": {
-      "type": "scrolling-text",
-      "settings": {
-        "full_width": true,
-        "text": "Promotion text",
-        "text_size": "large",
-        "text_style": "fill",
-        "scrolling_mode": "auto",
-        "scrolling_speed": 5,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "text_gradient": ""
-      }
-    },
-    "collection-list": {
-      "type": "collection-list",
-      "blocks": {
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "subheading": "",
-            "title": "",
-            "url": "",
-            "heading_tag": "h2",
-            "text_position": "place-self-center text-center",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "subheading": "",
-            "title": "",
-            "url": "",
-            "heading_tag": "h2",
-            "text_position": "place-self-center text-center",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection-3": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "subheading": "",
-            "title": "",
-            "url": "",
-            "heading_tag": "h2",
-            "text_position": "place-self-center text-center",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection-1",
-        "collection-2",
-        "collection-3"
-      ],
-      "settings": {
-        "full_width": true,
-        "stack_collections": false,
-        "collections_per_row": 3,
-        "show_progress_bar": false,
-        "subheading": "",
-        "title": "Collection list",
-        "content": "",
-        "link_url": "",
-        "link_text": "View all",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": ""
-      }
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "",
-        "products": [],
-        "full_width": true,
-        "stack_products": false,
-        "show_progress_bar": false,
-        "products_count": 6,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "subheading": "",
-        "title": "Featured collection",
-        "content": "",
-        "link_url": "",
-        "link_text": "View all",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
         "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
-    },
-    "impact-text": {
-      "type": "impact-text",
-      "blocks": {
-        "1664424181b38582d5-0": {
-          "type": "item",
-          "settings": {
-            "title": "100%",
-            "subheading": "Showcase a benefit of your product",
-            "content": "",
-            "button_text": "",
-            "button_url": "",
-            "animate_impact_text": false,
-            "animate_impact_text_duration": 2
-          }
-        }
-      },
-      "block_order": [
-        "1664424181b38582d5-0"
-      ],
-      "settings": {
-        "full_width": true,
-        "stack_mobile": true,
-        "text_alignment": "center",
-        "impact_text_style": "fill",
-        "text_divider": "none",
-        "impact_text_size_ratio": 1,
-        "background": "",
-        "background_gradient": "",
-        "heading_text_color": "",
-        "heading_gradient": "linear-gradient(180deg, rgba(26, 26, 26, 0.2), rgba(26, 26, 26, 0) 100%)",
-        "text_color": "",
-        "button_background": "",
-        "button_text_color": ""
-      }
-    },
-    "image-with-text-overlay": {
-      "type": "image-with-text-overlay",
-      "blocks": {
-        "1664424230c4756b0e-0": {
-          "type": "subheading",
-          "settings": {
-            "text": "Subheading"
-          }
-        },
-        "1664424230c4756b0e-1": {
-          "type": "heading",
-          "settings": {
-            "text": "Image with text overlay",
-            "heading_tag": "h1"
-          }
-        },
-        "1664424230c4756b0e-2": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "1664424230c4756b0e-0",
-        "1664424230c4756b0e-1",
-        "1664424230c4756b0e-2"
-      ],
-      "settings": {
-        "full_width": true,
-        "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30
-      }
-    },
-    "media-grid": {
-      "type": "media-grid",
-      "blocks": {
-        "item-1": {
-          "type": "image",
-          "settings": {
-            "title": "Promote your products",
-            "heading_tag": "h4",
-            "link_url": "",
-            "link_text": "",
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_column_span": 2,
-            "desktop_row_span": 2,
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "background": "#000000",
-            "background_gradient": "",
-            "text_color": "#ffffff",
-            "text_gradient": "",
-            "button_background": "#000000",
-            "button_text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "item-2": {
-          "type": "image",
-          "settings": {
-            "title": "Promote your products",
-            "heading_tag": "h4",
-            "link_url": "",
-            "link_text": "",
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_column_span": 1,
-            "desktop_row_span": 1,
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "background": "#000000",
-            "background_gradient": "",
-            "text_color": "#ffffff",
-            "text_gradient": "",
-            "button_background": "#000000",
-            "button_text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "item-3": {
-          "type": "image",
-          "settings": {
-            "title": "Promote your products",
-            "heading_tag": "h4",
-            "link_url": "",
-            "link_text": "",
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_column_span": 1,
-            "desktop_row_span": 1,
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "background": "#000000",
-            "background_gradient": "",
-            "text_color": "#ffffff",
-            "text_gradient": "",
-            "button_background": "#000000",
-            "button_text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "29246d34-c6e0-4373-84f6-b15e57736a00": {
-          "type": "image",
-          "settings": {
-            "title": "Promote your products",
-            "heading_tag": "h4",
-            "link_url": "",
-            "link_text": "",
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_column_span": 2,
-            "desktop_row_span": 1,
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "background": "#000000",
-            "background_gradient": "",
-            "text_color": "#ffffff",
-            "text_gradient": "",
-            "button_background": "#000000",
-            "button_text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "item-1",
-        "item-2",
-        "item-3",
-        "29246d34-c6e0-4373-84f6-b15e57736a00"
-      ],
-      "settings": {
-        "full_width": true,
-        "reduce_width": false,
-        "desktop_row_height": 290,
-        "background": "",
-        "background_gradient": ""
-      }
-    },
-    "before-after-image": {
-      "type": "before-after-image",
-      "settings": {
-        "full_width": true,
-        "subheading": "",
-        "title": "Before/after",
-        "content": "<p>Showcase your product benefit by using before/after image comparison.</p>",
-        "expand_image": false,
-        "text_position": "center",
-        "before_after_text_position": "bottom",
-        "before_text": "Before",
-        "after_text": "After",
-        "drag_initial_position": 50,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "before_text_color": "#ffffff",
-        "after_text_color": "#ffffff"
-      }
-    },
-    "press": {
-      "type": "press",
-      "blocks": {
-        "16644243327ba53d2a-0": {
-          "type": "quote",
-          "settings": {
-            "logo_width": 100,
-            "author": "",
-            "content": "Share info about what your customers say about your products.",
-            "show_rating": false,
-            "rating": 4
-          }
-        },
-        "16644243327ba53d2a-1": {
-          "type": "quote",
-          "settings": {
-            "logo_width": 100,
-            "author": "",
-            "content": "Or share content about your promotion, offers...",
-            "show_rating": false,
-            "rating": 4
-          }
-        }
-      },
-      "block_order": [
-        "16644243327ba53d2a-0",
-        "16644243327ba53d2a-1"
-      ],
-      "settings": {
-        "full_width": true,
-        "content_size": "medium",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "logo_item_background": "",
-        "logo_item_border": ""
-      }
-    },
-    "hot-spots": {
-      "type": "hot-spots",
-      "blocks": {
-        "1664424434f5b7d0e0-0": {
-          "type": "item",
-          "settings": {
-            "horizontal_position": 24,
-            "vertical_position": 70,
-            "horizontal_position_mobile": 24,
-            "vertical_position_mobile": 70,
-            "icon_width": 32,
-            "title": "Feature name",
-            "content": "<p>Share useful information about your product features.</p>"
-          }
-        },
-        "1664424434f5b7d0e0-1": {
-          "type": "item",
-          "settings": {
-            "horizontal_position": 62,
-            "vertical_position": 14,
-            "horizontal_position_mobile": 62,
-            "vertical_position_mobile": 14,
-            "icon_width": 32,
-            "title": "Feature name",
-            "content": "<p>Share useful information about your product features.</p>"
-          }
-        },
-        "1664424434f5b7d0e0-2": {
-          "type": "item",
-          "settings": {
-            "horizontal_position": 83,
-            "vertical_position": 75,
-            "horizontal_position_mobile": 83,
-            "vertical_position_mobile": 75,
-            "icon_width": 32,
-            "title": "Feature name",
-            "content": "<p>Share useful information about your product features.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "1664424434f5b7d0e0-0",
-        "1664424434f5b7d0e0-1",
-        "1664424434f5b7d0e0-2"
-      ],
-      "settings": {
-        "full_width": true,
-        "title": "",
-        "content": "",
-        "button_text": "",
-        "button_url": "",
-        "desktop_text_position": "place-self-start text-start",
-        "image_background": "",
-        "image_background_gradient": "",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "overlay_text_color": "#ffffff",
-        "overlay_button_background": "",
-        "overlay_button_text_color": "",
-        "hot_spot_dot_background": "#ffffff",
-        "hot_spot_dot_text_color": "#000000",
-        "hot_spot_content_background": "#ffffff",
-        "hot_spot_content_text_color": "#000000",
-        "hot_spot_content_opacity": 90,
-        "hot_spot_content_blur_radius": 3
-      }
-    },
-    "multiple-images-with-text": {
-      "type": "multiple-images-with-text",
-      "blocks": {
-        "1664424486a2b084ab-0": {
-          "type": "item",
-          "settings": {
-            "image_rotation_degrees": -2,
-            "subheading": "",
-            "title": "Heading 1",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "button_url": "",
-            "button_text": ""
-          }
-        },
-        "1664424486a2b084ab-1": {
-          "type": "item",
-          "settings": {
-            "image_rotation_degrees": 1.5,
-            "subheading": "",
-            "title": "Heading 2",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "button_url": "",
-            "button_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "1664424486a2b084ab-0",
-        "1664424486a2b084ab-1"
-      ],
-      "settings": {
-        "full_width": true,
-        "images_layout": "scattered",
-        "collage_images_alignment": "middle",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "button_background": "",
-        "button_text_color": ""
-      }
-    },
-    "featured-product": {
-      "type": "featured-product",
-      "blocks": {
-        "vendor": {
-          "type": "vendor",
-          "settings": {}
-        },
-        "title": {
-          "type": "title",
-          "settings": {
-            "heading_tag": "h2"
-          }
-        },
-        "badges": {
-          "type": "badges",
-          "settings": {}
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-            "show_taxes_notice": false
-          }
-        },
-        "rating": {
-          "type": "rating",
-          "settings": {
-            "show_empty": false
-          }
-        },
-        "separator": {
-          "type": "separator",
-          "settings": {}
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false
-          }
-        },
-        "variant-picker": {
-          "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "stack_blocks": true,
-            "selector_style": "block",
-            "swatch_selector_style": "color",
-            "size_chart_page": ""
-          }
-        },
-        "quantity-selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy-buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_payment_button": true,
-            "atc_button_background": "",
-            "atc_button_text_color": "",
-            "payment_button_background": "",
-            "payment_button_text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "vendor",
-        "title",
-        "badges",
-        "price",
-        "rating",
-        "separator",
-        "description",
-        "variant-picker",
-        "quantity-selector",
-        "buy-buttons"
-      ],
-      "settings": {
-        "full_width": false,
-        "product": "",
-        "desktop_media_width": 55,
-        "desktop_media_layout": "carousel_thumbnails_left",
-        "mobile_media_size": "expanded",
-        "mobile_carousel_control": "floating_dots",
-        "enable_video_autoplay": true,
-        "enable_video_looping": false,
-        "enable_image_zoom": true,
-        "max_image_zoom_level": 3,
-        "background": "#ffffff",
-        "background_gradient": "",
-        "text_color": "",
-        "input_background": "rgba(0,0,0,0)",
-        "input_text_color": ""
+        "testimonial_card_background": "",
+        "testimonial_card_text_color": ""
       }
     },
     "faq": {
@@ -708,41 +2055,57 @@
         "166442457738b23caf-0": {
           "type": "item",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "title": "À quoi sert Vitalité Minceur ?",
+            "content": "<p>Vitalité Minceur aide à soutenir l’équilibre glycémique, le métabolisme et la gestion des fringales grâce à sa formule à base de berbérine.</p>"
           }
         },
         "166442457738b23caf-1": {
           "type": "item",
           "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "title": "Quand prendre les gélules ?",
+            "content": "<p>Il est conseillé de prendre les gélules au moment des repas, avec un grand verre d’eau. Respecte toujours la dose journalière indiquée sur l’emballage.</p>"
           }
         },
         "166442457738b23caf-2": {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "Au bout de combien de temps voit-on les effets ?",
+            "content": "<p>Les effets peuvent varier selon les personnes. Une utilisation régulière pendant plusieurs semaines, associée à une alimentation équilibrée, permet généralement de mieux ressentir les bénéfices.</p>"
+          }
+        },
+        "item_NFaxk8": {
+          "type": "item",
+          "settings": {
+            "title": "Est-ce que Vitalité Minceur aide à réduire les fringales ?",
+            "content": "<p>Oui, la formule peut aider à limiter les envies de grignotage en participant à une meilleure stabilité de la glycémie au cours de la journée.</p>"
+          }
+        },
+        "item_MiQQa4": {
+          "type": "item",
+          "settings": {
+            "title": "Le produit est-il naturel et fabriqué en France ?",
+            "content": "<p>Oui, Vitalité Minceur est formulé avec des actifs d’origine naturelle, vegan, sans colorant ni conservateur, et fabriqué en France.</p>"
           }
         }
       },
       "block_order": [
         "166442457738b23caf-0",
         "166442457738b23caf-1",
-        "166442457738b23caf-2"
+        "166442457738b23caf-2",
+        "item_NFaxk8",
+        "item_MiQQa4"
       ],
       "settings": {
         "full_width": false,
         "subheading": "",
-        "title": "FAQ",
-        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "title": "Questions Fréquentes",
+        "content": "",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
+        "support_hours": "",
+        "answer_time": "",
         "button_text": "",
         "button_url": "",
-        "text_position": "start",
+        "text_position": "center",
         "background": "#ffffff",
         "background_gradient": "",
         "text_color": "",
@@ -756,19 +2119,30 @@
     }
   },
   "order": [
-    "slideshow",
-    "image-link-blocks",
-    "scrolling-text",
-    "collection-list",
-    "featured-collection",
-    "impact-text",
-    "image-with-text-overlay",
-    "media-grid",
-    "before-after-image",
-    "press",
-    "hot-spots",
-    "multiple-images-with-text",
-    "featured-product",
+    "herosection_TxKGFm",
+    "marqueeicons_6jTM4T",
+    "presentation_EkBfBH",
+    "featured_product_khQ4Qz",
+    "logoscrooll_6mjgGf",
+    "carouselbienfait_K94Rki",
+    "berberineaccordeon_QdbmeP",
+    "testimonialreviews_DeQWnV",
+    "berberineresult_RCjNgU",
+    "ingredients_GxTqXY",
+    "resultatsprouves_b3gcMW",
+    "efficaciteprouve_zx4pBJ",
+    "researchpopup_rtnacP",
+    "routine_a4ebbj",
+    "iconsguarantee_cNPR3Q",
+    "marqueeicons_cmWtrX",
+    "metabolisme_B8ignr",
+    "imagewithtext_wCjhfr",
+    "certif_XH7DiP",
+    "cleanlabel_VxG8gr",
+    "avisproduit_j8FVDL",
+    "rich_text_jm8eFe",
+    "logoscrooll_zK3aBh",
+    "testimonials_fekFkB",
     "faq"
   ]
 }
