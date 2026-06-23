@@ -24,12 +24,13 @@
         "message_eDP89E": {
           "type": "message",
           "settings": {
-            "text": "🌸 Offre de Printemps : Jusqu'à -50% !",
+            "text": "🌸 Offre du moment : Jusqu'à -50% !",
             "url": ""
           }
         },
         "message_6aU4jT": {
           "type": "message",
+          "disabled": true,
           "settings": {
             "text": "💚 Yuka 94/100",
             "url": ""
