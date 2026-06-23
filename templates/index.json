@@ -22,10 +22,10 @@
         "image_position_desktop": "center center",
         "image_position_mobile": "top center",
         "badge_text": "STOP AUX ENVIES DE SUCRES",
-        "offer_prefix": "Retrouvez le contrôle de vos envies",
-        "offer_value": "",
+        "offer_prefix": "Offre du moment",
+        "offer_value": "2 achetés = 1 offert",
         "description": "Vous craquez régulièrement sur le sucre, vous grignotez sans faim ou vous ressentez des coups de fatigue après les repas ?",
-        "btn_label": "J’essaie Mirabel →",
+        "btn_label": "JE REPRENDS LE CONTRÔLE →",
         "btn_link": "#shopify-section-template--28743066943865__featured_product_khQ4Qz",
         "show_trustpilot": true,
         "trust_label": "Excellent",
@@ -49,16 +49,16 @@
         "discount_weight": "800",
         "body_weight": "500",
         "button_weight": "800",
-        "badge_size_desktop": 19,
+        "badge_size_desktop": 22,
         "prefix_size_desktop": 26,
-        "discount_size_desktop": 78,
+        "discount_size_desktop": 60,
         "body_size_desktop": 15,
         "button_size_desktop": 17,
         "trust_size_desktop": 12,
         "stars_size_desktop": 22,
         "badge_size_mobile": 16,
         "prefix_size_mobile": 22,
-        "discount_size_mobile": 58,
+        "discount_size_mobile": 72,
         "body_size_mobile": 13,
         "button_size_mobile": 15,
         "trust_size_mobile": 12,
@@ -166,32 +166,32 @@
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/sugar-svgrepo-com.png",
-            "title": "Glycémie  Stable",
-            "text": "Aide à limiter les pics de sucre."
+            "title": "Vous craquez sur le sucre ?",
+            "text": "Réduisez les envies qui vous poussent vers les sucreries et les grignotages."
           }
         },
         "feature_WpPjp4": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/sugar-svgrepo-com_3.png",
-            "title": "Insuline Optimisée",
-            "text": "Favorise une meilleure sensibilité à l’insuline."
+            "title": "Votre poids stagne ?",
+            "text": "Une glycémie plus stable peut favoriser une meilleure gestion du poids sur le long terme."
           }
         },
         "feature_AYaiwK": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/sugar-svgrepo-com_1.png",
-            "title": "Équilibre Lipidique",
-            "text": "Soutient le cholestérol et les triglycérides."
+            "title": "Fatiguée après manger ?",
+            "text": "Profitez d'une énergie plus stable tout au long de la journée."
           }
         },
         "feature_HyaHxU": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/sugar-svgrepo-com_2.png",
-            "title": "Digestion & Microbiote",
-            "text": "Aide à maintenir une flore intestinale équilibrée."
+            "title": "Toujours faim ?",
+            "text": "Retrouvez une meilleure sensation de satiété entre les repas."
           }
         }
       },
@@ -216,9 +216,9 @@
         "gradient_color_2": "#f7e9c6",
         "gradient_color_3": "",
         "gradient_angle": 135,
-        "heading": "Régulation naturelle des graisses et sucres",
+        "heading": "Reprenez le contrôle de vos envies de sucre",
         "heading_color": "#1a1a1a",
-        "heading_size": 36,
+        "heading_size": 35,
         "subheading": "",
         "sub_color": "#1a1a1a",
         "sub_size": 13,
@@ -232,7 +232,7 @@
         "feature_text_color": "#1a1a1a",
         "feature_text_size": 13,
         "show_arrows": true,
-        "accent_color": "#e2682b",
+        "accent_color": "#152711",
         "arrow_size": 110,
         "arrow_offset": 16,
         "tagline_color": "#3a1e0e",
