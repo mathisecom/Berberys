@@ -15,16 +15,16 @@
       "settings": {
         "hero_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T144347.545.png",
         "image_alt": "",
-        "image_bg_color": "#FFFFFF",
+        "image_bg_color": "#ffffff",
         "text_width_desktop": 60,
         "banner_min_height_desktop": 360,
         "image_height_mobile": 410,
         "image_position_desktop": "center center",
         "image_position_mobile": "top center",
-        "badge_text": "Offre de Printemps",
-        "offer_prefix": "Jusqu’à",
-        "offer_value": "-50%",
-        "description": "Une berbérine nouvelle génération, hautement assimilable, conçue pour aider à soutenir l’équilibre glycémique, le métabolisme des graisses et le maintien d’un cholestérol normal.",
+        "badge_text": "STOP AUX ENVIES DE SUCRES",
+        "offer_prefix": "Retrouvez le contrôle de vos envies",
+        "offer_value": "",
+        "description": "Vous craquez régulièrement sur le sucre, vous grignotez sans faim ou vous ressentez des coups de fatigue après les repas ?",
         "btn_label": "J’essaie Mirabel →",
         "btn_link": "#shopify-section-template--28743066943865__featured_product_khQ4Qz",
         "show_trustpilot": true,
@@ -32,13 +32,13 @@
         "stars_text": "★★★★★",
         "trust_score": "Noté 4,7/5 sur",
         "trust_brand": "Trustpilot",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "text_color": "#1a1a1a",
         "heading_color": "#1a1a1a",
         "badge_bg": "#152711",
-        "badge_text_color": "#FFFFFF",
+        "badge_text_color": "#ffffff",
         "btn_bg": "#152711",
-        "btn_text_color": "#FFFFFF",
+        "btn_text_color": "#ffffff",
         "btn_hover_bg": "#152711",
         "stars_color": "#00b67a",
         "trust_text_color": "#000000",
@@ -101,11 +101,17 @@
     "marqueeicons_6jTM4T": {
       "type": "marqueeicons",
       "blocks": {
+        "item_iMi3Yj": {
+          "type": "item",
+          "settings": {
+            "text": "Cliniquement prouvé"
+          }
+        },
         "item_RNYBfb": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/categorie.svg",
-            "text": "Validé par les pharmaciens"
+            "text": "Testé en laboratoire"
           }
         },
         "item_CepQFM": {
@@ -124,6 +130,7 @@
         }
       },
       "block_order": [
+        "item_iMi3Yj",
         "item_RNYBfb",
         "item_CepQFM",
         "item_PDdARn"
@@ -144,7 +151,7 @@
         "item_gap": 48,
         "icon_gap": 8,
         "icon_size": 14,
-        "text_color": "#FFFFFF",
+        "text_color": "#ffffff",
         "text_size": 12,
         "text_weight": "600",
         "text_transform": "uppercase",
@@ -239,7 +246,7 @@
         "liquid_Lrc8VW": {
           "type": "liquid",
           "settings": {
-            "liquid": "<style>\n  .mirabel-tags {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 6px;\n    margin: 12px 0;\n  }\n\n  .mirabel-tag {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    padding: 4px 8px;\n    border: 1px solid #8EAFD1;\n    background-color: #152711; /* Vert appliqué ici */\n    color: #ffffff; /* Texte blanc appliqué ici */\n    font-size: 12px;\n    font-weight: 500;\n    line-height: 1;\n    text-transform: uppercase;\n    white-space: nowrap;\n  }\n\n  @media screen and (max-width: 480px) {\n    .mirabel-tags {\n      gap: 5px;\n    }\n\n    .mirabel-tag {\n      font-size: 11px;\n      padding: 4px 7px;\n    }\n  }\n</style>\n\n<div class=\"mirabel-tags\">\n  <span class=\"mirabel-tag\">Glycémie stable</span>\n  <span class=\"mirabel-tag\">Moins de fringales</span>\n</div>"
+            "liquid": "<style>\n  .mirabel-tags {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 6px;\n    margin: 12px 0;\n  }\n\n  .mirabel-tag {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    padding: 4px 8px;\n    border: 1px solid #8EAFD1;\n    background-color: #F8F2EA;\n    color: #111111;\n    font-size: 12px;\n    font-weight: 500;\n    line-height: 1;\n    text-transform: uppercase;\n    white-space: nowrap;\n  }\n\n  @media screen and (max-width: 480px) {\n    .mirabel-tags {\n      gap: 5px;\n    }\n\n    .mirabel-tag {\n      font-size: 11px;\n      padding: 4px 7px;\n    }\n  }\n</style>\n\n<div class=\"mirabel-tags\">\n  <span class=\"mirabel-tag\">Glycémie stable</span>\n  <span class=\"mirabel-tag\">Moins de fringales</span>\n</div>"
           }
         },
         "liquid_pEcFnn": {
@@ -913,7 +920,7 @@
         "card_border": "#fef9f0",
         "check_bg": "#152711",
         "track_bg": "#152711",
-        "progress_bg": "#F23A45",
+        "progress_bg": "#f23a45",
         "image_overlay": "linear-gradient(90deg, rgba(165, 191, 219, 0.15), rgba(165, 191, 219, 0.05) 100%)",
         "mobile_image_overlay": "linear-gradient(180deg, rgba(165, 191, 219, 0.05), rgba(165, 191, 219, 0.18) 100%)",
         "title_size_desktop": 40,
@@ -1023,7 +1030,7 @@
         "heading_line_2": "meilleurs actifs",
         "description": "Au coeur de nos solutions, des actifs puissants à l'efficacité scientifiquement prouvée, dans leur forme la plus biodisponible.",
         "heading_alignment": "left",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "heading_color": "#1f1f1f",
         "description_color": "#4a4a4a",
         "card_bg": "#f8f1e6",
@@ -1470,7 +1477,7 @@
         "item_gap": 48,
         "icon_gap": 8,
         "icon_size": 14,
-        "text_color": "#FFFFFF",
+        "text_color": "#ffffff",
         "text_size": 12,
         "text_weight": "600",
         "text_transform": "uppercase",
@@ -1565,7 +1572,6 @@
         "bullet_tFtREW",
         "bullet_44pUkc"
       ],
-      "disabled": true,
       "name": "Product Benefits",
       "settings": {
         "heading": "Un actif puissant pour l'équilibre métabolique",
