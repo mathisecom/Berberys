@@ -478,46 +478,46 @@
         "benefit_GKEfL9": {
           "type": "benefit",
           "settings": {
-            "image": "shopify://shop_images/18293190-456e-4589-82fb-099d807dfc85.avif",
-            "badge": "ÉNERGIE",
-            "title": "Énergie stable toute la journée",
-            "text": "Soutient la vitalité et la concentration, sans coup de fatigue."
+            "image": "shopify://shop_images/ChatGPT_Image_24_juin_2026_17_59_10.png",
+            "badge": "CONTRÔLE",
+            "title": "Reprenez le contrôle de vos envies de sucre",
+            "text": "Retrouvez une relation plus sereine avec l'alimentation et résistez plus facilement aux tentations du quotidien"
           }
         },
         "benefit_d8xCXn": {
           "type": "benefit",
           "settings": {
-            "image": "shopify://shop_images/feaf6ae5-2c35-43ce-adcd-ce161fefaae6.avif",
-            "badge": "ABSORPTION",
-            "title": "Meilleure assimilation des nutriments",
-            "text": "Optimise l’assimilation des vitamines et minéraux essentiels."
+            "image": "shopify://shop_images/ChatGPT_Image_24_juin_2026_18_42_23.png",
+            "badge": "FRINGALES",
+            "title": "Moins de craquages dans la journée",
+            "text": "Limitez les envies de sucre qui vous poussent à grignoter entre les repas"
           }
         },
         "benefit_cj3bzf": {
           "type": "benefit",
           "settings": {
-            "image": "shopify://shop_images/86082bb2-e67a-476b-bef2-7c9b01b88b81.avif",
-            "badge": "POIDS",
-            "title": "Gestion du poids facilitée",
-            "text": "Favorise la satiété et limite les fringales pour des résultats durables."
+            "image": "shopify://shop_images/ChatGPT_Image_24_juin_2026_18_44_55.png",
+            "badge": "SATIÉTÉ",
+            "title": "Vous vous sentez rassasiée plus longtemps",
+            "text": "Fini la sensation d'avoir encore faim peu de temps après avoir mangé"
           }
         },
         "benefit_AUpHaM": {
           "type": "benefit",
           "settings": {
-            "image": "shopify://shop_images/Digestion.webp",
-            "badge": "NETTOYAGE",
-            "title": "Nettoyage doux, résultats rapides",
-            "text": "Élimine en douceur les toxines sans agresser l’organisme."
+            "image": "shopify://shop_images/ChatGPT_Image_24_juin_2026_18_48_30.png",
+            "badge": "ÉNERGIE",
+            "title": "Moins de coups de fatigue après les repas",
+            "text": "Profitez d'une énergie plus stable tout au long de la journée"
           }
         },
         "benefit_pRGzY9": {
           "type": "benefit",
           "settings": {
-            "image": "shopify://shop_images/Design_sans_titre_25.png",
-            "badge": "DIGESTION",
-            "title": "Digestion sereine et régulière",
-            "text": "Apaise les inconforts, favorise un transit harmonieux au quotidien."
+            "image": "shopify://shop_images/ChatGPT_Image_24_juin_2026_18_52_43.png",
+            "badge": "SÉRÉNITÉ",
+            "title": "Une alimentation plus apaisée",
+            "text": "Mangez avec davantage de sérénité sans penser constamment au sucre"
           }
         }
       },
@@ -585,6 +585,135 @@
         "padding_bottom_mobile": 50,
         "padding_left_mobile": 20,
         "padding_right_mobile": 0
+      }
+    },
+    "testimonialreviews_DeQWnV": {
+      "type": "testimonialreviews",
+      "blocks": {
+        "review_Pxrh4V": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113224.587.jpg",
+            "image_alt": "Image avis client",
+            "title": "Ça change la vie",
+            "text": "Depuis que j’ai intégré ce produit à ma routine, je me sens plus équilibrée au quotidien. Simple à prendre, efficace, et vraiment agréable.",
+            "author": "Mary Morgane",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_bjiWPU": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113209.105.jpg",
+            "image_alt": "Image avis client",
+            "title": "Délicieux et SAV parfait !",
+            "text": "Excellent produit. J’apprécie la qualité, la composition et le sérieux de la marque. Une très belle découverte que je recommande.",
+            "author": "Capucine Chandon",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_j6WeAH": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113319.574.jpg",
+            "image_alt": "Image avis client",
+            "title": "Une révélation",
+            "text": "Je l’utilise chaque jour et je sens une vraie différence. C’est devenu un indispensable dans ma routine bien-être.",
+            "author": "Gilles Caubet",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_UwLDbr": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113305.122.jpg",
+            "image_alt": "Image avis client",
+            "title": "Très satisfaite",
+            "text": "La prise est simple, le produit est qualitatif et les effets se ressentent progressivement. Je suis ravie de mon achat.",
+            "author": "Claire Martin",
+            "verified_text": "Acheteur vérifié"
+          }
+        },
+        "review_Y99pAC": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113402.607.jpg",
+            "image_alt": "Image avis client",
+            "title": "Je recommande",
+            "text": "Très bonne expérience, livraison rapide et produit conforme à mes attentes. Je vais continuer sur plusieurs mois.",
+            "author": "Julie Bernard",
+            "verified_text": "Acheteur vérifié"
+          }
+        }
+      },
+      "block_order": [
+        "review_Pxrh4V",
+        "review_bjiWPU",
+        "review_j6WeAH",
+        "review_UwLDbr",
+        "review_Y99pAC"
+      ],
+      "name": "Avis clients custom",
+      "settings": {
+        "heading": "Témoignages de Femmes Comme Toi",
+        "rating_title": "Noté Excellent",
+        "rating_text": "<p>4.8/5 sur <strong>3,380+ Avis</strong></p>",
+        "show_button": false,
+        "button_label": "Voir les avis",
+        "button_link": "",
+        "section_bg": "#ffffff",
+        "card_bg": "#ffffff",
+        "card_border": "#000000",
+        "shadow_color": "#000000",
+        "title_color": "#000000",
+        "text_color": "#222222",
+        "muted_color": "#555555",
+        "star_color": "#00b67a",
+        "verified_color": "#00b67a",
+        "button_bg": "#fff27b",
+        "button_text_color": "#000000",
+        "arrow_bg": "#000000",
+        "arrow_color": "#ffffff",
+        "font_family": "inherit",
+        "title_size": 32,
+        "mobile_title_size": 28,
+        "title_weight": "800",
+        "rating_title_size": 18,
+        "mobile_rating_title_size": 16,
+        "rating_text_size": 15,
+        "mobile_rating_text_size": 14,
+        "card_title_size": 20,
+        "mobile_card_title_size": 19,
+        "card_text_size": 15,
+        "mobile_card_text_size": 14,
+        "author_size": 12,
+        "verified_size": 13,
+        "max_width": 1280,
+        "cards_area_width": 1040,
+        "card_gap": 28,
+        "card_min_height": 440,
+        "mobile_card_min_height": 420,
+        "card_radius": 8,
+        "shadow_offset": 6,
+        "card_padding_top": 36,
+        "card_padding_horizontal": 32,
+        "card_padding_bottom": 38,
+        "mobile_card_padding_top": 32,
+        "mobile_card_padding_horizontal": 24,
+        "mobile_card_padding_bottom": 34,
+        "stars_size": 24,
+        "mobile_stars_size": 23,
+        "image_aspect_ratio": "4 / 3",
+        "image_radius": 8,
+        "show_arrows": true,
+        "show_dots": true,
+        "arrow_size": 42,
+        "arrow_icon_size": 34,
+        "header_bottom_spacing": 50,
+        "padding_top": 56,
+        "padding_bottom": 64,
+        "mobile_padding_top": 28,
+        "mobile_padding_bottom": 52
       }
     },
     "berberineaccordeon_QdbmeP": {
@@ -728,135 +857,6 @@
         "padding_top_mobile": 20,
         "padding_bottom_mobile": 30,
         "padding_side_mobile": 16
-      }
-    },
-    "testimonialreviews_DeQWnV": {
-      "type": "testimonialreviews",
-      "blocks": {
-        "review_Pxrh4V": {
-          "type": "review",
-          "settings": {
-            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113224.587.jpg",
-            "image_alt": "Image avis client",
-            "title": "Ça change la vie",
-            "text": "Depuis que j’ai intégré ce produit à ma routine, je me sens plus équilibrée au quotidien. Simple à prendre, efficace, et vraiment agréable.",
-            "author": "Mary Morgane",
-            "verified_text": "Acheteur vérifié"
-          }
-        },
-        "review_bjiWPU": {
-          "type": "review",
-          "settings": {
-            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113209.105.jpg",
-            "image_alt": "Image avis client",
-            "title": "Délicieux et SAV parfait !",
-            "text": "Excellent produit. J’apprécie la qualité, la composition et le sérieux de la marque. Une très belle découverte que je recommande.",
-            "author": "Capucine Chandon",
-            "verified_text": "Acheteur vérifié"
-          }
-        },
-        "review_j6WeAH": {
-          "type": "review",
-          "settings": {
-            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113319.574.jpg",
-            "image_alt": "Image avis client",
-            "title": "Une révélation",
-            "text": "Je l’utilise chaque jour et je sens une vraie différence. C’est devenu un indispensable dans ma routine bien-être.",
-            "author": "Gilles Caubet",
-            "verified_text": "Acheteur vérifié"
-          }
-        },
-        "review_UwLDbr": {
-          "type": "review",
-          "settings": {
-            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113305.122.jpg",
-            "image_alt": "Image avis client",
-            "title": "Très satisfaite",
-            "text": "La prise est simple, le produit est qualitatif et les effets se ressentent progressivement. Je suis ravie de mon achat.",
-            "author": "Claire Martin",
-            "verified_text": "Acheteur vérifié"
-          }
-        },
-        "review_Y99pAC": {
-          "type": "review",
-          "settings": {
-            "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113402.607.jpg",
-            "image_alt": "Image avis client",
-            "title": "Je recommande",
-            "text": "Très bonne expérience, livraison rapide et produit conforme à mes attentes. Je vais continuer sur plusieurs mois.",
-            "author": "Julie Bernard",
-            "verified_text": "Acheteur vérifié"
-          }
-        }
-      },
-      "block_order": [
-        "review_Pxrh4V",
-        "review_bjiWPU",
-        "review_j6WeAH",
-        "review_UwLDbr",
-        "review_Y99pAC"
-      ],
-      "name": "Avis clients custom",
-      "settings": {
-        "heading": "Témoignages de Femmes Comme Toi",
-        "rating_title": "Noté Excellent",
-        "rating_text": "<p>4.8/5 sur <strong>3,380+ Avis</strong></p>",
-        "show_button": false,
-        "button_label": "Voir les avis",
-        "button_link": "",
-        "section_bg": "#ffffff",
-        "card_bg": "#ffffff",
-        "card_border": "#000000",
-        "shadow_color": "#000000",
-        "title_color": "#000000",
-        "text_color": "#222222",
-        "muted_color": "#555555",
-        "star_color": "#00b67a",
-        "verified_color": "#00b67a",
-        "button_bg": "#fff27b",
-        "button_text_color": "#000000",
-        "arrow_bg": "#000000",
-        "arrow_color": "#ffffff",
-        "font_family": "inherit",
-        "title_size": 32,
-        "mobile_title_size": 28,
-        "title_weight": "800",
-        "rating_title_size": 18,
-        "mobile_rating_title_size": 16,
-        "rating_text_size": 15,
-        "mobile_rating_text_size": 14,
-        "card_title_size": 20,
-        "mobile_card_title_size": 19,
-        "card_text_size": 15,
-        "mobile_card_text_size": 14,
-        "author_size": 12,
-        "verified_size": 13,
-        "max_width": 1280,
-        "cards_area_width": 1040,
-        "card_gap": 28,
-        "card_min_height": 440,
-        "mobile_card_min_height": 420,
-        "card_radius": 8,
-        "shadow_offset": 6,
-        "card_padding_top": 36,
-        "card_padding_horizontal": 32,
-        "card_padding_bottom": 38,
-        "mobile_card_padding_top": 32,
-        "mobile_card_padding_horizontal": 24,
-        "mobile_card_padding_bottom": 34,
-        "stars_size": 24,
-        "mobile_stars_size": 23,
-        "image_aspect_ratio": "4 / 3",
-        "image_radius": 8,
-        "show_arrows": true,
-        "show_dots": true,
-        "arrow_size": 42,
-        "arrow_icon_size": 34,
-        "header_bottom_spacing": 50,
-        "padding_top": 56,
-        "padding_bottom": 64,
-        "mobile_padding_top": 28,
-        "mobile_padding_bottom": 52
       }
     },
     "berberineresult_RCjNgU": {
@@ -2147,8 +2147,8 @@
     "featured_product_khQ4Qz",
     "logoscrooll_6mjgGf",
     "carouselbienfait_K94Rki",
-    "berberineaccordeon_QdbmeP",
     "testimonialreviews_DeQWnV",
+    "berberineaccordeon_QdbmeP",
     "berberineresult_RCjNgU",
     "ingredients_GxTqXY",
     "resultatsprouves_b3gcMW",
