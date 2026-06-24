@@ -300,7 +300,7 @@
         "buy_buttons_CCMmLm": {
           "type": "buy_buttons",
           "settings": {
-            "show_payment_button": true,
+            "show_payment_button": false,
             "show_gift_card_recipient": true,
             "atc_button_background": "#152711",
             "atc_button_text_color": "#ffffff",
@@ -325,8 +325,8 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "CONSEILS D'UTILISATION",
-            "content": "<p><strong>À qui s'adresse-t-il ?</strong></p><p>Personnes souhaitant soutenir la régulation de leur glycémie.</p><p><strong>Conseils d'utilisation</strong></p><p><strong>2 gélules par jour</strong>, à prendre de préférence à jeun ou au cours du premier repas de la journée selon votre tolérance, avec un grand verre d’eau.</p>",
+            "title": "DESCRIPTION",
+            "content": "<p>Vous avez l'impression de toujours penser au sucre ?</p><p>Notre formule associe berbérine, gymnema, chrome et fenugrec pour vous aider à retrouver le contrôle de vos envies et adopter des habitudes alimentaires plus sereines.</p><ul><li>Moins d'envies de sucre</li><li>Moins de grignotages</li><li>Une satiété plus durable</li><li>Une énergie plus stable</li></ul><p>Conçue pour les personnes qui craquent régulièrement sur le sucre, qui ont du mal à tenir entre les repas ou qui ressentent des coups de fatigue après manger, cette formule accompagne votre quotidien pour vous aider à reprendre le contrôle.</p><p>Parce que le problème n'est pas toujours une question de volonté.</p>",
             "page": ""
           }
         },
@@ -336,7 +336,7 @@
             "icon": "none",
             "icon_width": 20,
             "title": "COMPOSITION",
-            "content": "<p><strong>Extrait de Berberis aristata</strong><br/><br/>Standardisé à 97% en berbérine hydrochloride.</p><p><strong>Gymnema Sylvestre</strong><br/><br/>Plante traditionnellement utilisée pour accompagner la gestion des envies de sucre.</p><p><strong>Chrome</strong><br/><br/>Contribue au maintien d’une glycémie normale et au métabolisme normal des macronutriments.</p><p><strong>Extrait de Fenugrec</strong><br/><br/>Soutient le métabolisme des glucides et des lipides.</p><p><strong>Pipérine</strong><br/><br/>Issue du poivre noir, elle aide à favoriser l’assimilation des actifs.</p><p><strong>Enveloppe de la gélule</strong><br/><br/>Gélule d’origine végétale, adaptée à une formule vegan.</p>",
+            "content": "<p>Une formule complète pour reprendre le contrôle</p><p>Nous avons sélectionné 4 actifs reconnus pour leur complémentarité :</p><p>• Berbérine titrée à 97 %<br/>• Gymnema sylvestre<br/>• Chrome<br/>• Fenugrec</p><p>Notre berbérine est issue d'un extrait de berbéris standardisé à 97 % en berbérine hydrochloride, garantissant une concentration élevée et constante en actif.</p><p>Ensemble, ces ingrédients accompagnent l'équilibre glycémique et vous aident à retrouver une relation plus sereine avec l'alimentation.</p><p>Notre formule est élaborée selon des standards stricts de qualité et de traçabilité dans un laboratoire certifié ISO 9001 et ISO 22000.</p><p>Composition de la gélule : enveloppe végétale (hydroxypropylméthylcellulose), adaptée aux régimes végétariens.</p><p>✓ Berbérine titrée à 97 %<br/>✓ Laboratoire certifié ISO 9001 & ISO 22000<br/>✓ Gélules végétales<br/>✓ Contrôles qualité rigoureux</p>",
             "page": ""
           }
         },
@@ -345,8 +345,18 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "RÉSULTATS & ÉTUDES",
-            "content": "<ul><li>500mg de berbérine par gélule</li><li>40µg de chrome par gélule (100% des VNR)</li><li>Le chrome contribue au maintien d’une glycémie normale¹</li><li>Le chrome contribue au métabolisme des nutriments²</li><li>Convient aux végétaliens</li><li>Une gélule par jour – pas de préparation, pas de tracas</li></ul>",
+            "title": "CONSEILS D'UTILISATION",
+            "content": "<p>Conseils d'utilisation</p><p>Prendre 2 gélules chaque matin avec un grand verre d'eau, après le petit-déjeuner.</p><p>Pour une utilisation optimale, prendre les 2 gélules en une seule prise et intégrer cette routine quotidiennement.</p><p>À utiliser dans le cadre d'une alimentation variée et équilibrée ainsi que d'un mode de vie sain.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_yUicGJ": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "CONSEILS D'UTILISATION",
+            "content": "<p>Conseils d'utilisation</p><p>Prendre 2 gélules chaque matin avec un grand verre d'eau, après le petit-déjeuner.</p><p>Pour une utilisation optimale, prendre les 2 gélules en une seule prise et intégrer cette routine quotidiennement.</p><p>À utiliser dans le cadre d'une alimentation variée et équilibrée ainsi que d'un mode de vie sain.</p>",
             "page": ""
           }
         }
@@ -364,7 +374,8 @@
         "liquid_DYyRaA",
         "collapsible_text_QWprnH",
         "collapsible_text_Aeawcy",
-        "collapsible_text_azzGWX"
+        "collapsible_text_azzGWX",
+        "collapsible_text_yUicGJ"
       ],
       "name": "Featured product",
       "settings": {
