@@ -723,16 +723,16 @@
           "type": "feature",
           "settings": {
             "position": "left",
-            "title": "EXTRAITE DE \"BERBERIS ARISTATA\"",
-            "text": "<p>Authentification botanique et traçabilité certifiées </p><p>Seule espèce avec des allégations santé sur la glycémie </p><p>Origine Laos</p>"
+            "title": "Berbérine titrée à 97 %",
+            "text": "<p>Une concentration élevée et standardisée pour garantir une teneur constante en berbérine dans chaque gélule.</p>"
           }
         },
         "feature_34EEHe": {
           "type": "feature",
           "settings": {
             "position": "left",
-            "title": "STANDARDISÉE ET CONTRÔLÉE À PLUS DE 98%",
-            "text": "<p>Haut grade de Berbérine pure & stabilisée</p><p>Forme stable et naturelle</p>"
+            "title": "Berbérine Hydrochloride (HCl)",
+            "text": "<p>La forme de berbérine la plus utilisée dans les études scientifiques, sélectionnée pour sa stabilité et sa qualité constante.</p>"
           }
         },
         "feature_4X7rpN": {
@@ -740,7 +740,7 @@
           "settings": {
             "position": "right",
             "title": "100% PURE",
-            "text": "<p>Gélule végétale & vegan en pullulan</p><p>Aucun support ni contaminant</p><p>Sans additifs ni excipients</p>"
+            "text": "<p>Gélule végétale en hydroxypropylméthylcellulose (HPMC), sans gélatine.</p><p>Aucun support ni contaminant</p><p></p>"
           }
         },
         "feature_QkfnjA": {
@@ -748,7 +748,7 @@
           "settings": {
             "position": "right",
             "title": "LE JUSTE DOSAGE",
-            "text": "<p>300 mg / gélule</p><p>Dosage physiologique et validé par les autorités</p><p>Absence de surdosage</p>"
+            "text": "<p>300 mg de berbérine par gélule</p><p>Dosage physiologique et validé par les autorités</p><p>Absence de surdosage</p>"
           }
         },
         "accordion_i4YedE": {
@@ -801,8 +801,8 @@
         "heading_color": "#1a1a1a",
         "text_color": "#1a1a1a",
         "line_color": "#b9bfd5",
-        "title": "Les plus de notre Berbérine pure",
-        "subtitle": "Extrait Berberis aristata",
+        "title": "Pourquoi notre formule fait la différence",
+        "subtitle": "Des ingrédients sélectionnés pour leur qualité et leur complémentarité.",
         "title_size_desktop": 40,
         "title_size_mobile": 35,
         "title_weight": "600",
