@@ -1697,24 +1697,24 @@
           "type": "clean_item",
           "settings": {
             "image": "shopify://shop_images/pexels-lan-yao-324969-9937951_b8645a2d-eee7-44ef-8f0c-057e1e174a13.avif",
-            "title": "Sourcing éthique & local",
-            "text": "Chez Mirabel, nous sélectionnons rigoureusement chaque ingrédient, en privilégiant les filières durables et locales, dans le respect de l’humain et de l’environnement."
+            "title": "Des ingrédients sélectionnés avec exigence",
+            "text": "Nous sélectionnons chaque actif pour sa qualité, sa standardisation et sa traçabilité afin de garantir une formule fiable d'un lot à l'autre"
           }
         },
         "clean_item_xCH7bJ": {
           "type": "clean_item",
           "settings": {
             "image": "shopify://shop_images/IMG_2845.avif",
-            "title": "Pureté & naturalité",
-            "text": "Nos formules sont conçues sans additifs ni excipients controversés, pour garantir la meilleure assimilation et une parfaite tolérance."
+            "title": "Une formule sans ingrédients superflus",
+            "text": "Des actifs ciblés, des gélules végétales et uniquement les excipients indispensables à une fabrication de qualité."
           }
         },
         "clean_item_J8fVaa": {
           "type": "clean_item",
           "settings": {
             "image": "shopify://shop_images/Firefly_Une_vue_rapprochee_de_differents_tubes_a_essai_en_verre_transparent_remplis_d_eau_et_682333.avif",
-            "title": "Traçabilité & transparence",
-            "text": "Du sourcing à la fabrication, chaque étape est tracée. Nous partageons en toute transparence l’origine, la composition et les procédés de nos produits."
+            "title": "Une qualité contrôlée",
+            "text": "Des matières premières soigneusement sélectionnées jusqu'au produit fini, chaque étape est contrôlée selon des standards stricts"
           }
         }
       },
@@ -1725,7 +1725,7 @@
       ],
       "name": "Clean label slider",
       "settings": {
-        "title": "Clean Label Mirabel",
+        "title": "Notre engagement qualité",
         "bg_color": "#ffffff",
         "title_color": "#071344",
         "text_color": "#071344",
