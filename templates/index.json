@@ -2100,6 +2100,13 @@
     "faq": {
       "type": "faq",
       "blocks": {
+        "item_cpLrCg": {
+          "type": "item",
+          "settings": {
+            "title": "Pourquoi choisir Mirabel plutôt qu'une autre berbérine ?",
+            "content": "<p>Mirabel associe une <strong>berbérine hydrochloride titrée à 97 %</strong> à plusieurs ingrédients complémentaires : Gymnema sylvestre, chrome et fenugrec.</p><p>Cette approche vise à agir sur plusieurs leviers à la fois — équilibre glycémique, envies de sucre et satiété — plutôt que de reposer sur un seul actif. Notre formule est élaborée dans un laboratoire certifié <strong>ISO 9001</strong> et <strong>ISO 22000</strong>, avec des ingrédients soigneusement sélectionnés et des dosages clairement indiqués.</p>"
+          }
+        },
         "item_ykEWnH": {
           "type": "item",
           "settings": {
@@ -2151,6 +2158,7 @@
         }
       },
       "block_order": [
+        "item_cpLrCg",
         "item_ykEWnH",
         "item_tfaMMB",
         "166442457738b23caf-0",
