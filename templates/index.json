@@ -2100,6 +2100,20 @@
     "faq": {
       "type": "faq",
       "blocks": {
+        "item_ykEWnH": {
+          "type": "item",
+          "settings": {
+            "title": "Qu'est-ce que la berbérine ?",
+            "content": "<p>La berbérine est un composé naturellement présent dans certaines plantes du genre <strong>Berberis</strong>, notamment <strong>Berberis aristata</strong>.</p><p>Utilisée depuis des siècles dans les médecines traditionnelles asiatique et ayurvédique, elle est aujourd'hui l'un des actifs naturels les plus étudiés pour son rôle dans le maintien d'une glycémie normale et le soutien du métabolisme des glucides.</p><p>C'est pour cette raison qu'elle est aujourd'hui largement utilisée dans les compléments destinés aux personnes souhaitant retrouver un meilleur équilibre métabolique.</p>"
+          }
+        },
+        "item_tfaMMB": {
+          "type": "item",
+          "settings": {
+            "title": "Puis-je le prendre avec un traitement médical ?",
+            "content": "<p>La berbérine peut interagir avec certains médicaments, notamment ceux destinés à la glycémie, à la tension artérielle ou au cholestérol.</p><p>Si vous prenez un traitement médical, demandez l'avis de votre médecin ou de votre pharmacien avant de commencer une cure.</p>"
+          }
+        },
         "166442457738b23caf-0": {
           "type": "item",
           "settings": {
@@ -2111,32 +2125,34 @@
           "type": "item",
           "settings": {
             "title": "Quand prendre les gélules ?",
-            "content": "<p>Il est conseillé de prendre les gélules au moment des repas, avec un grand verre d’eau. Respecte toujours la dose journalière indiquée sur l’emballage.</p>"
+            "content": "<p>Prenez <strong>2 gélules par jour</strong>, avec un grand verre d'eau, <strong>après le petit-déjeuner</strong>.</p><p>Une prise quotidienne régulière permet d'intégrer facilement Mirabel à votre routine.</p>"
           }
         },
         "166442457738b23caf-2": {
           "type": "item",
           "settings": {
-            "title": "Au bout de combien de temps voit-on les effets ?",
-            "content": "<p>Les effets peuvent varier selon les personnes. Une utilisation régulière pendant plusieurs semaines, associée à une alimentation équilibrée, permet généralement de mieux ressentir les bénéfices.</p>"
+            "title": "Au bout de combien de temps puis-je ressentir les premiers effets ?",
+            "content": "<p>Chaque personne réagit différemment. Les premiers changements sont généralement observés après quelques semaines d'utilisation régulière. Les études sur la berbérine évaluent le plus souvent ses effets sur des périodes de <strong>4 à 8 semaines</strong>. Pour obtenir les meilleurs résultats, nous recommandons une cure de <strong>3 mois</strong>, associée à une alimentation équilibrée.</p>"
           }
         },
         "item_NFaxk8": {
           "type": "item",
           "settings": {
-            "title": "Est-ce que Vitalité Minceur aide à réduire les fringales ?",
-            "content": "<p>Oui, la formule peut aider à limiter les envies de grignotage en participant à une meilleure stabilité de la glycémie au cours de la journée.</p>"
+            "title": "Pourquoi ai-je constamment envie de sucre ?",
+            "content": "<p>Les envies de sucre ne sont pas toujours liées à un manque de volonté. Elles peuvent être influencées par différents facteurs, notamment les variations de glycémie, les habitudes alimentaires, le stress, le manque de sommeil ou certains déséquilibres métaboliques.</p><p>Mirabel a été conçu pour accompagner ces mécanismes dans le cadre d'une alimentation équilibrée.</p>"
           }
         },
         "item_MiQQa4": {
           "type": "item",
           "settings": {
-            "title": "Le produit est-il naturel et fabriqué en France ?",
-            "content": "<p>Oui, Vitalité Minceur est formulé avec des actifs d’origine naturelle, vegan, sans colorant ni conservateur, et fabriqué en France.</p>"
+            "title": "Y a-t-il des effets secondaires ?",
+            "content": "<p>La berbérine peut provoquer chez certaines personnes des effets digestifs temporaires, notamment au début de la cure (ballonnements, inconfort digestif ou modification du transit).</p><p>Ces effets sont généralement modérés et transitoires. Si vous présentez un traitement médical ou une pathologie particulière, demandez conseil à votre médecin avant utilisation.</p>"
           }
         }
       },
       "block_order": [
+        "item_ykEWnH",
+        "item_tfaMMB",
         "166442457738b23caf-0",
         "166442457738b23caf-1",
         "166442457738b23caf-2",
