@@ -761,6 +761,7 @@
         },
         "feature_qAaTrF": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "position": "left",
             "title": "EXTRAITE DE \"BERBERIS ARISTATA\"",
