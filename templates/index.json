@@ -1153,7 +1153,7 @@
         "stat_kCLWp3": {
           "type": "stat",
           "settings": {
-            "number": "4",
+            "number": "4-8",
             "text": "semaines les effets perçus sur la glycémie ²"
           }
         },
@@ -1161,14 +1161,14 @@
           "type": "stat",
           "settings": {
             "number": "+13",
-            "text": "méta-analyses sur son impact sur le profil lipidique ¹"
+            "text": "méta-analyses regroupant plusieurs études scientifiques ¹"
           }
         },
         "stat_W7TjmH": {
           "type": "stat",
           "settings": {
             "number": "8",
-            "text": "semaines les effets perçus sur la gestion des lipides ³"
+            "text": "semaines durée la plus fréquemment étudiée pour observer les effets sur l'équilibre glycémique"
           }
         }
       },
