@@ -1019,10 +1019,9 @@
         },
         "ingredient_gTrr9f": {
           "type": "ingredient",
-          "disabled": true,
           "settings": {
             "title": "Chrome",
-            "text": "Contribue au maintien d’une glycémie normale. Le chrome participe au métabolisme normal des macronutriments et aide à maintenir un taux de glucose équilibré."
+            "text": "Pour maintenir une glycémie normale\n\nLe chrome contribue au maintien d'une glycémie normale et participe au métabolisme normal des macronutriments."
           }
         },
         "ingredient_YjPYmi": {
@@ -1030,11 +1029,12 @@
           "settings": {
             "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143107.552.png",
             "title": "Fenugrec",
-            "text": "Soutient le métabolisme des glucides et des lipides. Le fenugrec accompagne l’équilibre énergétique et aide l’organisme dans la gestion des sucres et des graisses."
+            "text": "Pour une satiété plus durable\nLe fenugrec aide à prolonger la sensation de satiété et accompagne une alimentation plus sereine entre les repas."
           }
         },
         "ingredient_xKqaM9": {
           "type": "ingredient",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T143202.547.png",
             "title": "Pipérine",
