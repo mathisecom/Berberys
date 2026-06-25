@@ -1367,6 +1367,7 @@
         "step_ePbciC",
         "step_bKBw9P"
       ],
+      "disabled": true,
       "name": "Routine pensée",
       "settings": {
         "content_width": 1400,
@@ -1469,7 +1470,7 @@
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/categorie.svg",
-            "text": "Validé par les pharmaciens"
+            "text": "CLINIQUEMENT PROUVÉ"
           }
         },
         "item_cXwUBX": {
@@ -1483,7 +1484,7 @@
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
-            "text": "Fabriqué en France"
+            "text": "FORMULE FRANÇAISE"
           }
         }
       },
@@ -1520,18 +1521,18 @@
       "type": "metabolisme",
       "name": "Lovi métabolisme",
       "settings": {
-        "badge_text_content": "Votre nouvel allié pour perdre du poids",
+        "badge_text_content": "REPRENDRE LE CONTRÔLE",
         "heading_line_1": "Comment Mirabel",
-        "heading_line_2": "Agit sur ton Métabolisme",
-        "image_1": "shopify://shop_images/metabolism-step1-CjtJfZDy.webp",
-        "title_1": "Ton métabolisme se réveille",
-        "text_1": "<p>Ton corps arrête de stocker et recommence à brûler. Tu le sens dès les premières semaines.</p>",
-        "image_2": "shopify://shop_images/metabolism-step2-D_a3_iN7.webp",
-        "title_2": "La graisse abdominale fond en douceur",
-        "text_2": "<p>Pas de régime, pas de restriction. Ton ventre s’affine naturellement.</p>",
-        "image_3": "shopify://shop_images/metabolism-step3-BblnMMk6.webp",
-        "title_3": "Tu retrouves ton énergie et ta légèreté",
-        "text_3": "<p>Le stress hormonal se calme. Tu dors mieux, tu grignotes moins, tu te sens toi.</p>",
+        "heading_line_2": "Agit au quotidien",
+        "image_1": "shopify://shop_images/ChatGPT_Image_25_juin_2026_16_49_05.png",
+        "title_1": "Les envies de sucre diminuent",
+        "text_1": "<p>Vous pensez moins au sucre et les envies de grignoter deviennent plus faciles à maîtriser.</p>",
+        "image_2": "shopify://shop_images/ChatGPT_Image_24_juin_2026_18_44_55.png",
+        "title_2": "Vous restez rassasiée plus longtemps",
+        "text_2": "<p>Vous retrouvez une sensation de satiété entre les repas et il devient plus facile d'attendre le suivant.</p>",
+        "image_3": "shopify://shop_images/ChatGPT_Image_25_juin_2026_16_51_25.png",
+        "title_3": "Votre énergie devient plus stable",
+        "text_3": "<p>Moins de coups de fatigue après les repas et un quotidien plus régulier.</p>",
         "badge_size_desktop": 17,
         "main_title_size_desktop": 48,
         "block_title_size_desktop": 28,
