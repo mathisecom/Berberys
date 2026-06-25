@@ -1006,7 +1006,7 @@
           "settings": {
             "image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T142945.579.png",
             "title": "Berbérine",
-            "text": "Soutient l’équilibre glycémique et le métabolisme. La berbérine aide à accompagner la régulation du sucre dans le sang et participe au bon fonctionnement métabolique."
+            "text": "Reconnue pour son rôle dans l'équilibre glycémique, la berbérine accompagne le métabolisme des sucres et contribue à retrouver une énergie plus stable au quotidien."
           }
         },
         "ingredient_MRHtyf": {
@@ -1051,9 +1051,9 @@
       ],
       "name": "Ingrédients actifs",
       "settings": {
-        "heading_line_1": "Basé sur les",
-        "heading_line_2": "meilleurs actifs",
-        "description": "Au coeur de nos solutions, des actifs puissants à l'efficacité scientifiquement prouvée, dans leur forme la plus biodisponible.",
+        "heading_line_1": "Une formule pensée pour",
+        "heading_line_2": "reprendre le contrôle",
+        "description": "Quatre actifs complémentaires, sélectionnés pour agir sur les envies de sucre, la satiété et l'équilibre glycémique.",
         "heading_alignment": "left",
         "bg_color": "#ffffff",
         "heading_color": "#1f1f1f",
