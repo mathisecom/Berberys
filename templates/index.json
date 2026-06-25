@@ -759,6 +759,14 @@
             "content": "<p>La plante Berberis aristata à l’origine de notre extrait est produite selon des <strong>méthodes durables</strong>. La plante est cultivée au Laos dans son environnement naturel, et les fruits sont récoltés manuellement.</p><p>L’extrait obtenu est contrôlé afin de garantir une <strong>qualité optimale</strong> et une excellente stabilité.</p>"
           }
         },
+        "feature_qAaTrF": {
+          "type": "feature",
+          "settings": {
+            "position": "left",
+            "title": "EXTRAITE DE \"BERBERIS ARISTATA\"",
+            "text": "<ul><li>Authentification botanique et traçabilité certifiées</li><li>Origine Laos</li></ul>"
+          }
+        },
         "accordion_TjmrWK": {
           "type": "accordion",
           "settings": {
@@ -790,6 +798,7 @@
         "feature_4X7rpN",
         "feature_QkfnjA",
         "accordion_i4YedE",
+        "feature_qAaTrF",
         "accordion_TjmrWK",
         "accordion_D9eFwa",
         "accordion_Xf6yA7"
@@ -866,7 +875,7 @@
           "type": "benefit",
           "settings": {
             "progress_width": 95,
-            "title": "Glycémie",
+            "title": "Les envies de sucres",
             "subtitle": "Contribue à maintenir une glycémie normale",
             "bullet_1": "Aide à maintenir la glycémie à jeun",
             "bullet_2": "Limite les pics de sucre après les repas",
@@ -923,7 +932,7 @@
       ],
       "name": "Berbérine benefits",
       "settings": {
-        "title": "Les bienfaits de la Berbérine pure",
+        "title": "Pourquoi la berbérine est autant recherchée",
         "bg_image": "shopify://shop_images/berberine-image-ingredient.webp",
         "cream_color": "#fef9f0",
         "yellow_color": "#fff27b",
