@@ -753,6 +753,7 @@
         },
         "accordion_i4YedE": {
           "type": "accordion",
+          "disabled": true,
           "settings": {
             "open_by_default": true,
             "title": "Un grade ultra pur",
@@ -770,6 +771,7 @@
         },
         "accordion_TjmrWK": {
           "type": "accordion",
+          "disabled": true,
           "settings": {
             "open_by_default": false,
             "title": "Efficacité et synergie",
@@ -778,6 +780,7 @@
         },
         "accordion_D9eFwa": {
           "type": "accordion",
+          "disabled": true,
           "settings": {
             "open_by_default": false,
             "title": "Pourquoi des gélules de 300 mg plutôt que 500 mg ?",
@@ -786,6 +789,7 @@
         },
         "accordion_Xf6yA7": {
           "type": "accordion",
+          "disabled": true,
           "settings": {
             "open_by_default": false,
             "title": "Formule clean ultra stable",
@@ -1020,6 +1024,7 @@
         "ingredient_gTrr9f": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/chrome-fond-beige-sans-bords-blancs.png",
             "title": "Chrome",
             "text": "Pour maintenir une glycémie normale\n\nLe chrome contribue au maintien d'une glycémie normale et participe au métabolisme normal des macronutriments."
           }
