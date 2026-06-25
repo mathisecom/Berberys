@@ -530,9 +530,9 @@
       ],
       "name": "Bienfaits cure slider",
       "settings": {
-        "title_before": "Les",
-        "title_italic": "bienfaits",
-        "title_after": "de la cure",
+        "title_before": "Ce",
+        "title_italic": "qui peut changer",
+        "title_after": "au quotidien",
         "title_color": "#000000",
         "italic_color": "#152711",
         "title_size_desktop": 32,
