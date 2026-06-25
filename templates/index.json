@@ -1633,6 +1633,7 @@
     },
     "certif_XH7DiP": {
       "type": "certif",
+      "disabled": true,
       "name": "Certifications custom",
       "settings": {
         "title": "CERTIFICATIONS",
