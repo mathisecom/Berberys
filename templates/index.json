@@ -400,6 +400,13 @@
     "logoscrooll_6mjgGf": {
       "type": "logoscrooll",
       "blocks": {
+        "image_DTTz9A": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "url": ""
+          }
+        },
         "image_Hn7LTd": {
           "type": "image",
           "settings": {
@@ -430,6 +437,7 @@
         }
       },
       "block_order": [
+        "image_DTTz9A",
         "image_Hn7LTd",
         "image_npD4nH",
         "image_7JWM4F",
