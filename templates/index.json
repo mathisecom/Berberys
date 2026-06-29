@@ -1846,6 +1846,105 @@
             "text": "<p>Le soir était mon moment le plus difficile. Je craque beaucoup moins devant la télévision. Ça fait vraiment du bien.</p>",
             "date": "30/05/26"
           }
+        },
+        "review_teVPWr": {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
+        "review_ftdpqa": {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
+        "review_rVGWfm": {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
+        "review_bw4Ahw": {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
+        "review_KpyYnT": {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
+        "review_pAwrpj": {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
+        "review_eRMC9K": {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
+        "review_drqf47": {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
+        "review_LGFkj9": {
+          "type": "review",
+          "settings": {
+            "name": "Evelyne E.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
         }
       },
       "block_order": [
@@ -1854,7 +1953,16 @@
         "review_EAhjfL",
         "review_TVbcte",
         "review_gATent",
-        "review_WRLYpk"
+        "review_WRLYpk",
+        "review_teVPWr",
+        "review_ftdpqa",
+        "review_rVGWfm",
+        "review_bw4Ahw",
+        "review_KpyYnT",
+        "review_pAwrpj",
+        "review_eRMC9K",
+        "review_drqf47",
+        "review_LGFkj9"
       ],
       "name": "Avis produit custom",
       "settings": {
