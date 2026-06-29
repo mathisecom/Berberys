@@ -1862,7 +1862,7 @@
         "rating": "4.8",
         "stars": "★★★★★",
         "based_text": "Basé sur 3,380 avis",
-        "show_pagination": false,
+        "show_pagination": true,
         "pagination_pages": "1,2,3,4,5",
         "background_color": "#ffffff",
         "text_color": "#1a1a1a",
