@@ -1147,14 +1147,14 @@
           "type": "stat",
           "settings": {
             "number": "+37",
-            "text": "essais randomisés sur pubmed pour la gestion de la glycémie ¹"
+            "text": "essais randomisés sur pubmed pour la gestion des sucres ¹"
           }
         },
         "stat_kCLWp3": {
           "type": "stat",
           "settings": {
             "number": "4-8",
-            "text": "semaines les effets perçus sur la glycémie ²"
+            "text": "semaines les effets perçus sur les envies de sucres ²"
           }
         },
         "stat_wVtqT4": {
