@@ -104,27 +104,28 @@
         "item_iMi3Yj": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/ChatGPT_Image_29_juin_2026_13_52_49.png",
             "text": "Cliniquement prouvé"
           }
         },
         "item_RNYBfb": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/categorie.svg",
+            "icon": "shopify://shop_images/ChatGPT_Image_29_juin_2026__14_43_14-removebg-preview.png",
             "text": "Testé en laboratoire"
           }
         },
         "item_CepQFM": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/categorie_b5bdb2ef-2088-4875-9a14-1667bb17bf30.svg",
+            "icon": "shopify://shop_images/ChatGPT_Image_29_juin_2026_13_47_02.png",
             "text": "100% Vegan et naturel"
           }
         },
         "item_PDdARn": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/ico-france_c77710d7-bc69-4b55-be04-ce7275c555d6.webp",
+            "icon": "shopify://shop_images/Gemini_Generated_Image_n01ow6n01ow6n01o-removebg-preview.png",
             "text": "Formule française"
           }
         }
