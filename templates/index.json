@@ -400,13 +400,6 @@
     "logoscrooll_6mjgGf": {
       "type": "logoscrooll",
       "blocks": {
-        "image_DTTz9A": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "url": ""
-          }
-        },
         "image_Hn7LTd": {
           "type": "image",
           "settings": {
@@ -437,7 +430,6 @@
         }
       },
       "block_order": [
-        "image_DTTz9A",
         "image_Hn7LTd",
         "image_npD4nH",
         "image_7JWM4F",
@@ -604,9 +596,9 @@
           "settings": {
             "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113224.587.jpg",
             "image_alt": "Image avis client",
-            "title": "Ça change la vie",
-            "text": "Depuis que j’ai intégré ce produit à ma routine, je me sens plus équilibrée au quotidien. Simple à prendre, efficace, et vraiment agréable.",
-            "author": "Mary Morgane",
+            "title": "Je grignote beaucoup moins",
+            "text": "Depuis quelques semaines, je me surprends à ne plus courir vers les biscuits à 16h. Les envies de sucre sont beaucoup moins présentes et je me sens enfin plus en contrôle de mon alimentation",
+            "author": "Sophie",
             "verified_text": "Acheteur vérifié"
           }
         },
@@ -615,9 +607,9 @@
           "settings": {
             "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113209.105.jpg",
             "image_alt": "Image avis client",
-            "title": "Délicieux et SAV parfait !",
-            "text": "Excellent produit. J’apprécie la qualité, la composition et le sérieux de la marque. Une très belle découverte que je recommande.",
-            "author": "Capucine Chandon",
+            "title": "Enfin moins de fringales",
+            "text": "J'avais toujours besoin d'un dessert après chaque repas. Aujourd'hui, cette envie est beaucoup plus facile à gérer. Je ne pensais pas qu'un complément pouvait m'aider autant sur ce point.",
+            "author": "Isabelle",
             "verified_text": "Acheteur vérifié"
           }
         },
@@ -626,9 +618,9 @@
           "settings": {
             "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113319.574.jpg",
             "image_alt": "Image avis client",
-            "title": "Une révélation",
-            "text": "Je l’utilise chaque jour et je sens une vraie différence. C’est devenu un indispensable dans ma routine bien-être.",
-            "author": "Gilles Caubet",
+            "title": "Plus sereine au quotidien",
+            "text": "Je craquais tous les soirs devant la télévision. Depuis que je prends Mirabel, ces compulsions sont beaucoup moins fréquentes. Je culpabilise beaucoup moins.",
+            "author": "Nathalie",
             "verified_text": "Acheteur vérifié"
           }
         },
@@ -637,9 +629,9 @@
           "settings": {
             "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113305.122.jpg",
             "image_alt": "Image avis client",
-            "title": "Très satisfaite",
-            "text": "La prise est simple, le produit est qualitatif et les effets se ressentent progressivement. Je suis ravie de mon achat.",
-            "author": "Claire Martin",
+            "title": "Une vraie différence",
+            "text": "Mon objectif était surtout de retrouver le contrôle. Après environ un mois, je remarque que je pense beaucoup moins au sucre et je grignote moins entre les repas.",
+            "author": "Claire",
             "verified_text": "Acheteur vérifié"
           }
         },
@@ -648,9 +640,9 @@
           "settings": {
             "review_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-25T113402.607.jpg",
             "image_alt": "Image avis client",
-            "title": "Je recommande",
-            "text": "Très bonne expérience, livraison rapide et produit conforme à mes attentes. Je vais continuer sur plusieurs mois.",
-            "author": "Julie Bernard",
+            "title": "Plus facile de faire attention",
+            "text": "J'avais essayé plusieurs régimes sans réussir à tenir. Ce complément ne fait pas tout, mais il m'aide vraiment à mieux contrôler mes envies et à rester régulière.",
+            "author": "Julie",
             "verified_text": "Acheteur vérifié"
           }
         }
