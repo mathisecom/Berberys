@@ -655,7 +655,7 @@
       ],
       "name": "Avis clients custom",
       "settings": {
-        "heading": "ELLES ont repris le contrôle",
+        "heading": "Elles ont repris le contrôle",
         "rating_title": "Noté Excellent par nos clientes",
         "rating_text": "<p>4.8/5 sur <strong>3,380+ Avis</strong></p>",
         "show_button": false,
