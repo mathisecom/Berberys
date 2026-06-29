@@ -207,12 +207,20 @@
     /* Image en pleine largeur, placée en premier.
        L'écart image ↔ atouts = réglage dédié (la grille ajoute déjà
        son row-gap, on le compense pour obtenir la valeur exacte). */
-    #fs-{{ section.id }} .fs-center {
-      grid-column: 1 / -1;
-      order: -1;
-      margin-bottom: calc(var(--fs-mobile-image-gap) - {{ s.row_gap }}px);
-    }
-    #fs-{{ section.id }} .fs-product { max-width: {{ s.image_mobile_width }}px; }
+#fs-{{ section.id }} .fs-center {
+  grid-column: 1 / -1;
+  order: -1;
+  margin-bottom: calc(var(--fs-mobile-image-gap) - {{ s.row_gap }}px);
+  width: 100%;
+}
+
+#fs-{{ section.id }} .fs-product {
+  width: {{ s.image_mobile_width }}px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
     #fs-{{ section.id }} .fs-arrow { display: none; }
 
     /* Les conteneurs gauche/droite s'effacent : les 4 atouts
@@ -394,7 +402,7 @@
     },
     {
       "type": "range", "id": "image_mobile_width", "label": "Largeur max (mobile)",
-      "min": 160, "max": 600, "step": 10, "unit": "px", "default": 340
+      "min": 160, "max": 900, "step": 10, "unit": "px", "default": 340
     },
     {
       "type": "range", "id": "mobile_image_gap", "label": "Espace image ↔ atouts (mobile)",
