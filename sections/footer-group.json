@@ -99,7 +99,7 @@
           "type": "text",
           "settings": {
             "title": "Besoin d'aide",
-            "content": "<p><strong>E-mail </strong>: contact@mirabel.com</p><p><strong>Adresse</strong> :  17 Boulevard du Général Leclerc 33120 Arcachon</p><p><strong>Horaires d'assistance </strong>:<br/>Du lundi au vendredi : de 9h00 à 19h00</p>",
+            "content": "<p><strong>E-mail </strong>: contact@mirabel-nutrition.com</p><p><strong>Adresse</strong> :  17 Boulevard du Général Leclerc 33120 Arcachon</p><p><strong>Horaires d'assistance </strong>:<br/>Du lundi au vendredi : de 9h00 à 19h00</p>",
             "enable_follow_on_shop": true
           }
         }
