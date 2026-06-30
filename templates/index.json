@@ -263,7 +263,7 @@
         "liquid_hDrpnd": {
           "type": "liquid",
           "settings": {
-            "liquid": "<style>\n  .mirabel-title-block {\n    margin: 12px 0 16px;\n    color: #111111;\n  }\n\n  .mirabel-title-block h2 {\n    margin: 0 0 8px;\n    font-size: 36px;\n    font-weight: 700;\n    line-height: 1.1;\n    color: #111111;\n  }\n\n  .mirabel-title-block p {\n    margin: 0;\n    font-size: 15px;\n    font-weight: 400;\n    line-height: 1.4;\n    color: #111111;\n  }\n\n  @media screen and (max-width: 480px) {\n    .mirabel-title-block h2 {\n      font-size: 30px;\n    }\n\n    .mirabel-title-block p {\n      font-size: 14px;\n    }\n  }\n</style>\n\n<div class=\"mirabel-title-block\">\n  <h2>DETOX SUCRE</h2>\n  <p>Moins de sucre. Plus de contrôle,plus d'énergie.</p>\n</div>"
+            "liquid": "<style>\n  .mirabel-title-block {\n    margin: 12px 0 16px;\n    color: #111111;\n  }\n\n  .mirabel-title-block h2 {\n    margin: 0 0 8px;\n    font-size: 36px;\n    font-weight: 700;\n    line-height: 1.1;\n    color: #111111;\n  }\n\n  .mirabel-title-block p {\n    margin: 0;\n    font-size: 15px;\n    font-weight: 400;\n    line-height: 1.4;\n    color: #111111;\n  }\n\n  @media screen and (max-width: 480px) {\n    .mirabel-title-block h2 {\n      font-size: 30px;\n    }\n\n    .mirabel-title-block p {\n      font-size: 14px;\n    }\n  }\n</style>\n\n<div class=\"mirabel-title-block\">\n  <h2>DETOX SUCRE</h2>\n  <p>Moins de sucre. Plus de contrôle, plus d'énergie.</p>\n</div>"
           }
         },
         "price_kfhCb7": {
