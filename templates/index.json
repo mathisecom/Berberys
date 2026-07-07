@@ -794,6 +794,135 @@
         "padding_bottom": 44
       }
     },
+    "berberineresult_RCjNgU": {
+      "type": "berberineresult",
+      "blocks": {
+        "benefit_xXzHhK": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 10,
+            "title": "Les envies de sucres",
+            "subtitle": "Une glycémie plus stable peut aider à limiter les envies qui poussent à grignoter entre les repas",
+            "bullet_1": "Aide à réduire les envies de sucre au quotidien",
+            "bullet_2": "Limite les pics de sucre après les repas",
+            "bullet_3": "Favorise une relation plus sereine avec l'alimentation",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        },
+        "benefit_7He8LL": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 95,
+            "title": "Une énergie plus stable",
+            "subtitle": "Moins de variations d'énergie après les repas, pour un quotidien plus stable",
+            "bullet_1": "Évite les coups de barre après les repas",
+            "bullet_2": "Favorise une énergie plus régulière",
+            "bullet_3": "Vous aide à rester en forme toute la journée",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        },
+        "benefit_gxpmpN": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 96,
+            "title": "Une satiété plus durable",
+            "subtitle": "Retrouvez plus facilement une sensation de satiété entre les repas",
+            "bullet_1": "Aide à patienter jusqu'au repas suivant",
+            "bullet_2": "Réduit l'envie de grignoter",
+            "bullet_3": "Favorise une meilleure maîtrise de l'appétit",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        },
+        "benefit_G3itBg": {
+          "type": "benefit",
+          "settings": {
+            "progress_width": 80,
+            "title": "Un métabolisme soutenu",
+            "subtitle": "Lorsque votre métabolisme fonctionne de manière plus équilibrée, il devient plus facile d'adopter de bonnes habitudes au quotidien",
+            "bullet_1": "Accompagne la gestion des sucres",
+            "bullet_2": "Favorise l'équilibre métabolique",
+            "bullet_3": "Soutient votre organisme au quotidien",
+            "bullet_4": "",
+            "bullet_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_xXzHhK",
+        "benefit_7He8LL",
+        "benefit_gxpmpN",
+        "benefit_G3itBg"
+      ],
+      "name": "Berbérine benefits",
+      "settings": {
+        "title": "Pourquoi la berbérine est autant recherchée",
+        "bg_image": "shopify://shop_images/berberine-image-ingredient.webp",
+        "cream_color": "#fef9f0",
+        "yellow_color": "#fff27b",
+        "blue_color": "#152711",
+        "left_bg": "#152711",
+        "title_color": "#fef9f0",
+        "text_color": "#fef9f0",
+        "card_bg": "linear-gradient(145deg, rgba(21, 39, 17, 1), rgba(14, 35, 64, 0.78) 100%)",
+        "card_border": "#fef9f0",
+        "check_bg": "#152711",
+        "track_bg": "#152711",
+        "progress_bg": "#f23a45",
+        "image_overlay": "linear-gradient(90deg, rgba(165, 191, 219, 0.15), rgba(165, 191, 219, 0.05) 100%)",
+        "mobile_image_overlay": "linear-gradient(180deg, rgba(165, 191, 219, 0.05), rgba(165, 191, 219, 0.18) 100%)",
+        "title_size_desktop": 40,
+        "title_size_mobile": 34,
+        "title_weight": "600",
+        "title_max_width": 840,
+        "title_max_width_mobile": 390,
+        "title_margin_bottom": 76,
+        "title_margin_bottom_mobile": 34,
+        "desktop_card_width": 330,
+        "mobile_card_width": 280,
+        "card_min_height_desktop": 300,
+        "card_min_height_mobile": 335,
+        "card_gap_desktop": 12,
+        "card_gap_mobile": 14,
+        "card_radius": 8,
+        "card_blur": 4,
+        "card_padding_x_desktop": 20,
+        "card_padding_y_desktop": 18,
+        "card_padding_x_mobile": 17,
+        "card_padding_y_mobile": 17,
+        "card_title_size_desktop": 24,
+        "card_title_size_mobile": 22,
+        "card_title_weight": "700",
+        "card_title_margin_bottom": 10,
+        "card_text_size_desktop": 15,
+        "card_text_size_mobile": 15,
+        "card_text_weight": "600",
+        "bullet_size_desktop": 15,
+        "bullet_size_mobile": 15,
+        "bullet_weight": "700",
+        "bullets_margin_top": 64,
+        "bullet_gap": 10,
+        "check_size": 18,
+        "progress_height": 22,
+        "progress_line_height": 6,
+        "progress_symbol_size": 14,
+        "progress_margin_bottom": 22,
+        "desktop_left_width": 50,
+        "max_width": 1400,
+        "mobile_image_top": 112,
+        "mobile_peek_width": 80,
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 66,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 0
+      }
+    },
     "berberineaccordeon_QdbmeP": {
       "type": "berberineaccordeon",
       "blocks": {
@@ -949,135 +1078,6 @@
         "padding_top_mobile": 20,
         "padding_bottom_mobile": 30,
         "padding_side_mobile": 16
-      }
-    },
-    "berberineresult_RCjNgU": {
-      "type": "berberineresult",
-      "blocks": {
-        "benefit_xXzHhK": {
-          "type": "benefit",
-          "settings": {
-            "progress_width": 10,
-            "title": "Les envies de sucres",
-            "subtitle": "Une glycémie plus stable peut aider à limiter les envies qui poussent à grignoter entre les repas",
-            "bullet_1": "Aide à réduire les envies de sucre au quotidien",
-            "bullet_2": "Limite les pics de sucre après les repas",
-            "bullet_3": "Favorise une relation plus sereine avec l'alimentation",
-            "bullet_4": "",
-            "bullet_5": ""
-          }
-        },
-        "benefit_7He8LL": {
-          "type": "benefit",
-          "settings": {
-            "progress_width": 95,
-            "title": "Une énergie plus stable",
-            "subtitle": "Moins de variations d'énergie après les repas, pour un quotidien plus stable",
-            "bullet_1": "Évite les coups de barre après les repas",
-            "bullet_2": "Favorise une énergie plus régulière",
-            "bullet_3": "Vous aide à rester en forme toute la journée",
-            "bullet_4": "",
-            "bullet_5": ""
-          }
-        },
-        "benefit_gxpmpN": {
-          "type": "benefit",
-          "settings": {
-            "progress_width": 96,
-            "title": "Une satiété plus durable",
-            "subtitle": "Retrouvez plus facilement une sensation de satiété entre les repas",
-            "bullet_1": "Aide à patienter jusqu'au repas suivant",
-            "bullet_2": "Réduit l'envie de grignoter",
-            "bullet_3": "Favorise une meilleure maîtrise de l'appétit",
-            "bullet_4": "",
-            "bullet_5": ""
-          }
-        },
-        "benefit_G3itBg": {
-          "type": "benefit",
-          "settings": {
-            "progress_width": 80,
-            "title": "Un métabolisme soutenu",
-            "subtitle": "Lorsque votre métabolisme fonctionne de manière plus équilibrée, il devient plus facile d'adopter de bonnes habitudes au quotidien",
-            "bullet_1": "Accompagne la gestion des sucres",
-            "bullet_2": "Favorise l'équilibre métabolique",
-            "bullet_3": "Soutient votre organisme au quotidien",
-            "bullet_4": "",
-            "bullet_5": ""
-          }
-        }
-      },
-      "block_order": [
-        "benefit_xXzHhK",
-        "benefit_7He8LL",
-        "benefit_gxpmpN",
-        "benefit_G3itBg"
-      ],
-      "name": "Berbérine benefits",
-      "settings": {
-        "title": "Pourquoi la berbérine est autant recherchée",
-        "bg_image": "shopify://shop_images/berberine-image-ingredient.webp",
-        "cream_color": "#fef9f0",
-        "yellow_color": "#fff27b",
-        "blue_color": "#152711",
-        "left_bg": "#152711",
-        "title_color": "#fef9f0",
-        "text_color": "#fef9f0",
-        "card_bg": "linear-gradient(145deg, rgba(21, 39, 17, 1), rgba(14, 35, 64, 0.78) 100%)",
-        "card_border": "#fef9f0",
-        "check_bg": "#152711",
-        "track_bg": "#152711",
-        "progress_bg": "#f23a45",
-        "image_overlay": "linear-gradient(90deg, rgba(165, 191, 219, 0.15), rgba(165, 191, 219, 0.05) 100%)",
-        "mobile_image_overlay": "linear-gradient(180deg, rgba(165, 191, 219, 0.05), rgba(165, 191, 219, 0.18) 100%)",
-        "title_size_desktop": 40,
-        "title_size_mobile": 34,
-        "title_weight": "600",
-        "title_max_width": 840,
-        "title_max_width_mobile": 390,
-        "title_margin_bottom": 76,
-        "title_margin_bottom_mobile": 34,
-        "desktop_card_width": 330,
-        "mobile_card_width": 280,
-        "card_min_height_desktop": 300,
-        "card_min_height_mobile": 335,
-        "card_gap_desktop": 12,
-        "card_gap_mobile": 14,
-        "card_radius": 8,
-        "card_blur": 4,
-        "card_padding_x_desktop": 20,
-        "card_padding_y_desktop": 18,
-        "card_padding_x_mobile": 17,
-        "card_padding_y_mobile": 17,
-        "card_title_size_desktop": 24,
-        "card_title_size_mobile": 22,
-        "card_title_weight": "700",
-        "card_title_margin_bottom": 10,
-        "card_text_size_desktop": 15,
-        "card_text_size_mobile": 15,
-        "card_text_weight": "600",
-        "bullet_size_desktop": 15,
-        "bullet_size_mobile": 15,
-        "bullet_weight": "700",
-        "bullets_margin_top": 64,
-        "bullet_gap": 10,
-        "check_size": 18,
-        "progress_height": 22,
-        "progress_line_height": 6,
-        "progress_symbol_size": 14,
-        "progress_margin_bottom": 22,
-        "desktop_left_width": 50,
-        "max_width": 1400,
-        "mobile_image_top": 112,
-        "mobile_peek_width": 80,
-        "padding_top_desktop": 64,
-        "padding_bottom_desktop": 66,
-        "padding_left_desktop": 80,
-        "padding_right_desktop": 80,
-        "padding_top_mobile": 24,
-        "padding_bottom_mobile": 32,
-        "padding_left_mobile": 16,
-        "padding_right_mobile": 0
       }
     },
     "resultatsprouves_b3gcMW": {
