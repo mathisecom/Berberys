@@ -25,8 +25,11 @@
             "author": "Sylvie A.",
             "rating": 5,
             "date": "30/05/26",
+            "experience_date": "",
             "headline": "Je grignote beaucoup moins",
-            "text": "Je prenais quelque chose de sucré tous les après-midi. Depuis que je fais cette cure, ces envies sont beaucoup moins fréquentes. Je me sens plus en contrôle."
+            "text": "Je prenais quelque chose de sucré tous les après-midi. Depuis que je fais cette cure, ces envies sont beaucoup moins fréquentes. Je me sens plus en contrôle.",
+            "verified": false,
+            "response": ""
           }
         },
         "review_rdRpWf": {
@@ -35,8 +38,11 @@
             "author": "Sophie B.",
             "rating": 5,
             "date": "26/05/26",
+            "experience_date": "",
             "headline": "Très satisfaite",
-            "text": "Je cherchais surtout à limiter mes envies de sucre. Après quelques semaines, je remarque une vraie différence. Les gélules sont faciles à prendre."
+            "text": "Je cherchais surtout à limiter mes envies de sucre. Après quelques semaines, je remarque une vraie différence. Les gélules sont faciles à prendre.",
+            "verified": false,
+            "response": ""
           }
         },
         "review_4FndfD": {
@@ -45,8 +51,11 @@
             "author": "Céline H.",
             "rating": 4,
             "date": "25/05/26",
+            "experience_date": "",
             "headline": "",
-            "text": ""
+            "text": "",
+            "verified": false,
+            "response": ""
           }
         },
         "review_VDpiUJ": {
@@ -55,8 +64,11 @@
             "author": "Chantal M.",
             "rating": 5,
             "date": "23/05/26",
+            "experience_date": "",
             "headline": "Bonne surprise",
-            "text": "Je ne m'attendais pas à grand-chose mais je grignote clairement moins entre les repas. Je vais recommencer une cure."
+            "text": "Je ne m'attendais pas à grand-chose mais je grignote clairement moins entre les repas. Je vais recommencer une cure.",
+            "verified": false,
+            "response": ""
           }
         },
         "review_UGdNBx": {
@@ -65,8 +77,11 @@
             "author": "Emeline L.",
             "rating": 5,
             "date": "22/05/26",
+            "experience_date": "",
             "headline": "Très bon produit",
-            "text": "J'apprécie la composition et le fait que ce soit une formule naturelle. Je me sens moins attirée par les produits sucrés qu'avant."
+            "text": "J'apprécie la composition et le fait que ce soit une formule naturelle. Je me sens moins attirée par les produits sucrés qu'avant.",
+            "verified": false,
+            "response": ""
           }
         },
         "review_6Y8TXp": {
@@ -75,8 +90,11 @@
             "author": "Evelyne E.",
             "rating": 5,
             "date": "30/05/26",
+            "experience_date": "",
             "headline": "Moins de craquages",
-            "text": "Le soir était mon moment le plus difficile. Je craque beaucoup moins devant la télévision. Ça fait vraiment du bien."
+            "text": "Le soir était mon moment le plus difficile. Je craque beaucoup moins devant la télévision. Ça fait vraiment du bien.",
+            "verified": false,
+            "response": ""
           }
         },
         "review_LqmVwA": {
@@ -85,8 +103,11 @@
             "author": "Marie-Odile P.",
             "rating": 5,
             "date": "30/05/26",
+            "experience_date": "",
             "headline": "Efficace sur la glycémie",
-            "text": "Très bien, efficace sur ma glycémie et mon taux de cholestérol, et bien supportée. Je recommande la gélule Détox Sucre."
+            "text": "Très bien, efficace sur ma glycémie et mon taux de cholestérol, et bien supportée. Je recommande la gélule Détox Sucre.",
+            "verified": false,
+            "response": ""
           }
         }
       },
@@ -101,7 +122,55 @@
       ],
       "name": "Avis clients Mirabel",
       "settings": {
-        "summary_text": "Les clientes soulignent une nette diminution des envies de sucre et du grignotage, une composition naturelle appréciée, et des gélules faciles à intégrer au quotidien."
+        "brand_name": "Mirabel",
+        "product_name": "Mirabel",
+        "eyebrow": "Avis clients Mirabel",
+        "heading": "Avis sur Mirabel",
+        "tagline": "Moins de sucre. Plus de contrôle, plus d'énergie.",
+        "reviews_heading": "Avis pour Mirabel",
+        "reviews_period": "publiés par nos clientes",
+        "stats_mode": "blocks",
+        "manual_rating": 4.9,
+        "manual_total": 1200,
+        "manual_5_percent": 86,
+        "manual_4_percent": 14,
+        "manual_3_percent": 0,
+        "manual_2_percent": 0,
+        "manual_1_percent": 0,
+        "show_transparency_notice": true,
+        "transparency_title": "Des avis transparents",
+        "transparency_text": "Les avis sont publiés dans leur intégralité. Le badge « Acheteur vérifié » est réservé aux commandes dont l'achat a été confirmé.",
+        "verified_label": "Acheteur vérifié",
+        "show_summary": true,
+        "summary_title": "Résumé des avis",
+        "summary_text": "Les clientes soulignent une nette diminution des envies de sucre et du grignotage, une composition naturelle appréciée, et des gélules faciles à intégrer au quotidien.",
+        "summary_note": "Résumé basé sur les retours affichés dans cette section.",
+        "show_tabs": true,
+        "show_search": true,
+        "show_rating_filters": true,
+        "reviews_per_page": 5,
+        "show_review_button": true,
+        "review_button_label": "Déposer un avis",
+        "review_form_link": "",
+        "product_link": "",
+        "show_product_button": true,
+        "product_button_label": "Découvrir Mirabel",
+        "show_about": true,
+        "about_text": "Mirabel propose des gélules pensées pour accompagner votre routine et vous aider à mieux maîtriser les envies de sucre et le grignotage.",
+        "show_about_button": true,
+        "about_button_label": "Voir le produit",
+        "primary_color": "#1374f5",
+        "primary_soft_color": "#f4f7fb",
+        "background_color": "#ffffff",
+        "card_color": "#ffffff",
+        "text_color": "#111318",
+        "muted_color": "#626977",
+        "border_color": "#dfe2e7",
+        "success_color": "#18864b",
+        "corner_radius": 16,
+        "max_width": 1280,
+        "padding_top": 24,
+        "padding_bottom": 72
       }
     }
   },
