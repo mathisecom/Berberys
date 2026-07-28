@@ -152,7 +152,7 @@
         "show_review_button": true,
         "review_button_label": "Déposer un avis",
         "review_form_link": "",
-        "product_link": "",
+        "product_link": "shopify://products/gelules-de-berberine",
         "show_product_button": true,
         "product_button_label": "Découvrir Mirabel",
         "show_about": true,
@@ -170,7 +170,7 @@
         "corner_radius": 16,
         "max_width": 1280,
         "padding_top": 24,
-        "padding_bottom": 72
+        "padding_bottom": 48
       }
     }
   },
