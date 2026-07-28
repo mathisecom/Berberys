@@ -15,9 +15,98 @@
       "settings": {
         "content_width": "80ch"
       }
+    },
+    "mirabel_avis_clients_H3Tz7h": {
+      "type": "mirabel-avis-clients",
+      "blocks": {
+        "review_gH4A8f": {
+          "type": "review",
+          "settings": {
+            "author": "Sylvie A.",
+            "rating": 5,
+            "date": "30/05/26",
+            "headline": "Je grignote beaucoup moins",
+            "text": "Je prenais quelque chose de sucré tous les après-midi. Depuis que je fais cette cure, ces envies sont beaucoup moins fréquentes. Je me sens plus en contrôle."
+          }
+        },
+        "review_rdRpWf": {
+          "type": "review",
+          "settings": {
+            "author": "Sophie B.",
+            "rating": 5,
+            "date": "26/05/26",
+            "headline": "Très satisfaite",
+            "text": "Je cherchais surtout à limiter mes envies de sucre. Après quelques semaines, je remarque une vraie différence. Les gélules sont faciles à prendre."
+          }
+        },
+        "review_4FndfD": {
+          "type": "review",
+          "settings": {
+            "author": "Céline H.",
+            "rating": 4,
+            "date": "25/05/26",
+            "headline": "",
+            "text": ""
+          }
+        },
+        "review_VDpiUJ": {
+          "type": "review",
+          "settings": {
+            "author": "Chantal M.",
+            "rating": 5,
+            "date": "23/05/26",
+            "headline": "Bonne surprise",
+            "text": "Je ne m'attendais pas à grand-chose mais je grignote clairement moins entre les repas. Je vais recommencer une cure."
+          }
+        },
+        "review_UGdNBx": {
+          "type": "review",
+          "settings": {
+            "author": "Emeline L.",
+            "rating": 5,
+            "date": "22/05/26",
+            "headline": "Très bon produit",
+            "text": "J'apprécie la composition et le fait que ce soit une formule naturelle. Je me sens moins attirée par les produits sucrés qu'avant."
+          }
+        },
+        "review_6Y8TXp": {
+          "type": "review",
+          "settings": {
+            "author": "Evelyne E.",
+            "rating": 5,
+            "date": "30/05/26",
+            "headline": "Moins de craquages",
+            "text": "Le soir était mon moment le plus difficile. Je craque beaucoup moins devant la télévision. Ça fait vraiment du bien."
+          }
+        },
+        "review_LqmVwA": {
+          "type": "review",
+          "settings": {
+            "author": "Marie-Odile P.",
+            "rating": 5,
+            "date": "30/05/26",
+            "headline": "Efficace sur la glycémie",
+            "text": "Très bien, efficace sur ma glycémie et mon taux de cholestérol, et bien supportée. Je recommande la gélule Détox Sucre."
+          }
+        }
+      },
+      "block_order": [
+        "review_gH4A8f",
+        "review_rdRpWf",
+        "review_4FndfD",
+        "review_VDpiUJ",
+        "review_UGdNBx",
+        "review_6Y8TXp",
+        "review_LqmVwA"
+      ],
+      "name": "Avis clients Mirabel",
+      "settings": {
+        "summary_text": "Les clientes soulignent une nette diminution des envies de sucre et du grignotage, une composition naturelle appréciée, et des gélules faciles à intégrer au quotidien."
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "mirabel_avis_clients_H3Tz7h"
   ]
 }
