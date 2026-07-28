@@ -6,6 +6,25 @@
   Important : activez « Acheteur vérifié » uniquement pour une commande réellement contrôlée.
 {% endcomment %}
 
+{%- if section.settings.hide_theme_header -%}
+  <style>
+    /* Masque uniquement le header et la barre d’annonce du thème Impact
+       sur la page où cette section est présente. */
+    .shopify-section-group-header-group,
+    #shopify-section-header,
+    #shopify-section-announcement-bar {
+      display: none !important;
+    }
+
+    /* Évite un éventuel espace réservé par le header fixe du thème. */
+    html,
+    body {
+      --header-height: 0px !important;
+      --sticky-header-height: 0px !important;
+    }
+  </style>
+{%- endif -%}
+
 {%- liquid
   assign review_count = 0
   assign rating_sum = 0
@@ -1281,6 +1300,16 @@
     {
       "type": "header",
       "content": "Bandeau supérieur Mirabel"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_theme_header",
+      "label": "Masquer le header Impact sur cette page",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "Cette option masque le menu, le logo, le panier et la barre d’annonce du thème uniquement sur la page où cette section est ajoutée."
     },
     {
       "type": "checkbox",
