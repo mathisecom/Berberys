@@ -72,6 +72,49 @@
   endif
 
   assign overall_rating_percent = overall_rating | times: 20
+
+  assign ui_tab_overview = 'Aperçu'
+  assign ui_tab_reviews = 'Avis'
+  assign ui_tab_about = 'À propos'
+  assign ui_view_reviews = 'Voir les avis'
+  assign ui_score_prefix = 'Basé sur'
+  assign ui_search_label = 'Rechercher un mot-clé'
+  assign ui_search_placeholder = 'Rechercher'
+  assign ui_filters_label = 'Notes :'
+  assign ui_all_ratings = 'Toutes'
+  assign ui_reviews_list_title = 'Les avis clients'
+  assign ui_order_label = 'Ordre de la section'
+  assign ui_displayed_singular = 'avis affiché'
+  assign ui_displayed_plural = 'avis affichés'
+  assign ui_experience_label = 'Expérience du :'
+  assign ui_response_prefix = 'Réponse de'
+  assign ui_empty_text = 'Aucun avis ne correspond à votre recherche.'
+  assign ui_chronology_text = 'Avis affichés selon l’ordre défini dans l’éditeur Shopify.'
+  assign ui_about_title = 'À propos de Mirabel'
+
+  for block in section.blocks
+    if block.type == 'interface_texts'
+      assign ui_tab_overview = block.settings.tab_overview | default: ui_tab_overview
+      assign ui_tab_reviews = block.settings.tab_reviews | default: ui_tab_reviews
+      assign ui_tab_about = block.settings.tab_about | default: ui_tab_about
+      assign ui_view_reviews = block.settings.view_reviews | default: ui_view_reviews
+      assign ui_score_prefix = block.settings.score_prefix | default: ui_score_prefix
+      assign ui_search_label = block.settings.search_label | default: ui_search_label
+      assign ui_search_placeholder = block.settings.search_placeholder | default: ui_search_placeholder
+      assign ui_filters_label = block.settings.filters_label | default: ui_filters_label
+      assign ui_all_ratings = block.settings.all_ratings | default: ui_all_ratings
+      assign ui_reviews_list_title = block.settings.reviews_list_title | default: ui_reviews_list_title
+      assign ui_order_label = block.settings.order_label | default: ui_order_label
+      assign ui_displayed_singular = block.settings.displayed_singular | default: ui_displayed_singular
+      assign ui_displayed_plural = block.settings.displayed_plural | default: ui_displayed_plural
+      assign ui_experience_label = block.settings.experience_label | default: ui_experience_label
+      assign ui_response_prefix = block.settings.response_prefix | default: ui_response_prefix
+      assign ui_empty_text = block.settings.empty_text | default: ui_empty_text
+      assign ui_chronology_text = block.settings.chronology_text | default: ui_chronology_text
+      assign ui_about_title = block.settings.about_title | default: ui_about_title
+      break
+    endif
+  endfor
 -%}
 
 <section
@@ -79,6 +122,8 @@
   class="mvr"
   data-mvr-root
   data-page-size="{{ section.settings.reviews_per_page }}"
+  data-displayed-singular="{{ ui_displayed_singular | escape }}"
+  data-displayed-plural="{{ ui_displayed_plural | escape }}"
   style="
     --mvr-primary: {{ section.settings.primary_color }};
     --mvr-primary-soft: {{ section.settings.primary_soft_color }};
@@ -114,9 +159,9 @@
 
     {%- if section.settings.show_tabs -%}
       <nav class="mvr__tabs" aria-label="Navigation des avis">
-        <a class="mvr__tab" href="#mvr-overview-{{ section.id }}">Aperçu</a>
-        <a class="mvr__tab mvr__tab--active" href="#mirabel-reviews-list-{{ section.id }}">Avis</a>
-        <a class="mvr__tab" href="#mvr-about-{{ section.id }}">À propos</a>
+        <a class="mvr__tab" href="#mvr-overview-{{ section.id }}">{{ ui_tab_overview }}</a>
+        <a class="mvr__tab mvr__tab--active" href="#mirabel-reviews-list-{{ section.id }}">{{ ui_tab_reviews }}</a>
+        <a class="mvr__tab" href="#mvr-about-{{ section.id }}">{{ ui_tab_about }}</a>
       </nav>
     {%- endif -%}
 
@@ -138,7 +183,7 @@
             <span class="mvr-stars__base">★★★★★</span>
             <span class="mvr-stars__fill">★★★★★</span>
           </div>
-          <a href="#mirabel-reviews-list-{{ section.id }}">Voir les avis</a>
+          <a href="#mirabel-reviews-list-{{ section.id }}">{{ ui_view_reviews }}</a>
         </div>
       </div>
 
@@ -172,7 +217,7 @@
             <span aria-hidden="true">★</span>
           </div>
           <p class="mvr__score-caption">
-            Basé sur {{ displayed_total }}
+            {{ ui_score_prefix }} {{ displayed_total }}
             {%- if displayed_total > 1 -%} avis{%- else -%} avis{%- endif -%}
           </p>
 
@@ -195,12 +240,12 @@
           </div>
 
           {%- if section.settings.show_search -%}
-            <label class="mvr__search-label" for="MvrSearch-{{ section.id }}">Rechercher un mot-clé</label>
+            <label class="mvr__search-label" for="MvrSearch-{{ section.id }}">{{ ui_search_label }}</label>
             <div class="mvr__search">
               <input
                 id="MvrSearch-{{ section.id }}"
                 type="search"
-                placeholder="Rechercher"
+                placeholder="{{ ui_search_placeholder | escape }}"
                 autocomplete="off"
                 data-mvr-search
               >
@@ -210,9 +255,9 @@
 
           {%- if section.settings.show_rating_filters -%}
             <fieldset class="mvr__filters">
-              <legend>Notes :</legend>
+              <legend>{{ ui_filters_label }}</legend>
               <div class="mvr__filter-buttons">
-                <button type="button" class="is-active" data-mvr-rating="all" aria-pressed="true">Toutes</button>
+                <button type="button" class="is-active" data-mvr-rating="all" aria-pressed="true">{{ ui_all_ratings }}</button>
                 {%- for i in (1..5) -%}
                   <button type="button" data-mvr-rating="{{ i }}" aria-pressed="false">{{ i }} <span aria-hidden="true">★</span></button>
                 {%- endfor -%}
@@ -243,10 +288,13 @@
 
           <div id="mirabel-reviews-list-{{ section.id }}" class="mvr__list-heading">
             <div>
-              <h3>Les avis clients</h3>
-              <p data-mvr-results-count>{{ review_count }} avis affichés</p>
+              <h3>{{ ui_reviews_list_title }}</h3>
+              <p data-mvr-results-count>
+                {{ review_count }}
+                {% if review_count == 1 %}{{ ui_displayed_singular }}{% else %}{{ ui_displayed_plural }}{% endif %}
+              </p>
             </div>
-            <span>Ordre de la section</span>
+            <span>{{ ui_order_label }}</span>
           </div>
 
           <div class="mvr__reviews-list" data-mvr-list>
@@ -291,12 +339,12 @@
                   {%- endif -%}
 
                   {%- if block.settings.experience_date != blank -%}
-                    <p class="mvr-review__experience">Expérience du : <strong>{{ block.settings.experience_date }}</strong></p>
+                    <p class="mvr-review__experience">{{ ui_experience_label }} <strong>{{ block.settings.experience_date }}</strong></p>
                   {%- endif -%}
 
                   {%- if block.settings.response != blank -%}
                     <div class="mvr-review__response">
-                      <strong>Réponse de {{ section.settings.brand_name }}</strong>
+                      <strong>{{ ui_response_prefix }} {{ section.settings.brand_name }}</strong>
                       {{ block.settings.response }}
                     </div>
                   {%- endif -%}
@@ -306,17 +354,17 @@
           </div>
 
           <div class="mvr__empty" data-mvr-empty hidden>
-            Aucun avis ne correspond à votre recherche.
+            {{ ui_empty_text }}
           </div>
 
           <nav class="mvr__pagination" aria-label="Pagination des avis" data-mvr-pagination></nav>
-          <p class="mvr__chronology">Avis affichés selon l’ordre défini dans l’éditeur Shopify.</p>
+          <p class="mvr__chronology">{{ ui_chronology_text }}</p>
         </div>
       </div>
 
       {%- if section.settings.show_about -%}
         <section id="mvr-about-{{ section.id }}" class="mvr__about">
-          <h3>À propos de {{ section.settings.brand_name }}</h3>
+          <h3>{{ ui_about_title }}</h3>
           <strong>{{ section.settings.product_name }}</strong>
           <p>{{ section.settings.about_text }}</p>
 
@@ -940,6 +988,8 @@
       const emptyState = root.querySelector('[data-mvr-empty]');
       const resultCount = root.querySelector('[data-mvr-results-count]');
       const pageSize = Math.max(1, Number(root.dataset.pageSize || 6));
+      const displayedSingular = root.dataset.displayedSingular || 'avis affiché';
+      const displayedPlural = root.dataset.displayedPlural || 'avis affichés';
 
       let currentPage = 1;
       let activeRating = 'all';
@@ -1031,7 +1081,7 @@
         });
 
         if (emptyState) emptyState.hidden = matches.length !== 0;
-        if (resultCount) resultCount.textContent = `${matches.length} avis ${matches.length > 1 ? 'affichés' : 'affiché'}`;
+        if (resultCount) resultCount.textContent = `${matches.length} ${matches.length === 1 ? displayedSingular : displayedPlural}`;
         renderPagination(matches.length ? pages : 0);
       };
 
@@ -1100,7 +1150,7 @@
       "type": "text",
       "id": "product_name",
       "label": "Nom du produit",
-      "default": "DETOX SUCRE"
+      "default": "Mirabel"
     },
     {
       "type": "text",
@@ -1112,7 +1162,7 @@
       "type": "text",
       "id": "heading",
       "label": "Titre",
-      "default": "Avis sur DETOX SUCRE"
+      "default": "Avis sur Mirabel"
     },
     {
       "type": "text",
@@ -1124,7 +1174,7 @@
       "type": "text",
       "id": "reviews_heading",
       "label": "Titre de la liste",
-      "default": "Avis pour DETOX SUCRE"
+      "default": "Avis pour Mirabel"
     },
     {
       "type": "text",
@@ -1326,7 +1376,7 @@
     {
       "type": "url",
       "id": "product_link",
-      "label": "Lien vers DETOX SUCRE"
+      "label": "Lien vers Mirabel"
     },
     {
       "type": "checkbox",
@@ -1338,7 +1388,7 @@
       "type": "text",
       "id": "product_button_label",
       "label": "Texte du bouton produit",
-      "default": "Découvrir DETOX SUCRE"
+      "default": "Découvrir Mirabel"
     },
     {
       "type": "checkbox",
@@ -1350,7 +1400,7 @@
       "type": "textarea",
       "id": "about_text",
       "label": "Texte À propos",
-      "default": "DETOX SUCRE est une formule en gélules pensée pour accompagner une routine visant à mieux maîtriser les envies de sucre et le grignotage."
+      "default": "Mirabel propose des gélules pensées pour accompagner votre routine et vous aider à mieux maîtriser les envies de sucre et le grignotage."
     },
     {
       "type": "checkbox",
@@ -1458,6 +1508,134 @@
     }
   ],
   "blocks": [
+
+    {
+      "type": "interface_texts",
+      "name": "Textes principaux",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Onglets et navigation"
+        },
+        {
+          "type": "text",
+          "id": "tab_overview",
+          "label": "Onglet Aperçu",
+          "default": "Aperçu"
+        },
+        {
+          "type": "text",
+          "id": "tab_reviews",
+          "label": "Onglet Avis",
+          "default": "Avis"
+        },
+        {
+          "type": "text",
+          "id": "tab_about",
+          "label": "Onglet À propos",
+          "default": "À propos"
+        },
+        {
+          "type": "text",
+          "id": "view_reviews",
+          "label": "Lien Voir les avis",
+          "default": "Voir les avis"
+        },
+        {
+          "type": "header",
+          "content": "Score, recherche et filtres"
+        },
+        {
+          "type": "text",
+          "id": "score_prefix",
+          "label": "Texte avant le nombre d'avis",
+          "default": "Basé sur"
+        },
+        {
+          "type": "text",
+          "id": "search_label",
+          "label": "Titre de la recherche",
+          "default": "Rechercher un mot-clé"
+        },
+        {
+          "type": "text",
+          "id": "search_placeholder",
+          "label": "Texte dans la recherche",
+          "default": "Rechercher"
+        },
+        {
+          "type": "text",
+          "id": "filters_label",
+          "label": "Titre des filtres",
+          "default": "Notes :"
+        },
+        {
+          "type": "text",
+          "id": "all_ratings",
+          "label": "Bouton toutes les notes",
+          "default": "Toutes"
+        },
+        {
+          "type": "header",
+          "content": "Liste des avis"
+        },
+        {
+          "type": "text",
+          "id": "reviews_list_title",
+          "label": "Titre au-dessus des avis",
+          "default": "Les avis clients"
+        },
+        {
+          "type": "text",
+          "id": "order_label",
+          "label": "Texte de tri",
+          "default": "Ordre de la section"
+        },
+        {
+          "type": "text",
+          "id": "displayed_singular",
+          "label": "Résultat au singulier",
+          "default": "avis affiché"
+        },
+        {
+          "type": "text",
+          "id": "displayed_plural",
+          "label": "Résultat au pluriel",
+          "default": "avis affichés"
+        },
+        {
+          "type": "text",
+          "id": "experience_label",
+          "label": "Libellé de la date d'expérience",
+          "default": "Expérience du :"
+        },
+        {
+          "type": "text",
+          "id": "response_prefix",
+          "label": "Titre avant la réponse de la marque",
+          "default": "Réponse de"
+        },
+        {
+          "type": "textarea",
+          "id": "empty_text",
+          "label": "Message sans résultat",
+          "default": "Aucun avis ne correspond à votre recherche."
+        },
+        {
+          "type": "textarea",
+          "id": "chronology_text",
+          "label": "Texte sous la pagination",
+          "default": "Avis affichés selon l’ordre défini dans l’éditeur Shopify."
+        },
+        {
+          "type": "text",
+          "id": "about_title",
+          "label": "Titre À propos",
+          "default": "À propos de Mirabel"
+        }
+      ]
+    },
     {
       "type": "review",
       "name": "Avis client",
@@ -1508,7 +1686,7 @@
         {
           "type": "richtext",
           "id": "response",
-          "label": "Réponse de Mirabel"
+          "label": "Réponse de la marque"
         }
       ]
     }
@@ -1517,6 +1695,9 @@
     {
       "name": "Avis clients Mirabel",
       "blocks": [
+        {
+          "type": "interface_texts"
+        },
         {
           "type": "review",
           "settings": {
