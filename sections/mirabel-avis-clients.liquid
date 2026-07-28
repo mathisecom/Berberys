@@ -1,0 +1,318 @@
+{{ 'mirabel-avis-clients.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign section_title = section.settings.title
+  assign overall_rating = section.settings.overall_rating | plus: 0
+  assign total_reviews = section.settings.total_reviews
+  assign summary_text = section.settings.summary_text
+
+  assign full_stars = overall_rating | floor
+  assign has_half = false
+  assign remainder = overall_rating | minus: full_stars
+
+  if remainder >= 0.25 and remainder < 0.75
+    assign has_half = true
+  elsif remainder >= 0.75
+    assign full_stars = full_stars | plus: 1
+  endif
+
+  assign half_star_index = full_stars | plus: 1
+-%}
+
+<section class="mira-reviews" id="avis-clients">
+  <div class="mira-reviews__inner">
+
+    <header class="mira-reviews__head">
+      <p class="mira-reviews__eyebrow">Avis vérifiés</p>
+
+      <h2 class="mira-reviews__title">
+        {{ section_title | default: 'Ce que dit notre communauté' }}
+      </h2>
+
+      <div class="mira-reviews__score">
+        <span class="mira-reviews__score-number">
+          {{ overall_rating }}
+        </span>
+
+        <span
+          class="mira-reviews__stars"
+          aria-label="Note globale : {{ overall_rating }} sur 5"
+        >
+          {%- for i in (1..5) -%}
+            {%- if i <= full_stars -%}
+              <span class="mira-star mira-star--full" aria-hidden="true">★</span>
+            {%- elsif has_half and i == half_star_index -%}
+              <span class="mira-star mira-star--half" aria-hidden="true">★</span>
+            {%- else -%}
+              <span class="mira-star mira-star--empty" aria-hidden="true">★</span>
+            {%- endif -%}
+          {%- endfor -%}
+        </span>
+
+        <span class="mira-reviews__count">
+          Basé sur {{ total_reviews }} avis
+        </span>
+      </div>
+
+      {%- if summary_text != blank -%}
+        <p class="mira-reviews__summary">
+          {{ summary_text }}
+        </p>
+      {%- endif -%}
+    </header>
+
+    <div class="mira-reviews__list" role="list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'review' -%}
+          {%- liquid
+            assign r = block.settings.rating | plus: 0
+          -%}
+
+          <article
+            class="mira-review-card"
+            role="listitem"
+            {{ block.shopify_attributes }}
+          >
+            <div class="mira-review-card__top">
+              <div
+                class="mira-review-card__stars"
+                aria-label="Note : {{ r }} sur 5"
+              >
+                {%- for i in (1..5) -%}
+                  <span
+                    class="mira-star {% if i <= r %}mira-star--full{% else %}mira-star--empty{% endif %}"
+                    aria-hidden="true"
+                  >
+                    ★
+                  </span>
+                {%- endfor -%}
+              </div>
+
+              {%- if block.settings.date != blank -%}
+                <time class="mira-review-card__date">
+                  {{ block.settings.date }}
+                </time>
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.headline != blank -%}
+              <h3 class="mira-review-card__headline">
+                {{ block.settings.headline }}
+              </h3>
+            {%- endif -%}
+
+            {%- if block.settings.text != blank -%}
+              <p class="mira-review-card__text">
+                {{ block.settings.text }}
+              </p>
+            {%- endif -%}
+
+            <div class="mira-review-card__footer">
+              <span class="mira-review-card__author">
+                {{ block.settings.author | default: 'Client Mirabel' }}
+              </span>
+
+              <span class="mira-review-card__badge">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 12.5L9.5 18L20 6"
+                    stroke="currentColor"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
+                Acheteur vérifié
+              </span>
+            </div>
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.show_cta -%}
+      <div class="mira-reviews__cta">
+        <a
+          href="{{ section.settings.cta_link | default: '#' }}"
+          class="mira-reviews__cta-button"
+        >
+          {{ section.settings.cta_label | default: 'Laisser un avis' }}
+        </a>
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avis clients Mirabel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre de la section",
+      "default": "Ce que dit notre communauté"
+    },
+    {
+      "type": "text",
+      "id": "overall_rating",
+      "label": "Note globale (exemple : 4.9)",
+      "default": "4.9"
+    },
+    {
+      "type": "text",
+      "id": "total_reviews",
+      "label": "Nombre total d'avis (exemple : 1 265)",
+      "default": "1 265"
+    },
+    {
+      "type": "textarea",
+      "id": "summary_text",
+      "label": "Résumé des avis (optionnel)",
+      "default": "Les clientes soulignent une nette diminution des envies de sucre et du grignotage, une composition naturelle appréciée, et des gélules faciles à intégrer au quotidien."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Afficher un bouton d'appel à l'action",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Texte du bouton",
+      "default": "Découvrir Détox Sucre"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Lien du bouton"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avis",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Note",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "headline",
+          "label": "Titre de l'avis",
+          "default": "Très satisfaite"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte de l'avis"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Auteur",
+          "default": "Cliente Mirabel"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date (format libre)",
+          "default": "30/05/26"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avis clients Mirabel",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Je grignote beaucoup moins",
+            "text": "Je prenais quelque chose de sucré tous les après-midi. Depuis que je fais cette cure, ces envies sont beaucoup moins fréquentes. Je me sens plus en contrôle.",
+            "author": "Sylvie A.",
+            "date": "30/05/26"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Très satisfaite",
+            "text": "Je cherchais surtout à limiter mes envies de sucre. Après quelques semaines, je remarque une vraie différence. Les gélules sont faciles à prendre.",
+            "author": "Sophie B.",
+            "date": "26/05/26"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 4,
+            "headline": "",
+            "text": "",
+            "author": "Céline H.",
+            "date": "25/05/26"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Bonne surprise",
+            "text": "Je ne m'attendais pas à grand-chose mais je grignote clairement moins entre les repas. Je vais recommencer une cure.",
+            "author": "Chantal M.",
+            "date": "23/05/26"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Très bon produit",
+            "text": "J'apprécie la composition et le fait que ce soit une formule naturelle. Je me sens moins attirée par les produits sucrés qu'avant.",
+            "author": "Emeline L.",
+            "date": "22/05/26"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Moins de craquages",
+            "text": "Le soir était mon moment le plus difficile. Je craque beaucoup moins devant la télévision. Ça fait vraiment du bien.",
+            "author": "Evelyne E.",
+            "date": "30/05/26"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Efficace sur la glycémie",
+            "text": "Très bien, efficace sur ma glycémie et mon taux de cholestérol, et bien supportée. Je recommande la gélule Détox Sucre.",
+            "author": "Marie-Odile P.",
+            "date": "30/05/26"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
