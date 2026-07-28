@@ -1,207 +1,1473 @@
-{{ 'mirabel-avis-clients.css' | asset_url | stylesheet_tag }}
+{% comment %}
+  Section Shopify autonome — Avis clients Mirabel
+  Installation : Boutique en ligne > Thèmes > Modifier le code > Sections
+  Créez « mirabel-avis-clients.liquid », collez ce fichier, puis ajoutez la section dans l’éditeur.
+
+  Important : activez « Acheteur vérifié » uniquement pour une commande réellement contrôlée.
+{% endcomment %}
 
 {%- liquid
-  assign section_title = section.settings.title
-  assign overall_rating = section.settings.overall_rating | plus: 0
-  assign total_reviews = section.settings.total_reviews
-  assign summary_text = section.settings.summary_text
+  assign review_count = 0
+  assign rating_sum = 0
+  assign rating_5_count = 0
+  assign rating_4_count = 0
+  assign rating_3_count = 0
+  assign rating_2_count = 0
+  assign rating_1_count = 0
 
-  assign full_stars = overall_rating | floor
-  assign has_half = false
-  assign remainder = overall_rating | minus: full_stars
+  for block in section.blocks
+    if block.type == 'review'
+      assign review_count = review_count | plus: 1
+      assign block_rating = block.settings.rating | plus: 0
+      assign rating_sum = rating_sum | plus: block_rating
 
-  if remainder >= 0.25 and remainder < 0.75
-    assign has_half = true
-  elsif remainder >= 0.75
-    assign full_stars = full_stars | plus: 1
+      if block_rating == 5
+        assign rating_5_count = rating_5_count | plus: 1
+      elsif block_rating == 4
+        assign rating_4_count = rating_4_count | plus: 1
+      elsif block_rating == 3
+        assign rating_3_count = rating_3_count | plus: 1
+      elsif block_rating == 2
+        assign rating_2_count = rating_2_count | plus: 1
+      else
+        assign rating_1_count = rating_1_count | plus: 1
+      endif
+    endif
+  endfor
+
+  if section.settings.stats_mode == 'manual'
+    assign overall_rating = section.settings.manual_rating | plus: 0
+    assign displayed_total = section.settings.manual_total | plus: 0
+    assign rating_5_percent = section.settings.manual_5_percent
+    assign rating_4_percent = section.settings.manual_4_percent
+    assign rating_3_percent = section.settings.manual_3_percent
+    assign rating_2_percent = section.settings.manual_2_percent
+    assign rating_1_percent = section.settings.manual_1_percent
+  elsif review_count > 0
+    assign overall_rating = rating_sum | times: 1.0 | divided_by: review_count | round: 1
+    assign displayed_total = review_count
+    assign rating_5_percent = rating_5_count | times: 100 | divided_by: review_count
+    assign rating_4_percent = rating_4_count | times: 100 | divided_by: review_count
+    assign rating_3_percent = rating_3_count | times: 100 | divided_by: review_count
+    assign rating_2_percent = rating_2_count | times: 100 | divided_by: review_count
+    assign rating_1_percent = rating_1_count | times: 100 | divided_by: review_count
+  else
+    assign overall_rating = 0
+    assign displayed_total = 0
+    assign rating_5_percent = 0
+    assign rating_4_percent = 0
+    assign rating_3_percent = 0
+    assign rating_2_percent = 0
+    assign rating_1_percent = 0
   endif
 
-  assign half_star_index = full_stars | plus: 1
+  assign product_link = section.settings.product_link
+  if product_link == blank
+    assign product_link = '#mirabel-reviews-list-' | append: section.id
+  endif
+
+  assign review_form_link = section.settings.review_form_link
+  if review_form_link == blank
+    assign review_form_link = '#mirabel-reviews-list-' | append: section.id
+  endif
+
+  assign overall_rating_percent = overall_rating | times: 20
 -%}
 
-<section class="mira-reviews" id="avis-clients">
-  <div class="mira-reviews__inner">
+<section
+  id="MirabelReviews-{{ section.id }}"
+  class="mvr"
+  data-mvr-root
+  data-page-size="{{ section.settings.reviews_per_page }}"
+  style="
+    --mvr-primary: {{ section.settings.primary_color }};
+    --mvr-primary-soft: {{ section.settings.primary_soft_color }};
+    --mvr-text: {{ section.settings.text_color }};
+    --mvr-muted: {{ section.settings.muted_color }};
+    --mvr-border: {{ section.settings.border_color }};
+    --mvr-card: {{ section.settings.card_color }};
+    --mvr-background: {{ section.settings.background_color }};
+    --mvr-success: {{ section.settings.success_color }};
+    --mvr-radius: {{ section.settings.corner_radius }}px;
+    --mvr-max-width: {{ section.settings.max_width }}px;
+    --mvr-pad-top: {{ section.settings.padding_top }}px;
+    --mvr-pad-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="mvr__shell">
+    <header class="mvr__brandbar">
+      <a class="mvr__brand" href="#mvr-overview-{{ section.id }}" aria-label="Voir l’aperçu des avis {{ section.settings.brand_name }}">
+        <span class="mvr__brand-name">{{ section.settings.brand_name }}</span>
+        <span class="mvr__brand-score">{{ overall_rating }}</span>
+        <span class="mvr__brand-star" aria-hidden="true">★</span>
+      </a>
 
-    <header class="mira-reviews__head">
-      <p class="mira-reviews__eyebrow">Avis vérifiés</p>
-
-      <h2 class="mira-reviews__title">
-        {{ section_title | default: 'Ce que dit notre communauté' }}
-      </h2>
-
-      <div class="mira-reviews__score">
-        <span class="mira-reviews__score-number">
-          {{ overall_rating }}
-        </span>
-
-        <span
-          class="mira-reviews__stars"
-          aria-label="Note globale : {{ overall_rating }} sur 5"
-        >
-          {%- for i in (1..5) -%}
-            {%- if i <= full_stars -%}
-              <span class="mira-star mira-star--full" aria-hidden="true">★</span>
-            {%- elsif has_half and i == half_star_index -%}
-              <span class="mira-star mira-star--half" aria-hidden="true">★</span>
-            {%- else -%}
-              <span class="mira-star mira-star--empty" aria-hidden="true">★</span>
-            {%- endif -%}
-          {%- endfor -%}
-        </span>
-
-        <span class="mira-reviews__count">
-          Basé sur {{ total_reviews }} avis
-        </span>
-      </div>
-
-      {%- if summary_text != blank -%}
-        <p class="mira-reviews__summary">
-          {{ summary_text }}
-        </p>
+      {%- if section.settings.show_product_button -%}
+        <a class="mvr__outline-button" href="{{ product_link }}">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 4h6v6M20 4l-9 9M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6" />
+          </svg>
+          {{ section.settings.product_button_label }}
+        </a>
       {%- endif -%}
     </header>
 
-    <div class="mira-reviews__list" role="list">
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'review' -%}
-          {%- liquid
-            assign r = block.settings.rating | plus: 0
-          -%}
-
-          <article
-            class="mira-review-card"
-            role="listitem"
-            {{ block.shopify_attributes }}
-          >
-            <div class="mira-review-card__top">
-              <div
-                class="mira-review-card__stars"
-                aria-label="Note : {{ r }} sur 5"
-              >
-                {%- for i in (1..5) -%}
-                  <span
-                    class="mira-star {% if i <= r %}mira-star--full{% else %}mira-star--empty{% endif %}"
-                    aria-hidden="true"
-                  >
-                    ★
-                  </span>
-                {%- endfor -%}
-              </div>
-
-              {%- if block.settings.date != blank -%}
-                <time class="mira-review-card__date">
-                  {{ block.settings.date }}
-                </time>
-              {%- endif -%}
-            </div>
-
-            {%- if block.settings.headline != blank -%}
-              <h3 class="mira-review-card__headline">
-                {{ block.settings.headline }}
-              </h3>
-            {%- endif -%}
-
-            {%- if block.settings.text != blank -%}
-              <p class="mira-review-card__text">
-                {{ block.settings.text }}
-              </p>
-            {%- endif -%}
-
-            <div class="mira-review-card__footer">
-              <span class="mira-review-card__author">
-                {{ block.settings.author | default: 'Client Mirabel' }}
-              </span>
-
-              <span class="mira-review-card__badge">
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M4 12.5L9.5 18L20 6"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-
-                Acheteur vérifié
-              </span>
-            </div>
-          </article>
-        {%- endif -%}
-      {%- endfor -%}
-    </div>
-
-    {%- if section.settings.show_cta -%}
-      <div class="mira-reviews__cta">
-        <a
-          href="{{ section.settings.cta_link | default: '#' }}"
-          class="mira-reviews__cta-button"
-        >
-          {{ section.settings.cta_label | default: 'Laisser un avis' }}
-        </a>
-      </div>
+    {%- if section.settings.show_tabs -%}
+      <nav class="mvr__tabs" aria-label="Navigation des avis">
+        <a class="mvr__tab" href="#mvr-overview-{{ section.id }}">Aperçu</a>
+        <a class="mvr__tab mvr__tab--active" href="#mirabel-reviews-list-{{ section.id }}">Avis</a>
+        <a class="mvr__tab" href="#mvr-about-{{ section.id }}">À propos</a>
+      </nav>
     {%- endif -%}
 
+    <div id="mvr-overview-{{ section.id }}" class="mvr__content">
+      <div class="mvr__intro">
+        <div class="mvr__intro-copy">
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="mvr__eyebrow">{{ section.settings.eyebrow }}</p>
+          {%- endif -%}
+          <h2 class="mvr__heading">{{ section.settings.heading }}</h2>
+          {%- if section.settings.tagline != blank -%}
+            <p class="mvr__tagline">{{ section.settings.tagline }}</p>
+          {%- endif -%}
+        </div>
+
+        <div class="mvr__intro-rating" aria-label="Note moyenne : {{ overall_rating }} sur 5">
+          <strong>{{ overall_rating }}</strong>
+          <div class="mvr-stars mvr-stars--large" style="--mvr-rating-width: {{ overall_rating_percent }}%;" aria-hidden="true">
+            <span class="mvr-stars__base">★★★★★</span>
+            <span class="mvr-stars__fill">★★★★★</span>
+          </div>
+          <a href="#mirabel-reviews-list-{{ section.id }}">Voir les avis</a>
+        </div>
+      </div>
+
+      <div class="mvr__section-title-row">
+        <div>
+          <h3>{{ section.settings.reviews_heading }}</h3>
+          <p>
+            {{ displayed_total }}
+            {%- if displayed_total > 1 -%} avis{%- else -%} avis{%- endif -%}
+            {%- if section.settings.reviews_period != blank -%} {{ section.settings.reviews_period }}{%- endif -%}
+          </p>
+        </div>
+      </div>
+
+      {%- if section.settings.show_transparency_notice -%}
+        <div class="mvr__notice">
+          <span class="mvr__notice-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-2.9 8.2-7 10-4.1-1.8-7-5.4-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <div>
+            <strong>{{ section.settings.transparency_title }}</strong>
+            <p>{{ section.settings.transparency_text }}</p>
+          </div>
+        </div>
+      {%- endif -%}
+
+      <div class="mvr__layout">
+        <aside class="mvr__score-card" aria-label="Répartition des notes">
+          <div class="mvr__score-main">
+            <strong>{{ overall_rating }}</strong>
+            <span aria-hidden="true">★</span>
+          </div>
+          <p class="mvr__score-caption">
+            Basé sur {{ displayed_total }}
+            {%- if displayed_total > 1 -%} avis{%- else -%} avis{%- endif -%}
+          </p>
+
+          <div class="mvr__distribution">
+            {%- assign distribution_labels = '5,4,3,2,1' | split: ',' -%}
+            {%- for label in distribution_labels -%}
+              {%- case label -%}
+                {%- when '5' -%}{%- assign percent = rating_5_percent -%}
+                {%- when '4' -%}{%- assign percent = rating_4_percent -%}
+                {%- when '3' -%}{%- assign percent = rating_3_percent -%}
+                {%- when '2' -%}{%- assign percent = rating_2_percent -%}
+                {%- else -%}{%- assign percent = rating_1_percent -%}
+              {%- endcase -%}
+              <div class="mvr__distribution-row">
+                <span>{{ label }}</span>
+                <span class="mvr__bar" aria-hidden="true"><span style="width: {{ percent }}%;"></span></span>
+                <strong>{{ percent }}%</strong>
+              </div>
+            {%- endfor -%}
+          </div>
+
+          {%- if section.settings.show_search -%}
+            <label class="mvr__search-label" for="MvrSearch-{{ section.id }}">Rechercher un mot-clé</label>
+            <div class="mvr__search">
+              <input
+                id="MvrSearch-{{ section.id }}"
+                type="search"
+                placeholder="Rechercher"
+                autocomplete="off"
+                data-mvr-search
+              >
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.show_rating_filters -%}
+            <fieldset class="mvr__filters">
+              <legend>Notes :</legend>
+              <div class="mvr__filter-buttons">
+                <button type="button" class="is-active" data-mvr-rating="all" aria-pressed="true">Toutes</button>
+                {%- for i in (1..5) -%}
+                  <button type="button" data-mvr-rating="{{ i }}" aria-pressed="false">{{ i }} <span aria-hidden="true">★</span></button>
+                {%- endfor -%}
+              </div>
+            </fieldset>
+          {%- endif -%}
+        </aside>
+
+        <div class="mvr__reviews-column">
+          {%- if section.settings.show_summary -%}
+            <div class="mvr__summary-card">
+              <div class="mvr__summary-icon" aria-hidden="true">✦</div>
+              <div>
+                <h3>{{ section.settings.summary_title }}</h3>
+                <p>{{ section.settings.summary_text }}</p>
+                {%- if section.settings.summary_note != blank -%}
+                  <small>{{ section.settings.summary_note }}</small>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.show_review_button -%}
+            <a class="mvr__review-button" href="{{ review_form_link }}">
+              {{ section.settings.review_button_label }}
+            </a>
+          {%- endif -%}
+
+          <div id="mirabel-reviews-list-{{ section.id }}" class="mvr__list-heading">
+            <div>
+              <h3>Les avis clients</h3>
+              <p data-mvr-results-count>{{ review_count }} avis affichés</p>
+            </div>
+            <span>Ordre de la section</span>
+          </div>
+
+          <div class="mvr__reviews-list" data-mvr-list>
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'review' -%}
+                {%- assign review_rating = block.settings.rating | plus: 0 -%}
+                <article
+                  class="mvr-review"
+                  data-mvr-review
+                  data-rating="{{ review_rating }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <div class="mvr-review__top">
+                    <div>
+                      <h4>{{ block.settings.author | default: 'Client Mirabel' }}</h4>
+                      <div class="mvr-review__meta">
+                        <span class="mvr-review__stars" aria-label="{{ review_rating }} sur 5">
+                          {%- for i in (1..5) -%}
+                            <span class="{% if i <= review_rating %}is-filled{% endif %}" aria-hidden="true">★</span>
+                          {%- endfor -%}
+                        </span>
+                        {%- if block.settings.date != blank -%}
+                          <time>{{ block.settings.date }}</time>
+                        {%- endif -%}
+                      </div>
+                    </div>
+
+                    {%- if block.settings.verified -%}
+                      <span class="mvr-review__verified">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg>
+                        {{ section.settings.verified_label }}
+                      </span>
+                    {%- endif -%}
+                  </div>
+
+                  {%- if block.settings.headline != blank -%}
+                    <h5>{{ block.settings.headline }}</h5>
+                  {%- endif -%}
+
+                  {%- if block.settings.text != blank -%}
+                    <div class="mvr-review__text">{{ block.settings.text | newline_to_br }}</div>
+                  {%- endif -%}
+
+                  {%- if block.settings.experience_date != blank -%}
+                    <p class="mvr-review__experience">Expérience du : <strong>{{ block.settings.experience_date }}</strong></p>
+                  {%- endif -%}
+
+                  {%- if block.settings.response != blank -%}
+                    <div class="mvr-review__response">
+                      <strong>Réponse de {{ section.settings.brand_name }}</strong>
+                      {{ block.settings.response }}
+                    </div>
+                  {%- endif -%}
+                </article>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          <div class="mvr__empty" data-mvr-empty hidden>
+            Aucun avis ne correspond à votre recherche.
+          </div>
+
+          <nav class="mvr__pagination" aria-label="Pagination des avis" data-mvr-pagination></nav>
+          <p class="mvr__chronology">Avis affichés selon l’ordre défini dans l’éditeur Shopify.</p>
+        </div>
+      </div>
+
+      {%- if section.settings.show_about -%}
+        <section id="mvr-about-{{ section.id }}" class="mvr__about">
+          <h3>À propos de {{ section.settings.brand_name }}</h3>
+          <strong>{{ section.settings.product_name }}</strong>
+          <p>{{ section.settings.about_text }}</p>
+
+          {%- if section.settings.show_about_button -%}
+            <a class="mvr__outline-button" href="{{ product_link }}">
+              {{ section.settings.about_button_label }}
+            </a>
+          {%- endif -%}
+        </section>
+      {%- endif -%}
+    </div>
   </div>
 </section>
+
+<style>
+  #MirabelReviews-{{ section.id }} {
+    background: var(--mvr-background);
+    color: var(--mvr-text);
+    padding: var(--mvr-pad-top) 0 var(--mvr-pad-bottom);
+    font-family: var(--font-body-family, Arial, sans-serif);
+  }
+
+  #MirabelReviews-{{ section.id }} * { box-sizing: border-box; }
+  #MirabelReviews-{{ section.id }} a { color: inherit; }
+  #MirabelReviews-{{ section.id }} button,
+  #MirabelReviews-{{ section.id }} input { font: inherit; }
+
+  #MirabelReviews-{{ section.id }} .mvr__shell {
+    width: min(calc(100% - 32px), var(--mvr-max-width));
+    margin: 0 auto;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__brandbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--mvr-border);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: clamp(20px, 2vw, 26px);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__brand-score { font-size: .82em; }
+  #MirabelReviews-{{ section.id }} .mvr__brand-star { color: var(--mvr-primary); }
+
+  #MirabelReviews-{{ section.id }} .mvr__outline-button {
+    min-height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 10px 16px;
+    border: 1.5px solid var(--mvr-primary);
+    border-radius: 7px;
+    color: var(--mvr-primary);
+    background: transparent;
+    font-weight: 750;
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__outline-button:hover {
+    color: #fff;
+    background: var(--mvr-primary);
+    transform: translateY(-1px);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__outline-button svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__tabs {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    min-height: 58px;
+    border-bottom: 1px solid var(--mvr-border);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    align-self: stretch;
+    color: var(--mvr-text);
+    text-decoration: none;
+    font-weight: 650;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__tab--active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 5px;
+    background: var(--mvr-primary);
+    border-radius: 99px 99px 0 0;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__content { padding-top: 42px; }
+
+  #MirabelReviews-{{ section.id }} .mvr__intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    padding: 34px;
+    border-radius: var(--mvr-radius);
+    background:
+      radial-gradient(circle at 84% 18%, rgba(19, 116, 245, .10), transparent 38%),
+      var(--mvr-primary-soft);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__eyebrow {
+    margin: 0 0 8px;
+    color: var(--mvr-primary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__heading {
+    margin: 0;
+    font-size: clamp(30px, 4vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -.035em;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__tagline {
+    max-width: 680px;
+    margin: 14px 0 0;
+    color: var(--mvr-muted);
+    font-size: clamp(16px, 2vw, 20px);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__intro-rating {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 6px 12px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__intro-rating > strong {
+    font-size: clamp(40px, 6vw, 66px);
+    line-height: 1;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__intro-rating > a {
+    grid-column: 1 / -1;
+    justify-self: end;
+    color: var(--mvr-muted);
+    font-size: 14px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-stars {
+    --mvr-star-size: 24px;
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    font-size: var(--mvr-star-size);
+    line-height: 1;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-stars--large { --mvr-star-size: 32px; }
+  #MirabelReviews-{{ section.id }} .mvr-stars__base { color: #d9dde4; }
+  #MirabelReviews-{{ section.id }} .mvr-stars__fill {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: var(--mvr-rating-width);
+    overflow: hidden;
+    color: var(--mvr-primary);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__section-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 48px 0 24px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__section-title-row h3,
+  #MirabelReviews-{{ section.id }} .mvr__list-heading h3,
+  #MirabelReviews-{{ section.id }} .mvr__about h3 {
+    margin: 0;
+    font-size: clamp(25px, 3vw, 34px);
+    letter-spacing: -.025em;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__section-title-row p,
+  #MirabelReviews-{{ section.id }} .mvr__list-heading p {
+    margin: 10px 0 0;
+    color: var(--mvr-muted);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__notice {
+    display: flex;
+    gap: 14px;
+    padding: 18px 20px;
+    border: 1px solid var(--mvr-border);
+    border-radius: 8px;
+    background: var(--mvr-card);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__notice-icon {
+    flex: 0 0 24px;
+    color: var(--mvr-text);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__notice-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__notice strong { display: block; margin-bottom: 2px; }
+  #MirabelReviews-{{ section.id }} .mvr__notice p { margin: 0; color: var(--mvr-muted); line-height: 1.55; }
+
+  #MirabelReviews-{{ section.id }} .mvr__layout {
+    display: grid;
+    grid-template-columns: minmax(270px, 370px) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 56px);
+    align-items: start;
+    margin-top: 32px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__score-card {
+    position: sticky;
+    top: 20px;
+    padding: 30px;
+    border: 1px solid var(--mvr-border);
+    border-radius: var(--mvr-radius);
+    background: var(--mvr-card);
+    box-shadow: 0 12px 34px rgba(21, 31, 46, .08);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__score-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__score-main strong {
+    font-size: clamp(52px, 6vw, 72px);
+    line-height: 1;
+    letter-spacing: -.05em;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__score-main span {
+    color: var(--mvr-primary);
+    font-size: 68px;
+    line-height: 1;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__score-caption {
+    max-width: 170px;
+    margin: 14px auto 30px;
+    color: var(--mvr-muted);
+    text-align: center;
+    font-size: 13px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__distribution { display: grid; gap: 10px; }
+  #MirabelReviews-{{ section.id }} .mvr__distribution-row {
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr) 42px;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__distribution-row strong { text-align: right; }
+  #MirabelReviews-{{ section.id }} .mvr__bar {
+    height: 7px;
+    overflow: hidden;
+    border-radius: 99px;
+    background: #dfe2e6;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__bar > span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--mvr-primary);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__search-label {
+    display: block;
+    margin: 30px 0 9px;
+    font-weight: 700;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__search { position: relative; }
+  #MirabelReviews-{{ section.id }} .mvr__search input {
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 44px 10px 13px;
+    border: 1px solid var(--mvr-border);
+    border-radius: 6px;
+    background: var(--mvr-card);
+    color: var(--mvr-text);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__search input:focus {
+    outline: 2px solid rgba(19, 116, 245, .22);
+    border-color: var(--mvr-primary);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__search svg {
+    position: absolute;
+    top: 50%;
+    right: 13px;
+    width: 21px;
+    height: 21px;
+    transform: translateY(-50%);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__filters {
+    min-width: 0;
+    margin: 26px 0 0;
+    padding: 0;
+    border: 0;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__filters legend {
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__filter-buttons button {
+    min-height: 42px;
+    padding: 8px 11px;
+    border: 1px solid var(--mvr-border);
+    border-radius: 6px;
+    background: var(--mvr-card);
+    color: var(--mvr-text);
+    cursor: pointer;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__filter-buttons button span { color: #a5abb5; }
+  #MirabelReviews-{{ section.id }} .mvr__filter-buttons button:hover,
+  #MirabelReviews-{{ section.id }} .mvr__filter-buttons button.is-active {
+    border-color: var(--mvr-primary);
+    color: var(--mvr-primary);
+    background: var(--mvr-primary-soft);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__filter-buttons button.is-active span { color: var(--mvr-primary); }
+
+  #MirabelReviews-{{ section.id }} .mvr__summary-card {
+    display: flex;
+    gap: 14px;
+    padding: 24px;
+    border-radius: 12px;
+    background: var(--mvr-primary-soft);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__summary-icon {
+    color: var(--mvr-primary);
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__summary-card h3 { margin: 0 0 7px; font-size: 20px; }
+  #MirabelReviews-{{ section.id }} .mvr__summary-card p { margin: 0; line-height: 1.55; }
+  #MirabelReviews-{{ section.id }} .mvr__summary-card small { display: block; margin-top: 13px; color: var(--mvr-muted); }
+
+  #MirabelReviews-{{ section.id }} .mvr__review-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    margin: 28px 0;
+    border: 1px solid var(--mvr-border);
+    border-radius: 6px;
+    background: var(--mvr-card);
+    color: var(--mvr-muted);
+    font-weight: 750;
+    text-decoration: none;
+    transition: border-color .2s ease, color .2s ease;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__review-button:hover {
+    border-color: var(--mvr-primary);
+    color: var(--mvr-primary);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__list-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 30px 0 4px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__list-heading h3 { font-size: 24px; }
+  #MirabelReviews-{{ section.id }} .mvr__list-heading > span { color: var(--mvr-muted); font-size: 13px; }
+
+  #MirabelReviews-{{ section.id }} .mvr-review {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--mvr-border);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-review[hidden] { display: none !important; }
+
+  #MirabelReviews-{{ section.id }} .mvr-review__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-review__top h4 {
+    margin: 0 0 10px;
+    font-size: 19px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-review__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-review__stars {
+    display: inline-flex;
+    letter-spacing: 1px;
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-review__stars span { color: #cfd3d9; }
+  #MirabelReviews-{{ section.id }} .mvr-review__stars span.is-filled { color: var(--mvr-primary); }
+  #MirabelReviews-{{ section.id }} .mvr-review__meta time { color: var(--mvr-muted); }
+
+  #MirabelReviews-{{ section.id }} .mvr-review__verified {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--mvr-success);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-review__verified svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-review h5 {
+    margin: 20px 0 8px;
+    font-size: 18px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-review__text {
+    max-width: 900px;
+    color: var(--mvr-text);
+    line-height: 1.65;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-review__experience {
+    margin: 24px 0 0;
+    color: var(--mvr-muted);
+    font-size: 14px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-review__response {
+    margin-top: 22px;
+    padding: 18px;
+    border-left: 3px solid var(--mvr-primary);
+    border-radius: 0 8px 8px 0;
+    background: var(--mvr-primary-soft);
+    line-height: 1.55;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-review__response > strong { display: block; margin-bottom: 7px; }
+  #MirabelReviews-{{ section.id }} .mvr-review__response p { margin: 0; }
+
+  #MirabelReviews-{{ section.id }} .mvr__empty {
+    margin-top: 24px;
+    padding: 24px;
+    border: 1px dashed var(--mvr-border);
+    border-radius: 10px;
+    color: var(--mvr-muted);
+    text-align: center;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 34px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__pagination:empty { display: none; }
+  #MirabelReviews-{{ section.id }} .mvr__pagination button {
+    min-width: 38px;
+    height: 38px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 99px;
+    background: transparent;
+    color: var(--mvr-text);
+    cursor: pointer;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__pagination button:hover:not(:disabled) { background: var(--mvr-primary-soft); }
+  #MirabelReviews-{{ section.id }} .mvr__pagination button.is-active {
+    background: var(--mvr-primary);
+    color: #fff;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__pagination button:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__chronology {
+    margin: 22px 0 0;
+    color: var(--mvr-muted);
+    text-align: center;
+    font-size: 13px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__about {
+    margin-top: 68px;
+    padding: clamp(28px, 5vw, 52px);
+    border-radius: var(--mvr-radius);
+    background: var(--mvr-primary-soft);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__about > strong {
+    display: block;
+    margin-top: 26px;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr__about p {
+    max-width: 900px;
+    margin: 10px 0 24px;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 900px) {
+    #MirabelReviews-{{ section.id }} .mvr__layout { grid-template-columns: 1fr; }
+    #MirabelReviews-{{ section.id }} .mvr__score-card { position: static; }
+    #MirabelReviews-{{ section.id }} .mvr__distribution { max-width: 500px; margin-inline: auto; }
+  }
+
+  @media (max-width: 680px) {
+    #MirabelReviews-{{ section.id }} .mvr__shell { width: min(calc(100% - 22px), var(--mvr-max-width)); }
+    #MirabelReviews-{{ section.id }} .mvr__brandbar { align-items: flex-start; }
+    #MirabelReviews-{{ section.id }} .mvr__brandbar .mvr__outline-button { min-height: 40px; padding: 8px 10px; font-size: 13px; }
+    #MirabelReviews-{{ section.id }} .mvr__tabs { gap: 20px; overflow-x: auto; }
+    #MirabelReviews-{{ section.id }} .mvr__content { padding-top: 26px; }
+    #MirabelReviews-{{ section.id }} .mvr__intro { align-items: flex-start; flex-direction: column; padding: 24px; }
+    #MirabelReviews-{{ section.id }} .mvr__intro-rating > a { justify-self: start; }
+    #MirabelReviews-{{ section.id }} .mvr__section-title-row { margin-top: 36px; }
+    #MirabelReviews-{{ section.id }} .mvr__notice { padding: 16px; }
+    #MirabelReviews-{{ section.id }} .mvr__score-card { padding: 24px 18px; }
+    #MirabelReviews-{{ section.id }} .mvr-review__top { flex-direction: column; gap: 14px; }
+    #MirabelReviews-{{ section.id }} .mvr__list-heading { align-items: flex-start; flex-direction: column; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #MirabelReviews-{{ section.id }} * { scroll-behavior: auto !important; transition: none !important; }
+  }
+</style>
+
+<script>
+  (() => {
+    const initMirabelReviews = (root) => {
+      if (!root || root.dataset.mvrInitialized === 'true') return;
+      root.dataset.mvrInitialized = 'true';
+
+      const reviews = Array.from(root.querySelectorAll('[data-mvr-review]'));
+      const search = root.querySelector('[data-mvr-search]');
+      const ratingButtons = Array.from(root.querySelectorAll('[data-mvr-rating]'));
+      const pagination = root.querySelector('[data-mvr-pagination]');
+      const emptyState = root.querySelector('[data-mvr-empty]');
+      const resultCount = root.querySelector('[data-mvr-results-count]');
+      const pageSize = Math.max(1, Number(root.dataset.pageSize || 6));
+
+      let currentPage = 1;
+      let activeRating = 'all';
+      let query = '';
+
+      const normalize = (value) => String(value || '')
+        .toLocaleLowerCase('fr')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+
+      const filteredReviews = () => reviews.filter((review) => {
+        const ratingMatch = activeRating === 'all' || review.dataset.rating === activeRating;
+        const searchMatch = !query || normalize(review.textContent).includes(normalize(query));
+        return ratingMatch && searchMatch;
+      });
+
+      const makeButton = (label, options = {}) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = label;
+        if (options.className) button.className = options.className;
+        if (options.disabled) button.disabled = true;
+        if (options.ariaLabel) button.setAttribute('aria-label', options.ariaLabel);
+        if (options.onClick) button.addEventListener('click', options.onClick);
+        return button;
+      };
+
+      const renderPagination = (pages) => {
+        if (!pagination) return;
+        pagination.replaceChildren();
+        if (pages <= 1) return;
+
+        pagination.appendChild(makeButton('‹', {
+          disabled: currentPage === 1,
+          ariaLabel: 'Page précédente',
+          onClick: () => {
+            currentPage -= 1;
+            render();
+            root.querySelector('[data-mvr-list]')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }));
+
+        const visiblePages = [];
+        for (let page = 1; page <= pages; page += 1) {
+          if (page === 1 || page === pages || Math.abs(page - currentPage) <= 1) visiblePages.push(page);
+        }
+
+        let previousPage = 0;
+        visiblePages.forEach((page) => {
+          if (page - previousPage > 1) {
+            const ellipsis = document.createElement('span');
+            ellipsis.textContent = '…';
+            ellipsis.setAttribute('aria-hidden', 'true');
+            pagination.appendChild(ellipsis);
+          }
+
+          pagination.appendChild(makeButton(String(page), {
+            className: page === currentPage ? 'is-active' : '',
+            ariaLabel: `Page ${page}`,
+            onClick: () => {
+              currentPage = page;
+              render();
+              root.querySelector('[data-mvr-list]')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }));
+          previousPage = page;
+        });
+
+        pagination.appendChild(makeButton('›', {
+          disabled: currentPage === pages,
+          ariaLabel: 'Page suivante',
+          onClick: () => {
+            currentPage += 1;
+            render();
+            root.querySelector('[data-mvr-list]')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }));
+      };
+
+      const render = () => {
+        const matches = filteredReviews();
+        const pages = Math.max(1, Math.ceil(matches.length / pageSize));
+        currentPage = Math.min(currentPage, pages);
+        const start = (currentPage - 1) * pageSize;
+        const visible = new Set(matches.slice(start, start + pageSize));
+
+        reviews.forEach((review) => {
+          review.hidden = !visible.has(review);
+        });
+
+        if (emptyState) emptyState.hidden = matches.length !== 0;
+        if (resultCount) resultCount.textContent = `${matches.length} avis ${matches.length > 1 ? 'affichés' : 'affiché'}`;
+        renderPagination(matches.length ? pages : 0);
+      };
+
+      if (search) {
+        search.addEventListener('input', (event) => {
+          query = event.target.value.trim();
+          currentPage = 1;
+          render();
+        });
+      }
+
+      ratingButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          activeRating = button.dataset.mvrRating || 'all';
+          currentPage = 1;
+          ratingButtons.forEach((item) => {
+            const isActive = item === button;
+            item.classList.toggle('is-active', isActive);
+            item.setAttribute('aria-pressed', String(isActive));
+          });
+          render();
+        });
+      });
+
+      root.querySelectorAll('a[href^="#mvr-"], a[href^="#mirabel-reviews-list-"]').forEach((anchor) => {
+        anchor.addEventListener('click', (event) => {
+          const target = root.querySelector(anchor.getAttribute('href'));
+          if (!target) return;
+          event.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      render();
+    };
+
+    document.querySelectorAll('[data-mvr-root]').forEach(initMirabelReviews);
+
+    document.addEventListener('shopify:section:load', (event) => {
+      const root = event.target.matches?.('[data-mvr-root]')
+        ? event.target
+        : event.target.querySelector?.('[data-mvr-root]');
+      initMirabelReviews(root);
+    });
+  })();
+</script>
 
 {% schema %}
 {
   "name": "Avis clients Mirabel",
+  "tag": "section",
+  "class": "section-mirabel-reviews",
+  "max_blocks": 50,
   "settings": [
     {
-      "type": "text",
-      "id": "title",
-      "label": "Titre de la section",
-      "default": "Ce que dit notre communauté"
+      "type": "header",
+      "content": "Contenu principal"
     },
     {
       "type": "text",
-      "id": "overall_rating",
-      "label": "Note globale (exemple : 4.9)",
-      "default": "4.9"
+      "id": "brand_name",
+      "label": "Nom de la marque",
+      "default": "Mirabel"
     },
     {
       "type": "text",
-      "id": "total_reviews",
-      "label": "Nombre total d'avis (exemple : 1 265)",
-      "default": "1 265"
+      "id": "product_name",
+      "label": "Nom du produit",
+      "default": "DETOX SUCRE"
     },
     {
-      "type": "textarea",
-      "id": "summary_text",
-      "label": "Résumé des avis (optionnel)",
-      "default": "Les clientes soulignent une nette diminution des envies de sucre et du grignotage, une composition naturelle appréciée, et des gélules faciles à intégrer au quotidien."
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Petit titre",
+      "default": "Avis clients Mirabel"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Avis sur DETOX SUCRE"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Accroche",
+      "default": "Moins de sucre. Plus de contrôle, plus d'énergie."
+    },
+    {
+      "type": "text",
+      "id": "reviews_heading",
+      "label": "Titre de la liste",
+      "default": "Avis pour DETOX SUCRE"
+    },
+    {
+      "type": "text",
+      "id": "reviews_period",
+      "label": "Texte après le nombre d'avis",
+      "default": "publiés par nos clientes"
+    },
+    {
+      "type": "header",
+      "content": "Statistiques"
+    },
+    {
+      "type": "select",
+      "id": "stats_mode",
+      "label": "Calcul des statistiques",
+      "options": [
+        { "value": "blocks", "label": "Calculer depuis les avis affichés" },
+        { "value": "manual", "label": "Utiliser des valeurs manuelles" }
+      ],
+      "default": "blocks"
+    },
+    {
+      "type": "range",
+      "id": "manual_rating",
+      "label": "Note moyenne manuelle",
+      "min": 1,
+      "max": 5,
+      "step": 0.1,
+      "default": 4.9
+    },
+    {
+      "type": "number",
+      "id": "manual_total",
+      "label": "Nombre total manuel",
+      "default": 7
+    },
+    {
+      "type": "range",
+      "id": "manual_5_percent",
+      "label": "Pourcentage 5 étoiles",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 86
+    },
+    {
+      "type": "range",
+      "id": "manual_4_percent",
+      "label": "Pourcentage 4 étoiles",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "manual_3_percent",
+      "label": "Pourcentage 3 étoiles",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "manual_2_percent",
+      "label": "Pourcentage 2 étoiles",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "manual_1_percent",
+      "label": "Pourcentage 1 étoile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Transparence"
     },
     {
       "type": "checkbox",
-      "id": "show_cta",
-      "label": "Afficher un bouton d'appel à l'action",
+      "id": "show_transparency_notice",
+      "label": "Afficher l'encadré de transparence",
       "default": true
     },
     {
       "type": "text",
-      "id": "cta_label",
-      "label": "Texte du bouton",
-      "default": "Découvrir Détox Sucre"
+      "id": "transparency_title",
+      "label": "Titre de l'encadré",
+      "default": "Des avis transparents"
+    },
+    {
+      "type": "textarea",
+      "id": "transparency_text",
+      "label": "Texte de l'encadré",
+      "default": "Les avis sont publiés dans leur intégralité. Le badge « Acheteur vérifié » est réservé aux commandes dont l'achat a été confirmé."
+    },
+    {
+      "type": "paragraph",
+      "content": "N'activez le badge Acheteur vérifié que pour une transaction réellement contrôlée. Cette section ne remplace pas un service tiers de collecte et de modération."
+    },
+    {
+      "type": "text",
+      "id": "verified_label",
+      "label": "Libellé du badge",
+      "default": "Acheteur vérifié"
+    },
+    {
+      "type": "header",
+      "content": "Résumé"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_summary",
+      "label": "Afficher le résumé",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "summary_title",
+      "label": "Titre du résumé",
+      "default": "Résumé des avis"
+    },
+    {
+      "type": "textarea",
+      "id": "summary_text",
+      "label": "Texte du résumé",
+      "default": "Les clientes parlent surtout d'une diminution des envies de sucre et du grignotage, d'une prise facile au quotidien et d'une sensation de meilleur contrôle."
+    },
+    {
+      "type": "text",
+      "id": "summary_note",
+      "label": "Note sous le résumé",
+      "default": "Résumé basé sur les retours affichés dans cette section."
+    },
+    {
+      "type": "header",
+      "content": "Fonctions"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tabs",
+      "label": "Afficher les onglets",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Afficher la recherche",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating_filters",
+      "label": "Afficher les filtres par note",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "reviews_per_page",
+      "label": "Avis par page",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "show_review_button",
+      "label": "Afficher le bouton Déposer un avis",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "review_button_label",
+      "label": "Texte du bouton avis",
+      "default": "Déposer un avis"
     },
     {
       "type": "url",
-      "id": "cta_link",
-      "label": "Lien du bouton"
+      "id": "review_form_link",
+      "label": "Lien du formulaire d'avis"
+    },
+    {
+      "type": "header",
+      "content": "Produit et à propos"
+    },
+    {
+      "type": "url",
+      "id": "product_link",
+      "label": "Lien vers DETOX SUCRE"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_button",
+      "label": "Afficher le bouton produit en haut",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "product_button_label",
+      "label": "Texte du bouton produit",
+      "default": "Découvrir DETOX SUCRE"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_about",
+      "label": "Afficher la partie À propos",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "about_text",
+      "label": "Texte À propos",
+      "default": "DETOX SUCRE est une formule en gélules pensée pour accompagner une routine visant à mieux maîtriser les envies de sucre et le grignotage."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_about_button",
+      "label": "Afficher le bouton À propos",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "about_button_label",
+      "label": "Texte du bouton À propos",
+      "default": "Voir le produit"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs et dimensions"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Couleur principale",
+      "default": "#1374f5"
+    },
+    {
+      "type": "color",
+      "id": "primary_soft_color",
+      "label": "Fond coloré léger",
+      "default": "#f4f7fb"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fond de la section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Fond des cartes",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#111318"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Texte secondaire",
+      "default": "#626977"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Bordures",
+      "default": "#dfe2e7"
+    },
+    {
+      "type": "color",
+      "id": "success_color",
+      "label": "Badge vérifié",
+      "default": "#18864b"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "Arrondi des cartes",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale",
+      "min": 900,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1280
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haute",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge basse",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
     }
   ],
   "blocks": [
     {
       "type": "review",
-      "name": "Avis",
+      "name": "Avis client",
       "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Auteur",
+          "default": "Cliente Mirabel"
+        },
         {
           "type": "range",
           "id": "rating",
@@ -210,6 +1476,17 @@
           "max": 5,
           "step": 1,
           "default": 5
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date de publication",
+          "default": "30/05/26"
+        },
+        {
+          "type": "text",
+          "id": "experience_date",
+          "label": "Date d'expérience"
         },
         {
           "type": "text",
@@ -223,16 +1500,15 @@
           "label": "Texte de l'avis"
         },
         {
-          "type": "text",
-          "id": "author",
-          "label": "Auteur",
-          "default": "Cliente Mirabel"
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Acheteur vérifié",
+          "default": false
         },
         {
-          "type": "text",
-          "id": "date",
-          "label": "Date (format libre)",
-          "default": "30/05/26"
+          "type": "richtext",
+          "id": "response",
+          "label": "Réponse de Mirabel"
         }
       ]
     }
@@ -244,71 +1520,78 @@
         {
           "type": "review",
           "settings": {
+            "author": "Sylvie A.",
             "rating": 5,
+            "date": "30/05/26",
             "headline": "Je grignote beaucoup moins",
             "text": "Je prenais quelque chose de sucré tous les après-midi. Depuis que je fais cette cure, ces envies sont beaucoup moins fréquentes. Je me sens plus en contrôle.",
-            "author": "Sylvie A.",
-            "date": "30/05/26"
+            "verified": true
           }
         },
         {
           "type": "review",
           "settings": {
+            "author": "Sophie B.",
             "rating": 5,
+            "date": "26/05/26",
             "headline": "Très satisfaite",
             "text": "Je cherchais surtout à limiter mes envies de sucre. Après quelques semaines, je remarque une vraie différence. Les gélules sont faciles à prendre.",
-            "author": "Sophie B.",
-            "date": "26/05/26"
+            "verified": true
           }
         },
         {
           "type": "review",
           "settings": {
+            "author": "Céline H.",
             "rating": 4,
+            "date": "25/05/26",
             "headline": "",
             "text": "",
-            "author": "Céline H.",
-            "date": "25/05/26"
+            "verified": true
           }
         },
         {
           "type": "review",
           "settings": {
+            "author": "Chantal M.",
             "rating": 5,
+            "date": "23/05/26",
             "headline": "Bonne surprise",
             "text": "Je ne m'attendais pas à grand-chose mais je grignote clairement moins entre les repas. Je vais recommencer une cure.",
-            "author": "Chantal M.",
-            "date": "23/05/26"
+            "verified": true
           }
         },
         {
           "type": "review",
           "settings": {
+            "author": "Emeline L.",
             "rating": 5,
+            "date": "22/05/26",
             "headline": "Très bon produit",
             "text": "J'apprécie la composition et le fait que ce soit une formule naturelle. Je me sens moins attirée par les produits sucrés qu'avant.",
-            "author": "Emeline L.",
-            "date": "22/05/26"
+            "verified": true
           }
         },
         {
           "type": "review",
           "settings": {
+            "author": "Evelyne E.",
             "rating": 5,
+            "date": "30/05/26",
             "headline": "Moins de craquages",
             "text": "Le soir était mon moment le plus difficile. Je craque beaucoup moins devant la télévision. Ça fait vraiment du bien.",
-            "author": "Evelyne E.",
-            "date": "30/05/26"
+            "verified": true
           }
         },
         {
           "type": "review",
           "settings": {
-            "rating": 5,
-            "headline": "Efficace sur la glycémie",
-            "text": "Très bien, efficace sur ma glycémie et mon taux de cholestérol, et bien supportée. Je recommande la gélule Détox Sucre.",
             "author": "Marie-Odile P.",
-            "date": "30/05/26"
+            "rating": 5,
+            "date": "30/05/26",
+            "headline": "Très bien, efficace sur ma glycémie",
+            "text": "Très bien, efficace sur ma glycémie et mon taux de cholestérol, et bien supportée.",
+            "verified": true
           }
         }
       ]
