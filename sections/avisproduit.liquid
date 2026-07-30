@@ -41,6 +41,12 @@
     --title-bottom-space: {{ section.settings.title_bottom_space }}px;
     --summary-bottom-space: {{ section.settings.summary_bottom_space }}px;
     --review-padding-y: {{ section.settings.review_padding_y }}px;
+
+    --footer-bg: {{ section.settings.footer_background_color }};
+    --footer-text: {{ section.settings.footer_text_color }};
+    --footer-muted: {{ section.settings.footer_muted_color }};
+    --footer-icon-bg: {{ section.settings.footer_icon_background }};
+    --footer-icon-color: {{ section.settings.footer_icon_color }};
   "
 >
   <div class="product-reviews__inner">
@@ -77,7 +83,7 @@
       {% for block in section.blocks %}
         {% if block.type == 'review' %}
           <article class="product-reviews__item" {{ block.shopify_attributes }}>
-            
+
             <div class="product-reviews__author">
               {% if block.settings.name != blank %}
                 <div class="product-reviews__name">
@@ -152,6 +158,74 @@
     {% endif %}
 
   </div>
+
+  {% if section.settings.show_footer %}
+    <div class="product-reviews__footer">
+      <div class="product-reviews__footer-inner">
+
+        <div class="product-reviews__footer-brand">
+          {% if section.settings.footer_logo != blank %}
+            <img
+              class="product-reviews__footer-logo-img"
+              src="{{ section.settings.footer_logo | image_url: width: 80 }}"
+              alt="{{ section.settings.footer_brand_name | escape }}"
+              width="32"
+              height="32"
+              loading="lazy"
+            >
+          {% else %}
+            <span class="product-reviews__footer-logo-fallback" aria-hidden="true">
+              {{ section.settings.footer_brand_name | slice: 0, 1 }}
+            </span>
+          {% endif %}
+
+          {% if section.settings.footer_brand_name != blank %}
+            <span class="product-reviews__footer-brand-name">
+              {{ section.settings.footer_brand_name }}
+            </span>
+          {% endif %}
+        </div>
+
+        <div class="product-reviews__footer-social">
+          {% if section.settings.footer_facebook_url != blank %}
+            <a class="product-reviews__footer-icon" href="{{ section.settings.footer_facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.66V3.6C15.87 3.5 14.9 3.4 13.8 3.4c-2.3 0-3.9 1.4-3.9 4v2.5H7.2V13h2.7v8h3.6z"/></svg>
+            </a>
+          {% endif %}
+
+          {% if section.settings.footer_instagram_url != blank %}
+            <a class="product-reviews__footer-icon" href="{{ section.settings.footer_instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 8.4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2zm0 5.94a2.34 2.34 0 1 1 0-4.68 2.34 2.34 0 0 1 0 4.68zM16.9 8.26a.84.84 0 1 1-1.68 0 .84.84 0 0 1 1.68 0zM21 7.6c-.06-1.2-.33-2.26-1.2-3.13C18.93 3.6 17.87 3.33 16.67 3.27 15.44 3.2 8.56 3.2 7.33 3.27 6.13 3.33 5.07 3.6 4.2 4.47 3.33 5.34 3.06 6.4 3 7.6 2.93 8.83 2.93 15.17 3 16.4c.06 1.2.33 2.26 1.2 3.13.87.87 1.93 1.14 3.13 1.2 1.23.07 8.11.07 9.34 0 1.2-.06 2.26-.33 3.13-1.2.87-.87 1.14-1.93 1.2-3.13.07-1.23.07-7.57 0-8.8zm-2.43 10.7c-.26.65-.76 1.15-1.41 1.41-.98.39-3.3.3-4.16.3s-3.19.08-4.16-.3a2.53 2.53 0 0 1-1.41-1.41c-.39-.98-.3-3.3-.3-4.16s-.08-3.19.3-4.16c.26-.65.76-1.15 1.41-1.41.97-.39 3.3-.3 4.16-.3s3.19-.08 4.16.3c.65.26 1.15.76 1.41 1.41.39.98.3 3.3.3 4.16s.09 3.19-.3 4.16z"/></svg>
+            </a>
+          {% endif %}
+
+          {% if section.settings.footer_tiktok_url != blank %}
+            <a class="product-reviews__footer-icon" href="{{ section.settings.footer_tiktok_url }}" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16.6 5.82c-.9-.98-1.4-2.26-1.4-3.62h-3.03v13.4c0 1.5-1.22 2.72-2.72 2.72a2.72 2.72 0 0 1 0-5.44c.28 0 .55.04.8.12V9.9a5.75 5.75 0 0 0-.8-.06 5.75 5.75 0 1 0 5.75 5.75V9.2a7.3 7.3 0 0 0 4.27 1.36V7.53c-1.03 0-2.03-.36-2.87-.99z"/></svg>
+            </a>
+          {% endif %}
+
+          {% if section.settings.footer_linkedin_url != blank %}
+            <a class="product-reviews__footer-icon" href="{{ section.settings.footer_linkedin_url }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 4a1.67 1.67 0 1 0 0 3.34A1.67 1.67 0 0 0 5.5 4zM20 13.36c0-3.1-1.66-4.55-3.87-4.55-1.78 0-2.58.98-3.02 1.66V8.5H10.2c.04.83 0 11.5 0 11.5h2.9v-6.42c0-.34.02-.68.12-.93.28-.68.9-1.4 1.96-1.4 1.38 0 1.94 1.06 1.94 2.6V20H20v-6.64z"/></svg>
+            </a>
+          {% endif %}
+        </div>
+
+        {% if section.settings.footer_cookie_text != blank %}
+          <a
+            class="product-reviews__footer-cookie"
+            href="{{ section.settings.footer_cookie_url | default: '#' }}"
+            {% if section.settings.footer_cookie_opens_preferences %}data-cookie-preferences="true"{% endif %}
+          >
+            {{ section.settings.footer_cookie_text }}
+          </a>
+        {% endif %}
+
+      </div>
+    </div>
+  {% endif %}
+
 </section>
 
 <style>
@@ -349,6 +423,92 @@
     color: var(--muted-color);
   }
 
+  /* ---------- Footer générique ---------- */
+
+  .section-{{ section.id }} .product-reviews__footer {
+    width: 100%;
+    background: var(--footer-bg);
+  }
+
+  .section-{{ section.id }} .product-reviews__footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 28px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .section-{{ section.id }} .product-reviews__footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-{{ section.id }} .product-reviews__footer-logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+
+  .section-{{ section.id }} .product-reviews__footer-logo-fallback {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: var(--footer-icon-bg);
+    color: var(--footer-icon-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
+  .section-{{ section.id }} .product-reviews__footer-brand-name {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.2;
+    color: var(--footer-text);
+  }
+
+  .section-{{ section.id }} .product-reviews__footer-social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-{{ section.id }} .product-reviews__footer-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: var(--footer-icon-bg);
+    color: var(--footer-icon-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .section-{{ section.id }} .product-reviews__footer-icon:hover {
+    opacity: 0.8;
+  }
+
+  .section-{{ section.id }} .product-reviews__footer-cookie {
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    line-height: 1.2;
+    color: var(--footer-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
   @media screen and (max-width: 989px) {
     .section-{{ section.id }} .product-reviews__inner {
       padding: var(--padding-top-mobile) 24px var(--padding-bottom-mobile);
@@ -399,6 +559,12 @@
       gap: 16px;
       margin-top: 38px;
     }
+
+    .section-{{ section.id }} .product-reviews__footer-inner {
+      padding: 24px;
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   @media screen and (max-width: 749px) {
@@ -422,6 +588,11 @@
 
     .section-{{ section.id }} .product-reviews__date {
       align-self: flex-start;
+    }
+
+    .section-{{ section.id }} .product-reviews__footer-inner {
+      flex-direction: column;
+      gap: 16px;
     }
   }
 </style>
@@ -723,6 +894,95 @@
       "step": 2,
       "unit": "px",
       "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Footer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_footer",
+      "label": "Afficher le footer",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Logo (optionnel)"
+    },
+    {
+      "type": "text",
+      "id": "footer_brand_name",
+      "label": "Nom de marque",
+      "default": "Votre Marque"
+    },
+    {
+      "type": "url",
+      "id": "footer_facebook_url",
+      "label": "Lien Facebook"
+    },
+    {
+      "type": "url",
+      "id": "footer_instagram_url",
+      "label": "Lien Instagram"
+    },
+    {
+      "type": "url",
+      "id": "footer_tiktok_url",
+      "label": "Lien TikTok"
+    },
+    {
+      "type": "url",
+      "id": "footer_linkedin_url",
+      "label": "Lien LinkedIn"
+    },
+    {
+      "type": "text",
+      "id": "footer_cookie_text",
+      "label": "Texte lien cookies",
+      "default": "Gestion des cookies"
+    },
+    {
+      "type": "url",
+      "id": "footer_cookie_url",
+      "label": "Lien cookies (si pas de gestionnaire de préférences)"
+    },
+    {
+      "type": "checkbox",
+      "id": "footer_cookie_opens_preferences",
+      "label": "Ouvrir le gestionnaire de préférences cookies au clic",
+      "info": "Ajoute l'attribut data-cookie-preferences=\"true\", à brancher sur votre outil de consentement (Axeptio, Didomi, etc.)",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "footer_background_color",
+      "label": "Fond footer",
+      "default": "#0B0D17"
+    },
+    {
+      "type": "color",
+      "id": "footer_text_color",
+      "label": "Texte footer",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "footer_muted_color",
+      "label": "Texte secondaire footer",
+      "default": "#9CA3AF"
+    },
+    {
+      "type": "color",
+      "id": "footer_icon_background",
+      "label": "Fond icônes",
+      "default": "#3B82F6"
+    },
+    {
+      "type": "color",
+      "id": "footer_icon_color",
+      "label": "Couleur icônes",
+      "default": "#FFFFFF"
     }
   ],
   "blocks": [
