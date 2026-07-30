@@ -1902,7 +1902,21 @@
         "padding_top_desktop": 42,
         "padding_bottom_desktop": 40,
         "padding_top_mobile": 26,
-        "padding_bottom_mobile": 26
+        "padding_bottom_mobile": 26,
+        "show_footer": false,
+        "footer_brand_name": "Votre Marque",
+        "footer_facebook_url": "",
+        "footer_instagram_url": "",
+        "footer_tiktok_url": "",
+        "footer_linkedin_url": "",
+        "footer_cookie_text": "Gestion des cookies",
+        "footer_cookie_url": "",
+        "footer_cookie_opens_preferences": false,
+        "footer_background_color": "#0b0d17",
+        "footer_text_color": "#ffffff",
+        "footer_muted_color": "#9ca3af",
+        "footer_icon_background": "#3b82f6",
+        "footer_icon_color": "#ffffff"
       }
     },
     "rich_text_jm8eFe": {
