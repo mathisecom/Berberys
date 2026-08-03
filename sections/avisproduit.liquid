@@ -52,10 +52,17 @@
   <div class="product-reviews__inner">
 
     {% if section.settings.title != blank %}
-      <h2 class="product-reviews__title">
-        {{ section.settings.title }}
-      </h2>
+  <div class="product-reviews__title-wrapper">
+    {% if section.settings.logo != blank %}
+      <a href="{{ section.settings.logo_url }}" target="_blank">
+        <img src="{{ section.settings.logo | image_url: width: 120 }}" alt="Logo" class="product-reviews__logo">
+      </a>
     {% endif %}
+    <h2 class="product-reviews__title">
+      {{ section.settings.title }}
+    </h2>
+  </div>
+{% endif %}
 
     <div class="product-reviews__summary">
       <div class="product-reviews__rating-line">
