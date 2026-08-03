@@ -1257,6 +1257,9 @@
     },
     "researchpopup_rtnacP": {
       "type": "researchpopup",
+      "custom_css": [
+        ".researchpopup_rtnacP a[href] {text-decoration: underline !important; cursor: pointer;}"
+      ],
       "name": "Research popups",
       "settings": {
         "question_1": "Consultez les études scientifiques utilisées",
