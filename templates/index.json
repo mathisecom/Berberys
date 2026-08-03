@@ -1258,7 +1258,7 @@
     "researchpopup_rtnacP": {
       "type": "researchpopup",
       "custom_css": [
-        ".researchpopup_rtnacP a[href] {text-decoration: underline !important; cursor: pointer;}"
+        "a[href*=\"pubmed.ncbi.nlm.nih.gov\"] {text-decoration: underline !important;}"
       ],
       "name": "Research popups",
       "settings": {
