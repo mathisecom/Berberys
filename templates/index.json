@@ -1882,6 +1882,13 @@
       "name": "Avis produit custom",
       "settings": {
         "title": "Découvrez leur expérience avec Mirabel",
+        "show_verified_reviews": true,
+        "verified_reviews_logo": "shopify://shop_images/avisverifies.png",
+        "verified_reviews_logo_alt": "Avis Vérifiés",
+        "verified_reviews_logo_width": 100,
+        "verified_reviews_url": "",
+        "verified_reviews_link_text": "Voir tous les avis sur ce site",
+        "verified_reviews_new_tab": true,
         "rating": "4.8",
         "stars": "★★★★★",
         "based_text": "Basé sur 3,380 avis",
