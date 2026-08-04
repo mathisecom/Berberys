@@ -2049,91 +2049,6 @@
         "lazy": true
       }
     },
-    "testimonials_fekFkB": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial_43bMHi": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 4,
-            "author": "Sophie M.",
-            "title": "Je me sens plus légère",
-            "content": "<p>Après quelques semaines, je me sens plus légère et j’ai beaucoup moins envie de grignoter dans la journée. Le produit est facile à intégrer dans ma routine.</p>"
-          }
-        },
-        "testimonial_dVmE74": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Claire D.",
-            "title": "Je recommande",
-            "content": "<p>J’ai surtout remarqué une meilleure stabilité dans mon énergie. Moins de coups de fatigue et moins de fringales après les repas.</p>"
-          }
-        },
-        "testimonial_bR8Ppm": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 4,
-            "author": "Nathalie R.",
-            "title": "Très satisfaite",
-            "content": "<p>Très satisfaite. La composition est rassurante, le packaging est propre et j’apprécie que ce soit fabriqué en France.</p>"
-          }
-        },
-        "testimonial_ECqyMy": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 4,
-            "author": "Marine L.",
-            "title": "Mirabel m’aide à rester régulière",
-            "content": "<p>Je cherchais un complément naturel pour accompagner mon rééquilibrage alimentaire. Mirabel m’aide à rester régulière et motivée.</p>"
-          }
-        },
-        "testimonial_aNzgEM": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 4,
-            "author": "Isabelle T.",
-            "title": "Bon produit",
-            "content": "<p>Bon produit, agréable à prendre au quotidien. Je sens une vraie différence sur mes envies de sucre et mon confort après les repas.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_43bMHi",
-        "testimonial_dVmE74",
-        "testimonial_bR8Ppm",
-        "testimonial_ECqyMy",
-        "testimonial_aNzgEM"
-      ],
-      "disabled": true,
-      "name": "Testimonials",
-      "settings": {
-        "full_width": true,
-        "stack_testimonials": false,
-        "subheading": "",
-        "title": "",
-        "content": "",
-        "link_url": "",
-        "link_text": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "testimonial_card_background": "",
-        "testimonial_card_text_color": ""
-      }
-    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -2251,7 +2166,6 @@
     "avisproduit_j8FVDL",
     "rich_text_jm8eFe",
     "logoscrooll_zK3aBh",
-    "testimonials_fekFkB",
     "faq"
   ]
 }
