@@ -220,7 +220,7 @@
         </div>
 
         {% if section.settings.footer_cookie_text != blank %}
-          
+          <a
             class="product-reviews__footer-cookie"
             href="{{ section.settings.footer_cookie_url | default: '#' }}"
             {% if section.settings.footer_cookie_opens_preferences %}data-cookie-preferences="true"{% endif %}
@@ -602,20 +602,6 @@
       gap: 16px;
     }
   }
-
-  {% if page.handle == 'avis-mirabel' %}
-  /* ==========================================================
-     Masque le footer GLOBAL du thème, uniquement sur cette page
-     ⚠️ Adaptez le(s) sélecteur(s) ci-dessous à votre thème réel.
-     Inspectez le footer sur avis-mirabel (clic droit > Inspecter)
-     et remplacez les classes/ID génériques si besoin.
-     ========================================================== */
-  #shopify-section-sections--footer-group,
-  .footer,
-  .site-footer {
-    display: none !important;
-  }
-  {% endif %}
 </style>
 
 {% schema %}
