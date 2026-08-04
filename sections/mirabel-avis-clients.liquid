@@ -25,6 +25,16 @@
   </style>
 {%- endif -%}
 
+{%- if section.settings.hide_theme_footer -%}
+  <style>
+    /* Masque toutes les sections du groupe footer du thème
+       (footer, bandeau "text-with-icons", etc.) sur cette page uniquement. */
+    .shopify-section-group-footer-group {
+      display: none !important;
+    }
+  </style>
+{%- endif -%}
+
 {%- liquid
   assign review_count = 0
   assign rating_sum = 0
@@ -1310,6 +1320,16 @@
     {
       "type": "paragraph",
       "content": "Cette option masque le menu, le logo, le panier et la barre d’annonce du thème uniquement sur la page où cette section est ajoutée."
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_theme_footer",
+      "label": "Masquer le footer du thème sur cette page",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "Cette option masque le footer complet du thème (bloc newsletter, liens légaux, moyens de paiement, ainsi que le bandeau « Livraison offerte / Paiement sécurisé / Service client ») uniquement sur la page où cette section est ajoutée."
     },
     {
       "type": "checkbox",
