@@ -47,24 +47,36 @@
     --footer-muted: {{ section.settings.footer_muted_color }};
     --footer-icon-bg: {{ section.settings.footer_icon_background }};
     --footer-icon-color: {{ section.settings.footer_icon_color }};
+
+    --rating-logo-height: {{ section.settings.rating_logo_height }}px;
   "
 >
   <div class="product-reviews__inner">
 
     {% if section.settings.title != blank %}
-  <div class="product-reviews__title-wrapper">
-    {% if section.settings.logo != blank %}
-      <a href="{{ section.settings.logo_url }}" target="_blank">
-        <img src="{{ section.settings.logo | image_url: width: 120 }}" alt="Logo" class="product-reviews__logo">
-      </a>
+      <div class="product-reviews__title-wrapper">
+        <h2 class="product-reviews__title">
+          {{ section.settings.title }}
+        </h2>
+      </div>
     {% endif %}
-    <h2 class="product-reviews__title">
-      {{ section.settings.title }}
-    </h2>
-  </div>
-{% endif %}
 
     <div class="product-reviews__summary">
+
+      {% if section.settings.rating_logo != blank %}
+        
+          href="{{ section.settings.rating_logo_url | default: '#' }}"
+          class="product-reviews__rating-logo"
+          {% if section.settings.rating_logo_url != blank %}target="_blank" rel="noopener"{% endif %}
+        >
+          <img
+            src="{{ section.settings.rating_logo | image_url: width: 300 }}"
+            alt="{{ section.settings.title | escape }}"
+            loading="lazy"
+          >
+        </a>
+      {% endif %}
+
       <div class="product-reviews__rating-line">
         {% if section.settings.rating != blank %}
           <span class="product-reviews__rating">
@@ -220,7 +232,7 @@
         </div>
 
         {% if section.settings.footer_cookie_text != blank %}
-          <a
+          
             class="product-reviews__footer-cookie"
             href="{{ section.settings.footer_cookie_url | default: '#' }}"
             {% if section.settings.footer_cookie_opens_preferences %}data-cookie-preferences="true"{% endif %}
@@ -262,6 +274,18 @@
   .section-{{ section.id }} .product-reviews__summary {
     text-align: center;
     margin-bottom: var(--summary-bottom-space);
+  }
+
+  .section-{{ section.id }} .product-reviews__rating-logo {
+    display: inline-block;
+    margin-bottom: 18px;
+  }
+
+  .section-{{ section.id }} .product-reviews__rating-logo img {
+    display: block;
+    height: var(--rating-logo-height);
+    width: auto;
+    margin: 0 auto;
   }
 
   .section-{{ section.id }} .product-reviews__rating-line {
@@ -647,6 +671,31 @@
       "id": "pagination_pages",
       "label": "Pages pagination",
       "default": "1,2,3,4,5"
+    },
+    {
+      "type": "header",
+      "content": "Logo au-dessus de la note"
+    },
+    {
+      "type": "image_picker",
+      "id": "rating_logo",
+      "label": "Logo"
+    },
+    {
+      "type": "url",
+      "id": "rating_logo_url",
+      "label": "Lien du logo",
+      "info": "Ouvre dans un nouvel onglet si renseigné"
+    },
+    {
+      "type": "range",
+      "id": "rating_logo_height",
+      "label": "Hauteur du logo",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 32
     },
     {
       "type": "header",
