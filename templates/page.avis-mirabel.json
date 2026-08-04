@@ -189,7 +189,7 @@
         "certification_link": "https://certification.afnor.org/services/nf-service-avis-en-ligne",
         "certification_control_text": "Avis soumis à un contrôle.",
         "transparency_charter_label": "Voir notre charte de transparence",
-        "transparency_charter_url": "",
+        "transparency_charter_url": "https://fr.avis-verifies.com/charte-transparence/",
         "show_custom_footer": true,
         "footer_logo_alt": "Avis Vérifiés",
         "footer_logo_link": "",
