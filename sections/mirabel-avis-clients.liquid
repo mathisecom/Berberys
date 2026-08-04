@@ -169,6 +169,12 @@
     --mvr-max-width: {{ section.settings.max_width }}px;
     --mvr-pad-top: {{ section.settings.padding_top }}px;
     --mvr-pad-bottom: {{ section.settings.padding_bottom }}px;
+    --mvr-faq-bg: {{ section.settings.faq_background_color }};
+    --mvr-faq-panel: {{ section.settings.faq_panel_color }};
+    --mvr-faq-text: {{ section.settings.faq_text_color }};
+    --mvr-footer-bg: {{ section.settings.footer_background_color }};
+    --mvr-footer-text: {{ section.settings.footer_text_color }};
+    --mvr-footer-accent: {{ section.settings.footer_accent_color }};
   "
 >
   {%- if section.settings.show_top_header -%}
@@ -448,13 +454,191 @@
       {%- endif -%}
     </div>
   </div>
+
+  {%- if section.settings.show_faq_area -%}
+    <section class="mvr-trust" aria-labelledby="MvrFaqTitle-{{ section.id }}">
+      <div class="mvr-trust__inner">
+        {%- if section.settings.faq_badge != blank -%}
+          <div class="mvr-trust__badge" aria-hidden="true">
+            {{ section.settings.faq_badge
+              | image_url: width: 180
+              | image_tag:
+                class: 'mvr-trust__badge-image',
+                widths: '80, 120, 180',
+                sizes: '72px',
+                loading: 'lazy'
+            }}
+          </div>
+        {%- else -%}
+          <div class="mvr-trust__badge mvr-trust__badge--fallback" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><path d="M50 2 61 18l19-7 2 20 18 9-13 15 9 18-20 4-6 19-17-11-16 12-8-19-20-2 8-18L2 44l17-10 1-20 19 6L50 2Z"/><path d="m50 26 6 13 14 2-10 10 3 14-13-7-13 7 3-14-10-10 14-2 6-13Z"/></svg>
+          </div>
+        {%- endif -%}
+
+        <div class="mvr-trust__faq">
+          <h2 id="MvrFaqTitle-{{ section.id }}">{{ section.settings.faq_title }}</h2>
+
+          <div class="mvr-accordion">
+            {%- assign faq_count = 0 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'faq' -%}
+                {%- assign faq_count = faq_count | plus: 1 -%}
+                <details
+                  class="mvr-accordion__item"
+                  name="MvrFaq-{{ section.id }}"
+                  {% if section.settings.open_first_faq and faq_count == 1 %}open{% endif %}
+                  {{ block.shopify_attributes }}
+                >
+                  <summary>
+                    <span class="mvr-accordion__icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20"><path d="m5 8 5 5 5-5"/></svg>
+                    </span>
+                    <span>{{ block.settings.question }}</span>
+                  </summary>
+                  {%- if block.settings.answer != blank -%}
+                    <div class="mvr-accordion__answer">{{ block.settings.answer }}</div>
+                  {%- endif -%}
+                </details>
+              {%- endif -%}
+            {%- endfor -%}
+
+            {%- if faq_count == 0 -%}
+              <details class="mvr-accordion__item" name="MvrFaq-{{ section.id }}" {% if section.settings.open_first_faq %}open{% endif %}>
+                <summary><span class="mvr-accordion__icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="m5 8 5 5 5-5"/></svg></span><span>Transparence : notre ADN depuis le premier jour</span></summary>
+                <div class="mvr-accordion__answer"><p>Nous présentons clairement la manière dont les avis sont collectés, contrôlés, modérés et publiés.</p></div>
+              </details>
+              <details class="mvr-accordion__item" name="MvrFaq-{{ section.id }}">
+                <summary><span class="mvr-accordion__icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="m5 8 5 5 5-5"/></svg></span><span>Certification et label : gages de confiance</span></summary>
+                <div class="mvr-accordion__answer"><p>Les certifications et labels affichés doivent correspondre à des engagements réellement obtenus et vérifiables.</p></div>
+              </details>
+              <details class="mvr-accordion__item" name="MvrFaq-{{ section.id }}">
+                <summary><span class="mvr-accordion__icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="m5 8 5 5 5-5"/></svg></span><span>Des avis authentiques et vérifiés</span></summary>
+                <div class="mvr-accordion__answer"><p>Le statut vérifié est réservé aux avis reliés à une expérience ou à une commande effectivement contrôlée.</p></div>
+              </details>
+              <details class="mvr-accordion__item" name="MvrFaq-{{ section.id }}">
+                <summary><span class="mvr-accordion__icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="m5 8 5 5 5-5"/></svg></span><span>Une modération responsable et conforme</span></summary>
+                <div class="mvr-accordion__answer"><p>La modération protège les personnes et garantit des contenus utiles sans modifier le sens des témoignages.</p></div>
+              </details>
+              <details class="mvr-accordion__item" name="MvrFaq-{{ section.id }}">
+                <summary><span class="mvr-accordion__icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="m5 8 5 5 5-5"/></svg></span><span>Une publication authentique et transparente</span></summary>
+                <div class="mvr-accordion__answer"><p>Les règles de publication, les délais et les éventuels motifs de refus sont expliqués de manière accessible.</p></div>
+              </details>
+              <details class="mvr-accordion__item" name="MvrFaq-{{ section.id }}">
+                <summary><span class="mvr-accordion__icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="m5 8 5 5 5-5"/></svg></span><span>Une IA éthique au service de la confiance</span></summary>
+                <div class="mvr-accordion__answer"><p>Lorsque des outils automatisés sont utilisés, ils restent encadrés par des règles claires et une supervision humaine.</p></div>
+              </details>
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- if section.settings.show_certification -%}
+          <aside class="mvr-certification" aria-label="{{ section.settings.certification_title | escape }}">
+            <h3>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="M5 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/></svg>
+              {{ section.settings.certification_title }}
+            </h3>
+
+            <div class="mvr-certification__card">
+              {%- if section.settings.certification_logo != blank -%}
+                {{ section.settings.certification_logo
+                  | image_url: width: 360
+                  | image_tag:
+                    class: 'mvr-certification__logo',
+                    widths: '120, 180, 240, 360',
+                    sizes: '100px',
+                    loading: 'lazy',
+                    alt: section.settings.certification_logo_alt
+                }}
+              {%- endif -%}
+
+              {%- if section.settings.certification_text != blank -%}
+                <div class="mvr-certification__text">{{ section.settings.certification_text | newline_to_br }}</div>
+              {%- endif -%}
+
+              {%- if section.settings.certification_link_label != blank -%}
+                <a href="{{ section.settings.certification_link | default: '#' }}">
+                  {{ section.settings.certification_link_label }}
+                </a>
+              {%- endif -%}
+            </div>
+
+            {%- if section.settings.certification_control_text != blank -%}
+              <p class="mvr-certification__control">
+                {{ section.settings.certification_control_text }}
+                <span title="Informations complémentaires" aria-hidden="true">i</span>
+              </p>
+            {%- endif -%}
+
+            {%- if section.settings.transparency_charter_label != blank -%}
+              <a class="mvr-certification__charter" href="{{ section.settings.transparency_charter_url | default: '#' }}">
+                {{ section.settings.transparency_charter_label }}
+              </a>
+            {%- endif -%}
+          </aside>
+        {%- endif -%}
+      </div>
+    </section>
+  {%- endif -%}
+
+  {%- if section.settings.show_custom_footer -%}
+    <footer class="mvr-footer">
+      <div class="mvr-footer__inner">
+        <div class="mvr-footer__brand-socials">
+          <a class="mvr-footer__brand" href="{{ section.settings.footer_logo_link | default: product_link }}" aria-label="{{ section.settings.footer_brand_text | escape }}">
+            {%- if section.settings.footer_logo != blank -%}
+              {{ section.settings.footer_logo
+                | image_url: width: 520
+                | image_tag:
+                  class: 'mvr-footer__logo-image',
+                  widths: '160, 240, 360, 520',
+                  sizes: '150px',
+                  loading: 'lazy',
+                  alt: section.settings.footer_logo_alt
+              }}
+            {%- else -%}
+              <span class="mvr-footer__mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M30 3c7 7 8 14 4 21 7-4 14-3 21 4-7 7-14 8-21 4 4 7 3 14-4 21-7-7-8-14-4-21-7 4-14 3-21-4 7-7 14-8 21-4-4-7-3-14 4-21Z"/><circle cx="30" cy="28" r="7"/></svg>
+              </span>
+              <span class="mvr-footer__wordmark">
+                <strong>{{ section.settings.footer_brand_text }}</strong>
+                {%- if section.settings.footer_brand_subtext != blank -%}
+                  <span>{{ section.settings.footer_brand_subtext }}</span>
+                {%- endif -%}
+              </span>
+            {%- endif -%}
+          </a>
+
+          <nav class="mvr-footer__socials" aria-label="Réseaux sociaux">
+            <a href="{{ section.settings.facebook_url | default: routes.root_url }}" {% if section.settings.facebook_url != blank %}target="_blank" rel="noopener"{% endif %} aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v7h4v-7h3l1-4h-4V9c0-.7.3-1 1-1Z"/></svg>
+            </a>
+            <a href="{{ section.settings.instagram_url | default: routes.root_url }}" {% if section.settings.instagram_url != blank %}target="_blank" rel="noopener"{% endif %} aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="is-fill"/></svg>
+            </a>
+            <a href="{{ section.settings.tiktok_url | default: routes.root_url }}" {% if section.settings.tiktok_url != blank %}target="_blank" rel="noopener"{% endif %} aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4c.5 2.2 1.8 3.5 4 4v4c-1.6 0-3-.5-4-1.3V16a6 6 0 1 1-6-6h1v4H9a2 2 0 1 0 2 2V4h4Z"/></svg>
+            </a>
+            <a href="{{ section.settings.linkedin_url | default: routes.root_url }}" {% if section.settings.linkedin_url != blank %}target="_blank" rel="noopener"{% endif %} aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h4v11H5V9Zm2-5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm4 5h4v1.5c.8-1.2 2-2 4-2 3 0 5 2 5 6V20h-4v-5c0-2-.7-3-2.2-3-1.7 0-2.8 1.1-2.8 3.4V20h-4V9Z"/></svg>
+            </a>
+          </nav>
+        </div>
+
+        {%- if section.settings.cookie_label != blank -%}
+          <a class="mvr-footer__cookies" href="{{ section.settings.cookie_url | default: routes.root_url }}">
+            {{ section.settings.cookie_label }}
+          </a>
+        {%- endif -%}
+      </div>
+    </footer>
+  {%- endif -%}
 </section>
 
 <style>
   #MirabelReviews-{{ section.id }} {
     background: var(--mvr-background);
     color: var(--mvr-text);
-    padding: 0 0 var(--mvr-pad-bottom);
+    padding: 0;
     font-family: var(--font-body-family, Arial, sans-serif);
   }
 
@@ -553,6 +737,7 @@
     width: min(calc(100% - 32px), var(--mvr-max-width));
     margin: 0 auto;
     padding-top: var(--mvr-pad-top);
+    padding-bottom: var(--mvr-pad-bottom);
   }
 
   #MirabelReviews-{{ section.id }} .mvr__brandbar {
@@ -1107,8 +1292,322 @@
     line-height: 1.65;
   }
 
+
+  /* FAQ sombre et carte de certification */
+  #MirabelReviews-{{ section.id }} .mvr-trust {
+    position: relative;
+    overflow: hidden;
+    background: var(--mvr-faq-bg);
+    color: var(--mvr-faq-text);
+    padding: clamp(42px, 6vw, 72px) 0 38px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-trust__inner {
+    position: relative;
+    width: min(calc(100% - 32px), 900px);
+    margin: 0 auto;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-trust__faq h2 {
+    margin: 0 0 26px;
+    color: var(--mvr-faq-text);
+    font-size: clamp(22px, 2.8vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -.025em;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-trust__badge {
+    position: absolute;
+    z-index: 2;
+    top: -25px;
+    right: -34px;
+    width: 72px;
+    height: 72px;
+    pointer-events: none;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-trust__badge-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-trust__badge--fallback svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: var(--mvr-footer-accent);
+    stroke: #fff;
+    stroke-width: 1;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-accordion {
+    overflow: hidden;
+    border-radius: 3px;
+    background: var(--mvr-faq-panel);
+    padding: 5px 12px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-accordion__item {
+    border-bottom: 1px solid rgba(255, 255, 255, .58);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-accordion__item:last-child {
+    border-bottom: 0;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-accordion__item summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 54px;
+    padding: 10px 0;
+    color: var(--mvr-faq-text);
+    font-size: 15px;
+    font-weight: 750;
+    line-height: 1.35;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-accordion__item summary::-webkit-details-marker { display: none; }
+
+  #MirabelReviews-{{ section.id }} .mvr-accordion__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #05060a;
+    color: #fff;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-accordion__icon svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform .2s ease;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-accordion__item[open] .mvr-accordion__icon svg {
+    transform: rotate(180deg);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-accordion__answer {
+    padding: 0 10px 18px 34px;
+    color: rgba(255, 255, 255, .78);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-accordion__answer p { margin: 0; }
+  #MirabelReviews-{{ section.id }} .mvr-accordion__answer p + p { margin-top: 10px; }
+
+  #MirabelReviews-{{ section.id }} .mvr-certification {
+    width: min(100%, 260px);
+    margin-top: 28px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, .75);
+    border-radius: 14px;
+    color: var(--mvr-faq-text);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-certification h3 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 14px;
+    color: var(--mvr-faq-text);
+    font-size: 16px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-certification h3 svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-certification__card {
+    min-height: 175px;
+    padding: 18px;
+    border-radius: 7px;
+    background: #f1f1f2;
+    color: #17191d;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-certification__logo {
+    display: block;
+    width: auto;
+    max-width: 100px;
+    max-height: 54px;
+    margin-bottom: 16px;
+    object-fit: contain;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-certification__text {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-certification__card a {
+    display: inline-block;
+    margin-top: 14px;
+    color: #17191d;
+    font-size: 12px;
+    text-underline-offset: 2px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-certification__control {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 14px 0 0;
+    font-size: 12px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-certification__control span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    color: #111;
+    font-size: 10px;
+    font-weight: 900;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-certification__charter {
+    display: inline-block;
+    margin-top: 11px;
+    color: var(--mvr-faq-text);
+    font-size: 12px;
+    font-weight: 750;
+    text-underline-offset: 2px;
+  }
+
+  /* Footer inspiré de la capture */
+  #MirabelReviews-{{ section.id }} .mvr-footer {
+    background: var(--mvr-footer-bg);
+    color: var(--mvr-footer-text);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__inner {
+    width: min(calc(100% - 32px), 900px);
+    min-height: 150px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 38px;
+    padding: 30px 0;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__brand-socials {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--mvr-footer-text);
+    text-decoration: none;
+    line-height: .9;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__logo-image {
+    display: block;
+    width: auto;
+    max-width: {{ section.settings.footer_logo_width }}px;
+    max-height: 72px;
+    object-fit: contain;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__mark {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    color: var(--mvr-footer-accent);
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__mark svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__wordmark {
+    display: grid;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__wordmark strong,
+  #MirabelReviews-{{ section.id }} .mvr-footer__wordmark span {
+    color: var(--mvr-footer-text);
+    font-size: 17px;
+    font-weight: 900;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--mvr-footer-accent);
+    color: #fff;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__socials a:hover {
+    transform: translateY(-2px);
+    opacity: .88;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__socials svg {
+    width: 19px;
+    height: 19px;
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 1.8;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__socials svg rect,
+  #MirabelReviews-{{ section.id }} .mvr-footer__socials svg circle:not(.is-fill) {
+    fill: none;
+  }
+
+  #MirabelReviews-{{ section.id }} .mvr-footer__cookies {
+    color: var(--mvr-footer-text);
+    font-size: 12px;
+    text-underline-offset: 2px;
+    white-space: nowrap;
+  }
+
   @media (max-width: 900px) {
     #MirabelReviews-{{ section.id }} .mvr__layout { grid-template-columns: 1fr; }
+    #MirabelReviews-{{ section.id }} .mvr-trust__badge { right: 0; }
     #MirabelReviews-{{ section.id }} .mvr__score-card { position: static; }
     #MirabelReviews-{{ section.id }} .mvr__distribution { max-width: 500px; margin-inline: auto; }
   }
@@ -1139,6 +1638,16 @@
     #MirabelReviews-{{ section.id }} .mvr__score-card { padding: 24px 18px; }
     #MirabelReviews-{{ section.id }} .mvr-review__top { flex-direction: column; gap: 14px; }
     #MirabelReviews-{{ section.id }} .mvr__list-heading { align-items: flex-start; flex-direction: column; }
+    #MirabelReviews-{{ section.id }} .mvr-trust__inner,
+    #MirabelReviews-{{ section.id }} .mvr-footer__inner { width: min(calc(100% - 22px), 900px); }
+    #MirabelReviews-{{ section.id }} .mvr-trust__badge { top: -20px; right: -4px; width: 56px; height: 56px; opacity: .85; }
+    #MirabelReviews-{{ section.id }} .mvr-trust__faq h2 { padding-right: 56px; }
+    #MirabelReviews-{{ section.id }} .mvr-accordion { padding-inline: 10px; }
+    #MirabelReviews-{{ section.id }} .mvr-accordion__item summary { min-height: 50px; font-size: 13px; }
+    #MirabelReviews-{{ section.id }} .mvr-certification { width: 100%; }
+    #MirabelReviews-{{ section.id }} .mvr-footer__inner { align-items: flex-start; flex-direction: column; min-height: 0; gap: 24px; }
+    #MirabelReviews-{{ section.id }} .mvr-footer__brand-socials { align-items: flex-start; flex-direction: column; gap: 20px; }
+    #MirabelReviews-{{ section.id }} .mvr-footer__cookies { align-self: flex-start; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1715,6 +2224,169 @@
     },
     {
       "type": "header",
+      "content": "FAQ et certification"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_faq_area",
+      "label": "Afficher la FAQ sombre",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "faq_title",
+      "label": "Titre de la FAQ",
+      "default": "Les engagements Avis vérifiés"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_faq",
+      "label": "Ouvrir la première question par défaut",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "faq_badge",
+      "label": "Badge décoratif en haut à droite"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_certification",
+      "label": "Afficher la carte de certification",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "certification_title",
+      "label": "Titre de la carte",
+      "default": "Certification"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_logo",
+      "label": "Logo de certification"
+    },
+    {
+      "type": "text",
+      "id": "certification_logo_alt",
+      "label": "Texte alternatif du logo de certification",
+      "default": "Logo de certification"
+    },
+    {
+      "type": "textarea",
+      "id": "certification_text",
+      "label": "Texte de certification",
+      "default": "Ajoutez ici les informations exactes relatives à votre certification, à son périmètre et à l’organisme qui l’a délivrée."
+    },
+    {
+      "type": "text",
+      "id": "certification_link_label",
+      "label": "Texte du lien En savoir plus",
+      "default": "En savoir plus"
+    },
+    {
+      "type": "url",
+      "id": "certification_link",
+      "label": "Lien de certification"
+    },
+    {
+      "type": "text",
+      "id": "certification_control_text",
+      "label": "Texte sous la carte",
+      "default": "Avis soumis à un contrôle."
+    },
+    {
+      "type": "text",
+      "id": "transparency_charter_label",
+      "label": "Texte du lien charte",
+      "default": "Voir notre charte de transparence"
+    },
+    {
+      "type": "url",
+      "id": "transparency_charter_url",
+      "label": "Lien vers la charte de transparence"
+    },
+    {
+      "type": "header",
+      "content": "Footer personnalisé"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_custom_footer",
+      "label": "Afficher le footer sombre",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Logo du footer"
+    },
+    {
+      "type": "text",
+      "id": "footer_logo_alt",
+      "label": "Texte alternatif du logo du footer",
+      "default": "Avis Vérifiés"
+    },
+    {
+      "type": "url",
+      "id": "footer_logo_link",
+      "label": "Lien du logo du footer"
+    },
+    {
+      "type": "range",
+      "id": "footer_logo_width",
+      "label": "Largeur maximale du logo du footer",
+      "min": 90,
+      "max": 260,
+      "step": 10,
+      "unit": "px",
+      "default": 150
+    },
+    {
+      "type": "text",
+      "id": "footer_brand_text",
+      "label": "Nom affiché sans logo",
+      "default": "Avis"
+    },
+    {
+      "type": "text",
+      "id": "footer_brand_subtext",
+      "label": "Deuxième ligne affichée sans logo",
+      "default": "Vérifiés"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Lien Facebook"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Lien Instagram"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "Lien TikTok"
+    },
+    {
+      "type": "url",
+      "id": "linkedin_url",
+      "label": "Lien LinkedIn"
+    },
+    {
+      "type": "text",
+      "id": "cookie_label",
+      "label": "Texte du lien cookies",
+      "default": "Gestion des cookies"
+    },
+    {
+      "type": "url",
+      "id": "cookie_url",
+      "label": "Lien de gestion des cookies"
+    },
+    {
+      "type": "header",
       "content": "Couleurs et dimensions"
     },
     {
@@ -1764,6 +2436,42 @@
       "id": "success_color",
       "label": "Badge vérifié",
       "default": "#18864b"
+    },
+    {
+      "type": "color",
+      "id": "faq_background_color",
+      "label": "Fond de la zone FAQ",
+      "default": "#292a2e"
+    },
+    {
+      "type": "color",
+      "id": "faq_panel_color",
+      "label": "Fond de l’accordéon",
+      "default": "#323337"
+    },
+    {
+      "type": "color",
+      "id": "faq_text_color",
+      "label": "Texte de la FAQ",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "footer_background_color",
+      "label": "Fond du footer",
+      "default": "#03050d"
+    },
+    {
+      "type": "color",
+      "id": "footer_text_color",
+      "label": "Texte du footer",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "footer_accent_color",
+      "label": "Couleur des icônes du footer",
+      "default": "#0874ef"
     },
     {
       "type": "range",
@@ -1936,6 +2644,24 @@
       ]
     },
     {
+      "type": "faq",
+      "name": "Question FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Votre question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Réponse",
+          "default": "<p>Ajoutez ici une réponse claire et transparente.</p>"
+        }
+      ]
+    },
+    {
       "type": "review",
       "name": "Avis client",
       "settings": [
@@ -1996,6 +2722,48 @@
       "blocks": [
         {
           "type": "interface_texts"
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Transparence : notre ADN depuis le premier jour",
+            "answer": "<p>Nous présentons clairement la manière dont les avis sont collectés, contrôlés, modérés et publiés.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Certification et label : gages de confiance",
+            "answer": "<p>Les certifications et labels affichés doivent correspondre à des engagements réellement obtenus et vérifiables.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Des avis authentiques et vérifiés",
+            "answer": "<p>Le statut vérifié est réservé aux avis reliés à une expérience ou à une commande effectivement contrôlée.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Une modération responsable et conforme",
+            "answer": "<p>La modération vise à protéger les personnes et à garantir des contenus utiles, sans modifier le sens des témoignages.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Une publication authentique et transparente",
+            "answer": "<p>Les règles de publication, les délais et les éventuels motifs de refus sont expliqués de manière accessible.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Une IA éthique au service de la confiance",
+            "answer": "<p>Lorsque des outils automatisés sont utilisés, ils restent encadrés par des règles claires et une supervision humaine.</p>"
+          }
         },
         {
           "type": "review",
