@@ -32,6 +32,7 @@
     --rating-size-mobile: {{ section.settings.rating_size_mobile }}px;
     --stars-size: {{ section.settings.stars_size }}px;
     --summary-size: {{ section.settings.summary_size }}px;
+    --verified-reviews-logo-width: {{ section.settings.verified_reviews_logo_width }}px;
     --name-size: {{ section.settings.name_size }}px;
     --verified-size: {{ section.settings.verified_size }}px;
     --review-title-size: {{ section.settings.review_title_size }}px;
@@ -51,20 +52,61 @@
 >
   <div class="product-reviews__inner">
 
-    {% if section.settings.title != blank %}
-  <div class="product-reviews__title-wrapper">
-    {% if section.settings.logo != blank %}
-      <a href="{{ section.settings.logo_url }}" target="_blank">
-        <img src="{{ section.settings.logo | image_url: width: 120 }}" alt="Logo" class="product-reviews__logo">
-      </a>
+    {% assign show_verified_source = false %}
+    {% if section.settings.show_verified_reviews %}
+      {% if section.settings.verified_reviews_logo != blank %}
+        {% assign show_verified_source = true %}
+      {% elsif section.settings.verified_reviews_link_text != blank and section.settings.verified_reviews_url != blank %}
+        {% assign show_verified_source = true %}
+      {% endif %}
     {% endif %}
-    <h2 class="product-reviews__title">
-      {{ section.settings.title }}
-    </h2>
-  </div>
-{% endif %}
 
-    <div class="product-reviews__summary">
+    {% if section.settings.title != blank %}
+      <div class="product-reviews__title-wrapper">
+        <h2 class="product-reviews__title">
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    {% endif %}
+
+    {% if show_verified_source %}
+        <div class="product-reviews__verified-source">
+          {% if section.settings.verified_reviews_logo != blank %}
+            {% if section.settings.verified_reviews_url != blank %}
+              <a
+                class="product-reviews__verified-logo-link"
+                href="{{ section.settings.verified_reviews_url }}"
+                {% if section.settings.verified_reviews_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+                aria-label="Consulter tous les avis clients"
+              >
+            {% endif %}
+
+            <img
+              class="product-reviews__verified-logo"
+              src="{{ section.settings.verified_reviews_logo | image_url: width: 500 }}"
+              alt="{{ section.settings.verified_reviews_logo_alt | escape }}"
+              width="{{ section.settings.verified_reviews_logo_width }}"
+              loading="lazy"
+            >
+
+            {% if section.settings.verified_reviews_url != blank %}
+              </a>
+            {% endif %}
+          {% endif %}
+
+          {% if section.settings.verified_reviews_link_text != blank and section.settings.verified_reviews_url != blank %}
+            <a
+              class="product-reviews__verified-link"
+              href="{{ section.settings.verified_reviews_url }}"
+              {% if section.settings.verified_reviews_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+            >
+              {{ section.settings.verified_reviews_link_text }}
+            </a>
+          {% endif %}
+        </div>
+    {% endif %}
+
+    <div class="product-reviews__summary{% unless show_verified_source %} product-reviews__summary--without-verified-source{% endunless %}">
       <div class="product-reviews__rating-line">
         {% if section.settings.rating != blank %}
           <span class="product-reviews__rating">
@@ -249,6 +291,10 @@
     padding: var(--padding-top-desktop) 48px var(--padding-bottom-desktop);
   }
 
+  .section-{{ section.id }} .product-reviews__title-wrapper {
+    text-align: center;
+  }
+
   .section-{{ section.id }} .product-reviews__title {
     font-family: "Manrope", sans-serif;
     font-size: var(--title-size-desktop);
@@ -256,12 +302,54 @@
     font-weight: 600;
     color: var(--text-color);
     text-align: center;
-    margin: 0 0 var(--title-bottom-space);
+    margin: 0;
+  }
+
+  .section-{{ section.id }} .product-reviews__verified-source {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: clamp(20px, calc(var(--title-bottom-space) * 0.45), 40px) 0 24px;
+    text-align: center;
+  }
+
+  .section-{{ section.id }} .product-reviews__verified-logo-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .section-{{ section.id }} .product-reviews__verified-logo {
+    display: block;
+    width: min(var(--verified-reviews-logo-width), 100%);
+    height: auto;
+    object-fit: contain;
+  }
+
+  .section-{{ section.id }} .product-reviews__verified-link {
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .section-{{ section.id }} .product-reviews__verified-link:hover {
+    opacity: 0.75;
   }
 
   .section-{{ section.id }} .product-reviews__summary {
     text-align: center;
     margin-bottom: var(--summary-bottom-space);
+  }
+
+  .section-{{ section.id }} .product-reviews__summary--without-verified-source {
+    margin-top: var(--title-bottom-space);
   }
 
   .section-{{ section.id }} .product-reviews__rating-line {
@@ -523,7 +611,16 @@
 
     .section-{{ section.id }} .product-reviews__title {
       font-size: var(--title-size-mobile);
-      margin-bottom: 46px;
+    }
+
+    .section-{{ section.id }} .product-reviews__verified-source {
+      gap: 12px;
+      margin-top: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section-{{ section.id }} .product-reviews__verified-link {
+      font-size: 13px;
     }
 
     .section-{{ section.id }} .product-reviews__rating {
@@ -617,6 +714,58 @@
       "id": "title",
       "label": "Titre",
       "default": "Avis sur notre Berbérine pure"
+    },
+    {
+      "type": "header",
+      "content": "Lien Avis Vérifiés"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_verified_reviews",
+      "label": "Afficher le logo et le lien Avis Vérifiés",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "verified_reviews_logo",
+      "label": "Logo Avis Vérifiés"
+    },
+    {
+      "type": "text",
+      "id": "verified_reviews_logo_alt",
+      "label": "Texte alternatif du logo",
+      "default": "Avis Vérifiés"
+    },
+    {
+      "type": "range",
+      "id": "verified_reviews_logo_width",
+      "label": "Largeur du logo",
+      "min": 80,
+      "max": 280,
+      "step": 10,
+      "unit": "px",
+      "default": 160
+    },
+    {
+      "type": "url",
+      "id": "verified_reviews_url",
+      "label": "Lien vers la page Avis Vérifiés"
+    },
+    {
+      "type": "text",
+      "id": "verified_reviews_link_text",
+      "label": "Texte du lien",
+      "default": "Voir tous les avis sur ce site"
+    },
+    {
+      "type": "checkbox",
+      "id": "verified_reviews_new_tab",
+      "label": "Ouvrir le lien dans un nouvel onglet",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "Importez le logo officiel fourni par Avis Vérifiés et renseignez l’adresse publique de votre page d’avis. Le logo et le texte seront tous les deux cliquables."
     },
     {
       "type": "text",
