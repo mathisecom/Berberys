@@ -64,17 +64,9 @@
     <div class="product-reviews__summary">
 
       {% if section.settings.rating_logo != blank %}
-        
-          href="{{ section.settings.rating_logo_url | default: '#' }}"
-          class="product-reviews__rating-logo"
-          {% if section.settings.rating_logo_url != blank %}target="_blank" rel="noopener"{% endif %}
-        >
-          <img
-            src="{{ section.settings.rating_logo | image_url: width: 300 }}"
-            alt="{{ section.settings.title | escape }}"
-            loading="lazy"
-          >
-        </a>
+        {% assign rating_logo_target = '' %}
+        {% if section.settings.rating_logo_url != blank %}{% assign rating_logo_target = 'target="_blank" rel="noopener"' %}{% endif %}
+        <a href="{{ section.settings.rating_logo_url | default: '#' }}" class="product-reviews__rating-logo" {{ rating_logo_target }}><img src="{{ section.settings.rating_logo | image_url: width: 300 }}" alt="{{ section.settings.title | escape }}" loading="lazy"></a>
       {% endif %}
 
       <div class="product-reviews__rating-line">
@@ -277,15 +269,16 @@
   }
 
   .section-{{ section.id }} .product-reviews__rating-logo {
-    display: inline-block;
+    display: block;
+    width: 100%;
+    text-align: center;
     margin-bottom: 18px;
   }
 
   .section-{{ section.id }} .product-reviews__rating-logo img {
-    display: block;
+    display: inline-block;
     height: var(--rating-logo-height);
     width: auto;
-    margin: 0 auto;
   }
 
   .section-{{ section.id }} .product-reviews__rating-line {
