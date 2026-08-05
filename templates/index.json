@@ -1792,6 +1792,17 @@
     "avisproduit_j8FVDL": {
       "type": "avisproduit",
       "blocks": {
+        "review_YJMNxA": {
+          "type": "review",
+          "settings": {
+            "name": "Sophie L.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très bien , efficace sur",
+            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
+            "date": "30/05/26"
+          }
+        },
         "review_CEqjJQ": {
           "type": "review",
           "settings": {
@@ -1861,7 +1872,7 @@
         "review_teVPWr": {
           "type": "review",
           "settings": {
-            "name": "Evelyne E.",
+            "name": "Sonia",
             "verified": "Acheteur vérifié",
             "stars": "★★★★★",
             "review_title": "Très bien , efficace sur",
@@ -1882,6 +1893,7 @@
         }
       },
       "block_order": [
+        "review_YJMNxA",
         "review_CEqjJQ",
         "review_tBAtHM",
         "review_EAhjfL",
