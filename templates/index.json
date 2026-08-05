@@ -1868,6 +1868,17 @@
             "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
             "date": "30/05/26"
           }
+        },
+        "review_HMB3mY": {
+          "type": "review",
+          "settings": {
+            "name": "Marie D.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Enfin un vrai changement",
+            "text": "<p>Je cherchais surtout à calmer mes envies de sucre permanentes. Après 3 semaines, je grignote beaucoup moins et je n’ai plus ce besoin constant de dessert le soir. Je me sens plus légère et plus en contrôle.</p>",
+            "date": "03/06/26"
+          }
         }
       },
       "block_order": [
@@ -1877,7 +1888,8 @@
         "review_TVbcte",
         "review_gATent",
         "review_WRLYpk",
-        "review_teVPWr"
+        "review_teVPWr",
+        "review_HMB3mY"
       ],
       "name": "Avis produit custom",
       "settings": {
