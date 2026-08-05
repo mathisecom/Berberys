@@ -1885,7 +1885,7 @@
           "settings": {
             "name": "Céline H.",
             "verified": "Acheteur vérifié",
-            "stars": "★★★★☆",
+            "stars": "★★★★★",
             "review_title": "Bonne surprise",
             "text": "<p>Je ne m'attendais pas à grand-chose mais je grignote clairement moins entre les repas. Je vais recommencer une cure</p>",
             "date": "23/05/26"
@@ -1953,6 +1953,7 @@
         "stars": "★★★★★",
         "based_text": "Basé sur 3,380 avis",
         "show_pagination": true,
+        "reviews_per_page": 10,
         "pagination_pages": "1,2,3,4,5",
         "background_color": "#ffffff",
         "text_color": "#1a1a1a",
