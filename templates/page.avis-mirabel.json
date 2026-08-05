@@ -19,6 +19,149 @@
     "mirabel_avis_clients_H3Tz7h": {
       "type": "mirabel-avis-clients",
       "blocks": {
+        "review_QhrAPQ": {
+          "type": "review",
+          "settings": {
+            "author": "Hélène F.",
+            "rating": 5,
+            "date": "03/07/26",
+            "experience_date": "",
+            "headline": "Je continue",
+            "text": "J’ai perdu 2,5 kg et surtout je ne craque plus le soir.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_jH8AGc": {
+          "type": "review",
+          "settings": {
+            "author": "Sylvie B.",
+            "rating": 5,
+            "date": "02/07/26",
+            "experience_date": "",
+            "headline": "Efficace et naturel",
+            "text": "Je le prends depuis un mois et demi. Résultats progressifs mais réels.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_D7Xk94": {
+          "type": "review",
+          "settings": {
+            "author": "Nadine P.",
+            "rating": 5,
+            "date": "01/07/26",
+            "experience_date": "",
+            "headline": "Très bien",
+            "text": "Moins de ventre gonflé et moins d’envies. Je suis ravie.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_9iDxDb": {
+          "type": "review",
+          "settings": {
+            "author": "Céline M.",
+            "rating": 5,
+            "date": "30/06/26",
+            "experience_date": "",
+            "headline": "Enfin une aide",
+            "text": "À 52 ans, je pensais que c’était fichu. Ce complément m’aide beaucoup.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_Fwqg7a": {
+          "type": "review",
+          "settings": {
+            "author": "Dominique B.",
+            "rating": 5,
+            "date": "29/06/26",
+            "experience_date": "",
+            "headline": "top",
+            "text": "Les envies de sucre ont vraiment baissé. Je tiens mieux mes repas.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_Lq9MHM": {
+          "type": "review",
+          "settings": {
+            "author": "Martine C.",
+            "rating": 5,
+            "date": "27/06/26",
+            "experience_date": "",
+            "headline": "Satisfaite",
+            "text": "Les coups de barre après manger ont disparu. Mon énergie est plus constante.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_PCLCVP": {
+          "type": "review",
+          "settings": {
+            "author": "Béatrice L.",
+            "rating": 5,
+            "date": "26/06/26",
+            "experience_date": "",
+            "headline": "Efficace",
+            "text": "Après 5 semaines : -3 kg et surtout beaucoup moins de grignotage compulsif.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_CF6FKz": {
+          "type": "review",
+          "settings": {
+            "author": "Véronique D.",
+            "rating": 5,
+            "date": "25/06/26",
+            "experience_date": "",
+            "headline": "Plus de sérénité",
+            "text": "Je me sens moins coupable quand je mange. J’ai repris le contrôle.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_TtqED3": {
+          "type": "review",
+          "settings": {
+            "author": "Sandrine K.",
+            "rating": 5,
+            "date": "24/06/26",
+            "experience_date": "",
+            "headline": "Je recommande",
+            "text": "PCOS + résistance à l’insuline… ce produit m’aide vraiment à mieux gérer mon alimentation.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_bRVfiT": {
+          "type": "review",
+          "settings": {
+            "author": "Corinne J.",
+            "rating": 5,
+            "date": "23/06/26",
+            "experience_date": "",
+            "headline": "Très bon complément",
+            "text": "J’ai moins faim entre les repas et mes fringales de 16h ont presque disparu.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_xcLFFf": {
+          "type": "review",
+          "settings": {
+            "author": "Anne-Sophie V.",
+            "rating": 5,
+            "date": "22/06/26",
+            "experience_date": "",
+            "headline": "Libérée du sucre",
+            "text": "Je ne pense plus au sucre toute la journée. C’est énorme pour moi. Merci Mirabel",
+            "verified": false,
+            "response": ""
+          }
+        },
         "review_gzPLUd": {
           "type": "review",
           "settings": {
@@ -190,6 +333,17 @@
         }
       },
       "block_order": [
+        "review_QhrAPQ",
+        "review_jH8AGc",
+        "review_D7Xk94",
+        "review_9iDxDb",
+        "review_Fwqg7a",
+        "review_Lq9MHM",
+        "review_PCLCVP",
+        "review_CF6FKz",
+        "review_TtqED3",
+        "review_bRVfiT",
+        "review_xcLFFf",
         "review_gzPLUd",
         "review_tYiGBD",
         "review_HeBBiK",
