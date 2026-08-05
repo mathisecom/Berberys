@@ -1792,6 +1792,17 @@
     "avisproduit_j8FVDL": {
       "type": "avisproduit",
       "blocks": {
+        "review_w7EL9p": {
+          "type": "review",
+          "settings": {
+            "name": "Isabelle M.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Le contrôle est revenu",
+            "text": "<p>J’ai l’impression d’avoir retrouvé la volonté que j’avais perdue. Moins d’envies de sucre, moins de culpabilité. Je recommande vraiment.</p>",
+            "date": "09/06/26"
+          }
+        },
         "review_7pmrQC": {
           "type": "review",
           "settings": {
@@ -1904,6 +1915,7 @@
         }
       },
       "block_order": [
+        "review_w7EL9p",
         "review_7pmrQC",
         "review_eHdAqC",
         "review_YJMNxA",
