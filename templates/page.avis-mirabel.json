@@ -19,6 +19,19 @@
     "mirabel_avis_clients_H3Tz7h": {
       "type": "mirabel-avis-clients",
       "blocks": {
+        "review_gzPLUd": {
+          "type": "review",
+          "settings": {
+            "author": "Françoise H.",
+            "rating": 4,
+            "date": "20/06/26",
+            "experience_date": "",
+            "headline": "Changement progressif",
+            "text": "Pas de perte spectaculaire mais je perds doucement et surtout je ne reprends pas. Mes envies ont nettement diminué.",
+            "verified": false,
+            "response": ""
+          }
+        },
         "review_tYiGBD": {
           "type": "review",
           "settings": {
@@ -177,6 +190,7 @@
         }
       },
       "block_order": [
+        "review_gzPLUd",
         "review_tYiGBD",
         "review_HeBBiK",
         "review_6JRpcG",
