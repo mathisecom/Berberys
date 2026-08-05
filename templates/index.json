@@ -1792,6 +1792,17 @@
     "avisproduit_j8FVDL": {
       "type": "avisproduit",
       "blocks": {
+        "review_eEGWKW": {
+          "type": "review",
+          "settings": {
+            "name": "Catherine R.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Énergie retrouvée",
+            "text": "<p>Les coups de barre après les repas ont disparu. Je me sens plus dynamique et j’ai déjà perdu du ventre. Très contente de mon achat.</p>",
+            "date": "11/06/26"
+          }
+        },
         "review_w7EL9p": {
           "type": "review",
           "settings": {
@@ -1915,6 +1926,7 @@
         }
       },
       "block_order": [
+        "review_eEGWKW",
         "review_w7EL9p",
         "review_7pmrQC",
         "review_eHdAqC",
