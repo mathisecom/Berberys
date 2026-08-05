@@ -1792,6 +1792,17 @@
     "avisproduit_j8FVDL": {
       "type": "avisproduit",
       "blocks": {
+        "review_7pmrQC": {
+          "type": "review",
+          "settings": {
+            "name": "Nathalie P.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Très satisfaite",
+            "text": "<p>Je craquais tous les après-midis. Maintenant je passe devant les biscuits sans y penser. C’est un soulagement énorme. Les gélules sont faciles à prendre.</p>",
+            "date": "07/06/26"
+          }
+        },
         "review_eHdAqC": {
           "type": "review",
           "settings": {
@@ -1893,6 +1904,7 @@
         }
       },
       "block_order": [
+        "review_7pmrQC",
         "review_eHdAqC",
         "review_YJMNxA",
         "review_CEqjJQ",
