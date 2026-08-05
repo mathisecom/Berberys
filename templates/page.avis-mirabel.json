@@ -19,6 +19,19 @@
     "mirabel_avis_clients_H3Tz7h": {
       "type": "mirabel-avis-clients",
       "blocks": {
+        "review_LTaaBw": {
+          "type": "review",
+          "settings": {
+            "author": "Ines",
+            "rating": 2,
+            "date": "02/06/2026",
+            "experience_date": "",
+            "headline": "Livraison",
+            "text": "Soucis avec la livraison , on a du me renvoyer un nouveau pillulier",
+            "verified": false,
+            "response": ""
+          }
+        },
         "review_6phYbL": {
           "type": "review",
           "settings": {
@@ -372,6 +385,7 @@
         }
       },
       "block_order": [
+        "review_LTaaBw",
         "review_6phYbL",
         "review_c8MjcF",
         "review_EQrfjK",
