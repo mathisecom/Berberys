@@ -19,6 +19,19 @@
     "mirabel_avis_clients_H3Tz7h": {
       "type": "mirabel-avis-clients",
       "blocks": {
+        "review_EQrfjK": {
+          "type": "review",
+          "settings": {
+            "author": "Aurélie T.",
+            "rating": 5,
+            "date": "30/05/26",
+            "experience_date": "",
+            "headline": "Très satisfaite",
+            "text": "",
+            "verified": false,
+            "response": ""
+          }
+        },
         "review_QhrAPQ": {
           "type": "review",
           "settings": {
@@ -333,6 +346,7 @@
         }
       },
       "block_order": [
+        "review_EQrfjK",
         "review_QhrAPQ",
         "review_jH8AGc",
         "review_D7Xk94",
