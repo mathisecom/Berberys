@@ -1792,6 +1792,17 @@
     "avisproduit_j8FVDL": {
       "type": "avisproduit",
       "blocks": {
+        "review_eHdAqC": {
+          "type": "review",
+          "settings": {
+            "name": "Christine N.",
+            "verified": "Acheteur vérifié",
+            "stars": "★★★★★",
+            "review_title": "Moins de fringales",
+            "text": "<p>Depuis la périménopause, j’avais tout le temps faim. Mirabel m’aide vraiment à me sentir rassasiée plus longtemps. J’ai perdu 3 kg sans me forcer et mon énergie est plus stable.</p>",
+            "date": "30/05/26"
+          }
+        },
         "review_YJMNxA": {
           "type": "review",
           "settings": {
@@ -1869,17 +1880,6 @@
             "date": "30/05/26"
           }
         },
-        "review_teVPWr": {
-          "type": "review",
-          "settings": {
-            "name": "Sonia",
-            "verified": "Acheteur vérifié",
-            "stars": "★★★★★",
-            "review_title": "Très bien , efficace sur",
-            "text": "<p>Très bien , efficace sur ma glycémie et mon taux de cholestérol, et bien supportée .</p>",
-            "date": "30/05/26"
-          }
-        },
         "review_HMB3mY": {
           "type": "review",
           "settings": {
@@ -1893,6 +1893,7 @@
         }
       },
       "block_order": [
+        "review_eHdAqC",
         "review_YJMNxA",
         "review_CEqjJQ",
         "review_tBAtHM",
@@ -1900,7 +1901,6 @@
         "review_TVbcte",
         "review_gATent",
         "review_WRLYpk",
-        "review_teVPWr",
         "review_HMB3mY"
       ],
       "name": "Avis produit custom",
