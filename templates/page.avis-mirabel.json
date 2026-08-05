@@ -19,6 +19,71 @@
     "mirabel_avis_clients_H3Tz7h": {
       "type": "mirabel-avis-clients",
       "blocks": {
+        "review_tYiGBD": {
+          "type": "review",
+          "settings": {
+            "author": "Patricia F.",
+            "rating": 5,
+            "date": "18/06/26",
+            "experience_date": "",
+            "headline": "satisfaite",
+            "text": "Moins de ballonnements et surtout beaucoup moins d’envies de sucré. Je me sens plus légère moralement aussi.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_HeBBiK": {
+          "type": "review",
+          "settings": {
+            "author": "Emmanuelle G.",
+            "rating": 4,
+            "date": "17/06/26",
+            "experience_date": "",
+            "headline": "Je tiens enfin",
+            "text": "J’ai essayé beaucoup de choses. Là je tiens sur la durée sans craquer. Ma glycémie semble plus stable et je dors mieux.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_6JRpcG": {
+          "type": "review",
+          "settings": {
+            "author": "Valérie T.",
+            "rating": 5,
+            "date": "15/06/26",
+            "experience_date": "",
+            "headline": "Super produit",
+            "text": "Après 4 semaines, je remarque une vraie différence sur mes grignotages. Je mange normalement sans compulsion. Parfait pour la ménopause.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_xC74FD": {
+          "type": "review",
+          "settings": {
+            "author": "Laetitia B.",
+            "rating": 5,
+            "date": "13/06/26",
+            "experience_date": "",
+            "headline": "Moins accro au sucre",
+            "text": "Je pensais que c’était juste un manque de volonté. En fait mon corps réclamait du sucre tout le temps. Mirabel m’a aidée à casser ce cercle.",
+            "verified": false,
+            "response": ""
+          }
+        },
+        "review_JiQcW4": {
+          "type": "review",
+          "settings": {
+            "author": "Catherine R.",
+            "rating": 5,
+            "date": "11/06/26",
+            "experience_date": "",
+            "headline": "Énergie retrouvée",
+            "text": "Les coups de barre après les repas ont disparu. Je me sens plus dynamique et j’ai déjà perdu du ventre. Très contente de mon achat.",
+            "verified": false,
+            "response": ""
+          }
+        },
         "review_gH4A8f": {
           "type": "review",
           "settings": {
@@ -112,6 +177,11 @@
         }
       },
       "block_order": [
+        "review_tYiGBD",
+        "review_HeBBiK",
+        "review_6JRpcG",
+        "review_xC74FD",
+        "review_JiQcW4",
         "review_gH4A8f",
         "review_rdRpWf",
         "review_4FndfD",
